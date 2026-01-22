@@ -1,0 +1,293 @@
+/* Container section */
+.text {
+  position: relative;
+  background-color: #F8F8FA;
+  padding: 4vw 6vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading */
+.text h1 {
+  color: #005598;
+  padding: 0 0 2vw 0;
+  font-size: 2.3em;
+  text-align: center;
+}
+
+/* Paragraph text */
+.text p {
+  position: relative;
+  text-align: justify;
+  font-size: 1.2em;
+  margin: 1vw 0;
+}
+
+/* List styling */
+.text ul {
+  width: 100%;
+  font-size: 1.2em;
+  margin-left: 25px;
+  text-align: left;
+}
+
+/* Link: Back to services */
+.link_a {
+  all: unset;
+  margin-left: 100px;
+  color: #202E52;
+  font-weight: 600;
+  font-size: 1.1em;
+  cursor: pointer;
+  text-align: left;
+  width: 100vw;
+}
+
+.link_a:hover {
+  text-decoration: underline;
+}
+
+/* Contact button link */
+.link_contact_us {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Optional image box (not used here, but available) */
+.box-services {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  min-width: 300px;
+  min-height: 200px;
+  margin: 10px 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Contact button styling */
+.buttonTitle {
+  position: relative;
+  width: 200px;
+  background-color: #005598;
+  padding: 14px 0;
+  cursor: pointer;
+  margin: 50px auto 0 auto;
+  border: 1px solid #202E52;
+}
+
+.buttonTitle:hover {
+  background-color: #202E52;
+}
+
+.buttonTitle h3 {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #F2F2F2;
+}
+
+.common_issues-container{
+  position: relative;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.common_issues-box{
+  position: relative;
+  padding: 30px;
+  min-width: 350px;
+  width: 25%;
+  min-height: 500px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .02);
+  margin: 15px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.common_issues-box h2{
+  margin-left: 0;
+  padding: 0;
+  text-align: center;
+}
+.common_issues-box p{
+  margin-left: 0;
+  padding: 0;
+}
+.common_issues-box img{
+  margin-left: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+.services-container{
+  position: relative;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.services-box{
+  position: relative;
+  padding: 30px;
+  min-width: 350px;
+  width: 25%;
+  min-height: 500px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 15px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.services-box h2{
+  margin-left: 0;
+  padding: 0;
+  text-align: center;
+}
+.services-box p{
+  margin-left: 0;
+  padding: 0;
+}
+.services-box img{
+  margin-left: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+/* =========================
+   HOW THEY CONNECT (simple)
+========================= */
+.how_connect{
+  position: relative;
+  width: 100%;
+  padding: 28px 15px;
+  margin-top: 25px;
+  border-top: 1px solid rgba(32, 46, 82, .12);
+}
+
+.how_connect h2{
+  color: #005598;
+  text-align: center;
+  margin: 0 0 6px 0;
+  font-size: 1.9em;
+}
+
+.how_connect h3{
+  color: #202E52;
+  text-align: center;
+  margin: 0 0 14px 0;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.how_connect > p{
+  max-width: 980px;
+  margin: 0 auto 18px auto;
+  color: rgba(32, 46, 82, .92);
+  line-height: 1.65;
+  text-align: justify; /* matches your section style */
+  font-size: 1.1em;
+}
+
+/* Cards layout */
+.how_connect_cards{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* Card */
+.how_connect_card{
+  position: relative;
+  width: 25%;
+  min-width: 350px;
+  padding: 22px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(32, 46, 82, .12);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.how_connect_card h4{
+  margin: 0;
+  color: #202E52;
+  font-size: 1.1em;
+  line-height: 1.25;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(32, 46, 82, .10);
+}
+
+.how_connect_card p{
+  margin: 0;
+  color: rgba(32, 46, 82, .92);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.how_connect_card strong{
+  color: #202E52;
+}
+
+/* List inside last card */
+.how_connect_card ul{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(32, 46, 82, .92);
+  line-height: 1.7;
+  font-size: 1em;
+}
+
+.how_connect_card li{
+  margin: 6px 0;
+}
+
+/* Wide card */
+.how_connect_card_wide{
+  width: calc(25% * 2 + 16px);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .how_connect_card,
+  .how_connect_card_wide{
+    width: 100%;
+    min-width: 320px;
+  }
+
+  .how_connect > p{
+    text-align: left; /* reads better on mobile */
+  }
+}
