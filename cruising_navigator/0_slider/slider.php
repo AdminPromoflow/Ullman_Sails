@@ -1,11 +1,17 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 declare(strict_types=1);
 
 /* ---------------------------------------------
    Home Slider (Ullman Sails) — same pattern
 ---------------------------------------------- */
+
+function asset_version(string $absolutePath): ?int {
+  return is_file($absolutePath) ? filemtime($absolutePath) : null;
+}
+
+function with_version(string $relativeUrl, ?int $version): string {
+  return $version ? ($relativeUrl . '?v=' . $version) : $relativeUrl;
+}
 
 function slide_classes(array $slide): string {
   $classes = ['home-slider__slide', (string)$slide['bg']];
@@ -36,9 +42,15 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
   </div>
 <?php }
 
-/* Assets */
-$cssHref = '0_slider/slider.css?v=' . filemtime(__DIR__ . '/slider.css');
-$jsSrc  = '0_slider/slider.js?v=' . filemtime(__DIR__ . '/slider.js');
+/* Assets (absolute for filemtime, public for browser) */
+$cssFs = __DIR__ . '/slider.css';
+$jsFs  = __DIR__ . '/slider.js';
+
+$cssPublic = '0_slider/slider.css';
+$jsPublic  = '0_slider/slider.js';
+
+$cssHref = with_version($cssPublic, asset_version($cssFs));
+$jsSrc   = with_version($jsPublic,  asset_version($jsFs));
 
 /* UI assets */
 $logoSrc = '../Home/1.Slider/img/ullman_sails.png';
@@ -59,6 +71,8 @@ $slides = [
     'subtitle'    => 'Built for everyday cruising.',
   ],
 ];
+
+if (!$slides) return;
 
 $firstSlide = $slides[0];
 $lastSlide  = $slides[count($slides) - 1];
