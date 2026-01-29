@@ -67,7 +67,6 @@ $slides = [
   ],
 ];
 
-if (!$slides) return;
 
 $firstSlide = $slides[0];
 $lastSlide  = $slides[count($slides) - 1];
