@@ -47,15 +47,16 @@
     <?php //include "../cruising_navigator/0_slider/slider.php";?>
 
     <?php
-  echo "Directorio actual: " . __DIR__ . "<br>";
-  echo "Contenido del directorio:<br>";
-  $files = scandir(__DIR__);
-  foreach($files as $file) {
-      if($file != '.' && $file != '..') {
-          echo "- " . $file . "<br>";
-      }
-  }
-  ?>
+    echo "Directorio 0_slider existe: " . (file_exists(__DIR__ . "/0_slider") ? "SÍ" : "NO") . "<br>";
+    echo "Contenido de 0_slider:<br>";
+    $files = scandir(__DIR__ . "/0_slider");
+    foreach($files as $file) {
+        if($file != '.' && $file != '..') {
+            echo "- " . $file . "<br>";
+        }
+    }
+    echo "<br>slider.php existe: " . (file_exists(__DIR__ . "/0_slider/slider.php") ? "SÍ" : "NO") . "<br>";
+    ?>
     <?php include "navigation/navigation.php";?>
 
     <?php include "1_introduction/introduction.php";?>
