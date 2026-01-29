@@ -46,7 +46,7 @@
 
     <?php include "../General/arrows_up_down/arrows_up_down.php" ?>
 
-    <?php include "0_slider/slider.php";?>
+    <?php include "../racing_red_line_series/0_slider/slider.php";?>
     <?php include "navigation/navigation.php"?>
 
     <?php include "1_introduction/introduction.php";?>
