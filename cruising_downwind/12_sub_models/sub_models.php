@@ -1,0 +1,49 @@
+<?php
+$cssTime = filemtime('12_sub_models/sub_models.css');
+?>
+	<link rel="stylesheet" href="12_sub_models/sub_models.css?v=<?= $cssTime ?>">
+<body>
+
+  <section class="wrap">
+      <h2>How we build things that last</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Blue Line Series</h3>
+					<p>
+						Easy-trim cruising spinnakers that add downwind
+						speed while keeping handling safe—plus options like the ATN sock.</p>
+        </article>
+
+        <article class="card">
+          <h3>Cruising AP Spinnaker</h3>
+          <p>
+						Standard 165% asym for power with control,
+						typically 1.5oz nylon, built to stay hoisted across a wide range.</p>
+        </article>
+
+        <article class="card">
+          <h3>Cruising Mini Spinnaker</h3>
+          <p>
+						 145% Mini for simpler, forgiving downwind
+						sailing—great for singlehanders, easier hoists/douses with an ATN sock</p>
+        </article>
+
+        <article class="card">
+          <h3>The Axia Series — Blue Line (Downwind Cruising)</h3>
+          <p>
+						Dedicated downwind cruising sails for stable,
+						smooth flying shapes and confident broad-reaching/running, tailored to your rig.</p>
+        </article>
+
+        <article class="card">
+          <h3>Lightweight fabrics for easier handling</h3>
+          <p>
+						Comfortable ride and greater confidence on passage
+						Built for cruisers who want to sail deeper, faster, and with control</p>
+        </article>
+
+
+      </div>
+    </section>
+</body>

@@ -1,0 +1,133 @@
+<?php
+declare(strict_types=1);
+
+/* Filesystem paths (for filemtime) */
+$nsCssFs = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
+$nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
+
+/* Public paths */
+$nsCssPublic = '5_cloth_and_construction/cloth_and_construction.css';
+$nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
+
+/* Versions */
+$nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
+$nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
+?>
+
+<link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
+
+<section class="nav-specsheet" aria-label="Downwind cloth selection and construction">
+  <h2 id="csp-title" class="csp-title">Cloth Selection &amp; Construction</h2>
+
+  <div class="nav-specsheet__wrap">
+    <div class="nav-specsheet__panel">
+      <div class="nav-specsheet__grid">
+
+        <!-- Optional: keep your rotator as-is (images unchanged) -->
+        <figure class="nav-rotator" aria-label="Race Series cloth and construction rotator" data-interval="3000">
+          <div class="nav-rotator__frame">
+            <img class="nav-rotator__img is-active"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
+                 alt="Race sail view 1"
+                 data-sub="RACE DACRON — WOVEN POLYESTER">
+
+            <img class="nav-rotator__img"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png"
+                 alt="Race sail view 2"
+                 data-sub="RACE LAMINATE — LAMINATE / NON-WOVEN">
+
+            <img class="nav-rotator__img"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_3.png"
+                 alt="Race sail view 3"
+                 data-sub="STANDARD COMPONENTS — FINISHING">
+          </div>
+
+          <figcaption class="nav-rotator__caption">
+            <span class="nav-rotator__capTitle">RACE SERIES</span>
+            <span class="nav-rotator__capSub">RACE DACRON — WOVEN POLYESTER</span>
+
+            <div class="nav-rotator__dots" aria-hidden="true">
+              <span class="nav-rotator__dot is-active"></span>
+              <span class="nav-rotator__dot"></span>
+              <span class="nav-rotator__dot"></span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <div class="nav-specsheet__text">
+          <div class="nav-specsheet__meta">
+            <div class="nav-specsheet__metaTop">RACE SERIES</div>
+            <div class="nav-specsheet__metaSub">CLOTH &amp; CONSTRUCTION</div>
+          </div>
+
+          <!-- =========================
+               CLOTH SELECTION
+          ========================== -->
+          <h3 class="nav-specsheet__subtitle">Cloth Selection</h3>
+          <div class="nav-specsheet__list">
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">RACE DACRON</div>
+              <div class="nav-specsheet__val">CROSSCUT &amp; RADIAL WOVEN POLYESTER</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">RACE LAMINATE</div>
+              <div class="nav-specsheet__val">LAMINATE &amp; NON-WOVEN TEXTILE</div>
+            </div>
+          </div>
+
+          <!-- =========================
+               STANDARD COMPONENTS
+          ========================== -->
+          <h3 class="nav-specsheet__subtitle">Standard Components</h3>
+          <div class="nav-specsheet__list">
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">STITCHING</div>
+              <div class="nav-specsheet__val">TRIPLE-STEP</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">RINGS</div>
+              <div class="nav-specsheet__val">STAINLESS STEEL RINGS WITH SPECTRA/DYNEEMA WEBBING REINFORCEMENT</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">THREAD</div>
+              <div class="nav-specsheet__val">HIGH-PERFORMANCE DURABLE THREAD</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">SLIDES</div>
+              <div class="nav-specsheet__val">ADDITIONAL REINFORCEMENTS AT SLIDE ENTRY POINTS</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">BATTEN POCKETS</div>
+              <div class="nav-specsheet__val">LEECH OR LUFF LOADING VELCRO PUSH-IN, ROCKET TENSIONER, OR OTHER ADJUSTABLE OUTBOARD END STYLES WITH BATTENS</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">PATCHES</div>
+              <div class="nav-specsheet__val">RADIAL PATCHES</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">CONSTRUCTION ADHESIVE</div>
+              <div class="nav-specsheet__val">ULTRABOND HOJOS ON LAMINATE, ARAMID &amp; PEN SAILS</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">SAIL NUMBERS</div>
+              <div class="nav-specsheet__val">STANDARD STYLE &amp; COLOURS</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">DRAFT STRIPES</div>
+              <div class="nav-specsheet__val">RACE-STYLE MID MARKS APPLIED AT 50% OF FOOT &amp; 50% OF EACH DRAFT STRIP</div>
+            </div>
+            <div class="nav-specsheet__row">
+              <div class="nav-specsheet__key">TELLTALES</div>
+              <div class="nav-specsheet__val">TELLTALES ON LEECH &amp; BODY</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script defer src="<?= $nsJsPublic ?>?v=<?= $nsJsV ?>"></script>
