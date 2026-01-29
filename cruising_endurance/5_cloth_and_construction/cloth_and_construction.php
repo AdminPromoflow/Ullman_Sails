@@ -21,24 +21,23 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
 
   <div class="nav-specsheet__wrap">
     <div class="nav-specsheet__panel">
-
       <div class="nav-specsheet__grid">
 
         <figure class="nav-rotator" aria-label="Endurance sail image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
                  src="5_cloth_and_construction/img/sail_1.png"
-                 alt="Endurance Series sail view 1"
+                 alt="Endurance Series mainsail view"
                  data-sub="MAINSAIL, THE ENDURANCE SERIES">
 
             <img class="nav-rotator__img"
                  src="5_cloth_and_construction/img/sail_2.png"
-                 alt="Endurance Series sail view 2"
+                 alt="Endurance Series headsail view"
                  data-sub="HEADSAIL, THE ENDURANCE SERIES">
 
             <img class="nav-rotator__img"
                  src="5_cloth_and_construction/img/sail_3.png"
-                 alt="Endurance Series sail view 3"
+                 alt="Endurance Series jib view"
                  data-sub="JIB, THE ENDURANCE SERIES">
           </div>
 
@@ -60,7 +59,7 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
             <div class="nav-specsheet__metaSub">CROSSCUT WOVEN POLYESTER</div>
           </div>
 
-          <!-- Cloth options (as requested) -->
+          <!-- Cloth options -->
           <div class="nav-specsheet__list" role="list" aria-label="Cloth options">
             <div class="nav-specsheet__row" role="listitem">
               <div class="nav-specsheet__key">ENDURO DACRON</div>
@@ -80,41 +79,41 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
 
           <h3 class="nav-specsheet__subtitle">Standard Components</h3>
 
-          <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
+          <div class="nav-specsheet__list" role="list" aria-label="Standard components">
+            <div class="nav-specsheet__row" role="listitem">
               <div class="nav-specsheet__key">STITCHING</div>
               <div class="nav-specsheet__val">MULTIPLE TRIPLE-STEP</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row" role="listitem">
               <div class="nav-specsheet__key">RINGS</div>
               <div class="nav-specsheet__val">STAINLESS STEEL &amp; WEBBING LOAD STRAPS</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row" role="listitem">
               <div class="nav-specsheet__key">THREAD</div>
               <div class="nav-specsheet__val">HIGH PERFORMANCE DURABLE THREAD</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row" role="listitem">
               <div class="nav-specsheet__key">SLIDES</div>
               <div class="nav-specsheet__val">HEAVIER, STRONGER, REINFORCED</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row" role="listitem">
               <div class="nav-specsheet__key">BATTEN POCKETS</div>
               <div class="nav-specsheet__val">REINFORCED POCKETS &amp; BATTENS</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row" role="listitem">
               <div class="nav-specsheet__key">PATCHES</div>
               <div class="nav-specsheet__val">RADIAL PATCHES</div>
             </div>
           </div>
+
         </div>
 
       </div>
-
     </div>
   </div>
 </section>
