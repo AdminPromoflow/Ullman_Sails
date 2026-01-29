@@ -50,7 +50,7 @@
 
     <?php include "../General/arrows_up_down/arrows_up_down.php" ?>
 
-    <?php include "0_slider/slider.php";?>
+    <?php include "../cruising_endurance/0_slider/Slider.php";?>
     <?php include "navigation/navigation.php"?>
 
     <?php include "1_introduction/introduction.php";?>
