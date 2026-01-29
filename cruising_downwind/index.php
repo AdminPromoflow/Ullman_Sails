@@ -54,8 +54,8 @@
     <?php include "3_design_and_construction/design_and_construction.php";?>
     <?php include "4_durability_and_reinforcement/durability_and_reinforcement.php";?>
     <?php include "5_cloth_and_construction/cloth_and_construction.php";?>
-    <?php include "6_available_upgrades/available_upgrades.php";?>
     <?php include "7_standard_specifications/standard_specifications.php";?>
+    <?php include "6_available_upgrades/available_upgrades.php";?>
     <?php include "12_sub_models/sub_models.php" ?>
 
     <?php// include "5_cloth_selection/cloth_selection.php";?>

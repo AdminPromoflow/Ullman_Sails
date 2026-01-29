@@ -57,20 +57,23 @@ $logoSrc = '../Home/1.Slider/img/ullman_sails.png';
 $ctaHref = '#sailing-types-introduction';
 
 /* Slides */
+/* Slides (Race Series — Racing Sails) */
 $slides = [
   [
     'bg'          => 'bg-racing-1',
     'captionLeft' => true,
-    'title'       => 'Downwind Sails',
-    'subtitle'    => 'Purpose-built for fast, stable downwind sailing.',
+    'title'       => 'Race Series',
+    'subtitle'    => 'Fast trim, stable shape, wide control.',
   ],
   [
     'bg'          => 'bg-services',
     'captionLeft' => false,
-    'title'       => 'Downwind Sails',
-    'subtitle'    => 'Optimised for broad reaches and deep angles.',
+    'title'       => 'Race Series',
+    'subtitle'    => 'Radial build. Durable. Race-ready.',
   ],
 ];
+
+
 
 if (!$slides) return;
 

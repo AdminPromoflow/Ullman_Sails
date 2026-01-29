@@ -61,14 +61,14 @@ $slides = [
   [
     'bg'          => 'bg-racing-1',
     'captionLeft' => true,
-    'title'       => 'Downwind Sails',
-    'subtitle'    => 'Purpose-built for fast, stable downwind sailing.',
+    'title'       => 'Axia Series — Red Line',
+    'subtitle'    => 'Structured shape. Race control.',
   ],
   [
     'bg'          => 'bg-services',
     'captionLeft' => false,
-    'title'       => 'Downwind Sails',
-    'subtitle'    => 'Optimised for broad reaches and deep angles.',
+    'title'       => 'Axia Series — Red Line',
+    'subtitle'    => 'Low stretch. Fast modes.',
   ],
 ];
 

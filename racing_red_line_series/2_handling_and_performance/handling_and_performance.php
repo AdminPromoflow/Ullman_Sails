@@ -56,7 +56,7 @@ $ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : time();
 
       <img
         class="ph-image"
-        src="../cruising_navigator/2_handling_and_performance/img/performance-and-handling.jpg"
+        src="2_handling_and_performance/img/performance-and-handling.jpg"
         alt="Navigator Series sails shown under load"
         loading="lazy"
         decoding="async"

@@ -21,7 +21,7 @@ $ss_features = [
   'Furling control ',
   'Materials',
   'Construction & finishing ',
-  
+
 ];
 ?>
 
@@ -40,7 +40,7 @@ $ss_features = [
       <figure class="ss-figure">
         <div class="ss-image">
           <img
-            src="../cruising_navigator/7_standard_specifications/img/standard_specifications.jpg"
+            src="7_standard_specifications/img/standard_specifications.jpg"
             alt="Navigator sail standard specifications"
             loading="lazy"
             decoding="async"

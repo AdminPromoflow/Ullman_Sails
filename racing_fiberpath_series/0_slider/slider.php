@@ -61,14 +61,14 @@ $slides = [
   [
     'bg'          => 'bg-racing-1',
     'captionLeft' => true,
-    'title'       => 'Downwind Sails',
-    'subtitle'    => 'Purpose-built for fast, stable downwind sailing.',
+    'title'       => 'FiberPath Series',
+    'subtitle'    => '3D load paths. Race-ready shape.',
   ],
   [
     'bg'          => 'bg-services',
     'captionLeft' => false,
-    'title'       => 'Downwind Sails',
-    'subtitle'    => 'Optimised for broad reaches and deep angles.',
+    'title'       => 'FiberPath Series',
+    'subtitle'    => 'Low stretch. Fast response.',
   ],
 ];
 
