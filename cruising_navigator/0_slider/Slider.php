@@ -40,17 +40,12 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
        href="<?= htmlspecialchars($ctaHref, ENT_QUOTES, 'UTF-8') ?>"
        aria-label="Scroll down">↓</a>
   </div>
-<?php } 
+<?php }
 
 /* Assets (absolute for filemtime, public for browser) */
-$cssFs = __DIR__ . '/slider.css';
-$jsFs  = __DIR__ . '/slider.js';
-
-$cssPublic = '0_slider/slider.css';
-$jsPublic  = '0_slider/slider.js';
-
-$cssHref = with_version($cssPublic, asset_version($cssFs));
-$jsSrc   = with_version($jsPublic,  asset_version($jsFs));
+/* Assets */
+$cssHref = '0_slider/slider.css?v=' . filemtime(__DIR__ . '/slider.css');
+$jsSrc  = '0_slider/slider.js?v=' . filemtime(__DIR__ . '/slider.js');
 
 /* UI assets */
 $logoSrc = '../Home/1.Slider/img/ullman_sails.png';
