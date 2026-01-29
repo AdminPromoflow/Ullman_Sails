@@ -44,12 +44,18 @@
     <?php include "../General/new_sail_quote/new_sail_quote.php"; ?>
 
     <?php include "../General/arrows_up_down/arrows_up_down.php"; ?>
-    <?php include "../cruising_navigator/0_slider/slider.php";?>
+    <?php //include "../cruising_navigator/0_slider/slider.php";?>
 
     <?php
-    echo "Directorio actual: " . __DIR__ . "<br>";
-    echo "Archivo existe: " . (file_exists(__DIR__ . "/0_slider/slider.php") ? "SÍ" : "NO") . "<br>";
-    ?>
+  echo "Directorio actual: " . __DIR__ . "<br>";
+  echo "Contenido del directorio:<br>";
+  $files = scandir(__DIR__);
+  foreach($files as $file) {
+      if($file != '.' && $file != '..') {
+          echo "- " . $file . "<br>";
+      }
+  }
+  ?>
     <?php include "navigation/navigation.php";?>
 
     <?php include "1_introduction/introduction.php";?>
