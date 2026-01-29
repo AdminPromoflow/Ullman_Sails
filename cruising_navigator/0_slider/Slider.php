@@ -5,7 +5,6 @@ declare(strict_types=1);
    Home Slider (Ullman Sails) — same pattern
 ---------------------------------------------- */
 
-
 function slide_classes(array $slide): string {
   $classes = ['home-slider__slide', (string)$slide['bg']];
   if (!empty($slide['captionLeft'])) $classes[] = 'is-caption-left';
@@ -35,7 +34,6 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
   </div>
 <?php }
 
-/* Assets (absolute for filemtime, public for browser) */
 /* Assets */
 $cssHref = '0_slider/slider.css?v=' . filemtime(__DIR__ . '/slider.css');
 $jsSrc  = '0_slider/slider.js?v=' . filemtime(__DIR__ . '/slider.js');
@@ -59,7 +57,6 @@ $slides = [
     'subtitle'    => 'Built for everyday cruising.',
   ],
 ];
-
 
 $firstSlide = $slides[0];
 $lastSlide  = $slides[count($slides) - 1];
