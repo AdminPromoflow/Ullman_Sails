@@ -5,13 +5,6 @@ declare(strict_types=1);
    Home Slider (Ullman Sails) — same pattern
 ---------------------------------------------- */
 
-function asset_version(string $absolutePath): ?int {
-  return is_file($absolutePath) ? filemtime($absolutePath) : null;
-}
-
-function with_version(string $relativeUrl, ?int $version): string {
-  return $version ? ($relativeUrl . '?v=' . $version) : $relativeUrl;
-}
 
 function slide_classes(array $slide): string {
   $classes = ['home-slider__slide', (string)$slide['bg']];
