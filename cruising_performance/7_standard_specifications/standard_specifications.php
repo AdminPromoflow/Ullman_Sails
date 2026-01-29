@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$ssCssFs = __DIR__ . '/../cruising_navigator/7_standard_specifications/standard_specifications.css';
+$ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
 
 /* Public path */
-$ssCssPublic = '../cruising_navigator/7_standard_specifications/standard_specifications.css';
+$ssCssPublic = '7_standard_specifications/standard_specifications.css';
 
 /* Version */
 $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
@@ -15,7 +15,6 @@ $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
  * Using an array keeps the markup DRY and reduces maintenance errors.
  */
 $ss_features = [
-  'All Performance Series sails are built to our highest standards, with finishing details upgraded from the Voyager Series.',
   'Four reefs with webbing handles, reef blocks, and low-friction rings',
   'Colour-coded mainsail luff reefs for accuracy',
   'Mainsail luff furling reef system',
@@ -46,7 +45,7 @@ $ss_features = [
       <figure class="ss-figure">
         <div class="ss-image">
           <img
-            src="../cruising_navigator/7_standard_specifications/img/standard_specifications.jpg"
+            src="7_standard_specifications/img/standard_specifications.jpg"
             alt="Performance Series — standard specifications"
             loading="lazy"
             decoding="async"

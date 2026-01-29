@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$ssCssFs = __DIR__ . '/../cruising_navigator/7_standard_specifications/standard_specifications.css';
+$ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
 
 /* Public path */
-$ssCssPublic = '../cruising_navigator/7_standard_specifications/standard_specifications.css';
+$ssCssPublic = '7_standard_specifications/standard_specifications.css';
 
 /* Version */
 $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
@@ -14,16 +14,20 @@ $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
  * Standard specification items.
  * Using an array keeps the markup DRY and reduces maintenance errors.
  */
-$ss_features = [
-  'Triple-step stitching on every seam',
-  'Stainless steel rings',
-  'Aluminium headboards for mainsails',
-  'Standard battened mainsails',
-  'Fibreglass battens',
-  'Reinforced batten pockets',
-  'Hanks or slides',
-  'Telltales on headsails',
-];
+ $ss_features = [
+   'Triple-step stitching',
+   'Gore Tenara® thread',
+   'Stainless steel rings',
+   'Spectra/Dyneema webbing',
+   'Radial point patches',
+   'Reinforced slides/hanks',
+   'Reinforced batten pockets',
+   'Vinylester battens',
+   'Aluminium headboards',
+   'Draft stripes',
+   'Telltales',
+ ];
+
 ?>
 
 <link rel="stylesheet" href="<?= $ssCssPublic ?>?v=<?= $ssCssV ?>">
@@ -34,8 +38,7 @@ $ss_features = [
     <header class="ss-header">
       <h2 id="ss-title" class="ss-title">Standard Specifications</h2>
       <p class="ss-subtitle">
-        Standard upgraded finishing includes radial-point patching (with inside layer on FiberPath), Gore® Tenara® on seams/UV covers, patches for hanks/slides, stainless rings with Spectra/Dyneema backup webbing, multiple rows of triple-step stitching, reinforced batten pockets, vinylester battens, plus hanks or slides, telltales, draft stripes, etc.
-      </p>
+        Premium reinforcements and finishing (triple-step stitching, stainless rings, Tenara®, reinforced batten pockets).      </p>
     </header>
 
     <div class="ss-grid">
@@ -43,7 +46,7 @@ $ss_features = [
       <figure class="ss-figure">
         <div class="ss-image">
           <img
-            src="../cruising_navigator/7_standard_specifications/img/standard_specifications.jpg"
+            src="7_standard_specifications/img/standard_specifications.jpg"
             alt="Voyager sail standard specifications"
             loading="lazy"
             decoding="async"

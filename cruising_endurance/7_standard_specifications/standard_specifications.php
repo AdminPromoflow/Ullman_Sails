@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$ssCssFs = __DIR__ . '/../cruising_navigator/7_standard_specifications/standard_specifications.css';
+$ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
 
 /* Public path */
-$ssCssPublic = '../cruising_navigator/7_standard_specifications/standard_specifications.css';
+$ssCssPublic = '7_standard_specifications/standard_specifications.css';
 
 /* Version */
 $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
@@ -15,13 +15,13 @@ $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
  * Using an array keeps the markup DRY and reduces maintenance errors.
  */
 $ss_features = [
-  'Triple-step múltiple en costuras',
-  'Anillas inox con cinchas de carga',
-  'Hilo resistente a rayos UV',
-  'Slides reforzados, más fuertes',
-  'Parches radiales en zonas de carga',
-  'Doble cinta de baluma estable',
-  'Sunbrella UV en velas enrollador',
+  'Multiple triple-step stitching on seams',
+  'Stainless steel rings with load-bearing webbing',
+  'UV-resistant thread',
+  'Reinforced slides for added strength',
+  'Radial patches in high-load areas',
+  'Double leech tape for stability',
+  'Sunbrella UV cover on furling sails',
 ];
 ?>
 
@@ -40,7 +40,7 @@ $ss_features = [
       <figure class="ss-figure">
         <div class="ss-image">
           <img
-            src="../cruising_navigator/7_standard_specifications/img/standard_specifications.jpg"
+            src="7_standard_specifications/img/standard_specifications.jpg"
             alt="Navigator sail standard specifications"
             loading="lazy"
             decoding="async"

@@ -43,11 +43,11 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
 <?php }
 
 /* Assets (absolute for filemtime, public for browser) */
-$cssFs = __DIR__ . '/../cruising_endurance/0_slider/slider.css';
-$jsFs  = __DIR__ . '/../Home/1.Slider/Slider.js';
+$cssFs = __DIR__ . '/0_slider/slider.css';
+$jsFs  = __DIR__ . '/0_slider/slider.js';
 
-$cssPublic = '../cruising_endurance/0_slider/slider.css';
-$jsPublic  = '../Home/1.Slider/Slider.js';
+$cssPublic = '0_slider/slider.css';
+$jsPublic  = '0_slider/slider.js';
 
 $cssHref = with_version($cssPublic, asset_version($cssFs));
 $jsSrc   = with_version($jsPublic,  asset_version($jsFs));

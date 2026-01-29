@@ -40,12 +40,12 @@ $dac_items = [
 ];
 
 // Filesystem paths (for filemtime)
-$dacCssFs = __DIR__ . '/../cruising_navigator/3_design_and_construction/design_and_construction.css';
-$dacJsFs  = __DIR__ . '/../cruising_navigator/3_design_and_construction/design_and_construction.js';
+$dacCssFs = __DIR__ . '/3_design_and_construction/design_and_construction.css';
+$dacJsFs  = __DIR__ . '/3_design_and_construction/design_and_construction.js';
 
 // Public paths
-$dacCssPublic = '../cruising_navigator/3_design_and_construction/design_and_construction.css';
-$dacJsPublic  = '../cruising_navigator/3_design_and_construction/design_and_construction.js';
+$dacCssPublic = '3_design_and_construction/design_and_construction.css';
+$dacJsPublic  = '3_design_and_construction/design_and_construction.js';
 
 // Versions
 $dacCssV = is_file($dacCssFs) ? filemtime($dacCssFs) : time();

@@ -15,8 +15,8 @@ function versioned_asset(string $publicPath, string $fsPath): string {
 }
 
 /* Public + filesystem paths */
-$cssPublic = '../cruising_navigator/6_available_upgrades/available_upgrades.css';
-$cssFs     = __DIR__ . '/../cruising_navigator/6_available_upgrades/available_upgrades.css';
+$cssPublic = '6_available_upgrades/available_upgrades.css';
+$cssFs     = __DIR__ . '/6_available_upgrades/available_upgrades.css';
 $cssHref   = versioned_asset($cssPublic, $cssFs);
 
 $upgrades = [

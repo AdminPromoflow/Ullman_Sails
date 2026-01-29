@@ -31,9 +31,8 @@
     <?php include "../Sails-Types-Example/gore_tenara_thread/gore_tenara_thread.php";?>
     <?php include "../Sails-Types-Example/engineering_for_extreme_environments/engineering_for_extreme_environments.php";?>
     <?php include "../Sails-Types-Example/sub_ranges_models/sub_ranges_models.php";?>
-
-
-
+    <?php include "../Sails-Types-Example/11_expedition_extreme_environment/extreme_environment.php" ?>
+    <?php include "../Sails-Types-Example/12_sub_models/sub_models.php" ?>
     <?php include "../General/Footer/Footer.php"?>
   </body>
 </html>

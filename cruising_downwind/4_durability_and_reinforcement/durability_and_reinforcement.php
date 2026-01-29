@@ -36,12 +36,12 @@ $sid_items = [
 ];
 
 // Filesystem paths (for filemtime)
-$sidCssFs = __DIR__ . '/../cruising_navigator/4_durability_and_reinforcement/durability_and_reinforcement.css';
-$sidJsFs  = __DIR__ . '/../cruising_navigator/4_durability_and_reinforcement/durability_and_reinforcement.js';
+$sidCssFs = __DIR__ . '/4_durability_and_reinforcement/durability_and_reinforcement.css';
+$sidJsFs  = __DIR__ . '/4_durability_and_reinforcement/durability_and_reinforcement.js';
 
 // Public paths
-$sidCssPublic = '../cruising_navigator/4_durability_and_reinforcement/durability_and_reinforcement.css';
-$sidJsPublic  = '../cruising_navigator/4_durability_and_reinforcement/durability_and_reinforcement.js';
+$sidCssPublic = '4_durability_and_reinforcement/durability_and_reinforcement.css';
+$sidJsPublic  = '4_durability_and_reinforcement/durability_and_reinforcement.js';
 
 // Versions
 $sidCssV = is_file($sidCssFs) ? filemtime($sidCssFs) : time();

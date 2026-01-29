@@ -3,9 +3,7 @@
   position: relative;
   height: 80vh;
   width: 100vw;
-  background-color: red;
-  font-family: 'Poppins', sans-serif;
-  background-image: url("1.Slider/SlideHome.jpg");
+  background-image: url("../Racing/1.Slider/Topcrusingsails.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

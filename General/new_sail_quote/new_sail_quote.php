@@ -12,7 +12,6 @@ $jsTime  = filemtime('../General/new_sail_quote/new_sail_quote.js');
       <h3>New Sail Quote</h3>
     </div>
   </a>
-
 </div>
 
 <script src="../General/new_sail_quote/new_sail_quote.js?v=<?= $jsTime ?>" defer></script>

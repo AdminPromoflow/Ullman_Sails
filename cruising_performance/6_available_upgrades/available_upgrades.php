@@ -15,8 +15,8 @@ function versioned_asset(string $publicPath, string $fsPath): string {
 }
 
 /* Public + filesystem paths */
-$cssPublic = '../cruising_navigator/6_available_upgrades/available_upgrades.css';
-$cssFs     = __DIR__ . '/../cruising_navigator/6_available_upgrades/available_upgrades.css';
+$cssPublic = '6_available_upgrades/available_upgrades.css';
+$cssFs     = __DIR__ . '/6_available_upgrades/available_upgrades.css';
 $cssHref   = versioned_asset($cssPublic, $cssFs);
 
 $upgrades = [
@@ -24,10 +24,7 @@ $upgrades = [
     'title' => 'Upgraded luff systems',
     'text'  => 'Improves load distribution and smoother hoists for more reliable shape.',
   ],
-  [
-    'title' => 'Foot slides',
-    'text'  => 'Reduces friction and wear at the boom for easier hoisting and reefing.',
-  ],
+
   [
     'title' => 'Additional reefs',
     'text'  => 'Extends your depowering range for heavy-weather balance and control.',

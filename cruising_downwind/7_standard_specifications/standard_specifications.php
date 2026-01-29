@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$ssCssFs = __DIR__ . '/../cruising_navigator/7_standard_specifications/standard_specifications.css';
+$ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
 
 /* Public path */
-$ssCssPublic = '../cruising_navigator/7_standard_specifications/standard_specifications.css';
+$ssCssPublic = '7_standard_specifications/standard_specifications.css';
 
 /* Version */
 $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();

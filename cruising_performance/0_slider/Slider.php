@@ -29,7 +29,7 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
         loading="lazy"
         decoding="async"
       >
-    </div>
+    </div>   
 
     <h1 class="home-slider__title"><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></h1>
     <h2 class="home-slider__subtitle"><?= htmlspecialchars($subtitle, ENT_QUOTES, 'UTF-8') ?></h2>
@@ -43,10 +43,10 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
 <?php }
 
 /* Assets (absolute for filemtime, public for browser) */
-$cssFs = __DIR__ . '/../cruising_performance/0_slider/slider.css';
+$cssFs = __DIR__ . '/0_slider/slider.css';
 $jsFs  = __DIR__ . '/../Home/1.Slider/Slider.js';
 
-$cssPublic = '../cruising_performance/0_slider/slider.css';
+$cssPublic = '0_slider/slider.css';
 $jsPublic  = '../Home/1.Slider/Slider.js';
 
 $cssHref = with_version($cssPublic, asset_version($cssFs));

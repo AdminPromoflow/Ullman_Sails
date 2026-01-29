@@ -2,12 +2,12 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$navCssFs = __DIR__ . '/../cruising_navigator/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/../cruising_navigator/navigation/navigation.js';
+$navCssFs = __DIR__ . '/navigation/navigation.css';
+$navJsFs  = __DIR__ . '/navigation/navigation.js';
 
 /* Public paths (as used in HTML) */
-$navCssPublic = '../cruising_navigator/navigation/navigation.css';
-$navJsPublic  = '../cruising_navigator/navigation/navigation.js';
+$navCssPublic = 'navigation/navigation.css';
+$navJsPublic  = 'navigation/navigation.js';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();

@@ -25,12 +25,12 @@ $ph_steps = [
 
 
 // Filesystem paths (for filemtime)
-$ph_css_fs = __DIR__ . '/../cruising_navigator/2_handling_and_performance/handling_and_performance.css';
-$ph_js_fs  = __DIR__ . '/../cruising_navigator/2_handling_and_performance/handling_and_performance.js';
+$ph_css_fs = __DIR__ . '/2_handling_and_performance/handling_and_performance.css';
+$ph_js_fs  = __DIR__ . '/2_handling_and_performance/handling_and_performance.js';
 
 // Public paths
-$ph_css_public = '../cruising_navigator/2_handling_and_performance/handling_and_performance.css';
-$ph_js_public  = '../cruising_navigator/2_handling_and_performance/handling_and_performance.js';
+$ph_css_public = '2_handling_and_performance/handling_and_performance.css';
+$ph_js_public  = '2_handling_and_performance/handling_and_performance.js';
 
 // Versions
 $ph_css_v = is_file($ph_css_fs) ? filemtime($ph_css_fs) : time();

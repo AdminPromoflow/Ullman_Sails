@@ -1,12 +1,12 @@
 <?php
 // Asset versioning for cache-busting (changes the URL whenever the file changes)
-$introCssVersion = filemtime(__DIR__ . '/../cruising_navigator/1_introduction/introduction.css');
-$introJsVersion  = filemtime(__DIR__ . '/../cruising_navigator/1_introduction/introduction.js');
+$introCssVersion = filemtime(__DIR__ . '/1_introduction/introduction.css');
+$introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
 ?>
 
 <link
   rel="stylesheet"
-  href="../cruising_navigator/1_introduction/introduction.css?v=<?= $introCssVersion ?>"
+  href="1_introduction/introduction.css?v=<?= $introCssVersion ?>"
 >
 
 <section
@@ -38,5 +38,5 @@ $introJsVersion  = filemtime(__DIR__ . '/../cruising_navigator/1_introduction/in
 
 <script
   defer
-  src="../cruising_navigator/1_introduction/introduction.js?v=<?= $introJsVersion ?>"
+  src="../../1_introduction/introduction.js?v=<?= $introJsVersion ?>"
 ></script>

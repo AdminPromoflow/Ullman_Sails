@@ -2,12 +2,12 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$nsCssFs = __DIR__ . '/../cruising_navigator/5_cloth_and_construction/cloth_and_construction.css';
-$nsJsFs  = __DIR__ . '/../cruising_navigator/5_cloth_and_construction/cloth_and_construction.js';
+$nsCssFs = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
+$nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
 
 /* Public paths */
-$nsCssPublic = '../cruising_navigator/5_cloth_and_construction/cloth_and_construction.css';
-$nsJsPublic  = '../cruising_navigator/5_cloth_and_construction/cloth_and_construction.js';
+$nsCssPublic = '5_cloth_and_construction/cloth_and_construction.css';
+$nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
 
 /* Versions */
 $nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
@@ -27,17 +27,17 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator" aria-label="Endurance sail image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
+                 src="5_cloth_and_construction/img/sail_1.png"
                  alt="Endurance Series sail view 1"
                  data-sub="MAINSAIL, THE ENDURANCE SERIES">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png"
+                 src="5_cloth_and_construction/img/sail_2.png"
                  alt="Endurance Series sail view 2"
                  data-sub="HEADSAIL, THE ENDURANCE SERIES">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_3.png"
+                 src="5_cloth_and_construction/img/sail_3.png"
                  alt="Endurance Series sail view 3"
                  data-sub="JIB, THE ENDURANCE SERIES">
           </div>

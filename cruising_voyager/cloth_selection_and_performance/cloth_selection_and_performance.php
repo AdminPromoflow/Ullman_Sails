@@ -1,6 +1,6 @@
 <!-- CLOTH SELECTION AND PERFORMANCE -->
 <link rel="stylesheet"
-      href="../Cruising-1.Navigator/cloth_selection_and_performance/cloth_selection_and_performance.css?v=<?= filemtime(__DIR__ . '/../Cruising-1.Navigator/cloth_selection_and_performance/cloth_selection_and_performance.css'); ?>">
+      href="cloth_selection_and_performance/cloth_selection_and_performance.css?v=<?= filemtime(__DIR__ . '/cloth_selection_and_performance/cloth_selection_and_performance.css'); ?>">
 
 
       <section class="nav-specsheet" aria-label="Navigator cloth and components">
@@ -12,17 +12,17 @@
               <figure class="nav-rotator" aria-label="Navigator sail image rotator" data-interval="3000">
                 <div class="nav-rotator__frame">
                   <img class="nav-rotator__img is-active"
-                       src="../Cruising-1.Navigator/2.Services/Image/Nav_Main.2048_0_1.png"
+                       src="2.Services/Image/Nav_Main.2048_0_1.png"
                        alt="Navigator Series sail view 1"
                        data-sub="MAINSAIL">
 
                   <img class="nav-rotator__img"
-                       src="../Cruising-1.Navigator/2.Services/Image/Nav_Head.2048_0_1.png"
+                       src="2.Services/Image/Nav_Head.2048_0_1.png"
                        alt="Navigator Series sail view 2"
                        data-sub="HEADSAIL">
 
                   <img class="nav-rotator__img"
-                       src="../Cruising-1.Navigator/2.Services/Image/Nav_Jib.2048_0_1.png"
+                       src="2.Services/Image/Nav_Jib.2048_0_1.png"
                        alt="Navigator Series sail view 3"
                        data-sub="JIB">
                 </div>
@@ -89,5 +89,5 @@
         </div>
       </section>
       <script defer
-              src="../Cruising-1.Navigator/cloth_selection_and_performance/cloth_selection_and_performance.js?v=<?= filemtime(__DIR__ . '/../Cruising-1.Navigator/cloth_selection_and_performance/cloth_selection_and_performance.js'); ?>">
+              src="cloth_selection_and_performance/cloth_selection_and_performance.js?v=<?= filemtime(__DIR__ . '/cloth_selection_and_performance/cloth_selection_and_performance.js'); ?>">
       </script>

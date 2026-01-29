@@ -1,12 +1,12 @@
 <?php
 // Asset versioning for cache-busting (changes the URL whenever the file changes)
-$introCssVersion = filemtime(__DIR__ . '/../cruising_endurance/8_gore_tenara/introduction.css.css');
-$introJsVersion  = filemtime(__DIR__ . '/../cruising_endurance/8_gore_tenara/introduction.css.js');
+$introCssVersion = filemtime(__DIR__ . '/8_gore_tenara/introduction.css.css');
+$introJsVersion  = filemtime(__DIR__ . '/8_gore_tenara/introduction.css.js');
 ?>
 
 <link
   rel="stylesheet"
-  href="../cruising_endurance/8_gore_tenara/introduction.css?v=<?= $introCssVersion ?>"
+  href="8_gore_tenara/introduction.css?v=<?= $introCssVersion ?>"
 >
 
 <section
@@ -15,35 +15,24 @@ $introJsVersion  = filemtime(__DIR__ . '/../cruising_endurance/8_gore_tenara/int
   aria-labelledby="navigator-title"
 >
   <div class="sailing-content">
-    <h1 class="au-title" id="navigator-title">Gore&reg; Tenara&reg;</h1>
+    <h1 class="au-title" id="navigator-title">Gore® Tenara® thread</h1>
 
     <p>
-      Built for offshore passages, high latitudes and demanding cruising, Ullman&rsquo;s Performance Series targets sustained speed, structural integrity and long service life&mdash;ideal for serious passagemakers and superyachts that need dependable performance in harsh conditions.
+Performance Series finishing can include Gore® Tenara® thread to boost longevity. It resists UV degradation and helps seams stay dependable through long passages and harsh sun.    </p>
+
+    <p>
+      Tenara on seams & UV covers: Gore® Tenara® thread is specified on all seams and UV covers, reinforcing the areas most exposed to sunlight, chafe and repeated handling over time.
     </p>
 
     <p>
-      Precision shaping: Maintains designed shape under load for steadier trim.
+      100% Tenara thread: Built with 100% Gore® Tenara® thread for maximum durability, maintaining seam integrity and consistent finish quality when sailing in high-UV, high-mileage conditions.
     </p>
 
-    <p>
-      UltraLam &amp; FiberPath: High-end composites balance low-stretch control and strength.
-    </p>
 
-    <p>
-      3D design: Uses 3D tools and testing to refine shape and service life.
-    </p>
-
-    <p>
-      Reinforced build: Triple-step seams and heavy reinforcements resist fatigue.
-    </p>
-
-    <p>
-      Cruising options: Reefs, luff systems and furling/UV upgrades aid control.
-    </p>
   </div>
 </section>
 
 <script
   defer
-  src="../cruising_endurance/8_gore_tenara/introduction.css.js?v=<?= $introJsVersion ?>"
+  src="8_gore_tenara/introduction.css.js?v=<?= $introJsVersion ?>"
 ></script>

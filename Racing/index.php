@@ -54,13 +54,6 @@
         color: #111C42;
       }
 
-
-      header {
-        padding: 50px;
-        background-color: aquamarine;
-        text-align: center;
-      }
-
       nav {
         display: flex;
         flex-direction: row;
@@ -78,16 +71,25 @@
     <?php include "../General/Menu/Menu.php" ?>
 
     <div id="searchHide" class="searchHide">
-    <?php include "1.Slider/Slider.php" ?>
-    <?php include "2.Services/Services.php" ?>
+      <?php // include "navigation/navigation.php"; ?>
+      <?php include "../General/new_sail_quote/new_sail_quote.php"; ?>
+
+      <?php include "../General/arrows_up_down/arrows_up_down.php" ?>
+      <?php include "cruising_section/cruising_section.php" ?>
+      <?php include "sail_types_section/sail_types_section.php" ?>
+      <?php include "series_section/series_section.php" ?>
+
+
+
+    <?php //include "2.Services/Services.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>
+
 
 
     <div id="searchContent" class="searchContent">
     </div>
     <?php include "../General/Footer/Footer.php" ?>
-
     <script type="text/javascript">
     // Función para manejar el scroll suave y respuesta rápida
         let isScrolling = false;
@@ -113,6 +115,7 @@
         }
         }
     </script>
+
 
   </body>
 

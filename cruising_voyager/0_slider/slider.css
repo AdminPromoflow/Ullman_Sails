@@ -38,7 +38,7 @@
 }
 
 @supports (height: 1svh){
-  .home-slider{ --slider-h: clamp(28rem, 70svh, 52rem); }
+  .home-slider{ --slider-h: clamp(28rem, 85vh, 52rem); }
 }
 
 .home-slider__track{

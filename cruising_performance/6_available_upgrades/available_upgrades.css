@@ -105,6 +105,37 @@
   background: var(--au-line);
   margin: 0;
 }
+/* Group title (no number) */
+.available_upgrades{
+  --au-num-col: clamp(64px, 10vw, 90px);
+  --au-row-gap: clamp(1rem, 2.6vw, 26px);
+}
+
+.au-row{
+  grid-template-columns: var(--au-num-col) 1fr;
+  gap: var(--au-row-gap);
+}
+
+.au-group{
+  padding-left: calc(var(--au-num-col) + var(--au-row-gap));
+
+}
+
+.au-group-title{
+  margin: 0;
+  line-height: 1.15;
+  max-width: 72ch;
+  font-size: clamp(1.25rem, 2.2vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #202E52;
+}
+@media (max-width: 520px){
+  .au-group{
+    padding-left: 0;
+  }
+}
+
 
 /* =========================
    Responsive

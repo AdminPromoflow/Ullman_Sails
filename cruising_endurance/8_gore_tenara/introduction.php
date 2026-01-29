@@ -1,12 +1,12 @@
 <?php
 // Asset versioning for cache-busting (changes the URL whenever the file changes)
-$introCssVersion = filemtime(__DIR__ . '/../cruising_endurance/8_gore_tenara/introduction.css.css');
-$introJsVersion  = filemtime(__DIR__ . '/../cruising_endurance/8_gore_tenara/introduction.css.js');
+$introCssVersion = filemtime(__DIR__ . '/8_gore_tenara/introduction.css.css');
+$introJsVersion  = filemtime(__DIR__ . '/8_gore_tenara/introduction.css.js');
 ?>
 
 <link
   rel="stylesheet"
-  href="../cruising_endurance/8_gore_tenara/introduction.css?v=<?= $introCssVersion ?>"
+  href="8_gore_tenara/introduction.css?v=<?= $introCssVersion ?>"
 >
 
 <section
@@ -35,5 +35,5 @@ $introJsVersion  = filemtime(__DIR__ . '/../cruising_endurance/8_gore_tenara/int
 
 <script
   defer
-  src="../cruising_endurance/8_gore_tenara/introduction.css.js?v=<?= $introJsVersion ?>"
+  src="8_gore_tenara/introduction.css.js?v=<?= $introJsVersion ?>"
 ></script>
