@@ -15,9 +15,9 @@ $cssVer = file_exists($cssPath) ? filemtime($cssPath) : time();
 $jsVer  = file_exists($jsPath)  ? filemtime($jsPath)  : time();
 
 // Imágenes (versionadas)
-$imgNavigatorTime   = filemtime('../Racing/sail_types_section/img/Navigator.png');
-$imgEnduranceTime   = filemtime('../Racing/sail_types_section/img/Endurance.png');
-$imgVoyagerTime     = filemtime('../Racing/sail_types_section/img/Voyager.png');
+$imgNavigatorTime   = filemtime('../Racing/sail_types_section/img/race.jpg');
+$imgEnduranceTime   = filemtime('../Racing/sail_types_section/img/fiberpath.jpg');
+$imgVoyagerTime     = filemtime('../Racing/sail_types_section/img/red_line.jpg');
 
 
 // Flechas (las guardamos para usar ya mismo)
@@ -46,24 +46,24 @@ $imgArrowRightTime = filemtime('../Racing/sail_types_section/img/arrow_right.png
     </button>
 
     <div class="sail-types-scroller-container">
-      <a href="../cruising_navigator/index.php" class="sail-types-link">
+      <a href="../racing_race_series/index.php" class="sail-types-link">
         <div class="sail-types-box">
-          <img src="../Racing/sail_types_section/img/Navigator.png?v=<?= $imgNavigatorTime; ?>" alt="Navigator">
-          <p>Navigator Series</p>
+          <img src="../Racing/sail_types_section/img/race.jpg?v=<?= $imgNavigatorTime; ?>" alt="Navigator">
+          <p>Race Series</p>
         </div>
       </a>
 
-      <a href="../cruising_endurance/index.php" class="sail-types-link">
+      <a href="../racing_fiberpath_series/index.php" class="sail-types-link">
         <div class="sail-types-box">
-          <img src="../Racing/sail_types_section/img/Endurance.png?v=<?= $imgEnduranceTime; ?>" alt="Endurance">
-          <p>Endurance Series</p>
+          <img src="../Racing/sail_types_section/img/fiberpath.jpg?v=<?= $imgEnduranceTime; ?>" alt="Endurance">
+          <p>Fiberpath Series</p>
         </div>
       </a>
 
-      <a href="../cruising_voyager/index.php" class="sail-types-link">
+      <a href="../racing_red_line_series/index.php" class="sail-types-link">
         <div class="sail-types-box">
-          <img src="../Racing/sail_types_section/img/Voyager.png?v=<?= $imgVoyagerTime; ?>" alt="Voyager">
-          <p>Voyager Series</p>
+          <img src="../Racing/sail_types_section/img/red_line.jpg?v=<?= $imgVoyagerTime; ?>" alt="Voyager">
+          <p>The Axia Series - Red Line</p>
         </div>
       </a>
 
