@@ -5,7 +5,7 @@ $jsTime  = filemtime('../Racing/cruising_section/cruising_section.js');
 $img1Time = filemtime('../Racing/cruising_section/img/navigator.png');
 $img2Time = filemtime('../Racing/cruising_section/img/Endurance.png');
 $img3Time = filemtime('../Racing/cruising_section/img/voyager.png');
-$img4Time = filemtime('../Racing/cruising_section/img/cruising_section.jpg');
+$img4Time = filemtime('../Racing/cruising_section/img/racing_section.jpg');
 ?>
 
 <link rel="stylesheet" href="../Racing/cruising_section/cruising_section.css?v=<?= $cssTime ?>">
@@ -46,7 +46,7 @@ $img4Time = filemtime('../Racing/cruising_section/img/cruising_section.jpg');
 
   <figure class="cruising-image">
     <div class="cruising-image-inner">
-      <img src="../Racing/cruising_section/img/cruising_section.jpg?v=<?= $img4Time ?>" alt="Racing Sails">
+      <img src="../Racing/cruising_section/img/racing_section.jpg?v=<?= $img4Time ?>" alt="Racing Sails">
     </div>
   </figure>
 </section>
