@@ -1,13 +1,14 @@
 <?php
-// Asset versioning for cache-busting (changes the URL whenever the file changes)
-$introCssVersion = filemtime(__DIR__ . '/1_introduction/introduction.css');
-$introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
+$introCssFile = __DIR__ . '/1_introduction/introduction.css';
+$introJsFile  = __DIR__ . '/1_introduction/introduction.js';
+
+$introCssVersion = is_file($introCssFile) ? filemtime($introCssFile) : null;
+$introJsVersion  = is_file($introJsFile)  ? filemtime($introJsFile)  : null;
 ?>
 
-<link
-  rel="stylesheet"
-  href="1_introduction/introduction.css?v=<?= $introCssVersion ?>"
->
+<link rel="stylesheet" href="1_introduction/introduction.css<?= $introCssVersion ? '?v='.$introCssVersion : '' ?>">
+
+
 
 <section
   class="sailing-types-introduction"
@@ -37,7 +38,4 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
   </div>
 </section>
 
-<script
-  defer
-  src="1_introduction/introduction.js?v=<?= $introJsVersion ?>"
-></script>
+<script defer src="1_introduction/introduction.js<?= $introJsVersion ? '?v='.$introJsVersion : '' ?>"></script>

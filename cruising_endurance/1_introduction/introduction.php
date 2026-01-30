@@ -1,12 +1,17 @@
 <?php
 // Asset versioning for cache-busting (changes the URL whenever the file changes)
-$introCssVersion = filemtime(__DIR__ . '/1_introduction/introduction.css');
-$introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
+$introCssFile    = __DIR__ . '/1_introduction/introduction.css';
+$introJsFile     = __DIR__ . '/1_introduction/introduction.js';
+$introImgFile    = __DIR__ . '/1_introduction/img/ullman_sails.png';
+
+$introCssVersion = is_file($introCssFile) ? filemtime($introCssFile) : null;
+$introJsVersion  = is_file($introJsFile)  ? filemtime($introJsFile)  : null;
+$introImgVersion = is_file($introImgFile) ? filemtime($introImgFile) : null;
 ?>
 
 <link
   rel="stylesheet"
-  href="1_introduction/introduction.css?v=<?= $introCssVersion ?>"
+  href="1_introduction/introduction.css<?= $introCssVersion ? '?v='.$introCssVersion : '' ?>"
 >
 
 <section
@@ -18,7 +23,7 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
     <!-- Brand mark: provide meaningful alt text for accessibility -->
     <div class="img-title-sailing-content">
       <img
-        src="1_introduction/img/ullman_sails.png"
+        src="1_introduction/img/ullman_sails.png<?= $introImgVersion ? '?v='.$introImgVersion : '' ?>"
         alt="Ullman Sails"
         decoding="async"
         width="240"
@@ -38,5 +43,5 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
 
 <script
   defer
-  src="1_introduction/introduction.css?v=<?= $introJsVersion ?>"
+  src="1_introduction/introduction.css<?= $introJsVersion ? '?v='.$introJsVersion : '' ?>"
 ></script>

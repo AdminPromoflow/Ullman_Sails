@@ -25,19 +25,15 @@ $ph_steps = [
 
 
 // Filesystem paths (for filemtime)
-$ph_css_fs = __DIR__ . '/2_handling_and_performance/handling_and_performance.css';
-$ph_js_fs  = __DIR__ . '/2_handling_and_performance/handling_and_performance.js';
-
-// Public paths
-$ph_css_public = '2_handling_and_performance/handling_and_performance.css';
-$ph_js_public  = '2_handling_and_performance/handling_and_performance.js';
+$cssFile = __DIR__ . '/2_handling_and_performance/handling_and_performance.css';
+$jsFile  = __DIR__ . '/2_handling_and_performance/handling_and_performance.js';
 
 // Versions
-$ph_css_v = is_file($ph_css_fs) ? filemtime($ph_css_fs) : time();
-$ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : time();
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 ?>
 
-<link rel="stylesheet" href="<?= $ph_css_public ?>?v=<?= $ph_css_v ?>">
+<link rel="stylesheet" href="2_handling_and_performance/handling_and_performance.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section class="performance-and-handling" aria-labelledby="ph-title">
   <div class="ph-grid">
@@ -77,4 +73,4 @@ $ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : time();
   </div>
 </section>
 
-<script defer src="<?= $ph_js_public ?>?v=<?= $ph_js_v ?>" type="text/javascript"></script>
+<script defer src="2_handling_and_performance/handling_and_performance.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>" type="text/javascript"></script>

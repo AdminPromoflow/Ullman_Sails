@@ -29,7 +29,7 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
         loading="lazy"
         decoding="async"
       >
-    </div>   
+    </div>
 
     <h1 class="home-slider__title"><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></h1>
     <h2 class="home-slider__subtitle"><?= htmlspecialchars($subtitle, ENT_QUOTES, 'UTF-8') ?></h2>

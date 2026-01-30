@@ -14,19 +14,38 @@ function versioned_asset(string $publicPath, string $fsPath): string {
   return $publicPath . $sep . 'v=' . $v;
 }
 
-// Assets (public + filesystem)
-$assetsPublicBase = '../Cruising/series_section';
-$assetsFsBase     = __DIR__ . '/../Cruising/series_section';
+/* =========================
+   CHANGED: CSS/JS paths in the “previous format”
+========================= */
+$cssFile = __DIR__ . '/../Cruising/series_section/series_section.css';
+$jsFile  = __DIR__ . '/../Cruising/series_section/series_section.js';
 
-$cssHref = versioned_asset(
-  $assetsPublicBase . '/series_section.css',
-  $assetsFsBase . '/series_section.css'
-);
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
-$jsSrc = versioned_asset(
-  $assetsPublicBase . '/series_section.js',
-  $assetsFsBase . '/series_section.js'
-);
+$cssHref = '../Cruising/series_section/series_section.css' . ($cssVersion ? '?v='.$cssVersion : '');
+$jsSrc   = '../Cruising/series_section/series_section.js'  . ($jsVersion  ? '?v='.$jsVersion  : '');
+
+/* =========================
+   CHANGED: Image paths in the “previous format”
+========================= */
+$imgNavigatorFile   = __DIR__ . '/../Cruising/sail_types_section/img/Navigator.png';
+$imgEnduranceFile   = __DIR__ . '/../Cruising/sail_types_section/img/Endurance.png';
+$imgVoyagerFile     = __DIR__ . '/../Cruising/sail_types_section/img/Voyager.png';
+$imgPerformanceFile = __DIR__ . '/../Cruising/sail_types_section/img/Performance.png';
+$imgDownwindFile    = __DIR__ . '/../Cruising/sail_types_section/img/Downwind.png';
+
+$imgNavigatorV   = is_file($imgNavigatorFile)   ? filemtime($imgNavigatorFile)   : null;
+$imgEnduranceV   = is_file($imgEnduranceFile)   ? filemtime($imgEnduranceFile)   : null;
+$imgVoyagerV     = is_file($imgVoyagerFile)     ? filemtime($imgVoyagerFile)     : null;
+$imgPerformanceV = is_file($imgPerformanceFile) ? filemtime($imgPerformanceFile) : null;
+$imgDownwindV    = is_file($imgDownwindFile)    ? filemtime($imgDownwindFile)    : null;
+
+$imgNavigatorUrl   = '../Cruising/sail_types_section/img/Navigator.png'   . ($imgNavigatorV   ? '?v='.$imgNavigatorV   : '');
+$imgEnduranceUrl   = '../Cruising/sail_types_section/img/Endurance.png'   . ($imgEnduranceV   ? '?v='.$imgEnduranceV   : '');
+$imgVoyagerUrl     = '../Cruising/sail_types_section/img/Voyager.png'     . ($imgVoyagerV     ? '?v='.$imgVoyagerV     : '');
+$imgPerformanceUrl = '../Cruising/sail_types_section/img/Performance.png' . ($imgPerformanceV ? '?v='.$imgPerformanceV : '');
+$imgDownwindUrl    = '../Cruising/sail_types_section/img/Downwind.png'    . ($imgDownwindV    ? '?v='.$imgDownwindV    : '');
 
 // Data
 $series = [
@@ -35,7 +54,7 @@ $series = [
     'title'   => 'Navigator Series',
     'code'    => 'NAVIGATOR',
     'tagline' => 'Built for Everyday Cruising',
-    'img'     => '../Cruising/sail_types_section/img/Navigator.png',
+    'img'     => $imgNavigatorUrl,
     'alt'     => 'Navigator Series cruising sails',
     'href'    => '../Cruising-1.Navigator/index.php',
     'body'    => [
@@ -51,7 +70,7 @@ $series = [
     'title'   => 'Endurance Series',
     'code'    => 'ENDURANCE',
     'tagline' => 'Built for Longer Seasons & Heavy Use',
-    'img'     => '../Cruising/sail_types_section/img/Endurance.png',
+    'img'     => $imgEnduranceUrl,
     'alt'     => 'Endurance Series cruising sails',
     'href'    => '../Cruising-2.Endurance/index.php',
     'body'    => [
@@ -67,7 +86,7 @@ $series = [
     'title'   => 'Voyager Series',
     'code'    => 'VOYAGER',
     'tagline' => 'Built for Smooth Handling & Versatility',
-    'img'     => '../Cruising/sail_types_section/img/Voyager.png',
+    'img'     => $imgVoyagerUrl,
     'alt'     => 'Voyager Series cruising sails',
     'href'    => '../Cruising-3.Voyager/index.php',
     'body'    => [
@@ -83,7 +102,7 @@ $series = [
     'title'   => 'Expedition Series',
     'code'    => 'EXPEDITION',
     'tagline' => 'Built for Distance & Demanding Conditions',
-    'img'     => '../Cruising/sail_types_section/img/Performance.png',
+    'img'     => $imgPerformanceUrl,
     'alt'     => 'Expedition Series cruising sails',
     'href'    => '../Cruising-4.Expedition/index.php',
     'body'    => [
@@ -99,7 +118,7 @@ $series = [
     'title'   => 'Blue Line Spinnakers',
     'code'    => 'BLUE LINE',
     'tagline' => 'Built for Downwind Enjoyment',
-    'img'     => '../Cruising/sail_types_section/img/Downwind.png',
+    'img'     => $imgDownwindUrl,
     'alt'     => 'Blue Line Spinnakers downwind sails',
     'href'    => '../Cruising-5.BlueLineSpinnakers/index.php',
     'body'    => [

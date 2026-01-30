@@ -43,17 +43,20 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
 <?php }
 
 /* Assets (absolute for filemtime, public for browser) */
-$cssFs = __DIR__ . '/0_slider/slider.css';
-$jsFs  = __DIR__ . '/0_slider/slider.js';
+$cssFile = __DIR__ . '/0_slider/slider.css';
+$jsFile  = __DIR__ . '/0_slider/slider.js';
 
-$cssPublic = '0_slider/slider.css';
-$jsPublic  = '0_slider/slider.js';
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
-$cssHref = with_version($cssPublic, asset_version($cssFs));
-$jsSrc   = with_version($jsPublic,  asset_version($jsFs));
+$cssHref = '0_slider/slider.css' . ($cssVersion ? '?v='.$cssVersion : '');
+$jsSrc   = '0_slider/slider.js'  . ($jsVersion  ? '?v='.$jsVersion  : '');
 
 /* UI assets */
-$logoSrc = '../Home/1.Slider/img/ullman_sails.png';
+$logoFile = __DIR__ . '/../Home/1.Slider/img/ullman_sails.png';
+$logoVer  = is_file($logoFile) ? filemtime($logoFile) : null;
+$logoSrc  = '../Home/1.Slider/img/ullman_sails.png' . ($logoVer ? '?v='.$logoVer : '');
+
 $ctaHref = '#sailing-types-introduction';
 
 /* Slides */
@@ -101,18 +104,28 @@ $lastSlide  = $slides[count($slides) - 1];
 
   </div>
 
+  <?php
+  $leftArrowFile  = __DIR__ . '/../Home/1.Slider/img/left.png';
+  $rightArrowFile = __DIR__ . '/../Home/1.Slider/img/right.png';
+  $leftArrowVer   = is_file($leftArrowFile)  ? filemtime($leftArrowFile)  : null;
+  $rightArrowVer  = is_file($rightArrowFile) ? filemtime($rightArrowFile) : null;
+
+  $leftArrowSrc  = '../Home/1.Slider/img/left.png'  . ($leftArrowVer  ? '?v='.$leftArrowVer  : '');
+  $rightArrowSrc = '../Home/1.Slider/img/right.png' . ($rightArrowVer ? '?v='.$rightArrowVer : '');
+  ?>
+
   <button id="homeSliderPrev"
           class="home-slider__arrow home-slider__arrow--left"
           type="button"
           aria-label="Previous slide">
-    <img src="../Home/1.Slider/img/left.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="<?= htmlspecialchars($leftArrowSrc, ENT_QUOTES, 'UTF-8') ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 
   <button id="homeSliderNext"
           class="home-slider__arrow home-slider__arrow--right"
           type="button"
           aria-label="Next slide">
-    <img src="../Home/1.Slider/img/right.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="<?= htmlspecialchars($rightArrowSrc, ENT_QUOTES, 'UTF-8') ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 </section>
 

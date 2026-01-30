@@ -2,19 +2,24 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$nsCssFs = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
-$nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
-
-/* Public paths */
-$nsCssPublic = '5_cloth_and_construction/cloth_and_construction.css';
-$nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
+$cssFile = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
+$jsFile  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
 
 /* Versions */
-$nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
-$nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+
+/* Images (filesystem for filemtime) */
+$imgSail1File = __DIR__ . '/../cruising_navigator/5_cloth_and_construction/img/sail_1.png';
+$imgSail2File = __DIR__ . '/../cruising_navigator/5_cloth_and_construction/img/sail_2.png';
+$imgSail3File = __DIR__ . '/../cruising_navigator/5_cloth_and_construction/img/sail_3.png';
+
+$imgSail1V = is_file($imgSail1File) ? filemtime($imgSail1File) : null;
+$imgSail2V = is_file($imgSail2File) ? filemtime($imgSail2File) : null;
+$imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
 ?>
 
-<link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
+<link rel="stylesheet" href="5_cloth_and_construction/cloth_and_construction.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section class="nav-specsheet" aria-label="Downwind cloth selection and construction">
   <h2 id="csp-title" class="csp-title">Cloth Selection &amp; Construction</h2>
@@ -29,17 +34,17 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator" aria-label="Code sails image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png<?= $imgSail1V ? '?v='.$imgSail1V : '' ?>"
                  alt="Axia Code 50 sail view"
                  data-sub="AXIA CODE 50 — 50–60% MID-GIRTH">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png<?= $imgSail2V ? '?v='.$imgSail2V : '' ?>"
                  alt="Axia Code 60 sail view"
                  data-sub="AXIA CODE 60 — 60–70% MID-GIRTH">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_3.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_3.png<?= $imgSail3V ? '?v='.$imgSail3V : '' ?>"
                  alt="Axia Code 70 sail view"
                  data-sub="AXIA CODE 70 — 70–83% MID-GIRTH">
           </div>
@@ -137,12 +142,12 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator" aria-label="Classic spinnakers image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png<?= $imgSail1V ? '?v='.$imgSail1V : '' ?>"
                  alt="Axia Asymm sail view"
                  data-sub="AXIA ASYMM — 80%+ MID-GIRTH">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png<?= $imgSail2V ? '?v='.$imgSail2V : '' ?>"
                  alt="Axia Symm sail view"
                  data-sub="AXIA SYMM — SYMMETRICAL DOWNWIND">
           </div>
@@ -227,4 +232,4 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
 
 </section>
 
-<script defer src="<?= $nsJsPublic ?>?v=<?= $nsJsV ?>"></script>
+<script defer src="5_cloth_and_construction/cloth_and_construction.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>"></script>

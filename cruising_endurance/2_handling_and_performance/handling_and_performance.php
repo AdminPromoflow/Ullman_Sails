@@ -38,17 +38,20 @@ $ph_steps = [
 // Filesystem paths (for filemtime)
 $ph_css_fs = __DIR__ . '/2_handling_and_performance/handling_and_performance.css';
 $ph_js_fs  = __DIR__ . '/2_handling_and_performance/handling_and_performance.js';
+$ph_img_fs = __DIR__ . '/2_handling_and_performance/img/performance-and-handling.jpg';
 
 // Public paths
 $ph_css_public = '2_handling_and_performance/handling_and_performance.css';
 $ph_js_public  = '2_handling_and_performance/handling_and_performance.js';
+$ph_img_public = '2_handling_and_performance/img/performance-and-handling.jpg';
 
 // Versions
-$ph_css_v = is_file($ph_css_fs) ? filemtime($ph_css_fs) : time();
-$ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : time();
+$ph_css_v = is_file($ph_css_fs) ? filemtime($ph_css_fs) : null;
+$ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : null;
+$ph_img_v = is_file($ph_img_fs) ? filemtime($ph_img_fs) : null;
 ?>
 
-<link rel="stylesheet" href="<?= $ph_css_public ?>?v=<?= $ph_css_v ?>">
+<link rel="stylesheet" href="<?= $ph_css_public ?><?= $ph_css_v ? '?v='.$ph_css_v : '' ?>">
 
 <section class="performance-and-handling" aria-labelledby="ph-title">
   <div class="ph-grid">
@@ -59,7 +62,7 @@ $ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : time();
 
       <img
         class="ph-image"
-        src="2_handling_and_performance/img/performance-and-handling.jpg"
+        src="2_handling_and_performance/img/performance-and-handling.jpg<?= $ph_img_v ? '?v='.$ph_img_v : '' ?>"
         alt="Endurance Series sails shown under offshore load"
         loading="lazy"
         decoding="async"
@@ -88,4 +91,4 @@ $ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : time();
   </div>
 </section>
 
-<script defer src="<?= $ph_js_public ?>?v=<?= $ph_js_v ?>" type="text/javascript"></script>
+<script defer src="<?= $ph_js_public ?><?= $ph_js_v ? '?v='.$ph_js_v : '' ?>" type="text/javascript"></script>

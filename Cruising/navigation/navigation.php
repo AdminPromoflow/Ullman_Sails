@@ -1,20 +1,13 @@
 <?php
-declare(strict_types=1);
+$cssFile = __DIR__ . '/../cruising_navigator/navigation/navigation.css';
+$jsFile  = __DIR__ . '/../cruising_navigator/navigation/navigation.js';
 
-/* Filesystem paths (for filemtime) */
-$navCssFs = __DIR__ . '/../cruising_navigator/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/../cruising_navigator/navigation/navigation.js';
-
-/* Public paths (as used in HTML) */
-$navCssPublic = '../cruising_navigator/navigation/navigation.css';
-$navJsPublic  = '../cruising_navigator/navigation/navigation.js';
-
-/* Version values (cache-busting) */
-$navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
-$navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 ?>
 
-<link rel="stylesheet" href="<?= $navCssPublic ?>?v=<?= $navCssV ?>">
+<link rel="stylesheet" href="../cruising_navigator/navigation/navigation.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
+
 
 <?php
 /**
@@ -53,4 +46,4 @@ $breadcrumbs = $breadcrumbs ?? [
   </nav>
 </section>
 
-<script defer src="<?= $navJsPublic ?>?v=<?= $navJsV ?>" type="text/javascript"></script>
+<script defer src="../cruising_navigator/navigation/navigation.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>" type="text/javascript"></script>

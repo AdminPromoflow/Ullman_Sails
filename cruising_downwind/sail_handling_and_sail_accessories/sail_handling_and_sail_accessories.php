@@ -1,6 +1,11 @@
 <!-- SAIL HANDLING AND SAIL ACCESSORIES -->
+<?php
+$cssFile    = __DIR__ . '/sail_handling_and_sail_accessories/sail_handling_and_sail_accessories.css';
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+?>
+
 <link rel="stylesheet"
-      href="sail_handling_and_sail_accessories/sail_handling_and_sail_accessories.css?v=<?= filemtime(__DIR__ . '/sail_handling_and_sail_accessories/sail_handling_and_sail_accessories.css'); ?>">
+      href="sail_handling_and_sail_accessories/sail_handling_and_sail_accessories.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
       <section class="sail_handling_and_sail_accessories" aria-labelledby="shsa-title">
         <div class="shsa-wrap">

@@ -1,6 +1,11 @@
 <!-- GORE TENARA THREAD -->
+<?php
+$cssFile    = __DIR__ . '/gore_tenara_thread/gore_tenara_thread.css';
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+?>
+
 <link rel="stylesheet"
-      href="gore_tenara_thread/gore_tenara_thread.css?v=<?= filemtime(__DIR__ . '/gore_tenara_thread/gore_tenara_thread.css'); ?>">
+      href="gore_tenara_thread/gore_tenara_thread.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section class="gore_tenara_thread" aria-labelledby="gtt-title">
   <div class="gtt-wrap">

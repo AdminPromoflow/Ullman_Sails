@@ -36,19 +36,15 @@ $sid_items = [
 ];
 
 // Filesystem paths (for filemtime)
-$sidCssFs = __DIR__ . '/4_durability_and_reinforcement/durability_and_reinforcement.css';
-$sidJsFs  = __DIR__ . '/4_durability_and_reinforcement/durability_and_reinforcement.js';
-
-// Public paths
-$sidCssPublic = '4_durability_and_reinforcement/durability_and_reinforcement.css';
-$sidJsPublic  = '4_durability_and_reinforcement/durability_and_reinforcement.js';
+$cssFile = __DIR__ . '/4_durability_and_reinforcement/durability_and_reinforcement.css';
+$jsFile  = __DIR__ . '/4_durability_and_reinforcement/durability_and_reinforcement.js';
 
 // Versions
-$sidCssV = is_file($sidCssFs) ? filemtime($sidCssFs) : time();
-$sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 ?>
 
-<link rel="stylesheet" href="<?= $sidCssPublic ?>?v=<?= $sidCssV ?>">
+<link rel="stylesheet" href="4_durability_and_reinforcement/durability_and_reinforcement.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section class="strength-in-the-details" aria-labelledby="sid-title">
   <div class="sid-wrap">
@@ -83,4 +79,4 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
   </div>
 </section>
 
-<script defer src="<?= $sidJsPublic ?>?v=<?= $sidJsV ?>" type="text/javascript"></script>
+<script defer src="4_durability_and_reinforcement/durability_and_reinforcement.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>" type="text/javascript"></script>

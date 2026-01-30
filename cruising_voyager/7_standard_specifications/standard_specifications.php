@@ -3,30 +3,33 @@ declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
 $ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
+$ssImgFs = __DIR__ . '/7_standard_specifications/img/standard_specifications.jpg';
 
 /* Public path */
 $ssCssPublic = '7_standard_specifications/standard_specifications.css';
+$ssImgPublic = '7_standard_specifications/img/standard_specifications.jpg';
 
 /* Version */
 $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
+$ssImgV = is_file($ssImgFs) ? filemtime($ssImgFs) : time();
 
 /**
  * Standard specification items.
  * Using an array keeps the markup DRY and reduces maintenance errors.
  */
- $ss_features = [
-   'Triple-step stitching',
-   'Gore Tenara® thread',
-   'Stainless steel rings',
-   'Spectra/Dyneema webbing',
-   'Radial point patches',
-   'Reinforced slides/hanks',
-   'Reinforced batten pockets',
-   'Vinylester battens',
-   'Aluminium headboards',
-   'Draft stripes',
-   'Telltales',
- ];
+$ss_features = [
+  'Triple-step stitching',
+  'Gore Tenara® thread',
+  'Stainless steel rings',
+  'Spectra/Dyneema webbing',
+  'Radial point patches',
+  'Reinforced slides/hanks',
+  'Reinforced batten pockets',
+  'Vinylester battens',
+  'Aluminium headboards',
+  'Draft stripes',
+  'Telltales',
+];
 
 ?>
 
@@ -38,7 +41,8 @@ $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
     <header class="ss-header">
       <h2 id="ss-title" class="ss-title">Standard Specifications</h2>
       <p class="ss-subtitle">
-        Premium reinforcements and finishing (triple-step stitching, stainless rings, Tenara®, reinforced batten pockets).      </p>
+        Premium reinforcements and finishing (triple-step stitching, stainless rings, Tenara®, reinforced batten pockets).
+      </p>
     </header>
 
     <div class="ss-grid">
@@ -46,7 +50,7 @@ $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
       <figure class="ss-figure">
         <div class="ss-image">
           <img
-            src="7_standard_specifications/img/standard_specifications.jpg"
+            src="<?= $ssImgPublic ?>?v=<?= $ssImgV ?>"
             alt="Voyager sail standard specifications"
             loading="lazy"
             decoding="async"

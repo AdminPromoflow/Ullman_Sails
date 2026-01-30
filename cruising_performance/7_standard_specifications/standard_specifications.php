@@ -3,12 +3,15 @@ declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
 $ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
+$ssImgFs = __DIR__ . '/7_standard_specifications/img/standard_specifications.jpg';
 
 /* Public path */
 $ssCssPublic = '7_standard_specifications/standard_specifications.css';
+$ssImgPublic = '7_standard_specifications/img/standard_specifications.jpg';
 
 /* Version */
 $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
+$ssImgV = is_file($ssImgFs) ? filemtime($ssImgFs) : time();
 
 /**
  * Standard specification items.
@@ -45,7 +48,7 @@ $ss_features = [
       <figure class="ss-figure">
         <div class="ss-image">
           <img
-            src="7_standard_specifications/img/standard_specifications.jpg"
+            src="<?= $ssImgPublic ?>?v=<?= $ssImgV ?>"
             alt="Performance Series — standard specifications"
             loading="lazy"
             decoding="async"

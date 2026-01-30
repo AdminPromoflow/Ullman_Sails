@@ -1,30 +1,47 @@
 <?php
-// Ajusta BASE si tu index.php está en otra ruta
-$base = __DIR__;
+/* CSS + JS */
+$cssFile = __DIR__ . '/../Cruising/sail_types_section/sail_types_section.css';
+$jsFile  = __DIR__ . '/../Cruising/sail_types_section/sail_types_section.js';
 
-// Rutas físicas (para filemtime)
-$cssPath = $base . '/../Cruising/sail_types_section/sail_types_section.css';
-$jsPath  = $base . '/../Cruising/sail_types_section/sail_types_section.js';
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
-// URLs (las que van en <link> y <script>)
-$cssUrl = '../Cruising/sail_types_section/sail_types_section.css';
-$jsUrl  = '../Cruising/sail_types_section/sail_types_section.js';
+/* Images */
+$imgNavigatorFile   = __DIR__ . '/../Cruising/sail_types_section/img/Navigator.png';
+$imgEnduranceFile   = __DIR__ . '/../Cruising/sail_types_section/img/Endurance.png';
+$imgVoyagerFile     = __DIR__ . '/../Cruising/sail_types_section/img/Voyager.png';
+$imgPerformanceFile = __DIR__ . '/../Cruising/sail_types_section/img/Performance.png';
+$imgDownwindFile    = __DIR__ . '/../Cruising/sail_types_section/img/Downwind.png';
 
-// Versiones
-$cssVer = file_exists($cssPath) ? filemtime($cssPath) : time();
-$jsVer  = file_exists($jsPath)  ? filemtime($jsPath)  : time();
+$imgArrowLeftFile   = __DIR__ . '/../Cruising/sail_types_section/img/arrow_left.png';
+$imgArrowRightFile  = __DIR__ . '/../Cruising/sail_types_section/img/arrow_right.png';
 
-// Imágenes (versionadas)
-$imgNavigatorTime   = filemtime('../Cruising/sail_types_section/img/Navigator.png');
-$imgEnduranceTime   = filemtime('../Cruising/sail_types_section/img/Endurance.png');
-$imgVoyagerTime     = filemtime('../Cruising/sail_types_section/img/Voyager.png');
-$imgPerformanceTime = filemtime('../Cruising/sail_types_section/img/Performance.png');
-$imgDownwindTime    = filemtime('../Cruising/sail_types_section/img/Downwind.png');
+$imgNavigatorV   = is_file($imgNavigatorFile)   ? filemtime($imgNavigatorFile)   : null;
+$imgEnduranceV   = is_file($imgEnduranceFile)   ? filemtime($imgEnduranceFile)   : null;
+$imgVoyagerV     = is_file($imgVoyagerFile)     ? filemtime($imgVoyagerFile)     : null;
+$imgPerformanceV = is_file($imgPerformanceFile) ? filemtime($imgPerformanceFile) : null;
+$imgDownwindV    = is_file($imgDownwindFile)    ? filemtime($imgDownwindFile)    : null;
 
-// Flechas (las guardamos para usar ya mismo)
-$imgArrowLeftTime  = filemtime('../Cruising/sail_types_section/img/arrow_left.png');
-$imgArrowRightTime = filemtime('../Cruising/sail_types_section/img/arrow_right.png');
+$imgArrowLeftV   = is_file($imgArrowLeftFile)   ? filemtime($imgArrowLeftFile)   : null;
+$imgArrowRightV  = is_file($imgArrowRightFile)  ? filemtime($imgArrowRightFile)  : null;
 ?>
+
+<link rel="stylesheet" href="../Cruising/sail_types_section/sail_types_section.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
+
+<script defer src="../Cruising/sail_types_section/sail_types_section.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>"></script>
+
+<!-- Example image URLs (use these in <img src="...">) -->
+<?php
+$imgNavigatorUrl   = '../Cruising/sail_types_section/img/Navigator.png'   . ($imgNavigatorV   ? '?v='.$imgNavigatorV   : '');
+$imgEnduranceUrl   = '../Cruising/sail_types_section/img/Endurance.png'   . ($imgEnduranceV   ? '?v='.$imgEnduranceV   : '');
+$imgVoyagerUrl     = '../Cruising/sail_types_section/img/Voyager.png'     . ($imgVoyagerV     ? '?v='.$imgVoyagerV     : '');
+$imgPerformanceUrl = '../Cruising/sail_types_section/img/Performance.png' . ($imgPerformanceV ? '?v='.$imgPerformanceV : '');
+$imgDownwindUrl    = '../Cruising/sail_types_section/img/Downwind.png'    . ($imgDownwindV    ? '?v='.$imgDownwindV    : '');
+
+$imgArrowLeftUrl   = '../Cruising/sail_types_section/img/arrow_left.png'  . ($imgArrowLeftV   ? '?v='.$imgArrowLeftV   : '');
+$imgArrowRightUrl  = '../Cruising/sail_types_section/img/arrow_right.png' . ($imgArrowRightV  ? '?v='.$imgArrowRightV  : '');
+?>
+
 
 <link rel="stylesheet" href="<?= $cssUrl ?>?v=<?= $cssVer ?>">
 

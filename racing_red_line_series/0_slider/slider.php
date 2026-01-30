@@ -53,7 +53,14 @@ $cssHref = with_version($cssPublic, asset_version($cssFs));
 $jsSrc   = with_version($jsPublic,  asset_version($jsFs));
 
 /* UI assets */
-$logoSrc = '../Home/1.Slider/img/ullman_sails.png';
+$logoFs  = __DIR__ . '/../Home/1.Slider/img/ullman_sails.png';
+$leftFs  = __DIR__ . '/../Home/1.Slider/img/left.png';
+$rightFs = __DIR__ . '/../Home/1.Slider/img/right.png';
+
+$logoSrc   = with_version('../Home/1.Slider/img/ullman_sails.png', asset_version($logoFs));
+$leftIcon  = with_version('../Home/1.Slider/img/left.png',        asset_version($leftFs));
+$rightIcon = with_version('../Home/1.Slider/img/right.png',       asset_version($rightFs));
+
 $ctaHref = '#sailing-types-introduction';
 
 /* Slides */
@@ -105,14 +112,14 @@ $lastSlide  = $slides[count($slides) - 1];
           class="home-slider__arrow home-slider__arrow--left"
           type="button"
           aria-label="Previous slide">
-    <img src="../Home/1.Slider/img/left.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="<?= htmlspecialchars($leftIcon, ENT_QUOTES, 'UTF-8') ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 
   <button id="homeSliderNext"
           class="home-slider__arrow home-slider__arrow--right"
           type="button"
           aria-label="Next slide">
-    <img src="../Home/1.Slider/img/right.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="<?= htmlspecialchars($rightIcon, ENT_QUOTES, 'UTF-8') ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 </section>
 

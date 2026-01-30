@@ -4,45 +4,41 @@
    ============================== */
 
 :root{
-  /* Si ya existen en tu guía, puedes omitirlos aquí */
   --cs-ink: #0f2140;
   --cs-muted: #5f6b7a;
 
-  /* Contenedor y gutters */
-  --u-container: 72rem;                 /* ~1152px */
+  --u-container: 72rem;
   --u-gutter: clamp(1rem, 4vw, 3rem);
-
-  /* Espaciado vertical base de secciones */
   --u-sec-py: clamp(2.75rem, 6vw, 5rem);
-
-  /* Espaciado entre elementos */
   --u-gap: clamp(0.75rem, 2vw, 1.5rem);
 }
-.au-title {
-margin: 0;
-font-size: clamp(3rem, 4.5vw, 6rem);
-font-weight: 600!important;
-line-height: 1.12;
-color: var(--cs-ink);
-max-width: 26ch;
-padding-inline: clamp(0rem, 1.2vw, .5rem);
-margin-inline: auto;
+
+/* Título principal (tu formato) */
+.au-title{
+  margin: 0;
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600; /* quité !important */
+  line-height: 1.12;
+  color: var(--cs-ink);
+  max-width: 26ch;
+  padding-inline: clamp(0rem, 1.2vw, .5rem);
+  margin-inline: auto;
 }
+
+/* Sección */
 .sailing-types-introduction{
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* Mobile-first: padding fluido y seguro */
   padding-block: var(--u-sec-py);
   padding-inline: var(--u-gutter);
-
   background: #fff;
 }
 
+/* Contenedor */
 .sailing-content{
-  /* Contenedor fluido: no uses min-width fijo en responsive */
   width: min(100%, var(--u-container));
   margin-inline: auto;
 
@@ -54,13 +50,13 @@ margin-inline: auto;
   gap: var(--u-gap);
 }
 
-/* Bloque logo */
+/* Logo (si lo usas) */
 .img-title-sailing-content{
   width: clamp(140px, 28vw, 240px);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0; /* evita empujar en móvil */
+  margin: 0;
 }
 
 .sailing-content img{
@@ -70,28 +66,18 @@ margin-inline: auto;
   border-radius: 10px;
 }
 
-/* Título */
-.sailing-content h1{
+/* ✅ IMPORTANTE: ya NO usamos .sailing-content h1 para no pisar .au-title
+   En su lugar, damos “extras” solo al título con clase .au-title */
+.sailing-content .au-title{
   position: relative;
-  margin: 0;
-
-  /* Escala más estable en móvil y amplia en desktop */
-  font-size: clamp(2rem, 6.2vw, 5.3rem);
-  font-weight: 700;
-  line-height: 1.05;
-
-  /* Evita cortes raros y overflow */
-  max-width: 22ch;
-  padding-inline: clamp(0rem, 1.5vw, 0.5rem);
-  color: var(--cs-ink);
   z-index: 1;
 }
 
 @supports (text-wrap: balance){
-  .sailing-content h1{ text-wrap: balance; }
+  .sailing-content .au-title{ text-wrap: balance; }
 }
 
-.sailing-content h1::after{
+.sailing-content .au-title::after{
   content: "";
   display: block;
   width: clamp(72px, 18vw, 140px);
@@ -101,56 +87,54 @@ margin-inline: auto;
   transform: scaleX(.9);
 }
 
-/* Párrafo */
+/* Párrafos */
 .sailing-content p{
   margin: 0;
   font-size: clamp(1rem, 2.2vw, 1.5rem);
   line-height: 1.6;
-
   max-width: 68ch;
   color: var(--cs-muted);
   position: relative;
   z-index: 1;
-
-  /* Un poco de aire lateral en pantallas pequeñas */
   padding-inline: clamp(0rem, 2vw, 1rem);
 }
 
+/* Separación visual entre párrafos (opcional pero recomendable) */
+.sailing-content p + p{
+  margin-top: clamp(.6rem, 1.6vw, 1rem);
+}
+
 /* ==============================
-   Breakpoints (ajustes finos)
+   Breakpoints
    ============================== */
 
-/* Móviles pequeños (<= 360px) */
 @media (max-width: 360px){
   .sailing-types-introduction{
     padding-inline: 1rem;
   }
-  .sailing-content h1{
+  .au-title{
     font-size: clamp(1.75rem, 9vw, 2.35rem);
     max-width: 18ch;
   }
 }
 
-/* Móvil estándar (<= 480px) */
 @media (max-width: 480px){
   .sailing-content{
     gap: 0.9rem;
   }
   .sailing-content p{
-    font-size: 1.02rem; /* lectura cómoda */
+    font-size: 1.02rem;
   }
 }
 
-/* Tablet (>= 768px) */
 @media (min-width: 768px){
   .sailing-types-introduction{
     padding-block: clamp(3.5rem, 5vw, 5.5rem);
   }
 }
 
-/* Desktop grande (>= 1200px) */
 @media (min-width: 1200px){
-  .sailing-content h1{
-    max-width: 24ch;
+  .au-title{
+    max-width: 26ch;
   }
 }

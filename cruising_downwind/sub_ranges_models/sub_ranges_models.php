@@ -1,6 +1,11 @@
 <!-- SUB-RANGES / MODELS -->
+<?php
+$cssFile    = __DIR__ . '/sub_ranges_models/sub_ranges_models.css';
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+?>
+
 <link rel="stylesheet"
-      href="sub_ranges_models/sub_ranges_models.css?v=<?= filemtime(__DIR__ . '/sub_ranges_models/sub_ranges_models.css'); ?>">
+      href="sub_ranges_models/sub_ranges_models.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section class="sub_ranges_models" aria-labelledby="srm-title">
   <div class="srm-wrap">

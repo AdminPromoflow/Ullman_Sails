@@ -1,7 +1,9 @@
 <?php
-$cssTime = filemtime('12_sub_models/sub_models.css');
+$cssFile    = __DIR__ . '/12_sub_models/sub_models.css';
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
 ?>
-	<link rel="stylesheet" href="12_sub_models/sub_models.css?v=<?= $cssTime ?>">
+<link rel="stylesheet" href="12_sub_models/sub_models.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
+
 <body>
 
   <section class="wrap">

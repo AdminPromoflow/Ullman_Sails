@@ -24,7 +24,7 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
   <div class="home-slider__caption">
     <div class="home-slider__kicker">
       <img
-        src="<?= htmlspecialchars($logoSrc, ENT_QUOTES, 'UTF-8') ?>"
+        src="<?= htmlspecialchars(with_version($logoSrc, asset_version(__DIR__ . '/' . $logoSrc)), ENT_QUOTES, 'UTF-8') ?>"
         alt="Ullman Sails logo"
         loading="lazy"
         decoding="async"
@@ -105,14 +105,14 @@ $lastSlide  = $slides[count($slides) - 1];
           class="home-slider__arrow home-slider__arrow--left"
           type="button"
           aria-label="Previous slide">
-    <img src="../Home/1.Slider/img/left.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="<?= htmlspecialchars(with_version('../Home/1.Slider/img/left.png', asset_version(__DIR__ . '/../Home/1.Slider/img/left.png')), ENT_QUOTES, 'UTF-8') ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 
   <button id="homeSliderNext"
           class="home-slider__arrow home-slider__arrow--right"
           type="button"
           aria-label="Next slide">
-    <img src="../Home/1.Slider/img/right.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="<?= htmlspecialchars(with_version('../Home/1.Slider/img/right.png', asset_version(__DIR__ . '/../Home/1.Slider/img/right.png')), ENT_QUOTES, 'UTF-8') ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 </section>
 

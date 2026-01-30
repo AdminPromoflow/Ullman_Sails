@@ -2,9 +2,13 @@
 $cssFile = __DIR__ . '/../Cruising/2.Services/services.css';
 $jsFile  = __DIR__ . '/../Cruising/2.Services/services.js';
 
-$cssVer = file_exists($cssFile) ? filemtime($cssFile) : time();
-$jsVer  = file_exists($jsFile)  ? filemtime($jsFile)  : time();
+$cssVer = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 ?>
+
+<link rel="stylesheet" href="../Cruising/2.Services/services.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,7 +21,6 @@ $jsVer  = file_exists($jsFile)  ? filemtime($jsFile)  : time();
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../Cruising/2.Services/services.css?v=<?= $cssVer ?>">
 </head>
 <body>
 
@@ -127,6 +130,6 @@ $jsVer  = file_exists($jsFile)  ? filemtime($jsFile)  : time();
   </div>
 </section>
 
-<script src="../Cruising/2.Services/services.js?v=<?= $jsVer ?>" defer></script>
+<script defer src="../Cruising/2.Services/services.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
 </body>
 </html>

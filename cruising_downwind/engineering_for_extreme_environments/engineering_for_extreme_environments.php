@@ -1,6 +1,13 @@
 <!-- ENGINEERING FOR EXTREME ENVIRONMENTS -->
-<link rel="stylesheet"
-      href="engineering_for_extreme_environments/engineering_for_extreme_environments.css?v=<?= filemtime(__DIR__ . '/engineering_for_extreme_environments/engineering_for_extreme_environments.css'); ?>">
+<?php
+$cssFile    = __DIR__ . '/engineering_for_extreme_environments/engineering_for_extreme_environments.css';
+$jsFile     = __DIR__ . '/engineering_for_extreme_environments/engineering_for_extreme_environments.js';
+
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+?>
+
+<link rel="stylesheet" href="engineering_for_extreme_environments/engineering_for_extreme_environments.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section class="engineering_for_extreme_environments" aria-labelledby="efee-title">
   <div class="efee-wrap">

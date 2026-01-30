@@ -3,12 +3,14 @@ declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
 $ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
+$ssImgFs = __DIR__ . '/7_standard_specifications/img/standard_specifications.jpg';
 
 /* Public path */
 $ssCssPublic = '7_standard_specifications/standard_specifications.css';
 
 /* Version */
-$ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
+$ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : null;
+$ssImgV = is_file($ssImgFs) ? filemtime($ssImgFs) : null;
 
 /**
  * Standard specification items.
@@ -26,7 +28,7 @@ $ss_features = [
 ];
 ?>
 
-<link rel="stylesheet" href="<?= $ssCssPublic ?>?v=<?= $ssCssV ?>">
+<link rel="stylesheet" href="<?= $ssCssPublic ?><?= $ssCssV ? '?v='.$ssCssV : '' ?>">
 
 <section class="standard_specifications" aria-labelledby="ss-title">
   <div class="ss-wrap">
@@ -41,7 +43,7 @@ $ss_features = [
       <figure class="ss-figure">
         <div class="ss-image">
           <img
-            src="7_standard_specifications/img/standard_specifications.jpg"
+            src="7_standard_specifications/img/standard_specifications.jpg<?= $ssImgV ? '?v='.$ssImgV : '' ?>"
             alt="Navigator sail standard specifications"
             loading="lazy"
             decoding="async"

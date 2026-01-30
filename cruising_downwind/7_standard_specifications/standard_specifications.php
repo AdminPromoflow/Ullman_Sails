@@ -1,14 +1,11 @@
 <?php
 declare(strict_types=1);
 
-/* Filesystem paths (for filemtime) */
-$ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
-
-/* Public path */
-$ssCssPublic = '7_standard_specifications/standard_specifications.css';
+/* Filesystem path (for filemtime) */
+$cssFile = __DIR__ . '/7_standard_specifications/standard_specifications.css';
 
 /* Version */
-$ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
 
 /**
  * Standard specification items.
@@ -24,7 +21,7 @@ $ss_features = [
 ];
 ?>
 
-<link rel="stylesheet" href="<?= $ssCssPublic ?>?v=<?= $ssCssV ?>">
+<link rel="stylesheet" href="7_standard_specifications/standard_specifications.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section class="standard_specifications" aria-labelledby="ss-title">
   <div class="ss-wrap">

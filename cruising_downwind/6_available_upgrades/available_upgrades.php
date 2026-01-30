@@ -15,25 +15,11 @@ function versioned_asset(string $publicPath, string $fsPath): string {
 }
 
 /* Public + filesystem paths */
-$cssPublic = '6_available_upgrades/available_upgrades.css';
-$cssFs     = __DIR__ . '/6_available_upgrades/available_upgrades.css';
-$cssHref   = versioned_asset($cssPublic, $cssFs);
-
-$upgrades = [
-  [
-    'title' => 'Custom graphics',
-    'text'  => 'Personalise Blue Line or Axia Blue Line with your artwork for a distinctive, easy-to-spot sail.',
-  ],
-  [
-    'title' => 'Retriever patch (DOWNWIND)',
-    'text'  => 'Add a Blue Line retriever patch to gather the sail quickly on the drop, making recoveries safer and easier.',
-  ],
-];
-
-$total = count($upgrades);
+$cssFile    = __DIR__ . '/6_available_upgrades/available_upgrades.css';
+$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
 ?>
 
-<link rel="stylesheet" href="<?= esc($cssHref) ?>">
+<link rel="stylesheet" href="6_available_upgrades/available_upgrades.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section class="available_upgrades" aria-labelledby="au-title">
   <div class="au-wrap">
@@ -47,6 +33,21 @@ $total = count($upgrades);
     </header>
 
     <div class="au-list" role="list">
+      <?php
+      $upgrades = [
+        [
+          'title' => 'Custom graphics',
+          'text'  => 'Personalise Blue Line or Axia Blue Line with your artwork for a distinctive, easy-to-spot sail.',
+        ],
+        [
+          'title' => 'Retriever patch (DOWNWIND)',
+          'text'  => 'Add a Blue Line retriever patch to gather the sail quickly on the drop, making recoveries safer and easier.',
+        ],
+      ];
+
+      $total = count($upgrades);
+      ?>
+
       <?php foreach ($upgrades as $i => $item): ?>
         <?php $num = str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT); ?>
 

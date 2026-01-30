@@ -31,18 +31,20 @@ $ph_steps = [
   ],
 ];
 
-
 // Filesystem paths (for filemtime)
 $ph_css_fs = __DIR__ . '/2_handling_and_performance/handling_and_performance.css';
 $ph_js_fs  = __DIR__ . '/2_handling_and_performance/handling_and_performance.js';
+$ph_img_fs = __DIR__ . '/2_handling_and_performance/img/performance-and-handling.jpg';
 
 // Public paths
 $ph_css_public = '2_handling_and_performance/handling_and_performance.css';
 $ph_js_public  = '2_handling_and_performance/handling_and_performance.js';
+$ph_img_public = '2_handling_and_performance/img/performance-and-handling.jpg';
 
 // Versions
 $ph_css_v = is_file($ph_css_fs) ? filemtime($ph_css_fs) : time();
 $ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : time();
+$ph_img_v = is_file($ph_img_fs) ? filemtime($ph_img_fs) : time();
 ?>
 
 <link rel="stylesheet" href="<?= $ph_css_public ?>?v=<?= $ph_css_v ?>">
@@ -51,12 +53,12 @@ $ph_js_v  = is_file($ph_js_fs)  ? filemtime($ph_js_fs)  : time();
   <div class="ph-grid">
 
     <header class="ph-left">
-      <p class="ph-tagline">The Axia Series - Red Line</p>
+      <p class="ph-tagline">The Axia&nbsp;Series - Red Line</p>
       <h2 id="ph-title" class="ph-title">Performance and Handling</h2>
 
       <img
         class="ph-image"
-        src="2_handling_and_performance/img/performance-and-handling.jpg"
+        src="<?= $ph_img_public ?>?v=<?= $ph_img_v ?>"
         alt="Navigator Series sails shown under load"
         loading="lazy"
         decoding="async"

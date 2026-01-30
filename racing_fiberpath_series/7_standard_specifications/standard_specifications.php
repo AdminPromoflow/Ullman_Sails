@@ -3,12 +3,15 @@ declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
 $ssCssFs = __DIR__ . '/7_standard_specifications/standard_specifications.css';
+$ssImgFs = __DIR__ . '/7_standard_specifications/img/standard_specifications.jpg';
 
 /* Public path */
 $ssCssPublic = '7_standard_specifications/standard_specifications.css';
+$ssImgPublic = '7_standard_specifications/img/standard_specifications.jpg';
 
 /* Version */
 $ssCssV = is_file($ssCssFs) ? filemtime($ssCssFs) : time();
+$ssImgV = is_file($ssImgFs) ? filemtime($ssImgFs) : time();
 
 /**
  * Standard specification items.
@@ -35,7 +38,7 @@ $ss_features = [
 
     <header class="ss-header">
       <h2 id="ss-title" class="ss-title">Standard Specifications</h2>
-      <p class="ss-subtitle">Triple-step seams, Dyneema rings, UV thread, reinforcements, trim aids—race durable & repeatable.</p>
+      <p class="ss-subtitle">Triple-step seams, Dyneema rings, UV thread, reinforcements, trim aids—race durable &amp; repeatable.</p>
     </header>
 
     <div class="ss-grid">
@@ -43,7 +46,7 @@ $ss_features = [
       <figure class="ss-figure">
         <div class="ss-image">
           <img
-            src="7_standard_specifications/img/standard_specifications.jpg"
+            src="<?= $ssImgPublic ?>?v=<?= $ssImgV ?>"
             alt="Navigator sail standard specifications"
             loading="lazy"
             decoding="async"

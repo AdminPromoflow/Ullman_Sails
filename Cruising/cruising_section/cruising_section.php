@@ -1,9 +1,13 @@
 <?php
-$cssTime = filemtime('../Cruising/cruising_section/cruising_section.css');
-$jsTime  = filemtime('../Cruising/cruising_section/cruising_section.js');
+$cssFile = __DIR__ . '/../Cruising/cruising_section/cruising_section.css';
+$jsFile  = __DIR__ . '/../Cruising/cruising_section/cruising_section.js';
+
+$cssVer = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 ?>
 
-<link rel="stylesheet" href="../Cruising/cruising_section/cruising_section.css?v=<?= $cssTime ?>">
+<link rel="stylesheet" href="../Cruising/cruising_section/cruising_section.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
+
 
 <section class="cruising-section" aria-labelledby="cruising-title">
   <p class="cruising-label">Essential</p>
@@ -60,4 +64,4 @@ $jsTime  = filemtime('../Cruising/cruising_section/cruising_section.js');
   </figure>
 </section>
 
-<script src="../Cruising/cruising_section/cruising_section.js?v=<?= $jsTime ?>" defer></script>
+<script defer src="../Cruising/cruising_section/cruising_section.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>

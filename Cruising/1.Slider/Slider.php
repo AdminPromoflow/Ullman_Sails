@@ -1,27 +1,11 @@
-<style media="screen">
-.slideHome{
-  position: relative;
-  height: 80vh;
-  width: 100vw;
-  background-color: red;
-  background-image: url("../Cruising/1.Slider/Topcrusingsails.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.gradientSlideHome{
-  position: relative;
-  height: 100%;
-  width: 100%;
+<?php
+$introCssFile = __DIR__ . '/Cruising/1.Slider/Slider.css';
 
-}
+$introCssVersion = is_file($introCssFile) ? filemtime($introCssFile) : null;
+?>
 
-@media  (orientation: landscape) {
-  .slideHome{
-    height: 100vh;
-  }
-}
-</style>
+<link rel="stylesheet" href="Cruising/1.Slider/Slider.css<?= $introCssVersion ? '?v='.$introCssVersion : '' ?>">
+
 
 <section id="slideHome" class="slideHome">
   <div class="gradientSlideHome">

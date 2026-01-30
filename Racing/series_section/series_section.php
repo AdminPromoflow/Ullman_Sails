@@ -1,4 +1,13 @@
-<link rel="stylesheet" href="../Racing/series_section/series_section.css">
+<?php
+$cssTime = filemtime('../Racing/series_section/series_section.css');
+$jsTime  = filemtime('../Cruising/series_section/series_section.js');
+
+$img1Time = filemtime('../Racing/series_section/img/race.jpg');
+$img2Time = filemtime('../Racing/series_section/img/fiberpath.jpg');
+$img3Time = filemtime('../Racing/series_section/img/red_line.jpg');
+?>
+
+<link rel="stylesheet" href="../Racing/series_section/series_section.css?v=<?= $cssTime ?>">
 
 <div class="series-list">
   <!-- Race Series-->
@@ -11,7 +20,7 @@
     <div class="series-container">
       <figure class="series-image">
         <img
-          src="../Racing/series_section/img/race.jpg"
+          src="../Racing/series_section/img/race.jpg?v=<?= $img1Time ?>"
           alt="Navigator Series cruising sails"
           loading="lazy"
           decoding="async"
@@ -42,7 +51,7 @@
     <div class="series-container">
       <figure class="series-image">
         <img
-          src="../Racing/series_section/img/fiberpath.jpg"
+          src="../Racing/series_section/img/fiberpath.jpg?v=<?= $img2Time ?>"
           alt="Voyager Series cruising sails"
           loading="lazy"
           decoding="async"
@@ -75,7 +84,7 @@
     <div class="series-container">
       <figure class="series-image">
         <img
-          src="../Racing/series_section/img/red_line.jpg"
+          src="../Racing/series_section/img/red_line.jpg?v=<?= $img3Time ?>"
           alt="Race Series sails"
           loading="lazy"
           decoding="async"
@@ -88,14 +97,14 @@
         <p>
           Axia is Ullman’s latest innovation in downwind sail technology, combining
           Active Luff™ construction while our expertise and experience recognize that
-           cable-based technology remains one of the safest and fastest solutions
-           available. Offering a perfect balance of power, durability, and adaptability,
-           Axia delivers cutting-edge performance while remaining safe, reliable, and
-           race-proven across all wind conditions.</p>
+          cable-based technology remains one of the safest and fastest solutions
+          available. Offering a perfect balance of power, durability, and adaptability,
+          Axia delivers cutting-edge performance while remaining safe, reliable, and
+          race-proven across all wind conditions.</p>
 
       </div>
     </div>
   </section>
 </div>
 
-<script src="../Cruising/series_section/series_section.js" defer></script>
+<script src="../Cruising/series_section/series_section.js?v=<?= $jsTime ?>" defer></script>

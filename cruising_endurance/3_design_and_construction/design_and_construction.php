@@ -44,11 +44,11 @@ $dacCssPublic = '3_design_and_construction/design_and_construction.css';
 $dacJsPublic  = '3_design_and_construction/design_and_construction.js';
 
 // Versions
-$dacCssV = is_file($dacCssFs) ? filemtime($dacCssFs) : time();
-$dacJsV  = is_file($dacJsFs)  ? filemtime($dacJsFs)  : time();
+$dacCssV = is_file($dacCssFs) ? filemtime($dacCssFs) : null;
+$dacJsV  = is_file($dacJsFs)  ? filemtime($dacJsFs)  : null;
 ?>
 
-<link rel="stylesheet" href="<?= $dacCssPublic ?>?v=<?= $dacCssV ?>">
+<link rel="stylesheet" href="<?= $dacCssPublic ?><?= $dacCssV ? '?v='.$dacCssV : '' ?>">
 
 <section class="design-and-construction" aria-labelledby="dac-title">
   <div class="dac-wrap">
@@ -78,4 +78,4 @@ $dacJsV  = is_file($dacJsFs)  ? filemtime($dacJsFs)  : time();
   </div>
 </section>
 
-<script defer src="<?= $dacJsPublic ?>?v=<?= $dacJsV ?>" type="text/javascript"></script>
+<script defer src="<?= $dacJsPublic ?><?= $dacJsV ? '?v='.$dacJsV : '' ?>" type="text/javascript"></script>
