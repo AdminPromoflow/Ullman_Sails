@@ -60,15 +60,15 @@
 
 /* Title */
 .cruising-title{
-  position: relative;
-  font-size: clamp(3rem, 5vw, 6rem);
+  line-height: 1.12;
+  text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(3rem, 4.5vw, 6rem);
   font-weight: 600;
   max-width: 18ch;
-  margin: 15px auto 20px;
-  color: var(--cs-ink);
-  line-height: 1.05;
-  z-index: 1;
+  margin: auto;
   color: #005598;
+  text-align: center;
 }
 
 /* subrayado elegante */

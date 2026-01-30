@@ -15,14 +15,15 @@
 
 /* Título principal (tu formato) */
 .au-title{
-  margin: 0;
-  font-size: clamp(3rem, 4.5vw, 6rem);
-  font-weight: 600; /* quité !important */
   line-height: 1.12;
-  color: var(--cs-ink);
-  max-width: 26ch;
-  padding-inline: clamp(0rem, 1.2vw, .5rem);
-  margin-inline: auto;
+text-align: center;
+padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+font-size: clamp(3rem, 4.5vw, 6rem);
+font-weight: 600;
+max-width: 18ch;
+margin: auto;
+color: #005598;
+text-align: center;
 }
 
 /* Sección */

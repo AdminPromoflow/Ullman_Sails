@@ -30,17 +30,16 @@
 }
 
 /* Title like .ss-title */
-h2{
-  margin: 0 0 clamp(1rem, 2.2vw, 1.4rem);
+.wrap h2{
+  line-height: 1.12;
+  text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
   font-size: clamp(3rem, 4.5vw, 6rem);
   font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  max-width: 18ch;
+  margin: auto;
+  color: #005598;
   text-align: center;
-
-  color: var(--cs-ink);
-  max-width: 26ch;
-  padding-inline: clamp(0rem, 1.2vw, .5rem);
 }
 
 /* Main grid */

@@ -50,6 +50,7 @@
   font-size: clamp(3rem, 4.5vw, 6rem);
   font-weight: 600;
   line-height: 1.12;
+  text-align: center;
 
   color: var(--cs-ink);
   max-width: 26ch;

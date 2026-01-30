@@ -29,7 +29,7 @@
   padding-block: var(--u-sec-py);
   padding-inline: var(--u-gutter);
 
-  background: #fff;
+  background: #fafafa;
 }
 
 .sailing-content{
@@ -67,8 +67,8 @@
   margin: 0;
 
   /* Escala más estable en móvil y amplia en desktop */
-  font-size: clamp(2rem, 6.2vw, 5.3rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
   line-height: 1.05;
 
   /* Evita cortes raros y overflow */

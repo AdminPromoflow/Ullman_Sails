@@ -3,13 +3,15 @@
   padding: 6vw 2vw 6vw 2vw;
 }
 .sail-types-title {
-  position: relative;
-  font-weight: 600;
+  line-height: 1.12;
   text-align: center;
-  font-size: clamp(3rem, 5vw, 6rem);
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
   max-width: 18ch;
-  margin: 15px auto 20px;
+  margin: auto;
   color: #005598;
+  text-align: center;
 }
 
 .sail-types-subtitle {
@@ -32,6 +34,7 @@
   height: 450px;
   width: 510px;
   margin: 20px;
+  font-size: clamp(3rem, 4.5vw, 6rem);
   flex: 0 0 auto; /* importante para que no se encoja */
   cursor: pointer;
 }

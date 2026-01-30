@@ -23,12 +23,14 @@
 }
 
 .efee-title{
-  margin: 0;
-  font-size: clamp(2.8rem, 4.6vw, 5.3rem);
-  font-weight: 800;
-  line-height: 1.03;
-  color: #0b0b0b;
-  max-width: 22ch;
+  line-height: 1.12;
+  text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
+  max-width: 18ch;
+  margin: auto;
+  color: #005598;
   text-align: center;
 }
 

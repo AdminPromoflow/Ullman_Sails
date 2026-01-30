@@ -61,7 +61,7 @@
   line-height: 1.12;
 
   color: var(--cs-ink);
-  max-width: 26ch;
+  max-width: 18ch;
   padding-inline: clamp(0rem, 1.2vw, .5rem);
 }
 

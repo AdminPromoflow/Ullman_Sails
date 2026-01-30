@@ -9,7 +9,7 @@
 
   position: relative;
   padding: 7vw 3vw;
-  background: #fff;
+  background: #fafafa;
 }
 
 .efee-wrap{
@@ -23,12 +23,12 @@
 }
 
 .efee-title{
-  margin: 0;
-  font-size: clamp(2.8rem, 4.6vw, 5.3rem);
-  font-weight: 800;
-  line-height: 1.03;
+  margin: auto;
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
+  line-height: 1.12;
   color: #0b0b0b;
-  max-width: 22ch;
+  max-width: 18ch;
   text-align: center;
 }
 
