@@ -22,6 +22,10 @@
     }
     h1{
       color: #005598!important;
+      font-size: clamp(3rem, 5vw, 6rem);
+      font-weight: 600;
+      max-width: 18ch;
+      margin: 15px auto 20px;
     }
     h2{
       color: #005598!important;

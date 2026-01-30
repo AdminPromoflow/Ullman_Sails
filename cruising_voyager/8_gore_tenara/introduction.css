@@ -19,14 +19,13 @@
   --u-gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 .au-title {
-margin: 0;
-font-size: clamp(3rem, 4.5vw, 6rem);
-font-weight: 600!important;
-line-height: 1.12;
-color: var(--cs-ink);
-max-width: 26ch;
-padding-inline: clamp(0rem, 1.2vw, .5rem);
-margin-inline: auto;
+  margin: 0;
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600!important;
+  line-height: 1.12;
+  max-width: 26ch;
+  padding-inline: clamp(0rem, 1.2vw, .5rem);
+  margin-inline: auto;
 }
 .sailing-types-introduction{
   position: relative;

@@ -45,17 +45,16 @@
 
 /* Section title format (as requested) */
 .sid-title{
-  margin: 0;
 
-  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-size: clamp(3rem, 5vw, 6rem);
   font-weight: 600;
   line-height: 1.12;
 
-  color: var(--cs-ink);
-  max-width: 26ch;
   padding-inline: clamp(0rem, 1.2vw, .5rem);
-
-  margin-inline: auto;
+  margin: auto;
+  max-width: 18ch;
+  color: #005598;
+  text-align: center;
 }
 
 .sid-intro{

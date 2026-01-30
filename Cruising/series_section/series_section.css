@@ -21,13 +21,13 @@
 }
 .series-title{
   position: relative;
-  font-size: 5em;
-  width: 80%;
-  font-weight: 400;
   margin-bottom: 2.5vw;
   text-align: left;
-  left: 50%;
-  transform: translateX(-50%);
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-weight: 600;
+  max-width: 18ch;
+  margin: 15px auto 20px;
+  color: #005598;
 }
 
 .series-subtitle{

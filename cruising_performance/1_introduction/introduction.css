@@ -64,17 +64,15 @@
 /* Título */
 .sailing-content h1{
   position: relative;
-  margin: 0;
 
   /* Escala más estable en móvil y amplia en desktop */
-  font-size: clamp(2rem, 6.2vw, 5.3rem);
-  font-weight: 700;
   line-height: 1.05;
-
-  /* Evita cortes raros y overflow */
-  max-width: 22ch;
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-weight: 600;
+  max-width: 18ch;
+  margin: 15px auto 20px;
+  color: #005598;
   padding-inline: clamp(0rem, 1.5vw, 0.5rem);
-  color: var(--cs-ink);
   z-index: 1;
 }
 

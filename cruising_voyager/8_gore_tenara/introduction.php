@@ -4,10 +4,7 @@ $introCssVersion = filemtime(__DIR__ . '/8_gore_tenara/introduction.css');
 $introJsVersion  = filemtime(__DIR__ . '/8_gore_tenara/introduction.js');
 ?>
 
-<link
-  rel="stylesheet"
-  href="8_gore_tenara/introduction.css?v=<?= $introCssVersion ?>"
->
+<link rel="stylesheet" href="8_gore_tenara/introduction.css?v=<?= $introCssVersion ?>">
 
 <section
   class="sailing-types-introduction"

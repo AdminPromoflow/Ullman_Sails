@@ -4,12 +4,12 @@
 }
 .sail-types-title {
   position: relative;
-  font-size: 5em;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 50%;
+  font-size: clamp(3rem, 5vw, 6rem);
+  max-width: 18ch;
+  margin: 15px auto 20px;
+  color: #005598;
 }
 
 .sail-types-subtitle {
