@@ -26,16 +26,17 @@
 .csp-title{
   margin: 0;
 
-  font-size: clamp(3rem, 4.5vw, 6rem);
-  font-weight: 600;
+  font-size: clamp(2.2rem, 3.2vw, 3.3rem);
+  font-weight: 500;
   line-height: 1.12;
 
-  color: var(--cs-ink);
-  max-width: 26ch;
+  color: #C5234A;
+  font-style: italic;
+  max-width: none;
   padding-inline: clamp(0rem, 1.2vw, .5rem);
 
   margin-inline: auto;
-  text-align: center;
+  text-align: left;
   padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
 }
 
@@ -173,7 +174,7 @@
   font-size: clamp(1.2rem, 1.8vw, 1.7rem);
   font-weight: 500;
   font-style: italic;
-  color: #1f4a7a;
+  color: #C5234A;
 }
 
 .nav-specsheet__list{
@@ -201,6 +202,33 @@
   font-size: clamp(.92rem, 1.7vw, 1.02rem);
   color: rgba(31,47,67,0.80);
 }
+
+ .nav-specsheet__group{
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 2.1rem;
+ }
+
+ .nav-specsheet__groupTitle{
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: clamp(.95rem, 1.7vw, 1.05rem);
+  color: #1f2f43;
+ }
+
+ .nav-specsheet__groupItems{
+  display: grid;
+  gap: 0.45rem;
+ }
+
+ .nav-specsheet__item{
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-size: clamp(.92rem, 1.7vw, 1.02rem);
+  color: rgba(31,47,67,0.80);
+ }
 
 /* =========================
    Responsive

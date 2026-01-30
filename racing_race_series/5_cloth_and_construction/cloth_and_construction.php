@@ -5,6 +5,11 @@ declare(strict_types=1);
 $nsCssFs = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
 $nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
 
+/* Rotator images (filesystem paths for filemtime) */
+$rrSail1Fs = __DIR__ . '/../../cruising_navigator/5_cloth_and_construction/img/sail_1.png';
+$rrSail2Fs = __DIR__ . '/../../cruising_navigator/5_cloth_and_construction/img/sail_2.png';
+$rrSail3Fs = __DIR__ . '/../../cruising_navigator/5_cloth_and_construction/img/sail_3.png';
+
 /* Public paths */
 $nsCssPublic = '5_cloth_and_construction/cloth_and_construction.css';
 $nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
@@ -12,6 +17,10 @@ $nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
 /* Versions */
 $nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
 $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
+
+$rrSail1V = is_file($rrSail1Fs) ? filemtime($rrSail1Fs) : time();
+$rrSail2V = is_file($rrSail2Fs) ? filemtime($rrSail2Fs) : time();
+$rrSail3V = is_file($rrSail3Fs) ? filemtime($rrSail3Fs) : time();
 ?>
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
@@ -27,17 +36,17 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator" aria-label="Race Series cloth and construction rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png?v=<?= $rrSail1V ?>"
                  alt="Race sail view 1"
                  data-sub="RACE DACRON — WOVEN POLYESTER">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png?v=<?= $rrSail2V ?>"
                  alt="Race sail view 2"
                  data-sub="RACE LAMINATE — LAMINATE / NON-WOVEN">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_3.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_3.png?v=<?= $rrSail3V ?>"
                  alt="Race sail view 3"
                  data-sub="STANDARD COMPONENTS — FINISHING">
           </div>
@@ -55,23 +64,17 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         </figure>
 
         <div class="nav-specsheet__text">
-          <div class="nav-specsheet__meta">
-            <div class="nav-specsheet__metaTop">RACE SERIES</div>
-            <div class="nav-specsheet__metaSub">CLOTH &amp; CONSTRUCTION</div>
+          <div class="nav-specsheet__group" aria-label="Cloth Selection and Construction">
+            <div class="nav-specsheet__groupTitle">RACE DACRON</div>
+            <div class="nav-specsheet__groupItems">
+              <div class="nav-specsheet__item">CROSSCUT &amp; RADIAL WOVEN POLYESTER</div>
+            </div>
           </div>
 
-          <!-- =========================
-               CLOTH SELECTION
-          ========================== -->
-          <h3 class="nav-specsheet__subtitle">Cloth Selection</h3>
-          <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">RACE DACRON</div>
-              <div class="nav-specsheet__val">CROSSCUT &amp; RADIAL WOVEN POLYESTER</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">RACE LAMINATE</div>
-              <div class="nav-specsheet__val">LAMINATE &amp; NON-WOVEN TEXTILE</div>
+          <div class="nav-specsheet__group">
+            <div class="nav-specsheet__groupTitle">RACE LAMINATE</div>
+            <div class="nav-specsheet__groupItems">
+              <div class="nav-specsheet__item">LAMINATE &amp; NONE WOVEN TEXTILE</div>
             </div>
           </div>
 

@@ -12,6 +12,14 @@ $nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
 /* Versions */
 $nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
 $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
+
+/* Rotator image versions */
+$sail1Fs = __DIR__ . '/img/sail_1.png';
+$sail2Fs = __DIR__ . '/img/sail_2.png';
+$sail3Fs = __DIR__ . '/img/sail_3.png';
+$sail1V  = is_file($sail1Fs) ? filemtime($sail1Fs) : time();
+$sail2V  = is_file($sail2Fs) ? filemtime($sail2Fs) : time();
+$sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
 ?>
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
@@ -27,17 +35,17 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator" aria-label="Navigator sail image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="5_cloth_and_construction/img/sail_1.png"
+                 src="5_cloth_and_construction/img/sail_1.png?v=<?= $sail1V ?>"
                  alt="Navigator Series sail view 1"
                  data-sub="MAINSAIL">
 
             <img class="nav-rotator__img"
-                 src="5_cloth_and_construction/img/sail_2.png"
+                 src="5_cloth_and_construction/img/sail_2.png?v=<?= $sail2V ?>"
                  alt="Navigator Series sail view 2"
                  data-sub="HEADSAIL">
 
             <img class="nav-rotator__img"
-                 src="5_cloth_and_construction/img/sail_3.png"
+                 src="5_cloth_and_construction/img/sail_3.png?v=<?= $sail3V ?>"
                  alt="Navigator Series sail view 3"
                  data-sub="JIB">
           </div>

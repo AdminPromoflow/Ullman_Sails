@@ -5,6 +5,15 @@ declare(strict_types=1);
 $nsCssFs = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
 $nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
 
+/* Rotator images (filesystem paths for filemtime) */
+$fpRegattaMainFs = __DIR__ . '/img/GrandPrix_Main.2048_0_1.png';
+$fpRegattaHeadFs = __DIR__ . '/img/Regatta_Head.2048_0_1.png';
+$fpRegattaJibFs  = __DIR__ . '/img/Regatta_Jib.2048_0_1.png';
+
+$fpGrandPrixMainFs = __DIR__ . '/../../cruising_navigator/5_cloth_and_construction/img/sail_1.png';
+$fpGrandPrixHeadFs = __DIR__ . '/../../cruising_navigator/5_cloth_and_construction/img/sail_2.png';
+$fpGrandPrixJibFs  = __DIR__ . '/../../cruising_navigator/5_cloth_and_construction/img/sail_2.png';
+
 /* Public paths */
 $nsCssPublic = '5_cloth_and_construction/cloth_and_construction.css';
 $nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
@@ -12,6 +21,14 @@ $nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
 /* Versions */
 $nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
 $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
+
+$fpRegattaMainV = is_file($fpRegattaMainFs) ? filemtime($fpRegattaMainFs) : time();
+$fpRegattaHeadV = is_file($fpRegattaHeadFs) ? filemtime($fpRegattaHeadFs) : time();
+$fpRegattaJibV  = is_file($fpRegattaJibFs)  ? filemtime($fpRegattaJibFs)  : time();
+
+$fpGrandPrixMainV = is_file($fpGrandPrixMainFs) ? filemtime($fpGrandPrixMainFs) : time();
+$fpGrandPrixHeadV = is_file($fpGrandPrixHeadFs) ? filemtime($fpGrandPrixHeadFs) : time();
+$fpGrandPrixJibV  = is_file($fpGrandPrixJibFs)  ? filemtime($fpGrandPrixJibFs)  : time();
 ?>
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
@@ -29,20 +46,23 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator" aria-label="FiberPath image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../racing_fiberpath_series/5_cloth_and_construction/img/GrandPrix_Main.2048_0_1.png"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/GrandPrix_Main.2048_0_1.png?v=<?= $fpRegattaMainV ?>"
                  alt="FiberPath sail view 1"
-                 data-sub="FIBERPATH — CUSTOM STRING LAMINATE">
+                 data-sub="THE FIBERPATH REGATTA SERIES — MAINSAIL">
+
 
             <img class="nav-rotator__img"
-                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Head.2048_0_1.png"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Head.2048_0_1.png?v=<?= $fpRegattaHeadV ?>"
                  alt="FiberPath sail view 2"
-                 data-sub="FIBERPATH — CUSTOM STRING LAMINATE">
+                 data-sub="THE FIBERPATH REGATTA SERIES — HEADSAIL">
+
 
             <img class="nav-rotator__img"
-                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Jib.2048_0_1.png"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Jib.2048_0_1.png?v=<?= $fpRegattaJibV ?>"
                  alt="FiberPath sail view 3"
-                 data-sub="FIBERPATH — CUSTOM STRING LAMINATE">
+                 data-sub="THE FIBERPATH REGATTA SERIES — JIB">
           </div>
+
 
           <figcaption class="nav-rotator__caption">
             <span class="nav-rotator__capTitle">FIBERPATH</span>
@@ -57,16 +77,10 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         </figure>
 
         <div class="nav-specsheet__text">
-          <div class="nav-specsheet__meta">
-            <div class="nav-specsheet__metaTop">FIBERPATH</div>
-            <div class="nav-specsheet__metaSub">CLOTH SELECTION &amp; CONSTRUCTION</div>
-          </div>
-
-          <h3 class="nav-specsheet__subtitle">Cloth Selection</h3>
-          <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CLOTH</div>
-              <div class="nav-specsheet__val">CUSTOM STRING LAMINATE</div>
+          <div class="nav-specsheet__group" aria-label="Cloth Selection and Construction">
+            <div class="nav-specsheet__groupTitle">FIBERPATH</div>
+            <div class="nav-specsheet__groupItems">
+              <div class="nav-specsheet__item">CUSTOM STRING LAMINATE</div>
             </div>
           </div>
 
@@ -125,15 +139,23 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator" aria-label="FiberPath image rotator 2" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png?v=<?= $fpGrandPrixMainV ?>"
                  alt="FiberPath sail view A"
-                 data-sub="FIBERPATH — CUSTOM STRING LAMINATE">
+                 data-sub="THE FIBERPATH GRAND PRIX SERIES — MAINSAIL">
+
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png?v=<?= $fpGrandPrixHeadV ?>"
                  alt="FiberPath sail view B"
-                 data-sub="FIBERPATH — CUSTOM STRING LAMINATE">
+                 data-sub="THE FIBERPATH GRAND PRIX SERIES — HEADSAIL">
+
+
+           <img class="nav-rotator__img"
+                src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png?v=<?= $fpGrandPrixJibV ?>"
+                alt="FiberPath sail view B"
+                data-sub="THE FIBERPATH GRAND PRIX SERIES — JIB">
           </div>
+
 
           <figcaption class="nav-rotator__caption">
             <span class="nav-rotator__capTitle">FIBERPATH</span>
@@ -142,21 +164,16 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
             <div class="nav-rotator__dots" aria-hidden="true">
               <span class="nav-rotator__dot is-active"></span>
               <span class="nav-rotator__dot"></span>
+              <span class="nav-rotator__dot"></span>
             </div>
           </figcaption>
         </figure>
 
         <div class="nav-specsheet__text">
-          <div class="nav-specsheet__meta">
-            <div class="nav-specsheet__metaTop">FIBERPATH</div>
-            <div class="nav-specsheet__metaSub">CLOTH SELECTION &amp; CONSTRUCTION</div>
-          </div>
-
-          <h3 class="nav-specsheet__subtitle">Cloth Selection</h3>
-          <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CLOTH</div>
-              <div class="nav-specsheet__val">CUSTOM STRING LAMINATE</div>
+          <div class="nav-specsheet__group" aria-label="Cloth Selection and Construction">
+            <div class="nav-specsheet__groupTitle">FIBERPATH</div>
+            <div class="nav-specsheet__groupItems">
+              <div class="nav-specsheet__item">CUSTOM STRING LAMINATE</div>
             </div>
           </div>
 

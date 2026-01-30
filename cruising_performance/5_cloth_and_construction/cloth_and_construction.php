@@ -12,6 +12,14 @@ $nsJsPublic  = '5_cloth_and_construction/cloth_and_construction.js';
 /* Versions */
 $nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
 $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
+
+/* Rotator image versions */
+$sail1Fs = __DIR__ . '/img/sail_1.png';
+$sail2Fs = __DIR__ . '/img/sail_2.png';
+$sail3Fs = __DIR__ . '/img/sail_3.png';
+$sail1V  = is_file($sail1Fs) ? filemtime($sail1Fs) : time();
+$sail2V  = is_file($sail2Fs) ? filemtime($sail2Fs) : time();
+$sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
 ?>
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
@@ -27,17 +35,17 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator" aria-label="Performance sail image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="5_cloth_and_construction/img/sail_1.png"
+                 src="5_cloth_and_construction/img/sail_1.png?v=<?= $sail1V ?>"
                  alt="Performance Series sail view 1"
                  data-sub="MAINSAIL, THE PERFORMANCE SERIES">
 
             <img class="nav-rotator__img"
-                 src="5_cloth_and_construction/img/sail_2.png"
+                 src="5_cloth_and_construction/img/sail_2.png?v=<?= $sail2V ?>"
                  alt="Performance Series sail view 2"
                  data-sub="HEADSAIL, THE PERFORMANCE SERIES">
 
             <img class="nav-rotator__img"
-                 src="5_cloth_and_construction/img/sail_3.png"
+                 src="5_cloth_and_construction/img/sail_3.png?v=<?= $sail3V ?>"
                  alt="Performance Series sail view 3"
                  data-sub="JIB, THE PERFORMANCE SERIES">
           </div>
@@ -55,22 +63,18 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         </figure>
 
         <div class="nav-specsheet__text">
-          <div class="nav-specsheet__meta">
-            <div class="nav-specsheet__metaTop">ULTRALAM</div>
-            <div class="nav-specsheet__metaSub">RADIAL CARBON ULTRA PE HIGH END LAMINATE</div>
+          <div class="nav-specsheet__group" aria-label="Cloth Selection and Construction">
+            <div class="nav-specsheet__groupTitle">ULTRALAM</div>
+            <div class="nav-specsheet__groupItems">
+              <div class="nav-specsheet__item">RADIAL CARBON ULTRA PE</div>
+              <div class="nav-specsheet__item">HIGH END LAMINATE</div>
+            </div>
           </div>
 
-          <h3 class="nav-specsheet__subtitle">Cloth Selection &amp; Construction</h3>
-
-          <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">ULTRALAM</div>
-              <div class="nav-specsheet__val">RADIAL CARBON ULTRA PE HIGH END LAMINATE</div>
-            </div>
-
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">PERFORMANCE FIBERPATH</div>
-              <div class="nav-specsheet__val">CUSTOM STRING LAMINATE</div>
+          <div class="nav-specsheet__group">
+            <div class="nav-specsheet__groupTitle">PERFORMANCE FIBERPATH</div>
+            <div class="nav-specsheet__groupItems">
+              <div class="nav-specsheet__item">CUSTOM STRING LAMINATE</div>
             </div>
           </div>
 
