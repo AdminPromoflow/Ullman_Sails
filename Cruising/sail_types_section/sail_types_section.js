@@ -1,3 +1,8 @@
+/* =======================
+   sail_types_section.js — COPY & PASTE
+   (Tu slider intacto + Parallax tipo HERO al final)
+   ======================= */
+
 // Cruising - Sail Types slider (arrows + dots) - smooth wrap + no dead clicks
 (() => {
   const section = document.querySelector(".sail-types-section");
@@ -13,7 +18,7 @@
   if (!container || !scroller || boxes.length === 0) return;
 
   let index = 0;
-  let currentX = 0; // track del translate real aplicado (para duraciones dinámicas)
+  let currentX = 0;
 
   const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
@@ -29,14 +34,13 @@
     return Math.max(0, scroller.scrollWidth - container.clientWidth);
   }
 
-  // translateX real (con clamp)
   function getTranslateX(i) {
     const raw = i * getStep();
     return Math.min(raw, getMaxTranslate());
   }
 
   function nearlyEqual(a, b) {
-    return Math.abs(a - b) < 1; // tolerancia por decimales
+    return Math.abs(a - b) < 1;
   }
 
   function setActiveDot(i) {
@@ -50,11 +54,9 @@
       scroller.style.transitionDuration = "0ms";
       return;
     }
-
     const dist = Math.abs(toX - fromX);
     let ms = Math.min(900, Math.max(350, (dist / 1000) * 600));
     if (isWrap) ms = Math.min(1100, ms + 200);
-
     scroller.style.transitionDuration = `${Math.round(ms)}ms`;
   }
 
@@ -88,7 +90,6 @@
     setActiveDot(index);
   }
 
-  // Arrow Right: salta índices que no mueven y si ya estás al final real => wrap a 0
   if (btnRight) {
     btnRight.addEventListener("click", () => {
       const max = boxes.length - 1;
@@ -105,7 +106,6 @@
     });
   }
 
-  // Arrow Left: salta índices que no mueven y si ya estás al inicio real => wrap al final
   if (btnLeft) {
     btnLeft.addEventListener("click", () => {
       const max = boxes.length - 1;
@@ -122,7 +122,6 @@
     });
   }
 
-  // Dots
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
       const i = Number(dot.getAttribute("data-index"));
@@ -130,101 +129,60 @@
     });
   });
 
-  // Resize
   window.addEventListener("resize", () => {
     applyTransform(index, false);
     setActiveDot(index);
   });
 
-  // Init (sin animación)
   applyTransform(0, false);
   setActiveDot(0);
 })();
 
-
-// =========================
-// Sail Types — Parallax (title + subtitle + images) by scroll
-// =========================
+/* =========================================================
+   ADD-ON — Parallax tipo HERO (título + texto + imágenes)
+   ========================================================= */
 (() => {
   const section = document.querySelector(".sail-types-section");
   if (!section) return;
 
-  const title = section.querySelector("h2");
-  const subtitle = section.querySelector(".sail-types-subtitle");
-  const images = Array.from(section.querySelectorAll(".sail-types-box img"));
-
-  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-
-  // Si reduce motion: deja todo quieto
-  if (reduceMotion) {
-    if (title) title.style.transform = "";
-    if (subtitle) subtitle.style.transform = "";
-    images.forEach((img) => (img.style.transform = ""));
-    return;
-  }
+  const texts = Array.from(section.querySelectorAll("[data-st-parallax-text]"));
+  const imgs  = Array.from(section.querySelectorAll("[data-st-parallax-img]"));
 
   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
-  let raf = 0;
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  if (reduceMotion) return;
 
   function update() {
-    raf = 0;
-
     const rect = section.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const vh = window.innerHeight || 1;
 
-    // Solo anima cuando el bloque está cerca del viewport
-    const inView = rect.bottom > -120 && rect.top < vh + 120;
-    if (!inView) return;
+    const end = vh * 0.9;
+    const p = clamp((0 - rect.top) / end, 0, 1);
 
-    // Distancia del centro de la sección al centro del viewport
-    const sectionCenter = rect.top + rect.height * 0.5;
-    const viewportCenter = vh * 0.5;
-    const delta = sectionCenter - viewportCenter;
+    texts.forEach((el, i) => {
+      const localP = clamp(p + i * 0.06, 0, 1);
+      const y  = localP * 90;
+      const op = clamp(1 - localP * 1.25, 0, 1);
+      el.style.transform = `translate3d(0, ${y}px, 0)`;
+      el.style.opacity = op;
+    });
 
-    // Normaliza a [-1..1] (suave y estable)
-    const denom = (vh * 0.5 + rect.height * 0.5) || 1;
-    const n = clamp(delta / denom, -1, 1);
-
-    // “Cerca del centro” => 1, lejos => 0
-    const proximity = 1 - Math.abs(n);
-
-    // Ajustes de profundidad (puedes subir/bajar estos números)
-    const titleY = clamp(n * -26, -26, 26);
-    const subY   = clamp(n * -16, -16, 16);
-
-    const imgBaseY = clamp(n * 22, -22, 22);
-    const imgBaseX = clamp(n * 8, -8, 8);
-
-    // Escala muy suave (más cerca del centro = un pelín más grande)
-    const scale = 1 + (proximity * .14);
-
-    if (title) {
-      title.style.transform = `translate3d(0, ${titleY.toFixed(2)}px, 0)`;
-    }
-
-    if (subtitle) {
-      subtitle.style.transform = `translate3d(0, ${subY.toFixed(2)}px, 0)`;
-    }
-
-    // Imágenes: mismo parallax, pero con ligera variación por índice (depth)
-    images.forEach((img, i) => {
-      const depth = 0.82 + (i * 0.05); // 0.82.. (suave)
-      const x = imgBaseX * depth;
-      const y = imgBaseY * depth;
-
-      img.style.transform =
-        `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) scale(${scale.toFixed(4)})`;
+    const imgY = -p * 70;
+    imgs.forEach((img) => {
+      img.style.transform = `translate3d(0, ${imgY}px, 0)`;
     });
   }
 
-  function requestTick() {
+  let raf = 0;
+  function onScroll() {
     if (raf) return;
-    raf = window.requestAnimationFrame(update);
+    raf = requestAnimationFrame(() => {
+      raf = 0;
+      update();
+    });
   }
 
-  window.addEventListener("scroll", requestTick, { passive: true });
-  window.addEventListener("resize", requestTick);
-
-  // Init
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
   update();
 })();

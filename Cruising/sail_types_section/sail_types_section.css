@@ -1,29 +1,13 @@
+/* =======================
+   sail_types_section.css — COPY & PASTE
+   (Tu CSS + ADD-ON al final)
+   ======================= */
+
 .sail-types-section{
   position: relative;
   padding: 6vw 2vw;
 }
-/* =========================
-   Sail Types — Parallax targets
-========================= */
-.sail-types-section h2,
-.sail-types-subtitle{
-  will-change: transform;
-  transform: translate3d(0,0,0);
-}
 
-.sail-types-box img{
-  will-change: transform;
-  transform: translate3d(0,0,0);
-}
-
-/* Respeta accesibilidad */
-@media (prefers-reduced-motion: reduce){
-  .sail-types-section h2,
-  .sail-types-subtitle,
-  .sail-types-box img{
-    transform: none !important;
-  }
-}
 /* Section specific styles */
 .sail-types-section h2 {
   font-size: clamp(2.4rem, 3.6vw, 4.8rem);
@@ -63,24 +47,31 @@
   height: 450px;
   width: 510px;
   margin: 20px;
-  flex: 0 0 auto; /* importante para que no se encoja */
+  flex: 0 0 auto;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .sail-types-box img{
   position: relative;
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   display: block;
 }
 
+/* ✅ FIX: antes este <p> tenía el mismo tamaño del slide y rompía el layout/clicks */
 .sail-types-title{
-  position: relative;
-  height: 450px;
-  width: 510px;
-  margin: 20px;
-  flex: 0 0 auto; /* importante para que no se encoja */
-  cursor: pointer;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 14px 16px;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(1.05rem, 1.25vw, 1.35rem);
+  line-height: 1.2;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
 }
 
 .sail-types-scroller-container {
@@ -141,3 +132,19 @@
 
 .sail-types-arrow-left{ left: 12px; }
 .sail-types-arrow-right{ right: 12px; }
+
+/* =========================================================
+   ADD-ON — Parallax tipo HERO
+   ========================================================= */
+.sail-types-section [data-st-parallax-text],
+.sail-types-section [data-st-parallax-img]{
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .sail-types-section [data-st-parallax-text],
+  .sail-types-section [data-st-parallax-img]{
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

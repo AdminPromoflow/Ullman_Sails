@@ -1,7 +1,11 @@
 <?php
+/* =======================
+   sail_types_section.php — COPY & PASTE
+   (Solo data-attributes, NO mezclar aquí JS/CSS)
+   ======================= */
 declare(strict_types=1);
 
-/* CSS + JS */
+/* CSS + JS (filemtime) */
 $cssFs = __DIR__ . '/../Cruising/sail_types_section/sail_types_section.css';
 $jsFs  = __DIR__ . '/../Cruising/sail_types_section/sail_types_section.js';
 
@@ -11,9 +15,11 @@ $jsPublic  = '../Cruising/sail_types_section/sail_types_section.js';
 $cssV = is_file($cssFs) ? filemtime($cssFs) : null;
 $jsV  = is_file($jsFs)  ? filemtime($jsFs)  : null;
 
-/* Helper */
-function with_v(string $url, ?int $v): string {
-  return $v ? ($url . '?v=' . $v) : $url;
+/* Helper (evita "Cannot redeclare") */
+if (!function_exists('with_v')) {
+  function with_v(string $url, ?int $v): string {
+    return $v ? ($url . '?v=' . $v) : $url;
+  }
 }
 
 /* Arrows */
@@ -64,13 +70,13 @@ $slides = [
 ];
 ?>
 
-<link rel="stylesheet" href="<?= with_v($cssPublic, $cssV) ?>">
-<script defer src="<?= with_v($jsPublic, $jsV) ?>"></script>
+<link rel="stylesheet" href="<?= htmlspecialchars(with_v($cssPublic, $cssV), ENT_QUOTES, 'UTF-8') ?>">
+<script defer src="<?= htmlspecialchars(with_v($jsPublic, $jsV), ENT_QUOTES, 'UTF-8') ?>"></script>
 
 <div class="sail-types-section">
-  <h2>Discover Your <br>Perfect Sail</h2>
+  <h2 data-st-parallax-text>Discover Your <br>Perfect Sail</h2>
 
-  <p class="sail-types-subtitle">
+  <p class="sail-types-subtitle" data-st-parallax-text>
     From everyday cruising to long-distance adventures, we have a sail type to match every journey.
   </p>
 
@@ -90,12 +96,15 @@ $slides = [
         <a href="<?= htmlspecialchars($s['href'], ENT_QUOTES, 'UTF-8') ?>" class="sail-types-link">
           <div class="sail-types-box">
             <img
+              data-st-parallax-img
               src="<?= htmlspecialchars(with_v($s['imgUrl'], $imgV), ENT_QUOTES, 'UTF-8') ?>"
               alt="<?= htmlspecialchars($s['alt'], ENT_QUOTES, 'UTF-8') ?>"
               loading="lazy"
               decoding="async"
             >
-            <p class="sail-types-title"><?= htmlspecialchars($s['label'], ENT_QUOTES, 'UTF-8') ?></p>
+            <p class="sail-types-title" data-st-parallax-text>
+              <?= htmlspecialchars($s['label'], ENT_QUOTES, 'UTF-8') ?>
+            </p>
           </div>
         </a>
       <?php endforeach; ?>
