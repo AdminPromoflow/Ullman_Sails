@@ -13,6 +13,7 @@
   if (!container || !scroller || boxes.length === 0) return;
 
   let index = 0;
+  let currentX = 0; // track del translate real aplicado (para duraciones dinámicas)
 
   const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
@@ -39,6 +40,7 @@
   }
 
   function setActiveDot(i) {
+    if (!dots.length) return;
     dots.forEach((d) => d.classList.remove("is-active"));
     if (dots[i]) dots[i].classList.add("is-active");
   }
@@ -50,7 +52,6 @@
     }
 
     const dist = Math.abs(toX - fromX);
-    // duración según distancia (cap), y un poquito más si es wrap
     let ms = Math.min(900, Math.max(350, (dist / 1000) * 600));
     if (isWrap) ms = Math.min(1100, ms + 200);
 
@@ -59,21 +60,22 @@
 
   function applyTransform(i, animate = true, isWrap = false) {
     const toX = getTranslateX(i);
-    const fromX = getTranslateX(index);
+    const fromX = currentX;
 
     if (!animate) {
       scroller.classList.add("no-transition");
       scroller.style.transform = `translateX(${-toX}px)`;
       scroller.offsetWidth; // reflow
       scroller.classList.remove("no-transition");
+      currentX = toX;
       return;
     }
 
     setDynamicDuration(fromX, toX, isWrap);
     scroller.style.transform = `translateX(${-toX}px)`;
+    currentX = toX;
   }
 
-  // goTo con control de wrap smooth
   function goTo(i, { wrap = false } = {}) {
     const max = boxes.length - 1;
 
@@ -81,20 +83,12 @@
     if (target < 0) target = max;
     if (target > max) target = 0;
 
-    // importante: animamos desde el index actual hacia target
-    const prevIndex = index;
     index = target;
-
     applyTransform(index, true, wrap);
     setActiveDot(index);
-
-    // si por alguna razón no cambió visualmente, al menos no dejes dots raros
-    if (nearlyEqual(getTranslateX(prevIndex), getTranslateX(index))) {
-      // mantiene coherencia; no hace nada extra
-    }
   }
 
-  // ---- Arrow Right: salta índices que no mueven y si ya estás al final real => wrap smooth a 0
+  // Arrow Right: salta índices que no mueven y si ya estás al final real => wrap a 0
   if (btnRight) {
     btnRight.addEventListener("click", () => {
       const max = boxes.length - 1;
@@ -102,19 +96,16 @@
 
       let next = index + 1;
 
-      // si se pasó, wrap directo
       if (next > max) return goTo(0, { wrap: true });
 
-      // saltar índices que no cambian el translate (dead clicks)
       while (next <= max && nearlyEqual(getTranslateX(next), curX)) next++;
 
-      // si no hay más movimiento real, wrap al inicio (smooth)
       if (next > max) goTo(0, { wrap: true });
       else goTo(next);
     });
   }
 
-  // ---- Arrow Left: salta índices que no mueven y si ya estás al inicio real => wrap smooth al final
+  // Arrow Left: salta índices que no mueven y si ya estás al inicio real => wrap al final
   if (btnLeft) {
     btnLeft.addEventListener("click", () => {
       const max = boxes.length - 1;
@@ -141,19 +132,99 @@
 
   // Resize
   window.addEventListener("resize", () => {
-    scroller.style.transitionDuration = "0ms";
-    scroller.classList.add("no-transition");
-    scroller.style.transform = `translateX(${-getTranslateX(index)}px)`;
-    scroller.offsetWidth;
-    scroller.classList.remove("no-transition");
+    applyTransform(index, false);
     setActiveDot(index);
   });
 
   // Init (sin animación)
-  scroller.style.transitionDuration = "0ms";
-  scroller.classList.add("no-transition");
-  scroller.style.transform = `translateX(0px)`;
-  scroller.offsetWidth;
-  scroller.classList.remove("no-transition");
+  applyTransform(0, false);
   setActiveDot(0);
+})();
+
+
+// =========================
+// Sail Types — Parallax (title + subtitle + images) by scroll
+// =========================
+(() => {
+  const section = document.querySelector(".sail-types-section");
+  if (!section) return;
+
+  const title = section.querySelector("h2");
+  const subtitle = section.querySelector(".sail-types-subtitle");
+  const images = Array.from(section.querySelectorAll(".sail-types-box img"));
+
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+  // Si reduce motion: deja todo quieto
+  if (reduceMotion) {
+    if (title) title.style.transform = "";
+    if (subtitle) subtitle.style.transform = "";
+    images.forEach((img) => (img.style.transform = ""));
+    return;
+  }
+
+  const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+  let raf = 0;
+
+  function update() {
+    raf = 0;
+
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+
+    // Solo anima cuando el bloque está cerca del viewport
+    const inView = rect.bottom > -120 && rect.top < vh + 120;
+    if (!inView) return;
+
+    // Distancia del centro de la sección al centro del viewport
+    const sectionCenter = rect.top + rect.height * 0.5;
+    const viewportCenter = vh * 0.5;
+    const delta = sectionCenter - viewportCenter;
+
+    // Normaliza a [-1..1] (suave y estable)
+    const denom = (vh * 0.5 + rect.height * 0.5) || 1;
+    const n = clamp(delta / denom, -1, 1);
+
+    // “Cerca del centro” => 1, lejos => 0
+    const proximity = 1 - Math.abs(n);
+
+    // Ajustes de profundidad (puedes subir/bajar estos números)
+    const titleY = clamp(n * -26, -26, 26);
+    const subY   = clamp(n * -16, -16, 16);
+
+    const imgBaseY = clamp(n * 22, -22, 22);
+    const imgBaseX = clamp(n * 8, -8, 8);
+
+    // Escala muy suave (más cerca del centro = un pelín más grande)
+    const scale = 1 + (proximity * .14);
+
+    if (title) {
+      title.style.transform = `translate3d(0, ${titleY.toFixed(2)}px, 0)`;
+    }
+
+    if (subtitle) {
+      subtitle.style.transform = `translate3d(0, ${subY.toFixed(2)}px, 0)`;
+    }
+
+    // Imágenes: mismo parallax, pero con ligera variación por índice (depth)
+    images.forEach((img, i) => {
+      const depth = 0.82 + (i * 0.05); // 0.82.. (suave)
+      const x = imgBaseX * depth;
+      const y = imgBaseY * depth;
+
+      img.style.transform =
+        `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) scale(${scale.toFixed(4)})`;
+    });
+  }
+
+  function requestTick() {
+    if (raf) return;
+    raf = window.requestAnimationFrame(update);
+  }
+
+  window.addEventListener("scroll", requestTick, { passive: true });
+  window.addEventListener("resize", requestTick);
+
+  // Init
+  update();
 })();

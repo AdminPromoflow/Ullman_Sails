@@ -13,9 +13,7 @@
      overflow-x: hidden;
      padding: 1rem;
    }
-   p {
-     font-size: clamp(1rem, 1.2vw, 1.4rem);
-   }
+   
 
    h3 {
      font-size: clamp(1.2rem, 1.5vw, 1.6rem);

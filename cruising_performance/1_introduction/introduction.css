@@ -64,14 +64,14 @@
 /* Título */
 .sailing-content h1{
   line-height: 1.12;
-text-align: center;
-padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
-font-size: clamp(3rem, 4.5vw, 6rem);
-font-weight: 600;
-max-width: 18ch;
-margin: auto;
-color: #005598;
-text-align: center;
+  text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
+  max-width: 18ch;
+  margin: auto;
+  color: #005598;
+  text-align: center;
 }
 
 @supports (text-wrap: balance){

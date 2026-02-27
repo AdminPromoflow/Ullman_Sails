@@ -10,9 +10,17 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
 
 <section class="cruising-section" aria-labelledby="cruising-title">
-  <p class="cruising-label">Essential</p>
+  <div class="img-title-sailing-content">
+      <img
+        src="../cruising_navigator/1_introduction/img/ullman_sails.png"
+        alt="Ullman Sails"
+        decoding="async"
+        width="240"
+        height="72"
+      >
+    </div>
 
-  <h2 id="cruising-title" class="cruising-title">Cruising sails</h2>
+  <h1 id="cruising-title" class="cruising-title">Cruising sails</h1>
 
   <p class="cruising-subtitle">
     When it comes to cruising sails, durability and ease of use are key. The Navigator Series, Endurance Series,

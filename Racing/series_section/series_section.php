@@ -13,7 +13,7 @@ $img3Time = filemtime('../Racing/series_section/img/red_line.jpg');
   <!-- Race Series-->
   <section class="series-section" aria-labelledby="series-title-navigator">
     <header class="series-header">
-      <p class="series-subtitle">EXPLORE</p>
+      <p class="series-subtitle">Racing Sails</p>
       <h2 id="series-title-navigator" class="series-title">Race Series</h2>
     </header>
 
@@ -76,7 +76,7 @@ $img3Time = filemtime('../Racing/series_section/img/red_line.jpg');
   <!-- The Axia Series – Red Line -->
   <section class="series-section is-reversed" aria-labelledby="series-title-race">
     <header class="series-header">
-      <p class="series-subtitle">EXPLORE DOWNWIND</p>
+      <p class="series-subtitle">Racing Sails DOWNWIND</p>
       <h2 id="series-title-race" class="series-title">The Axia Series – Red Line</h2>
 
     </header>

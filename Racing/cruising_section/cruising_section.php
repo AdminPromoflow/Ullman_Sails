@@ -11,9 +11,17 @@ $img4Time = filemtime('../Racing/cruising_section/img/racing_section.jpg');
 <link rel="stylesheet" href="../Racing/cruising_section/cruising_section.css?v=<?= $cssTime ?>">
 
 <section class="cruising-section" aria-labelledby="cruising-title">
-  <p class="cruising-label">Essential</p>
+  <div class="img-title-sailing-content">
+      <img
+        src="../cruising_navigator/1_introduction/img/ullman_sails.png"
+        alt="Ullman Sails"
+        decoding="async"
+        width="240"
+        height="72"
+      >
+    </div>
 
-  <h2 id="cruising-title" class="cruising-title">Racing sails</h2>
+    <h2 id="cruising-title" class="cruising-title">Racing Sails</h2>
 
   <p class="cruising-subtitle">
     When it comes to cruising sails, durability and ease of use are key. The Navigator Series, Endurance Series,

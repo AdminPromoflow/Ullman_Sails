@@ -28,7 +28,7 @@ $imgArrowRightTime = filemtime('../Racing/sail_types_section/img/arrow_right.png
 <link rel="stylesheet" href="<?= $cssUrl ?>?v=<?= $cssVer ?>">
 
 <div class="sail-types-section">
-  <h1 class="sail-types-title">Discover Your Perfect Sail</h1>
+  <h2 class="sail-types-title">Discover Your <br>Perfect Sail</h2>
   <p class="sail-types-subtitle">
     From everyday cruising to long-distance adventures, we have a sail type to match every journey.
   </p>

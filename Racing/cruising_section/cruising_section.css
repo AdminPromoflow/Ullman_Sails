@@ -9,65 +9,76 @@
   --cs-shadow:0 18px 45px rgba(15,33,64,.10);
   --cs-soft:0 10px 26px rgba(15,33,64,.08);
 
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 55%, #ffffff 100%);
-  padding: 5vw 20px 8vw 20px;
+  background: #fafafa;
+  padding-top: 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  flex-direction: column;
 }
 
-/* sutil brillo diagonal */
+/* sutil brillo diagonal más sutil */
 .cruising-section::before{
   content:"";
   position:absolute;
   inset:-40% -30%;
-  background: radial-gradient(closest-side, rgba(15,33,64,.06), transparent 65%);
+  background: radial-gradient(closest-side, rgba(15,33,64,.04), transparent 70%);
   transform: rotate(-10deg);
   pointer-events:none;
-  opacity: .9;
+  opacity: .7;
 }
 
 /* ---- Estado inicial (antes de revelar) ---- */
-.cruising-label,
 .cruising-title,
 .cruising-subtitle,
 .cruising-icons,
-.cruising-image{
+.cruising-image,
+.img-title-sailing-content {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity .7s ease, transform .7s ease;
 }
 
 /* ---- Reveal ---- */
-.cruising-section.is-visible .cruising-label{ transition-delay: .05s; opacity:1; transform: translateY(0); }
-.cruising-section.is-visible .cruising-title{ transition-delay: .12s; opacity:1; transform: translateY(0); }
-.cruising-section.is-visible .cruising-subtitle{ transition-delay: .18s; opacity:1; transform: translateY(0); }
-.cruising-section.is-visible .cruising-icons{ transition-delay: .25s; opacity:1; transform: translateY(0); }
-.cruising-section.is-visible .cruising-image{ transition-delay: .30s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .img-title-sailing-content { transition-delay: .05s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .cruising-title { transition-delay: .12s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .cruising-subtitle { transition-delay: .18s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .cruising-icons { transition-delay: .25s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .cruising-image { transition-delay: .30s; opacity:1; transform: translateY(0); }
 
-/* Label */
-.cruising-label{
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  width: 100%;
-  color: var(--cs-muted);
-  position: relative;
-  z-index: 1;
+/* Logo container */
+.img-title-sailing-content{
+  width: clamp(140px, 28vw, 240px);
+  margin: 0 auto 1rem;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Title */
-.cruising-title{
-  position: relative;
-  font-size: clamp(3rem, 5vw, 6rem);
-  font-weight: 600;
-  max-width: 18ch;
-  margin: 15px auto 20px;
-  color: #005598;
-  line-height: 1.05;
-  z-index: 1;
+.img-title-sailing-content:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.img-title-sailing-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Title - Specific class for backward compatibility */
+.cruising-title {
+  font-size: clamp(2.4rem, 3.6vw, 4.8rem);
+line-height: 1.2;
+margin: 0.5rem 0 1.25rem 0;
+color: #005598;
+text-align: center;
+max-width: 22ch;
+margin-inline: auto;
 }
 
 /* subrayado elegante */

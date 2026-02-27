@@ -1,116 +1,111 @@
 <?php
+declare(strict_types=1);
+
 /* CSS + JS */
-$cssFile = __DIR__ . '/../Cruising/sail_types_section/sail_types_section.css';
-$jsFile  = __DIR__ . '/../Cruising/sail_types_section/sail_types_section.js';
+$cssFs = __DIR__ . '/../Cruising/sail_types_section/sail_types_section.css';
+$jsFs  = __DIR__ . '/../Cruising/sail_types_section/sail_types_section.js';
 
-$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
-$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+$cssPublic = '../Cruising/sail_types_section/sail_types_section.css';
+$jsPublic  = '../Cruising/sail_types_section/sail_types_section.js';
 
-/* Images */
-$imgNavigatorFile   = __DIR__ . '/../Cruising/sail_types_section/img/Navigator.png';
-$imgEnduranceFile   = __DIR__ . '/../Cruising/sail_types_section/img/Endurance.png';
-$imgVoyagerFile     = __DIR__ . '/../Cruising/sail_types_section/img/Voyager.png';
-$imgPerformanceFile = __DIR__ . '/../Cruising/sail_types_section/img/Performance.png';
-$imgDownwindFile    = __DIR__ . '/../Cruising/sail_types_section/img/Downwind.png';
+$cssV = is_file($cssFs) ? filemtime($cssFs) : null;
+$jsV  = is_file($jsFs)  ? filemtime($jsFs)  : null;
 
-$imgArrowLeftFile   = __DIR__ . '/../Cruising/sail_types_section/img/arrow_left.png';
-$imgArrowRightFile  = __DIR__ . '/../Cruising/sail_types_section/img/arrow_right.png';
+/* Helper */
+function with_v(string $url, ?int $v): string {
+  return $v ? ($url . '?v=' . $v) : $url;
+}
 
-$imgNavigatorV   = is_file($imgNavigatorFile)   ? filemtime($imgNavigatorFile)   : null;
-$imgEnduranceV   = is_file($imgEnduranceFile)   ? filemtime($imgEnduranceFile)   : null;
-$imgVoyagerV     = is_file($imgVoyagerFile)     ? filemtime($imgVoyagerFile)     : null;
-$imgPerformanceV = is_file($imgPerformanceFile) ? filemtime($imgPerformanceFile) : null;
-$imgDownwindV    = is_file($imgDownwindFile)    ? filemtime($imgDownwindFile)    : null;
+/* Arrows */
+$arrowLeftFs   = __DIR__ . '/../Cruising/sail_types_section/img/arrow_left.png';
+$arrowRightFs  = __DIR__ . '/../Cruising/sail_types_section/img/arrow_right.png';
+$arrowLeftUrl  = '../Cruising/sail_types_section/img/arrow_left.png';
+$arrowRightUrl = '../Cruising/sail_types_section/img/arrow_right.png';
+$arrowLeftV    = is_file($arrowLeftFs)  ? filemtime($arrowLeftFs)  : null;
+$arrowRightV   = is_file($arrowRightFs) ? filemtime($arrowRightFs) : null;
 
-$imgArrowLeftV   = is_file($imgArrowLeftFile)   ? filemtime($imgArrowLeftFile)   : null;
-$imgArrowRightV  = is_file($imgArrowRightFile)  ? filemtime($imgArrowRightFile)  : null;
+/* Slides */
+$slides = [
+  [
+    'href'  => '../cruising_navigator/index.php',
+    'imgFs' => __DIR__ . '/../Cruising/sail_types_section/img/Navigator.png',
+    'imgUrl'=> '../Cruising/sail_types_section/img/Navigator.png',
+    'alt'   => 'Navigator',
+    'label' => 'Navigator Series',
+  ],
+  [
+    'href'  => '../cruising_endurance/index.php',
+    'imgFs' => __DIR__ . '/../Cruising/sail_types_section/img/Endurance.png',
+    'imgUrl'=> '../Cruising/sail_types_section/img/Endurance.png',
+    'alt'   => 'Endurance',
+    'label' => 'Endurance Series',
+  ],
+  [
+    'href'  => '../cruising_voyager/index.php',
+    'imgFs' => __DIR__ . '/../Cruising/sail_types_section/img/Voyager.png',
+    'imgUrl'=> '../Cruising/sail_types_section/img/Voyager.png',
+    'alt'   => 'Voyager',
+    'label' => 'Voyager Series',
+  ],
+  [
+    'href'  => '../cruising_performance/index.php',
+    'imgFs' => __DIR__ . '/../Cruising/sail_types_section/img/Performance.png',
+    'imgUrl'=> '../Cruising/sail_types_section/img/Performance.png',
+    'alt'   => 'Performance',
+    'label' => 'Performance',
+  ],
+  [
+    'href'  => '../cruising_downwind/index.php',
+    'imgFs' => __DIR__ . '/../Cruising/sail_types_section/img/Downwind.png',
+    'imgUrl'=> '../Cruising/sail_types_section/img/Downwind.png',
+    'alt'   => 'Downwind',
+    'label' => 'Downwind',
+  ],
+];
 ?>
 
-<link rel="stylesheet" href="../Cruising/sail_types_section/sail_types_section.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
-
-<script defer src="../Cruising/sail_types_section/sail_types_section.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>"></script>
-
-<!-- Example image URLs (use these in <img src="...">) -->
-<?php
-$imgNavigatorUrl   = '../Cruising/sail_types_section/img/Navigator.png'   . ($imgNavigatorV   ? '?v='.$imgNavigatorV   : '');
-$imgEnduranceUrl   = '../Cruising/sail_types_section/img/Endurance.png'   . ($imgEnduranceV   ? '?v='.$imgEnduranceV   : '');
-$imgVoyagerUrl     = '../Cruising/sail_types_section/img/Voyager.png'     . ($imgVoyagerV     ? '?v='.$imgVoyagerV     : '');
-$imgPerformanceUrl = '../Cruising/sail_types_section/img/Performance.png' . ($imgPerformanceV ? '?v='.$imgPerformanceV : '');
-$imgDownwindUrl    = '../Cruising/sail_types_section/img/Downwind.png'    . ($imgDownwindV    ? '?v='.$imgDownwindV    : '');
-
-$imgArrowLeftUrl   = '../Cruising/sail_types_section/img/arrow_left.png'  . ($imgArrowLeftV   ? '?v='.$imgArrowLeftV   : '');
-$imgArrowRightUrl  = '../Cruising/sail_types_section/img/arrow_right.png' . ($imgArrowRightV  ? '?v='.$imgArrowRightV  : '');
-?>
-
-
-<link rel="stylesheet" href="<?= $cssUrl ?>?v=<?= $cssVer ?>">
+<link rel="stylesheet" href="<?= with_v($cssPublic, $cssV) ?>">
+<script defer src="<?= with_v($jsPublic, $jsV) ?>"></script>
 
 <div class="sail-types-section">
-  <h1 class="sail-types-title">Discover Your Perfect Sail</h1>
+  <h2>Discover Your <br>Perfect Sail</h2>
+
   <p class="sail-types-subtitle">
     From everyday cruising to long-distance adventures, we have a sail type to match every journey.
   </p>
 
   <div class="sail-types-container">
 
-    <!-- Flecha izquierda -->
     <button class="sail-types-arrow sail-types-arrow-left" type="button" aria-label="Previous">
-      <img src="../Cruising/sail_types_section/img/arrow_left.png?v=<?= $imgArrowLeftTime; ?>" alt="">
+      <img src="<?= htmlspecialchars(with_v($arrowLeftUrl, $arrowLeftV), ENT_QUOTES, 'UTF-8') ?>" alt="">
     </button>
 
-    <!-- Flecha derecha -->
     <button class="sail-types-arrow sail-types-arrow-right" type="button" aria-label="Next">
-      <img src="../Cruising/sail_types_section/img/arrow_right.png?v=<?= $imgArrowRightTime; ?>" alt="">
+      <img src="<?= htmlspecialchars(with_v($arrowRightUrl, $arrowRightV), ENT_QUOTES, 'UTF-8') ?>" alt="">
     </button>
 
     <div class="sail-types-scroller-container">
-      <a href="../cruising_navigator/index.php" class="sail-types-link">
-        <div class="sail-types-box">
-          <img src="../Cruising/sail_types_section/img/Navigator.png?v=<?= $imgNavigatorTime; ?>" alt="Navigator">
-          <p>Navigator Series</p>
-        </div>
-      </a>
+      <?php foreach ($slides as $i => $s): ?>
+        <?php $imgV = is_file($s['imgFs']) ? filemtime($s['imgFs']) : null; ?>
+        <a href="<?= htmlspecialchars($s['href'], ENT_QUOTES, 'UTF-8') ?>" class="sail-types-link">
+          <div class="sail-types-box">
+            <img
+              src="<?= htmlspecialchars(with_v($s['imgUrl'], $imgV), ENT_QUOTES, 'UTF-8') ?>"
+              alt="<?= htmlspecialchars($s['alt'], ENT_QUOTES, 'UTF-8') ?>"
+              loading="lazy"
+              decoding="async"
+            >
+            <p class="sail-types-title"><?= htmlspecialchars($s['label'], ENT_QUOTES, 'UTF-8') ?></p>
+          </div>
+        </a>
+      <?php endforeach; ?>
+    </div>
 
-      <a href="../cruising_endurance/index.php" class="sail-types-link">
-        <div class="sail-types-box">
-          <img src="../Cruising/sail_types_section/img/Endurance.png?v=<?= $imgEnduranceTime; ?>" alt="Endurance">
-          <p>Endurance Series</p>
-        </div>
-      </a>
-
-      <a href="../cruising_voyager/index.php" class="sail-types-link">
-        <div class="sail-types-box">
-          <img src="../Cruising/sail_types_section/img/Voyager.png?v=<?= $imgVoyagerTime; ?>" alt="Voyager">
-          <p>Voyager Series</p>
-        </div>
-      </a>
-
-      <a href="../cruising_performance/index.php" class="sail-types-link">
-        <div class="sail-types-box">
-          <img src="../Cruising/sail_types_section/img/Performance.png?v=<?= $imgPerformanceTime; ?>" alt="Performance">
-          <p>Performance</p>
-        </div>
-      </a>
-
-      <a href="../cruising_downwind/index.php" class="sail-types-link">
-        <div class="sail-types-box">
-          <img src="../Cruising/sail_types_section/img/Downwind.png?v=<?= $imgDownwindTime; ?>" alt="Downwind">
-          <p>Downwind</p>
-        </div>
-      </a>
-
-
-    <!-- Dots visibles -->
     <div class="sail-types-dots" aria-label="Slider dots">
-      <span class="sail-types-dot is-active" data-index="0"></span>
-      <span class="sail-types-dot" data-index="1"></span>
-      <span class="sail-types-dot" data-index="2"></span>
-      <span class="sail-types-dot" data-index="3"></span>
-      <span class="sail-types-dot" data-index="4"></span>
+      <?php for ($i = 0; $i < count($slides); $i++): ?>
+        <span class="sail-types-dot<?= $i === 0 ? ' is-active' : '' ?>" data-index="<?= $i ?>"></span>
+      <?php endfor; ?>
     </div>
 
   </div>
 </div>
-</div>
-
-<script defer src="<?= $jsUrl ?>?v=<?= $jsVer ?>"></script>

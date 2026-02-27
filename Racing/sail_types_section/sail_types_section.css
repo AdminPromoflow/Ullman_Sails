@@ -3,20 +3,26 @@
   padding: 6vw 2vw 6vw 2vw;
 }
 .sail-types-title {
-  position: relative;
-  font-size: clamp(3rem, 5vw, 6rem);
-  font-weight: 600;
+  line-height: 1.12;
   text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(2.4rem, 3.6vw, 4.8rem);
+  font-weight: 600;
+  max-width: 18ch;
   margin: auto;
-  max-width: 90vw;
   color: #005598;
+  text-align: center;
 }
 
 .sail-types-subtitle {
-  font-size: 1.5em;
-  width: 100%;
+  font-size: clamp(1.05rem, 1.6vw, 1.5rem);
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  color: #5f6b7a;
   text-align: center;
-  margin: 1.6vw 0;
+  max-width: 65ch;
+  margin: auto;
+
 }
 
 .sail-types-container {
@@ -34,6 +40,8 @@
   margin: 20px;
   flex: 0 0 auto; /* importante para que no se encoja */
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .sail-types-box img{

@@ -1,176 +1,177 @@
-<?php
-declare(strict_types=1);
-
-function esc(string $value): string {
-  return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-}
-
-function versioned_asset(string $publicPath, string $fsPath): string {
-  if (!is_file($fsPath)) {
-    return $publicPath; // fallback limpio: sin v=
-  }
-  $v = filemtime($fsPath);
-  $sep = str_contains($publicPath, '?') ? '&' : '?';
-  return $publicPath . $sep . 'v=' . $v;
-}
-
-/* =========================
-   CHANGED: CSS/JS paths in the “previous format”
-========================= */
-$cssFile = __DIR__ . '/../Cruising/series_section/series_section.css';
-$jsFile  = __DIR__ . '/../Cruising/series_section/series_section.js';
-
-$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
-$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
-
-$cssHref = '../Cruising/series_section/series_section.css' . ($cssVersion ? '?v='.$cssVersion : '');
-$jsSrc   = '../Cruising/series_section/series_section.js'  . ($jsVersion  ? '?v='.$jsVersion  : '');
-
-/* =========================
-   CHANGED: Image paths in the “previous format”
-========================= */
-$imgNavigatorFile   = __DIR__ . '/../Cruising/sail_types_section/img/Navigator.png';
-$imgEnduranceFile   = __DIR__ . '/../Cruising/sail_types_section/img/Endurance.png';
-$imgVoyagerFile     = __DIR__ . '/../Cruising/sail_types_section/img/Voyager.png';
-$imgPerformanceFile = __DIR__ . '/../Cruising/sail_types_section/img/Performance.png';
-$imgDownwindFile    = __DIR__ . '/../Cruising/sail_types_section/img/Downwind.png';
-
-$imgNavigatorV   = is_file($imgNavigatorFile)   ? filemtime($imgNavigatorFile)   : null;
-$imgEnduranceV   = is_file($imgEnduranceFile)   ? filemtime($imgEnduranceFile)   : null;
-$imgVoyagerV     = is_file($imgVoyagerFile)     ? filemtime($imgVoyagerFile)     : null;
-$imgPerformanceV = is_file($imgPerformanceFile) ? filemtime($imgPerformanceFile) : null;
-$imgDownwindV    = is_file($imgDownwindFile)    ? filemtime($imgDownwindFile)    : null;
-
-$imgNavigatorUrl   = '../Cruising/sail_types_section/img/Navigator.png'   . ($imgNavigatorV   ? '?v='.$imgNavigatorV   : '');
-$imgEnduranceUrl   = '../Cruising/sail_types_section/img/Endurance.png'   . ($imgEnduranceV   ? '?v='.$imgEnduranceV   : '');
-$imgVoyagerUrl     = '../Cruising/sail_types_section/img/Voyager.png'     . ($imgVoyagerV     ? '?v='.$imgVoyagerV     : '');
-$imgPerformanceUrl = '../Cruising/sail_types_section/img/Performance.png' . ($imgPerformanceV ? '?v='.$imgPerformanceV : '');
-$imgDownwindUrl    = '../Cruising/sail_types_section/img/Downwind.png'    . ($imgDownwindV    ? '?v='.$imgDownwindV    : '');
-
-// Data
-$series = [
-  [
-    'key'     => 'navigator',
-    'title'   => 'Navigator Series',
-    'code'    => 'NAVIGATOR',
-    'tagline' => 'Built for Everyday Cruising',
-    'img'     => $imgNavigatorUrl,
-    'alt'     => 'Navigator Series cruising sails',
-    'href'    => '../Cruising-1.Navigator/index.php',
-    'body'    => [
-      'The Navigator Series is designed for reliable, all-round cruising. A balanced build helps maintain shape and deliver consistent handling across a wide range of conditions.',
-      'Practical construction and thoughtful detailing make it a dependable choice for regular sailing and long seasons.',
-    ],
-    'clothName' => 'NAVIGATOR DACRON',
-    'clothText' => 'A proven Dacron option focused on durability, easy care, and long-term cruising performance.',
-    'reversed'  => false,
-  ],
-  [
-    'key'     => 'endurance',
-    'title'   => 'Endurance Series',
-    'code'    => 'ENDURANCE',
-    'tagline' => 'Built for Longer Seasons & Heavy Use',
-    'img'     => $imgEnduranceUrl,
-    'alt'     => 'Endurance Series cruising sails',
-    'href'    => '../Cruising-2.Endurance/index.php',
-    'body'    => [
-      'The Endurance Series is designed for cruisers who sail often and want extra longevity. Reinforcements are focused on high-load areas to reduce wear over time.',
-      'A tougher build approach helps the sail hold shape longer, cope with repeated hoists, and stay dependable in a wider range of real-world conditions.',
-    ],
-    'clothName' => 'ENDURANCE DACRON',
-    'clothText' => 'A more robust Dacron option aimed at durability and long-term cruising reliability, with practical details and a clean, hard-wearing finish.',
-    'reversed'  => true,
-  ],
-  [
-    'key'     => 'voyager',
-    'title'   => 'Voyager Series',
-    'code'    => 'VOYAGER',
-    'tagline' => 'Built for Smooth Handling & Versatility',
-    'img'     => $imgVoyagerUrl,
-    'alt'     => 'Voyager Series cruising sails',
-    'href'    => '../Cruising-3.Voyager/index.php',
-    'body'    => [
-      'The Voyager Series is aimed at comfortable cruising with a focus on balanced handling and dependable shape.',
-      'Designed to feel easy on the winches and predictable across changing conditions.',
-    ],
-    'clothName' => 'VOYAGER DACRON',
-    'clothText' => 'A cruising-focused cloth choice for reliable performance and everyday durability.',
-    'reversed'  => false,
-  ],
-  [
-    'key'     => 'expedition',
-    'title'   => 'Expedition Series',
-    'code'    => 'EXPEDITION',
-    'tagline' => 'Built for Distance & Demanding Conditions',
-    'img'     => $imgPerformanceUrl,
-    'alt'     => 'Expedition Series cruising sails',
-    'href'    => '../Cruising-4.Expedition/index.php',
-    'body'    => [
-      'The Expedition Series is built for sailors planning longer passages and wanting a stronger, confidence-inspiring build.',
-      'Extra structure and reinforcement help keep the sail stable and reliable when conditions build.',
-    ],
-    'clothName' => 'EXPEDITION CLOTH',
-    'clothText' => 'A tougher specification aimed at durability and shape retention for extended cruising.',
-    'reversed'  => true,
-  ],
-  [
-    'key'     => 'blueline',
-    'title'   => 'Blue Line Spinnakers',
-    'code'    => 'BLUE LINE',
-    'tagline' => 'Built for Downwind Enjoyment',
-    'img'     => $imgDownwindUrl,
-    'alt'     => 'Blue Line Spinnakers downwind sails',
-    'href'    => '../Cruising-5.BlueLineSpinnakers/index.php',
-    'body'    => [
-      'Blue Line Spinnakers are designed to make downwind sailing more fun, stable, and efficient—ideal for cruising programs.',
-      'A focus on easy trimming and dependable flying shape helps keep the experience smooth and enjoyable.',
-    ],
-    'clothName' => 'SPINNAKER CLOTH',
-    'clothText' => 'A purpose-built cloth selection for downwind sails, balancing stability, strength, and handling.',
-    'reversed'  => false,
-  ],
-];
-?>
-
-<link rel="stylesheet" href="<?= esc($cssHref) ?>">
+<link rel="stylesheet" href="../Cruising/series_section/series_section.css">
 
 <div class="series-list">
-  <?php foreach ($series as $s): ?>
-    <?php $titleId = 'series-title-' . $s['key']; ?>
-    <section class="series-section<?= $s['reversed'] ? ' is-reversed' : '' ?>" aria-labelledby="<?= esc($titleId) ?>">
-      <header class="series-header">
-        <p class="series-subtitle">EXPLORE</p>
-        <h2 id="<?= esc($titleId) ?>" class="series-title"><?= esc($s['title']) ?></h2>
-      </header>
 
-      <div class="series-container">
-        <figure class="series-image">
-          <img
-            src="<?= esc($s['img']) ?>"
-            alt="<?= esc($s['alt']) ?>"
-            loading="lazy"
-            decoding="async"
-          />
-          <!-- <a class="view-brochure" href="<?= esc($s['href']) ?>">View Brochure</a> -->
-        </figure>
+  <!-- Navigator Series -->
+  <section class="series-section" aria-labelledby="series-title-navigator">
+    <header class="series-header">
+      <p class="series-subtitle">Cruising sails</p>
+      <h2 id="series-title-navigator" class="series-title">Navigator Series</h2>
+    </header>
 
-        <div class="series-text">
-          <h3 class="series-code"><?= esc($s['code']) ?></h3>
-          <p class="series-tagline"><?= esc($s['tagline']) ?></p>
+    <div class="series-container">
+      <figure class="series-image">
+        <img
+          src="../Cruising/sail_types_section/img/Navigator.png"
+          alt="Navigator Series cruising sails"
+          loading="lazy"
+          decoding="async"
+        />
+        <!-- <a class="view-brochure" href="../Cruising-1.Navigator/index.php">View Brochure</a> -->
+      </figure>
 
-          <?php foreach ($s['body'] as $p): ?>
-            <p><?= esc($p) ?></p>
-          <?php endforeach; ?>
+      <div class="series-text">
+        <h3 class="series-code">NAVIGATOR</h3>
+        <p class="series-tagline">Built for Everyday Cruising</p>
 
-          <hr class="series-divider" aria-hidden="true">
+        <p>The Navigator Series is designed for reliable, all-round cruising. A balanced build helps maintain shape and deliver consistent handling across a wide range of conditions.</p>
+        <p>Practical construction and thoughtful detailing make it a dependable choice for regular sailing and long seasons.</p>
 
-          <h4 class="series-cloth">Cloth <em>Selection</em></h4>
-          <p><strong><?= esc($s['clothName']) ?></strong></p>
-          <p><?= esc($s['clothText']) ?></p>
-        </div>
+        <hr class="series-divider" aria-hidden="true">
+
+        <h4 class="series-cloth">Cloth <em>Selection</em></h4>
+        <p><strong>NAVIGATOR DACRON</strong></p>
+        <p>A proven Dacron option focused on durability, easy care, and long-term cruising performance.</p>
       </div>
-    </section>
-  <?php endforeach; ?>
+    </div>
+  </section>
+
+  <!-- Endurance Series -->
+  <section class="series-section is-reversed" aria-labelledby="series-title-endurance">
+    <header class="series-header">
+      <p class="series-subtitle">Cruising sails</p>
+      <h2 id="series-title-endurance" class="series-title">Endurance Series</h2>
+    </header>
+
+    <div class="series-container">
+      <figure class="series-image">
+        <img
+          src="../Cruising/sail_types_section/img/Endurance.png"
+          alt="Endurance Series cruising sails"
+          loading="lazy"
+          decoding="async"
+        />
+        <!-- <a class="view-brochure" href="../Cruising-2.Endurance/index.php">View Brochure</a> -->
+      </figure>
+
+      <div class="series-text">
+        <h3 class="series-code">ENDURANCE</h3>
+        <p class="series-tagline">Built for Longer Seasons &amp; Heavy Use</p>
+
+        <p>The Endurance Series is designed for cruisers who sail often and want extra longevity. Reinforcements are focused on high-load areas to reduce wear over time.</p>
+        <p>A tougher build approach helps the sail hold shape longer, cope with repeated hoists, and stay dependable in a wider range of real-world conditions.</p>
+
+        <hr class="series-divider" aria-hidden="true">
+
+        <h4 class="series-cloth">Cloth <em>Selection</em></h4>
+        <p><strong>ENDURANCE DACRON</strong></p>
+        <p>A more robust Dacron option aimed at durability and long-term cruising reliability, with practical details and a clean, hard-wearing finish.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voyager Series -->
+  <section class="series-section" aria-labelledby="series-title-voyager">
+    <header class="series-header">
+      <p class="series-subtitle">Cruising sails</p>
+      <h2 id="series-title-voyager" class="series-title">Voyager Series</h2>
+    </header>
+
+    <div class="series-container">
+      <figure class="series-image">
+        <img
+          src="../Cruising/sail_types_section/img/Voyager.png"
+          alt="Voyager Series cruising sails"
+          loading="lazy"
+          decoding="async"
+        />
+        <!-- <a class="view-brochure" href="../Cruising-3.Voyager/index.php">View Brochure</a> -->
+      </figure>
+
+      <div class="series-text">
+        <h3 class="series-code">VOYAGER</h3>
+        <p class="series-tagline">Built for Smooth Handling &amp; Versatility</p>
+
+        <p>The Voyager Series is aimed at comfortable cruising with a focus on balanced handling and dependable shape.</p>
+        <p>Designed to feel easy on the winches and predictable across changing conditions.</p>
+
+        <hr class="series-divider" aria-hidden="true">
+
+        <h4 class="series-cloth">Cloth <em>Selection</em></h4>
+        <p><strong>VOYAGER DACRON</strong></p>
+        <p>A cruising-focused cloth choice for reliable performance and everyday durability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expedition Series -->
+  <section class="series-section is-reversed" aria-labelledby="series-title-expedition">
+    <header class="series-header">
+      <p class="series-subtitle">Cruising sails</p>
+      <h2 id="series-title-expedition" class="series-title">Expedition Series</h2>
+    </header>
+
+    <div class="series-container">
+      <figure class="series-image">
+        <img
+          src="../Cruising/sail_types_section/img/Performance.png"
+          alt="Expedition Series cruising sails"
+          loading="lazy"
+          decoding="async"
+        />
+        <!-- <a class="view-brochure" href="../Cruising-4.Expedition/index.php">View Brochure</a> -->
+      </figure>
+
+      <div class="series-text">
+        <h3 class="series-code">EXPEDITION</h3>
+        <p class="series-tagline">Built for Distance &amp; Demanding Conditions</p>
+
+        <p>The Expedition Series is built for sailors planning longer passages and wanting a stronger, confidence-inspiring build.</p>
+        <p>Extra structure and reinforcement help keep the sail stable and reliable when conditions build.</p>
+
+        <hr class="series-divider" aria-hidden="true">
+
+        <h4 class="series-cloth">Cloth <em>Selection</em></h4>
+        <p><strong>EXPEDITION CLOTH</strong></p>
+        <p>A tougher specification aimed at durability and shape retention for extended cruising.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blue Line Spinnakers -->
+  <section class="series-section" aria-labelledby="series-title-blueline">
+    <header class="series-header">
+      <p class="series-subtitle">Cruising sails</p>
+      <h2 id="series-title-blueline" class="series-title">Blue Line Spinnakers</h2>
+    </header>
+
+    <div class="series-container">
+      <figure class="series-image">
+        <img
+          src="../Cruising/sail_types_section/img/Downwind.png"
+          alt="Blue Line Spinnakers downwind sails"
+          loading="lazy"
+          decoding="async"
+        />
+        <!-- <a class="view-brochure" href="../Cruising-5.BlueLineSpinnakers/index.php">View Brochure</a> -->
+      </figure>
+
+      <div class="series-text">
+        <h3 class="series-code">BLUE LINE</h3>
+        <p class="series-tagline">Built for Downwind Enjoyment</p>
+
+        <p>Blue Line Spinnakers are designed to make downwind sailing more fun, stable, and efficient—ideal for cruising programs.</p>
+        <p>A focus on easy trimming and dependable flying shape helps keep the experience smooth and enjoyable.</p>
+
+        <hr class="series-divider" aria-hidden="true">
+
+        <h4 class="series-cloth">Cloth <em>Selection</em></h4>
+        <p><strong>SPINNAKER CLOTH</strong></p>
+        <p>A purpose-built cloth selection for downwind sails, balancing stability, strength, and handling.</p>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<script src="<?= esc($jsSrc) ?>" defer></script>
+<script src="../Cruising/series_section/series_section.js" defer></script>

@@ -1,24 +1,48 @@
 .sail-types-section{
   position: relative;
-  padding: 6vw 2vw 6vw 2vw;
+  padding: 6vw 2vw;
 }
-.sail-types-title {
-  line-height: 1.12;
-  text-align: center;
-  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
-  font-size: clamp(3rem, 4.5vw, 6rem);
-  font-weight: 600;
-  max-width: 18ch;
-  margin: auto;
-  color: #005598;
-  text-align: center;
+/* =========================
+   Sail Types — Parallax targets
+========================= */
+.sail-types-section h2,
+.sail-types-subtitle{
+  will-change: transform;
+  transform: translate3d(0,0,0);
 }
 
-.sail-types-subtitle {
-  font-size: 1.5em;
-  width: 100%;
+.sail-types-box img{
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
+
+/* Respeta accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .sail-types-section h2,
+  .sail-types-subtitle,
+  .sail-types-box img{
+    transform: none !important;
+  }
+}
+/* Section specific styles */
+.sail-types-section h2 {
+  font-size: clamp(2.4rem, 3.6vw, 4.8rem);
+  line-height: 1.2;
+  margin: 0.5rem 0 1.25rem 0;
+  color: #005598;
   text-align: center;
-  margin: 1.6vw 0;
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.sail-types-subtitle{
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  color: #5f6b7a;
+  text-align: center;
+  max-width: 65ch;
+  margin-inline: auto;
 }
 
 .sail-types-container {
@@ -29,41 +53,58 @@
   position: relative;
 }
 
+.sail-types-link{
+  text-decoration: none;
+  color: inherit;
+}
+
 .sail-types-box{
   position: relative;
   height: 450px;
   width: 510px;
   margin: 20px;
-  font-size: clamp(3rem, 4.5vw, 6rem);
   flex: 0 0 auto; /* importante para que no se encoja */
   cursor: pointer;
 }
 
 .sail-types-box img{
   position: relative;
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  width: 90%;
   display: block;
+}
+
+.sail-types-title{
+  position: relative;
+  height: 450px;
+  width: 510px;
+  margin: 20px;
+  flex: 0 0 auto; /* importante para que no se encoja */
+  cursor: pointer;
 }
 
 .sail-types-scroller-container {
   display: flex;
   flex-wrap: nowrap;
-  transition: transform 0.5s ease;
   position: relative;
+  transition: transform 0.55s cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
+}
+
+.sail-types-scroller-container.no-transition{
+  transition: none !important;
 }
 
 .sail-types-dots {
   position: relative;
   display: flex;
-  display: none;
   justify-content: center;
   margin-top: 15px;
-  z-index: 5; /* visible encima */
+  z-index: 5;
 }
 
 .sail-types-dot {
-  width: 10px;         /* un poco más visible */
+  width: 10px;
   height: 10px;
   background-color: #ccc;
   border-radius: 50%;
@@ -96,13 +137,6 @@
   width: 18px;
   height: 18px;
   display: block;
-}
-.sail-types-scroller-container{
-  transition: transform 0.55s cubic-bezier(.22,.61,.36,1);
-  will-change: transform;
-}
-.sail-types-scroller-container.no-transition{
-  transition: none !important;
 }
 
 .sail-types-arrow-left{ left: 12px; }
