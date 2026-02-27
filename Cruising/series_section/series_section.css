@@ -283,3 +283,19 @@
     max-width: 22ch;
   }
 }
+
+/* =========================================================
+   ADD-ON — Parallax hooks (NO cambia tu estilo)
+   ========================================================= */
+.series-section [data-sr-parallax-text],
+.series-section [data-sr-parallax-img]{
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .series-section [data-sr-parallax-text],
+  .series-section [data-sr-parallax-img]{
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
