@@ -284,18 +284,43 @@
   }
 }
 
+
 /* =========================================================
-   ADD-ON — Parallax hooks (NO cambia tu estilo)
+   ADD-ON — Elegant Center-Focus Parallax (subtle)
    ========================================================= */
-.series-section [data-sr-parallax-text],
-.series-section [data-sr-parallax-img]{
-  will-change: transform, opacity;
+.series-section{
+  /* JS actualizará estas 2 variables por sección */
+  --sr-o: 0;  /* offset (-1..1) respecto al centro del viewport */
+  --sr-p: 0;  /* intensidad (0..1) */
+}
+
+.series-section [data-sr="text"],
+.series-section [data-sr="img"]{
+  will-change: transform, opacity, filter;
+}
+
+/* Texto: drift suave + micro blur + fade sutil */
+.series-section [data-sr="text"]{
+  transform: translate3d(0, calc(var(--sr-o) * 14px), 0);
+  opacity: clamp(.55, calc(1 - (var(--sr-p) * .35)), 1);
+  filter: blur(calc(var(--sr-p) * 1.15px));
+}
+
+/* Imagen: depth feeling (opuesto al texto) + micro-scale + fade sutil */
+.series-section [data-sr="img"]{
+  transform:
+    translate3d(0, calc(var(--sr-o) * -10px), 0)
+    scale(calc(1 - (var(--sr-p) * .015)));
+  opacity: clamp(.55, calc(1 - (var(--sr-p) * .28)), 1);
+  filter: blur(calc(var(--sr-p) * 1px));
+  transform-origin: center;
 }
 
 @media (prefers-reduced-motion: reduce){
-  .series-section [data-sr-parallax-text],
-  .series-section [data-sr-parallax-img]{
+  .series-section [data-sr="text"],
+  .series-section [data-sr="img"]{
     transform: none !important;
     opacity: 1 !important;
+    filter: none !important;
   }
 }
