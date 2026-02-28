@@ -92,8 +92,6 @@
   .nav-rotator__dot{ transition: none; }
 }
 
-
-
 /* Accesibilidad */
 @media (prefers-reduced-motion: reduce){
   .nav-rotator__img{ animation: none; }
@@ -136,6 +134,7 @@
   border-radius: 999px;
   background: rgba(31,47,67,0.18);
 }
+
 /* ===== Rotator (con transición bonita y controlado por JS) ===== */
 .nav-rotator__img{
   position: absolute;
@@ -186,8 +185,6 @@
   .nav-rotator__capSub{ transition: none; }
   .nav-rotator__dot{ transition: none; }
 }
-
-
 
 .dot--1{ animation-delay: 0s; }
 .dot--2{ animation-delay: 3s; }
@@ -265,5 +262,31 @@
   }
   .nav-rotator__frame{
     width: min(420px, 100%);
+  }
+}
+
+/* =========================
+   Reveal only (ADD-ON)
+   - Uses: data-sr-reveal, .sr-item, .is-revealed, delays via --sr-delay
+========================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
   }
 }

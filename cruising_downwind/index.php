@@ -8,9 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <style media="screen">
+
     html {
       scroll-behavior: smooth;
     }
+
     body{
       margin: 0px;
       padding: 0px;

@@ -16,14 +16,14 @@
 /* Título principal (tu formato) */
 .au-title{
   line-height: 1.12;
-text-align: center;
-padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
-font-size: clamp(3rem, 4.5vw, 6rem);
-font-weight: 600;
-max-width: 18ch;
-margin: auto;
-color: #005598;
-text-align: center;
+  text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
+  max-width: 18ch;
+  margin: auto;
+  color: #005598;
+  text-align: center;
 }
 
 /* Sección */
@@ -137,5 +137,32 @@ text-align: center;
 @media (min-width: 1200px){
   .au-title{
     max-width: 26ch;
+  }
+}
+
+/* =========================
+   Reveal only (IntersectionObserver + stagger)
+   - Adds ONLY: data-sr-reveal, .sr-item, .is-revealed, delays
+========================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    transition: none;
+    transform: none;
+    opacity: 1;
   }
 }

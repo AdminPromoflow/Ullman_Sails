@@ -42,13 +42,13 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $sidCssPublic ?>?v=<?= $sidCssV ?>">
 
-<section class="strength-in-the-details" aria-labelledby="sid-title">
+<section class="strength-in-the-details" data-sr-reveal aria-labelledby="sid-title">
   <div class="sid-wrap">
 
     <header class="sid-header">
-      <p class="sid-tagline">Ullman Sails Performance</p>
-      <h2 id="sid-title" class="sid-title">Durability and Reinforcement</h2>
-      <p class="sid-intro">
+      <p class="sid-tagline sr-item">Ullman Sails Performance</p>
+      <h2 id="sid-title" class="sid-title sr-item">Durability and Reinforcement</h2>
+      <p class="sid-intro sr-item">
         Built for offshore miles and harsh climates, Ullman’s Performance sails prioritise strength, reinforced build, and high-spec finishing to hold shape and integrity over long passages.
       </p>
     </header>
@@ -57,7 +57,7 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
     <div class="sid-grid">
       <?php foreach ($sid_items as $item): ?>
-        <article class="sid-item">
+        <article class="sid-item sr-item">
           <div class="sid-media" aria-hidden="true">
             <div class="sid-media-inner">
               <?= $dac_cube_svg ?>

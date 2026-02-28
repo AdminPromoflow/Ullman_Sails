@@ -1,5 +1,4 @@
 <?php
-// Asset versioning for cache-busting (changes the URL whenever the file changes)
 $cssFile = __DIR__ . '/1_introduction/introduction.css';
 $jsFile  = __DIR__ . '/1_introduction/introduction.js';
 
@@ -7,15 +6,15 @@ $cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
 $jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 ?>
 
-<link rel="stylesheet"href="1_introduction/introduction.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
+<link rel="stylesheet" href="1_introduction/introduction.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
 <section
   class="sailing-types-introduction"
   id="sailing-types-introduction"
-  aria-labelledby="navigator-title"
+  data-sr-reveal
+  aria-labelledby="downwind-title"
 >
   <div class="sailing-content">
-    <!-- Brand mark: provide meaningful alt text for accessibility -->
     <div class="img-title-sailing-content">
       <img
         src="../cruising_navigator/1_introduction/img/ullman_sails.png"
@@ -26,14 +25,12 @@ $jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
       >
     </div>
 
-    <!-- The main heading for this section; referenced by aria-labelledby -->
-    <h1 id="navigator-title">Downwind Series</h1>
+    <h1 id="downwind-title">Downwind Series</h1>
 
-    <!-- Keep the intro copy as a single paragraph for clean semantics -->
     <p>
       Downwind with Blue Line and Axia Blue Line: easy-trim spinnakers and code sails built for cruisers adding smooth power and confidence. Compatible with spinnaker socks and top-down furlers across changing angles.
     </p>
   </div>
 </section>
 
-<script defer src="1_introduction/introduction.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>" ></script>
+<script defer src="1_introduction/introduction.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>"></script>

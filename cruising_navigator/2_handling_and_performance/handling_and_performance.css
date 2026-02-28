@@ -54,19 +54,15 @@
 
 .ph-title{
   line-height: 1.12;
-text-align: center;
-padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
-font-size: clamp(3rem, 4.5vw, 6rem);
-font-weight: 600;
-max-width: 18ch;
-margin: auto;
-color: #005598;
-text-align: center;
+  text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
+  max-width: 18ch;
+  margin: auto;
+  color: #005598;
+  text-align: center;
 }
-
-
-
-
 
 @supports (text-wrap: balance){
   .ph-title{ text-wrap: balance; }
@@ -196,7 +192,32 @@ text-align: center;
   }
 }
 
+/* =========================
+   SR REVEAL ONLY (Add-on)
+   - Uses: data-sr-reveal, .sr-item, .is-revealed, delays via --sr-delay
+   - No layout/color/size changes
+========================= */
+.performance-and-handling[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 700ms cubic-bezier(.2,.75,.2,1),
+    transform 700ms cubic-bezier(.2,.75,.2,1);
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.performance-and-handling[data-sr-reveal].is-revealed .sr-item{
+  opacity: 1;
+  transform: none;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce){
-  /* already no motion here; keep for consistency */
+  .performance-and-handling[data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0ms !important;
+  }
 }

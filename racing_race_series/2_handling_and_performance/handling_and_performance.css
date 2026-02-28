@@ -65,10 +65,6 @@
   padding-inline: clamp(0rem, 1.2vw, .5rem);
 }
 
-
-
-
-
 @supports (text-wrap: balance){
   .ph-title{ text-wrap: balance; }
 }
@@ -200,4 +196,30 @@
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce){
   /* already no motion here; keep for consistency */
+}
+
+/* =========================
+   Reveal only (ADD-ON)
+   - NO cambia tu estilo base
+   - SOLO afecta elementos con .sr-item
+========================= */
+.performance-and-handling .sr-item{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.performance-and-handling .sr-item.is-revealed{
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .performance-and-handling .sr-item{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }

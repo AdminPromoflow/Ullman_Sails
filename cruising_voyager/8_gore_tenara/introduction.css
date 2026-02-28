@@ -18,6 +18,7 @@
   /* Espaciado entre elementos */
   --u-gap: clamp(0.75rem, 2vw, 1.5rem);
 }
+
 .au-title {
   margin: 0;
   font-size: clamp(3rem, 4.5vw, 6rem);
@@ -27,6 +28,7 @@
   padding-inline: clamp(0rem, 1.2vw, .5rem);
   margin-inline: auto;
 }
+
 .sailing-types-introduction{
   position: relative;
   display: flex;
@@ -147,5 +149,34 @@
 @media (min-width: 1200px){
   .sailing-content h1{
     max-width: 24ch;
+  }
+}
+
+/* =========================
+   Reveal only (IntersectionObserver + stagger)
+   - Adds only: data-sr-reveal, .sr-item, .is-revealed, delays via --sr-delay
+========================= */
+
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+  opacity 650ms ease,
+  transform 650ms cubic-bezier(.2,.8,.2,1);
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* prefers-reduced-motion: keep visible */
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

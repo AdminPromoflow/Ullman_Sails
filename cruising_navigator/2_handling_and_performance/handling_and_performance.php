@@ -44,15 +44,19 @@ $ph_img_v = is_file($ph_img_fs) ? filemtime($ph_img_fs) : null;
 
 <link rel="stylesheet" href="<?= $ph_css_public ?><?= $ph_css_v ? '?v='.$ph_css_v : '' ?>">
 
-<section class="performance-and-handling" aria-labelledby="ph-title">
+<section
+  class="performance-and-handling"
+  data-sr-reveal
+  aria-labelledby="ph-title"
+>
   <div class="ph-grid">
 
     <header class="ph-left">
-      <p class="ph-tagline">Navigator Series</p>
-      <h2 id="ph-title" class="ph-title">Performance and Handling</h2>
+      <p class="ph-tagline sr-item">Navigator Series</p>
+      <h2 id="ph-title" class="ph-title sr-item">Performance and Handling</h2>
 
       <img
-        class="ph-image"
+        class="ph-image sr-item"
         src="2_handling_and_performance/img/performance-and-handling.jpg<?= $ph_img_v ? '?v='.$ph_img_v : '' ?>"
         alt="Navigator Series sails shown under load"
         loading="lazy"
@@ -63,7 +67,7 @@ $ph_img_v = is_file($ph_img_fs) ? filemtime($ph_img_fs) : null;
     <div class="ph-right">
       <ol class="ph-steps" role="list">
         <?php foreach ($ph_steps as $i => $step): ?>
-          <li class="ph-step">
+          <li class="ph-step sr-item">
             <div class="ph-marker" aria-hidden="true">
               <span class="ph-cube-wrap">
                 <?= $ph_cube_svg ?>

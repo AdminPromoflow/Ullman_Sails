@@ -108,6 +108,24 @@
   max-width: 66ch;
 }
 
+/* =========================
+   Reveal only (IntersectionObserver + stagger)
+   (Adds ONLY: data-sr-reveal, .sr-item, .is-revealed + delays)
+========================= */
+
+.engineering_for_extreme_environments[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.engineering_for_extreme_environments[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive */
 @media (max-width: 980px){
   .efee-grid{
@@ -144,5 +162,11 @@
   .engineering_for_extreme_environments *{
     transition: none !important;
     animation: none !important;
+  }
+
+  /* Ensure visible with reduced motion */
+  .engineering_for_extreme_environments[data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

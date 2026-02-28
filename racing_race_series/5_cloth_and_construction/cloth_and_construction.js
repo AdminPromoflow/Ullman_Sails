@@ -1,4 +1,8 @@
 // File: cruising_navigator/5_cloth_and_construction/cloth_and_construction.js
+
+/* =========================
+   Rotator (tu código tal cual)
+========================= */
 (() => {
   const prefersReducedMotion =
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -74,4 +78,58 @@
   }
 
   document.querySelectorAll('.nav-rotator').forEach(initRotator);
+})();
+
+/* =========================
+   Reveal only (IntersectionObserver + stagger + PRM)
+   - Una sola vez por sección
+   - Stagger: 70ms
+========================= */
+(() => {
+  const STAGGER_MS = 70;
+
+  const prefersReducedMotion =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const sections = Array.from(document.querySelectorAll('[data-sr-reveal]'));
+  if (!sections.length) return;
+
+  const done = new WeakSet();
+
+  function revealSection(section) {
+    if (done.has(section)) return;
+    done.add(section);
+
+    const items = Array.from(section.querySelectorAll('.sr-item'));
+    if (!items.length) return;
+
+    // Delays (stagger)
+    items.forEach((el, i) => {
+      el.style.setProperty('--sr-delay', prefersReducedMotion ? '0ms' : `${i * STAGGER_MS}ms`);
+    });
+
+    // Trigger reveal
+    requestAnimationFrame(() => {
+      items.forEach(el => el.classList.add('is-revealed'));
+    });
+  }
+
+  // No IO or reduced motion => reveal immediately
+  if (!('IntersectionObserver' in window) || prefersReducedMotion) {
+    sections.forEach(revealSection);
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      revealSection(entry.target);
+      io.unobserve(entry.target); // UNA sola vez por sección
+    }
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -8% 0px',
+  });
+
+  sections.forEach(sec => io.observe(sec));
 })();

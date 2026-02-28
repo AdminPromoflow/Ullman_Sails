@@ -201,3 +201,36 @@
     animation: none !important;
   }
 }
+
+/* =========================
+   Reveal only (ADD-ON) — IntersectionObserver + stagger (70ms)
+   Reglas: SOLO data-sr-reveal, .sr-item, .is-revealed y delays
+========================= */
+.strength-in-the-details[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  filter: blur(6px);
+
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(.2,.9,.2,1),
+    filter 700ms ease;
+
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.strength-in-the-details[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+/* Prefer reduced motion: never hide content */
+@media (prefers-reduced-motion: reduce){
+  .strength-in-the-details[data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}

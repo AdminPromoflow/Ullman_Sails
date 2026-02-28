@@ -13,10 +13,11 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
   class="sailing-types-introduction"
   id="sailing-types-introduction"
   aria-labelledby="navigator-title"
+  data-sr-reveal
 >
   <div class="sailing-content">
-    <!-- Brand mark: provide meaningful alt text for accessibility -->
-    <div class="img-title-sailing-content">
+    <!-- 1) Logo -->
+    <div class="img-title-sailing-content sr-item">
       <img
         src="../cruising_navigator/1_introduction/img/ullman_sails.png"
         alt="Ullman Sails"
@@ -26,12 +27,13 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
       >
     </div>
 
-    <!-- The main heading for this section; referenced by aria-labelledby -->
-    <h1 id="navigator-title">The Race Series</h1>
+    <!-- 2) Title -->
+    <h1 class="sr-item" id="navigator-title">The Race&nbsp;Series</h1>
 
-    <!-- Keep the intro copy as a single paragraph for clean semantics -->
-    <p>
-Built to maximise racecourse performance, Ullman uses 3D modelling, CFD and two-boat testing to refine every design. Shapes are optimised for flow, balance and trim response, scaled from One Design to offshore.    </p>
+    <!-- 3) Paragraph -->
+    <p class="sr-item">
+      Built to maximise racecourse performance, Ullman uses 3D modelling, CFD and two-boat testing to refine every design. Shapes are optimised for flow, balance and trim response, scaled from One Design to offshore.
+    </p>
   </div>
 </section>
 

@@ -194,6 +194,28 @@
   }
 }
 
+/* =========================
+   Reveal only (IntersectionObserver + stagger)
+   - Adds ONLY: [data-sr-reveal], .sr-item, .is-revealed, delays via --sr-delay
+========================= */
+@media (prefers-reduced-motion: no-preference){
+  .strength-in-the-details[data-sr-reveal] .sr-item{
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    will-change: opacity, transform;
+
+    transition-property: opacity, transform;
+    transition-duration: 700ms;
+    transition-timing-function: cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--sr-delay, 0ms);
+  }
+
+  .strength-in-the-details[data-sr-reveal].is-revealed .sr-item{
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce){
   .strength-in-the-details *{

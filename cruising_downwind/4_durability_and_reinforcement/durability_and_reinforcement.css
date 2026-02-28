@@ -198,4 +198,29 @@
     transition: none !important;
     animation: none !important;
   }
+
+  /* Reveal-only: keep content visible with reduced motion */
+  [data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* =========================
+   Reveal only (ADD-ON)
+   - data-sr-reveal + .sr-item + .is-revealed + delays
+========================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 800ms ease,
+    transform 800ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: none;
 }

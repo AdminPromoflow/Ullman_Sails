@@ -191,3 +191,20 @@
     animation: none !important;
   }
 }
+
+/* =========================
+   Reveal only (IntersectionObserver + stagger)
+   SOLO: data-sr-reveal, .sr-item, .is-revealed, delays
+========================= */
+.standard_specifications[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.standard_specifications.is-revealed .sr-item{
+  opacity: 1;
+  transform: none;
+}

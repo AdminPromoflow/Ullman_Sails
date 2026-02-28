@@ -1,5 +1,5 @@
 /* =========================
-   DESIGN AND CONSTRUCTION — responsive (same pattern as before)
+   DESIGN AND CONSTRUCTION — responsive + REVEAL ONLY
    File: cruising_navigator/3_design_and_construction/design_and_construction.css
 ========================= */
 
@@ -42,7 +42,6 @@
 /* Section title format (as requested, slimmer) */
 .dac-title{
   line-height: 1.12;
-  text-align: center;
   padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
   font-size: clamp(3rem, 4.5vw, 6rem);
   font-weight: 600;
@@ -90,15 +89,11 @@
 
 .dac-card-title{
   margin: 0;
-
   font-size: clamp(1.15rem, 2vw, 1.55rem);
   font-weight: 800;
   line-height: 1.2;
-
-  /* Remove hard min-width: avoids overflow on small screens */
   max-width: 28ch;
   margin-inline: auto;
-
   color: #0b0b0b;
 }
 
@@ -142,10 +137,49 @@
   }
 }
 
+/* =========================
+   REVEAL ONLY (same system)
+   - data-sr-reveal + sr-item + is-revealed
+========================= */
+
+/* If JS is NOT available, keep visible */
+html:not(.js-sr) .design-and-construction .dac-header > *,
+html:not(.js-sr) .design-and-construction .dac-card{
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Reveal animation */
+.js-sr [data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translate3d(0, 16px, 0) scale(.985);
+  filter: blur(2px);
+
+  transition:
+    opacity 650ms cubic-bezier(.22,.61,.36,1),
+    transform 650ms cubic-bezier(.22,.61,.36,1),
+    filter 650ms cubic-bezier(.22,.61,.36,1);
+  transition-delay: var(--sr-delay, 0ms);
+
+  will-change: opacity, transform, filter;
+}
+
+.js-sr [data-sr-reveal].is-revealed .sr-item{
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce){
   .design-and-construction *{
     transition: none !important;
     animation: none !important;
+  }
+  .js-sr [data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 }

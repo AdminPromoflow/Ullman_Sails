@@ -152,3 +152,28 @@
     animation: none !important;
   }
 }
+
+/* =========================
+   Reveal only — ADD-ON (IntersectionObserver + stagger)
+   Adds ONLY: data-sr-reveal, .sr-item, .is-revealed and delays
+========================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal].is-revealed .sr-item{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure content is visible when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

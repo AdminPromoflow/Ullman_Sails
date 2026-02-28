@@ -13,10 +13,11 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
   class="sailing-types-introduction"
   id="sailing-types-introduction"
   aria-labelledby="navigator-title"
+  data-sr-reveal
 >
   <div class="sailing-content">
-    <!-- Brand mark: provide meaningful alt text for accessibility -->
-    <div class="img-title-sailing-content">
+    <!-- 1) Logo -->
+    <div class="img-title-sailing-content sr-item">
       <img
         src="../cruising_navigator/1_introduction/img/ullman_sails.png"
         alt="Ullman Sails"
@@ -26,11 +27,11 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
       >
     </div>
 
-    <!-- The main heading for this section; referenced by aria-labelledby -->
-    <h1 id="navigator-title">The FiberPath Series</h1>
+    <!-- 2) Título -->
+    <h1 id="navigator-title" class="sr-item">The FiberPath&nbsp;Series</h1>
 
-    <!-- Keep the intro copy as a single paragraph for clean semantics -->
-    <p>
+    <!-- 3) Texto -->
+    <p class="sr-item">
       Reliable strength for coastal and bluewater cruising: FiberPath builds sails with engineered load paths for dependable shape under sustained loads. Reinforcement is focused in high-load zones, supporting durability and consistent performance over long miles.
     </p>
   </div>

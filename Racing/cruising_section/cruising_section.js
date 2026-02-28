@@ -1,5 +1,5 @@
 // =========================
-// Cruising Section — reveal + parallax por scroll (REAL scroll event)
+// Cruising Section — reveal + parallax imagen (scroll real)
 // =========================
 (() => {
   const section = document.querySelector(".cruising-section");
@@ -9,27 +9,30 @@
   if (!img) return;
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   if (reduceMotion) {
     section.classList.add("is-visible");
     return;
   }
 
-  // ---- Reveal ----
-  const revealIO = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          section.classList.add("is-visible");
-          revealIO.disconnect();
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  const BASE_SCALE = 1.08;
+  const MAX_MOVE_PX = 60; // sube a 80/100 si lo quieres más fuerte
+
+  // ---- Reveal (1 vez) ----
+  const revealIO = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      section.classList.add("is-visible");
+      revealIO.disconnect();
+
+      // ajusta parallax justo al revelar
+      requestAnimationFrame(updateParallax);
+      break;
+    }
+  }, { threshold: 0.2 });
+
   revealIO.observe(section);
 
-  // ---- Scroll parallax (solo se actualiza al hacer scroll/resize) ----
+  // ---- Parallax imagen (solo scroll/resize) ----
   let ticking = false;
 
   function clamp(val, min, max) {
@@ -42,22 +45,20 @@
     const rect = section.getBoundingClientRect();
     const vh = window.innerHeight || document.documentElement.clientHeight;
 
-    // Si está fuera de pantalla, lo dejamos “neutral”
+    // fuera de pantalla -> neutral
     if (rect.bottom < 0 || rect.top > vh) {
-      img.style.transform = "translate3d(0, 0px, 0) scale(1.08)";
+      img.style.transform = `translate3d(0, 0px, 0) scale(${BASE_SCALE})`;
       return;
     }
 
-    // Progreso 0..1 mientras atraviesa el viewport
+    // 0..1 atravesando viewport
     const progress = (vh - rect.top) / (vh + rect.height);
     const p = clamp(progress, 0, 1);
 
-    // Movimiento visible y elegante:
-    // (-30px .. +30px aprox)
-    const y = (0.5 - p) * 60;
+    // (-MAX/2 .. +MAX/2)
+    const y = (0.5 - p) * MAX_MOVE_PX;
 
-    // Puedes subir este número si lo quieres más fuerte: 60 -> 80/100
-    img.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0) scale(1.08)`;
+    img.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0) scale(${BASE_SCALE})`;
   }
 
   function onScroll() {
@@ -66,10 +67,10 @@
     requestAnimationFrame(updateParallax);
   }
 
-  // ✅ Evento scroll (lo que pediste)
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
 
-  // Si el usuario entra ya scrolleado, se ajusta en el primer scroll.
-  // (Si quieres que se aplique apenas cargue SIN scroll, dime y lo activamos en load)
+  // ✅ Aplica desde que carga, aunque el usuario ya esté scrolleado
+  window.addEventListener("load", () => requestAnimationFrame(updateParallax));
+  requestAnimationFrame(updateParallax);
 })();

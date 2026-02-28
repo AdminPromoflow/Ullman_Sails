@@ -144,6 +144,25 @@
 }
 
 /* =========================
+   Reveal only (IntersectionObserver + stagger)
+   - Adds ONLY: data-sr-reveal, .sr-item, .is-revealed, delays
+========================= */
+.strength-in-the-details[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 700ms cubic-bezier(.2,.7,.2,1),
+    transform 700ms cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.strength-in-the-details.is-revealed .sr-item{
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================
    Responsive
 ========================= */
 

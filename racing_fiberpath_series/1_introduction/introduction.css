@@ -141,3 +141,34 @@
     max-width: 24ch;
   }
 }
+
+/* ==============================
+   REVEAL ONLY (ADD-ON)
+   - data-sr-reveal
+   - .sr-item
+   - .is-revealed
+   - delays via --sr-delay
+   ============================== */
+
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

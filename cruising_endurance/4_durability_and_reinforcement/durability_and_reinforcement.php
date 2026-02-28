@@ -46,21 +46,22 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $sidCssPublic ?>?v=<?= $sidCssV ?>">
 
-<section class="strength-in-the-details" aria-labelledby="sid-title">
+<section class="strength-in-the-details" aria-labelledby="sid-title" data-sr-reveal>
   <div class="sid-wrap">
 
     <header class="sid-header">
-      <p class="sid-tagline">Navigator Series</p>
-      <h2 id="sid-title" class="sid-title">Durability and Reinforcement</h2>
-      <p class="sid-intro">
-Endurance sails are built for offshore miles, with durability-led reinforcement to handle sustained loads, frequent reefing and long UV exposure—keeping shape and reliability at sea.      </p>
+      <p class="sid-tagline sr-item">Navigator Series</p>
+      <h2 id="sid-title" class="sid-title sr-item">Durability and Reinforcement</h2>
+      <p class="sid-intro sr-item">
+        Endurance sails are built for offshore miles, with durability-led reinforcement to handle sustained loads, frequent reefing and long UV exposure—keeping shape and reliability at sea.
+      </p>
     </header>
 
-    <hr class="sid-divider" aria-hidden="true">
+    <hr class="sid-divider sr-item" aria-hidden="true">
 
     <div class="sid-grid">
       <?php foreach ($sid_items as $item): ?>
-        <article class="sid-item">
+        <article class="sid-item sr-item">
           <div class="sid-media" aria-hidden="true">
             <div class="sid-media-inner">
               <?= $dac_cube_svg ?>

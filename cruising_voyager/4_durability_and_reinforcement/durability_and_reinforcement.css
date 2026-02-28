@@ -199,3 +199,32 @@
     animation: none !important;
   }
 }
+
+/* =========================
+   Reveal only — ADD-ON
+   (data-sr-reveal + .sr-item + .is-revealed + delays)
+   NO parallax, NO cambio de estilo base
+========================= */
+.strength-in-the-details[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 650ms cubic-bezier(.2,.7,.2,1),
+    transform 650ms cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.strength-in-the-details[data-sr-reveal].is-revealed .sr-item{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .strength-in-the-details[data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+  }
+}

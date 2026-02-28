@@ -8,16 +8,15 @@ $introJsVersion  = is_file($introJsFile)  ? filemtime($introJsFile)  : null;
 
 <link rel="stylesheet" href="1_introduction/introduction.css<?= $introCssVersion ? '?v='.$introCssVersion : '' ?>">
 
-
-
 <section
   class="sailing-types-introduction"
   id="sailing-types-introduction"
   aria-labelledby="navigator-title"
+  data-sr-reveal
 >
   <div class="sailing-content">
     <!-- Brand mark: provide meaningful alt text for accessibility -->
-    <div class="img-title-sailing-content">
+    <div class="img-title-sailing-content sr-item" data-sr-delay="0">
       <img
         src="1_introduction/img/ullman_sails.png"
         alt="Ullman Sails"
@@ -28,10 +27,10 @@ $introJsVersion  = is_file($introJsFile)  ? filemtime($introJsFile)  : null;
     </div>
 
     <!-- The main heading for this section; referenced by aria-labelledby -->
-    <h1 id="navigator-title">The Navigator Series</h1>
+    <h1 id="navigator-title" class="sr-item" data-sr-delay="70">The Navigator Series</h1>
 
     <!-- Keep the intro copy as a single paragraph for clean semantics -->
-    <p>
+    <p class="sr-item" data-sr-delay="140">
       Durable, custom-designed sails ideal for coastal cruising and day sailing. Each sail is tailored to your boat’s
       specifications and your preferred sailing style, ensuring confidence and reliability on the water.
     </p>

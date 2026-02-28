@@ -50,21 +50,21 @@ $dacJsV  = is_file($dacJsFs)  ? filemtime($dacJsFs)  : null;
 
 <link rel="stylesheet" href="<?= $dacCssPublic ?><?= $dacCssV ? '?v='.$dacCssV : '' ?>">
 
-<section class="design-and-construction" aria-labelledby="dac-title">
+<section class="design-and-construction" data-sr-reveal aria-labelledby="dac-title">
   <div class="dac-wrap">
 
     <header class="dac-header">
-      <p class="dac-tagline">Endurance Series</p>
-      <h2 id="dac-title" class="dac-title">Reliable by Design</h2>
+      <p class="dac-tagline sr-item">Endurance Series</p>
+      <h2 id="dac-title" class="dac-title sr-item">Reliable by Design</h2>
 
-      <p class="dac-subtitle">
+      <p class="dac-subtitle sr-item">
         Endurance sails are Ullman’s hard-wearing choice for offshore cruising, built to keep shape and confidence over long miles. They prioritise structural strength, UV resistance and balanced handling when conditions turn demanding, tuned to your boat and crew.
       </p>
     </header>
 
     <ul class="dac-grid" role="list">
       <?php foreach ($dac_items as $item): ?>
-        <li class="dac-card">
+        <li class="dac-card sr-item">
           <div class="dac-icon" aria-hidden="true">
             <?= $dac_cube_svg ?>
           </div>

@@ -24,15 +24,22 @@ $sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
 
-<section class="nav-specsheet" aria-label="Voyager cloth selection and construction">
-  <h2 id="csp-title" class="csp-title">Cloth Selection &amp; Construction</h2>
+<section
+  class="nav-specsheet"
+  data-sr-reveal
+  aria-label="Voyager cloth selection and construction"
+>
+  <!-- 1) Title -->
+  <h2 id="csp-title" class="csp-title sr-item">Cloth Selection &amp; Construction</h2>
 
   <div class="nav-specsheet__wrap">
-    <div class="nav-specsheet__panel">
+    <!-- 2) Panel -->
+    <div class="nav-specsheet__panel sr-item">
 
       <div class="nav-specsheet__grid">
 
-        <figure class="nav-rotator" aria-label="Voyager sail image rotator" data-interval="3000">
+        <!-- 3) Rotator -->
+        <figure class="nav-rotator sr-item" aria-label="Voyager sail image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
                  src="5_cloth_and_construction/img/sail_1.png?v=<?= $sail1V ?>"
@@ -62,7 +69,8 @@ $sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
           </figcaption>
         </figure>
 
-        <div class="nav-specsheet__text">
+        <!-- 4) Text -->
+        <div class="nav-specsheet__text sr-item">
           <div class="nav-specsheet__group" aria-label="Cloth Selection and Construction">
             <div class="nav-specsheet__groupTitle">ULTRACRUISE</div>
             <div class="nav-specsheet__groupItems">

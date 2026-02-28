@@ -1,16 +1,28 @@
 <!-- ENGINEERING FOR EXTREME ENVIRONMENTS -->
-<link rel="stylesheet"
-      href="9_engineering_for_extreme_environments/engineering_for_extreme_environments.css?v=<?= filemtime(__DIR__ . '/9_engineering_for_extreme_environments/engineering_for_extreme_environments.css'); ?>">
+<?php
+declare(strict_types=1);
 
-<section class="engineering_for_extreme_environments" aria-labelledby="efee-title">
+$efeeCssFs = __DIR__ . '/9_engineering_for_extreme_environments/engineering_for_extreme_environments.css';
+$efeeJsFs  = __DIR__ . '/9_engineering_for_extreme_environments/engineering_for_extreme_environments.js';
+
+$efeeCssPublic = '9_engineering_for_extreme_environments/engineering_for_extreme_environments.css';
+$efeeJsPublic  = '9_engineering_for_extreme_environments/engineering_for_extreme_environments.js';
+
+$efeeCssV = is_file($efeeCssFs) ? filemtime($efeeCssFs) : time();
+$efeeJsV  = is_file($efeeJsFs)  ? filemtime($efeeJsFs)  : time();
+?>
+
+<link rel="stylesheet" href="<?= $efeeCssPublic ?>?v=<?= $efeeCssV ?>">
+
+<section class="engineering_for_extreme_environments" data-sr-reveal aria-labelledby="efee-title">
   <div class="efee-wrap">
 
     <header class="efee-header">
-      <h2 id="efee-title" class="efee-title">Engineering for extreme environments</h2>
+      <h2 id="efee-title" class="efee-title sr-item">Engineering for extreme environments</h2>
     </header>
 
     <div class="efee-grid" role="list">
-      <article class="efee-item" role="listitem">
+      <article class="efee-item sr-item" role="listitem">
         <div class="efee-num" aria-hidden="true">01</div>
         <div class="efee-body">
           <h3 class="efee-item-title">High-load radial construction</h3>
@@ -20,7 +32,7 @@
         </div>
       </article>
 
-      <article class="efee-item" role="listitem">
+      <article class="efee-item sr-item" role="listitem">
         <div class="efee-num" aria-hidden="true">02</div>
         <div class="efee-body">
           <h3 class="efee-item-title">Performance cloth options</h3>
@@ -30,7 +42,7 @@
         </div>
       </article>
 
-      <article class="efee-item" role="listitem">
+      <article class="efee-item sr-item" role="listitem">
         <div class="efee-num" aria-hidden="true">03</div>
         <div class="efee-body">
           <h3 class="efee-item-title">Heavy-duty finishing details</h3>
@@ -40,7 +52,7 @@
         </div>
       </article>
 
-      <article class="efee-item" role="listitem">
+      <article class="efee-item sr-item" role="listitem">
         <div class="efee-num" aria-hidden="true">04</div>
         <div class="efee-body">
           <h3 class="efee-item-title">Precision control under pressure</h3>
@@ -53,3 +65,5 @@
 
   </div>
 </section>
+
+<script defer src="<?= $efeeJsPublic ?>?v=<?= $efeeJsV ?>" type="text/javascript"></script>

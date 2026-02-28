@@ -46,22 +46,22 @@ $jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
 <link rel="stylesheet" href="4_durability_and_reinforcement/durability_and_reinforcement.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
-<section class="strength-in-the-details" aria-labelledby="sid-title">
+<section class="strength-in-the-details" aria-labelledby="sid-title" data-sr-reveal>
   <div class="sid-wrap">
 
     <header class="sid-header">
-      <p class="sid-tagline">Blue Line & Axia Blue Line</p>
-      <h2 id="sid-title" class="sid-title">Durability and Handling</h2>
-      <p class="sid-intro">
+      <p class="sid-tagline sr-item">Blue Line & Axia Blue Line</p>
+      <h2 id="sid-title" class="sid-title sr-item">Durability and Handling</h2>
+      <p class="sid-intro sr-item">
         Both Blue Line and Axia Blue Line emphasise durability for downwind cruising, pairing robust nylon cloth with radial builds, plus handling options and custom upgrades to suit your rig.
       </p>
     </header>
 
-    <hr class="sid-divider" aria-hidden="true">
+    <hr class="sid-divider sr-item" aria-hidden="true">
 
     <div class="sid-grid">
       <?php foreach ($sid_items as $item): ?>
-        <article class="sid-item">
+        <article class="sid-item sr-item">
           <div class="sid-media" aria-hidden="true">
             <div class="sid-media-inner">
               <?= $dac_cube_svg ?>

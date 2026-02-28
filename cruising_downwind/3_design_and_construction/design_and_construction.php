@@ -13,30 +13,12 @@ $dac_cube_svg = <<<SVG
 SVG;
 
 $dac_items = [
-  [
-    'title' => 'Cruising Focus',
-    'text'  => 'Designed for downwind cruising with everyday comfort.',
-  ],
-  [
-    'title' => 'Easy Trimming',
-    'text'  => 'Easy to trim across a wide range of downwind conditions.',
-  ],
-  [
-    'title' => 'Speed with Control',
-    'text'  => 'Adds usable power while keeping handling safe and calm.',
-  ],
-  [
-    'title' => 'Durability First',
-    'text'  => 'Materials and build choices prioritise long service life.',
-  ],
-  [
-    'title' => 'Tailored to Your Rig',
-    'text'  => 'Built around your rig and your cruising goals.',
-  ],
-  [
-    'title' => 'Handling Systems',
-    'text'  => 'Works with socks and furlers to simplify hoists and drops.',
-  ],
+  [ 'title' => 'Cruising Focus',     'text' => 'Designed for downwind cruising with everyday comfort.' ],
+  [ 'title' => 'Easy Trimming',      'text' => 'Easy to trim across a wide range of downwind conditions.' ],
+  [ 'title' => 'Speed with Control', 'text' => 'Adds usable power while keeping handling safe and calm.' ],
+  [ 'title' => 'Durability First',   'text' => 'Materials and build choices prioritise long service life.' ],
+  [ 'title' => 'Tailored to Your Rig','text' => 'Built around your rig and your cruising goals.' ],
+  [ 'title' => 'Handling Systems',   'text' => 'Works with socks and furlers to simplify hoists and drops.' ],
 ];
 
 // Filesystem paths (for filemtime)
@@ -50,7 +32,7 @@ $jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
 <link rel="stylesheet" href="3_design_and_construction/design_and_construction.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
-<section class="design-and-construction" aria-labelledby="dac-title">
+<section class="design-and-construction" data-sr-reveal aria-labelledby="dac-title">
   <div class="dac-wrap">
 
     <header class="dac-header">

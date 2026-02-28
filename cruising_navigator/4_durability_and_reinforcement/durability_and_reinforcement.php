@@ -66,22 +66,22 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $sidCssPublic ?>?v=<?= $sidCssV ?>">
 
-<section class="strength-in-the-details" aria-labelledby="sid-title">
+<section class="strength-in-the-details" aria-labelledby="sid-title" data-sr-reveal>
   <div class="sid-wrap">
 
     <header class="sid-header">
-      <p class="sid-tagline">Navigator Series</p>
-      <h2 id="sid-title" class="sid-title">Durability and Reinforcement</h2>
-      <p class="sid-intro">
+      <p class="sid-tagline sr-item" data-sr-delay="0">Navigator Series</p>
+      <h2 id="sid-title" class="sid-title sr-item" data-sr-delay="70">Durability and Reinforcement</h2>
+      <p class="sid-intro sr-item" data-sr-delay="140">
         Built for coastal cruising and day sailing, the Ullman Sails Navigator Series blends premium Dacron with proven reinforcement for reliable shape and durability. Explore the nine key features below.
       </p>
     </header>
 
-    <hr class="sid-divider" aria-hidden="true">
+    <hr class="sid-divider sr-item" aria-hidden="true" data-sr-delay="210">
 
     <div class="sid-grid">
-      <?php foreach ($sid_items as $item): ?>
-        <article class="sid-item">
+      <?php foreach ($sid_items as $i => $item): ?>
+        <article class="sid-item sr-item" data-sr-delay="<?= 280 + ((int)$i * 70) ?>">
           <div class="sid-media" aria-hidden="true">
             <div class="sid-media-inner">
               <?= $dac_cube_svg ?>

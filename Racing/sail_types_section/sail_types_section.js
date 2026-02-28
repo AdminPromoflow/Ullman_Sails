@@ -1,3 +1,8 @@
+/* =========================
+   sail_types_section.js — COPY & PASTE
+   (tu slider + Reveal only)
+========================= */
+
 // Cruising - Sail Types slider (arrows + dots) - smooth wrap + no dead clicks
 (() => {
   const section = document.querySelector(".sail-types-section");
@@ -28,14 +33,13 @@
     return Math.max(0, scroller.scrollWidth - container.clientWidth);
   }
 
-  // translateX real (con clamp)
   function getTranslateX(i) {
     const raw = i * getStep();
     return Math.min(raw, getMaxTranslate());
   }
 
   function nearlyEqual(a, b) {
-    return Math.abs(a - b) < 1; // tolerancia por decimales
+    return Math.abs(a - b) < 1;
   }
 
   function setActiveDot(i) {
@@ -50,7 +54,6 @@
     }
 
     const dist = Math.abs(toX - fromX);
-    // duración según distancia (cap), y un poquito más si es wrap
     let ms = Math.min(900, Math.max(350, (dist / 1000) * 600));
     if (isWrap) ms = Math.min(1100, ms + 200);
 
@@ -64,7 +67,7 @@
     if (!animate) {
       scroller.classList.add("no-transition");
       scroller.style.transform = `translateX(${-toX}px)`;
-      scroller.offsetWidth; // reflow
+      scroller.offsetWidth;
       scroller.classList.remove("no-transition");
       return;
     }
@@ -73,7 +76,6 @@
     scroller.style.transform = `translateX(${-toX}px)`;
   }
 
-  // goTo con control de wrap smooth
   function goTo(i, { wrap = false } = {}) {
     const max = boxes.length - 1;
 
@@ -81,20 +83,17 @@
     if (target < 0) target = max;
     if (target > max) target = 0;
 
-    // importante: animamos desde el index actual hacia target
     const prevIndex = index;
     index = target;
 
     applyTransform(index, true, wrap);
     setActiveDot(index);
 
-    // si por alguna razón no cambió visualmente, al menos no dejes dots raros
     if (nearlyEqual(getTranslateX(prevIndex), getTranslateX(index))) {
-      // mantiene coherencia; no hace nada extra
+      // coherencia sin extras
     }
   }
 
-  // ---- Arrow Right: salta índices que no mueven y si ya estás al final real => wrap smooth a 0
   if (btnRight) {
     btnRight.addEventListener("click", () => {
       const max = boxes.length - 1;
@@ -102,19 +101,15 @@
 
       let next = index + 1;
 
-      // si se pasó, wrap directo
       if (next > max) return goTo(0, { wrap: true });
 
-      // saltar índices que no cambian el translate (dead clicks)
       while (next <= max && nearlyEqual(getTranslateX(next), curX)) next++;
 
-      // si no hay más movimiento real, wrap al inicio (smooth)
       if (next > max) goTo(0, { wrap: true });
       else goTo(next);
     });
   }
 
-  // ---- Arrow Left: salta índices que no mueven y si ya estás al inicio real => wrap smooth al final
   if (btnLeft) {
     btnLeft.addEventListener("click", () => {
       const max = boxes.length - 1;
@@ -131,7 +126,6 @@
     });
   }
 
-  // Dots
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
       const i = Number(dot.getAttribute("data-index"));
@@ -139,7 +133,6 @@
     });
   });
 
-  // Resize
   window.addEventListener("resize", () => {
     scroller.style.transitionDuration = "0ms";
     scroller.classList.add("no-transition");
@@ -149,11 +142,79 @@
     setActiveDot(index);
   });
 
-  // Init (sin animación)
   scroller.style.transitionDuration = "0ms";
   scroller.classList.add("no-transition");
   scroller.style.transform = `translateX(0px)`;
   scroller.offsetWidth;
   scroller.classList.remove("no-transition");
   setActiveDot(0);
+})();
+
+
+// =========================
+// Reveal only (IntersectionObserver + stagger 70ms + prefers-reduced-motion)
+// - ejecuta UNA sola vez por sección
+// =========================
+(() => {
+  const STAGGER_MS = 70;
+  const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+  const sections = document.querySelectorAll("[data-sr-reveal]");
+  if (!sections.length) return;
+
+  function collectOrderedItems(section) {
+    const ordered = [];
+
+    const pushIf = (el) => {
+      if (!el) return;
+      if (!el.classList || !el.classList.contains("sr-item")) return;
+      if (ordered.includes(el)) return;
+      ordered.push(el);
+    };
+
+    // Orden (no lo diste): 1) título 2) subtítulo 3) flechas 4) boxes
+    pushIf(section.querySelector(".sail-types-title"));
+    pushIf(section.querySelector(".sail-types-subtitle"));
+    section.querySelectorAll(".sail-types-arrow.sr-item").forEach(pushIf);
+    section.querySelectorAll(".sail-types-box.sr-item").forEach(pushIf);
+
+    // Fallback por si agregas más sr-items después
+    section.querySelectorAll(".sr-item").forEach(pushIf);
+
+    return ordered;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const section = entry.target;
+
+      // Una sola vez por sección
+      if (section.dataset.srDone === "1") {
+        io.unobserve(section);
+        return;
+      }
+      section.dataset.srDone = "1";
+
+      const items = collectOrderedItems(section);
+
+      items.forEach((el, i) => {
+        const delay = reduce ? 0 : i * STAGGER_MS;
+        // delays por CSS var
+        el.style.setProperty("--sr-delay", `${delay}ms`);
+      });
+
+      requestAnimationFrame(() => {
+        items.forEach((el) => el.classList.add("is-revealed"));
+      });
+
+      io.unobserve(section);
+    });
+  }, { threshold: 0.22, rootMargin: "0px 0px -10% 0px" });
+
+  sections.forEach((section) => {
+    if (section.dataset.srDone === "1") return;
+    io.observe(section);
+  });
 })();

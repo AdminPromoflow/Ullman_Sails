@@ -19,6 +19,11 @@ $cssPublic = '6_available_upgrades/available_upgrades.css';
 $cssFs     = __DIR__ . '/6_available_upgrades/available_upgrades.css';
 $cssHref   = versioned_asset($cssPublic, $cssFs);
 
+/* JS paths (para el reveal) */
+$jsPublic = '6_available_upgrades/available_upgrades.js';
+$jsFs     = __DIR__ . '/6_available_upgrades/available_upgrades.js';
+$jsSrc    = versioned_asset($jsPublic, $jsFs);
+
 $upgrades = [
   [
     'title' => '100% Gore® Tenara® thread stitching',
@@ -67,13 +72,13 @@ $total = count($upgrades);
 
 <link rel="stylesheet" href="<?= esc($cssHref) ?>">
 
-<section class="available_upgrades" aria-labelledby="au-title">
+<section class="available_upgrades" aria-labelledby="au-title" data-sr-reveal>
   <div class="au-wrap">
 
     <header class="au-header">
-      <p class="au-tagline">Voyager Series</p>
-      <h2 id="au-title" class="au-title">Available Upgrades</h2>
-      <p class="au-subtitle">
+      <p class="au-tagline sr-item" data-sr-delay="0">Voyager Series</p>
+      <h2 id="au-title" class="au-title sr-item" data-sr-delay="70">Available Upgrades</h2>
+      <p class="au-subtitle sr-item" data-sr-delay="140">
         Durability-focused options to extend service life and improve handling for Voyager sails.
       </p>
     </header>
@@ -82,7 +87,7 @@ $total = count($upgrades);
       <?php foreach ($upgrades as $i => $item): ?>
         <?php $num = str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT); ?>
 
-        <article class="au-row" role="listitem">
+        <article class="au-row sr-item" role="listitem" data-sr-delay="<?= 210 + ((int)$i * 70) ?>">
           <div class="au-num" aria-hidden="true"><?= esc($num) ?></div>
 
           <div class="au-body">
@@ -92,10 +97,12 @@ $total = count($upgrades);
         </article>
 
         <?php if ($i < $total - 1): ?>
-          <hr class="au-divider" aria-hidden="true">
+          <hr class="au-divider sr-item" aria-hidden="true" data-sr-delay="<?= 210 + ((int)$i * 70) + 35 ?>">
         <?php endif; ?>
       <?php endforeach; ?>
     </div>
 
   </div>
 </section>
+
+<script defer src="<?= esc($jsSrc) ?>"></script>

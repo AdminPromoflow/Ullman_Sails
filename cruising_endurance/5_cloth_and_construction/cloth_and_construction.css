@@ -1,6 +1,6 @@
 /* =========================
    NAV SPEC SHEET — responsive (same pattern as before)
-   File: cruising_navigator/6_cloth_and_construction/cloth_and_construction.css
+   File: cruising_navigator/5_cloth_and_construction/cloth_and_construction.css
 ========================= */
 
 .nav-specsheet{
@@ -250,4 +250,31 @@
   .nav-rotator__img{ transition: none; }
   .nav-rotator__capSub{ transition: none; }
   .nav-rotator__dot{ transition: none; }
+}
+
+/* =========================
+   Reveal only (IntersectionObserver + stagger)
+   - Adds ONLY: data-sr-reveal, .sr-item, .is-revealed, delays
+========================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    transition: none;
+    transform: none;
+    opacity: 1; /* aparece sin animación */
+  }
 }

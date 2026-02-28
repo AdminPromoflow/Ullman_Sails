@@ -136,3 +136,34 @@
     animation: none !important;
   }
 }
+
+/* =========================================================
+   Reveal only (IntersectionObserver + stagger + PRM)
+   SOLO lo necesario: data-sr-reveal, .sr-item, .is-revealed y delays
+   Root: [data-sr-reveal] (1 vez por sección)
+   Stagger: 70ms
+========================================================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 720ms cubic-bezier(.2,.8,.2,1),
+    transform 720ms cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+  [data-sr-reveal] .sr-item.is-revealed{
+    transform: none;
+  }
+}

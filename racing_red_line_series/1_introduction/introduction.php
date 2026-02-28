@@ -13,10 +13,11 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
   class="sailing-types-introduction"
   id="sailing-types-introduction"
   aria-labelledby="navigator-title"
+  data-sr-reveal
 >
   <div class="sailing-content">
     <!-- Brand mark: provide meaningful alt text for accessibility -->
-    <div class="img-title-sailing-content">
+    <div class="img-title-sailing-content sr-item">
       <img
         src="../cruising_navigator/1_introduction/img/ullman_sails.png"
         alt="Ullman Sails"
@@ -27,10 +28,12 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
     </div>
 
     <!-- The main heading for this section; referenced by aria-labelledby -->
-    <h1 id="navigator-title">The Axia Series - Red Line</h1>
+    <h1 class="sr-item" id="navigator-title">The Axia&nbsp;Series&nbsp;- Red Line</h1>
 
     <!-- Keep the intro copy as a single paragraph for clean semantics -->
-    <p>Built to maximise racecourse performance, Axia Red Line is Ullman’s downwind racing range for symmetric, asymmetric and Code sails. Built for fast rotation, smooth acceleration and tight trims, with light construction and structured luffs for easy launches and pace to leeward.</p>
+    <p class="sr-item">
+      Built to maximise racecourse performance, Axia Red Line is Ullman’s downwind racing range for symmetric, asymmetric and Code sails. Built for fast rotation, smooth acceleration and tight trims, with light construction and structured luffs for easy launches and pace to leeward.
+    </p>
   </div>
 </section>
 

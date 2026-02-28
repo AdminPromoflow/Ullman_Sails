@@ -24,15 +24,15 @@ $sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
 
-<section class="nav-specsheet" aria-label="Endurance cloth selection and construction">
-  <h2 id="csp-title" class="csp-title">Cloth Selection &amp; Construction</h2>
+<section class="nav-specsheet" data-sr-reveal aria-label="Endurance cloth selection and construction">
+  <h2 id="csp-title" class="csp-title sr-item" data-sr-delay="0">Cloth Selection &amp; Construction</h2>
 
   <div class="nav-specsheet__wrap">
     <div class="nav-specsheet__panel">
-
       <div class="nav-specsheet__grid">
 
-        <figure class="nav-rotator" aria-label="Endurance sail image rotator" data-interval="3000">
+        <!-- Rotator (reveal como bloque, NO en cada img para no romper el rotator) -->
+        <figure class="nav-rotator sr-item" aria-label="Endurance sail image rotator" data-interval="3000" data-sr-delay="70">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
                  src="5_cloth_and_construction/img/sail_1.png?v=<?= $sail1V ?>"
@@ -62,61 +62,61 @@ $sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
           </figcaption>
         </figure>
 
+        <!-- Text -->
         <div class="nav-specsheet__text">
 
-  <div class="nav-specsheet__group" aria-label="Cloth Selection and Construction">
-    <div class="nav-specsheet__groupTitle">ENDURO DACRON</div>
-    <div class="nav-specsheet__groupItems">
-      <div class="nav-specsheet__item">CROSSCUT WOVEN POLYESTER</div>
-      <div class="nav-specsheet__item">RADIAL WOVEN POLYESTER</div>
-    </div>
-  </div>
+          <div class="nav-specsheet__group sr-item" aria-label="Cloth Selection and Construction" data-sr-delay="140">
+            <div class="nav-specsheet__groupTitle">ENDURO DACRON</div>
+            <div class="nav-specsheet__groupItems">
+              <div class="nav-specsheet__item">CROSSCUT WOVEN POLYESTER</div>
+              <div class="nav-specsheet__item">RADIAL WOVEN POLYESTER</div>
+            </div>
+          </div>
 
-  <div class="nav-specsheet__group">
-    <div class="nav-specsheet__groupTitle">ENDURO LAMINATE</div>
-    <div class="nav-specsheet__groupItems">
-      <div class="nav-specsheet__item">RADIAL TAFFETA</div>
-    </div>
-  </div>
+          <div class="nav-specsheet__group sr-item" data-sr-delay="210">
+            <div class="nav-specsheet__groupTitle">ENDURO LAMINATE</div>
+            <div class="nav-specsheet__groupItems">
+              <div class="nav-specsheet__item">RADIAL TAFFETA</div>
+            </div>
+          </div>
 
-  <h3 class="nav-specsheet__subtitle">Standard Components</h3>
+          <h3 class="nav-specsheet__subtitle sr-item" data-sr-delay="280">Standard Components</h3>
 
-  <div class="nav-specsheet__list">
-    <div class="nav-specsheet__row">
-      <div class="nav-specsheet__key">STITCHING</div>
-      <div class="nav-specsheet__val">MULTIPLE TRIPLE-STEP</div>
-    </div>
+          <div class="nav-specsheet__list">
+            <div class="nav-specsheet__row sr-item" data-sr-delay="350">
+              <div class="nav-specsheet__key">STITCHING</div>
+              <div class="nav-specsheet__val">MULTIPLE TRIPLE-STEP</div>
+            </div>
 
-    <div class="nav-specsheet__row">
-      <div class="nav-specsheet__key">RINGS</div>
-      <div class="nav-specsheet__val">STAINLESS STEEL &​amp; WEBBING LOAD STRAPS</div>
-    </div>
+            <div class="nav-specsheet__row sr-item" data-sr-delay="420">
+              <div class="nav-specsheet__key">RINGS</div>
+              <div class="nav-specsheet__val">STAINLESS STEEL &​amp; WEBBING LOAD STRAPS</div>
+            </div>
 
-    <div class="nav-specsheet__row">
-      <div class="nav-specsheet__key">THREAD</div>
-      <div class="nav-specsheet__val">HIGH PERFORMANCE DURABLE THREAD</div>
-    </div>
+            <div class="nav-specsheet__row sr-item" data-sr-delay="490">
+              <div class="nav-specsheet__key">THREAD</div>
+              <div class="nav-specsheet__val">HIGH PERFORMANCE DURABLE THREAD</div>
+            </div>
 
-    <div class="nav-specsheet__row">
-      <div class="nav-specsheet__key">SLIDES</div>
-      <div class="nav-specsheet__val">HEAVIER, STRONGER, REINFORCED</div>
-    </div>
+            <div class="nav-specsheet__row sr-item" data-sr-delay="560">
+              <div class="nav-specsheet__key">SLIDES</div>
+              <div class="nav-specsheet__val">HEAVIER, STRONGER, REINFORCED</div>
+            </div>
 
-    <div class="nav-specsheet__row">
-      <div class="nav-specsheet__key">BATTEN POCKETS</div>
-      <div class="nav-specsheet__val">REINFORCED POCKETS &​amp; BATTENS</div>
-    </div>
+            <div class="nav-specsheet__row sr-item" data-sr-delay="630">
+              <div class="nav-specsheet__key">BATTEN POCKETS</div>
+              <div class="nav-specsheet__val">REINFORCED POCKETS &​amp; BATTENS</div>
+            </div>
 
-    <div class="nav-specsheet__row">
-      <div class="nav-specsheet__key">PATCHES</div>
-      <div class="nav-specsheet__val">RADIAL PATCHES</div>
-    </div>
-  </div>
+            <div class="nav-specsheet__row sr-item" data-sr-delay="700">
+              <div class="nav-specsheet__key">PATCHES</div>
+              <div class="nav-specsheet__val">RADIAL PATCHES</div>
+            </div>
+          </div>
 
-</div>
+        </div>
 
       </div>
-
     </div>
   </div>
 </section>

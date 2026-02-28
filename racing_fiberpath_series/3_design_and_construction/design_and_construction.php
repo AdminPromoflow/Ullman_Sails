@@ -29,7 +29,6 @@ $dac_items = [
     'title' => 'Skin options',
     'text'  => 'Film taffeta or NWT skins to suit your programme best.',
   ],
-
 ];
 
 // Filesystem paths (for filemtime)
@@ -47,20 +46,21 @@ $dacJsV  = is_file($dacJsFs)  ? filemtime($dacJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $dacCssPublic ?>?v=<?= $dacCssV ?>">
 
-<section class="design-and-construction" aria-labelledby="dac-title">
+<section class="design-and-construction" data-sr-reveal aria-labelledby="dac-title">
   <div class="dac-wrap">
 
     <header class="dac-header">
-      <p class="dac-tagline">The FiberPath Series</p>
-      <h2 id="dac-title" class="dac-title">Reliable by Design</h2>
+      <p class="dac-tagline sr-item">The FiberPath&nbsp;Series</p>
+      <h2 id="dac-title" class="dac-title sr-item">Reliable by Design</h2>
 
-      <p class="dac-subtitle">
-        Elite upwind membranes for top-level racing. FiberPath uses mapped carbon/aramid fibre paths and high-pressure lamination to lock in draft position, reduce stretch, and keep peak shapes for longer so trim stays razor-precise. Suits One Design to Grand Prix.      </p>
+      <p class="dac-subtitle sr-item">
+        Elite upwind membranes for top-level racing. FiberPath uses mapped carbon/aramid fibre paths and high-pressure lamination to lock in draft position, reduce stretch, and keep peak shapes for longer so trim stays razor-precise. Suits One Design to Grand Prix.
+      </p>
     </header>
 
     <ul class="dac-grid" role="list">
       <?php foreach ($dac_items as $item): ?>
-        <li class="dac-card">
+        <li class="dac-card sr-item">
           <div class="dac-icon" aria-hidden="true">
             <?= $dac_cube_svg ?>
           </div>

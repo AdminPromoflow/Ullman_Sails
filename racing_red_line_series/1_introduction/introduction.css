@@ -141,3 +141,31 @@
     max-width: 24ch;
   }
 }
+
+/* =========================================================
+   Reveal only (NO parallax) — SOLO lo necesario
+   Usa: data-sr-reveal + .sr-item + .is-revealed + delays
+   ========================================================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 650ms cubic-bezier(.2,.9,.2,1),
+    transform 650ms cubic-bezier(.2,.9,.2,1);
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: none;
+}
+
+/* Respeta prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

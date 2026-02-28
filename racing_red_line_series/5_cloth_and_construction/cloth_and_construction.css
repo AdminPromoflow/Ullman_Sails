@@ -232,3 +232,34 @@
   .nav-rotator__capSub{ transition: none; }
   .nav-rotator__dot{ transition: none; }
 }
+
+/* =========================
+   Reveal only (ADD-ON)
+   - uses: data-sr-reveal, .sr-item, .is-revealed, delays
+========================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(6px);
+
+  transition: opacity 650ms ease, transform 650ms ease, filter 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* prefers-reduced-motion: show instantly */
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none !important;
+    transition-delay: 0ms !important;
+  }
+}

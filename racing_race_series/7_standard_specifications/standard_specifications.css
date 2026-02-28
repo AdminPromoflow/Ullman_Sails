@@ -188,3 +188,28 @@
     animation: none !important;
   }
 }
+
+/* =========================
+   Reveal only (ADD-ON)
+   - SOLO afecta elementos con .sr-item
+========================= */
+.standard_specifications .sr-item{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.standard_specifications .sr-item.is-revealed{
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .standard_specifications .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -198,32 +198,32 @@
   color: rgba(31,47,67,0.80);
 }
 
- .nav-specsheet__group{
+.nav-specsheet__group{
   display: grid;
   gap: 0.55rem;
   margin-bottom: 2.1rem;
- }
+}
 
- .nav-specsheet__groupTitle{
+.nav-specsheet__groupTitle{
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: clamp(.95rem, 1.7vw, 1.05rem);
   color: #1f2f43;
- }
+}
 
- .nav-specsheet__groupItems{
+.nav-specsheet__groupItems{
   display: grid;
   gap: 0.45rem;
- }
+}
 
- .nav-specsheet__item{
+.nav-specsheet__item{
   font-weight: 500;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   font-size: clamp(.92rem, 1.7vw, 1.02rem);
   color: rgba(31,47,67,0.80);
- }
+}
 
 /* =========================
    Responsive
@@ -254,4 +254,29 @@
   .nav-rotator__img{ transition: none; }
   .nav-rotator__capSub{ transition: none; }
   .nav-rotator__dot{ transition: none; }
+}
+
+/* =========================
+   Reveal only — ADD-ON (no parallax)
+   - Uses: data-sr-reveal + .sr-item + .is-revealed + stagger delays
+========================= */
+.js-sr [data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.js-sr [data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .js-sr [data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

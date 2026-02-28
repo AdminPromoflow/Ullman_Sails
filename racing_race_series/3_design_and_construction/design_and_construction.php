@@ -29,7 +29,6 @@ $dac_items = [
     'title' => 'Longer race life',
     'text'  => 'Finishing details that keep sails fast for longer too.',
   ],
-
 ];
 
 // Filesystem paths (for filemtime)
@@ -47,21 +46,22 @@ $dacJsV  = is_file($dacJsFs)  ? filemtime($dacJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $dacCssPublic ?>?v=<?= $dacCssV ?>">
 
-<section class="design-and-construction" aria-labelledby="dac-title">
+<section class="design-and-construction" data-sr-reveal aria-labelledby="dac-title">
   <div class="dac-wrap">
 
     <header class="dac-header">
-      <p class="dac-tagline">The Race Series</p>
-      <h2 id="dac-title" class="dac-title">Reliable by Design</h2>
+      <p class="dac-tagline sr-item">The Race&nbsp;Series</p>
 
-      <p class="dac-subtitle">
+      <h2 id="dac-title" class="dac-title sr-item">Reliable by Design</h2>
+
+      <p class="dac-subtitle sr-item">
         Race Series is built for club and class racing, combining efficient shapes with proven construction options. Custom design targets a wide trim range, balanced loads, and durable performance, so your sails stay fast and raceable longer. Using SMAR Azure® 3D.
       </p>
     </header>
 
     <ul class="dac-grid" role="list">
       <?php foreach ($dac_items as $item): ?>
-        <li class="dac-card">
+        <li class="dac-card sr-item">
           <div class="dac-icon" aria-hidden="true">
             <?= $dac_cube_svg ?>
           </div>

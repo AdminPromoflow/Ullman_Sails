@@ -46,21 +46,21 @@ $dacJsV  = is_file($dacJsFs)  ? filemtime($dacJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $dacCssPublic ?>?v=<?= $dacCssV ?>">
 
-<section class="design-and-construction" aria-labelledby="dac-title">
+<section class="design-and-construction" data-sr-reveal aria-labelledby="dac-title">
   <div class="dac-wrap">
 
     <header class="dac-header">
-      <p class="dac-tagline">Navigator Series</p>
-      <h2 id="dac-title" class="dac-title">Reliable by Design</h2>
+      <p class="dac-tagline sr-item">Navigator Series</p>
+      <h2 id="dac-title" class="dac-title sr-item">Reliable by Design</h2>
 
-      <p class="dac-subtitle">
+      <p class="dac-subtitle sr-item">
         Building on our introduction, this section highlights how our seasoned design team and advanced technology come together to deliver sails that are reliable and effortless to manage. Below are four key points that support lasting performance and ease of use.
       </p>
     </header>
 
     <ul class="dac-grid" role="list">
       <?php foreach ($dac_items as $item): ?>
-        <li class="dac-card">
+        <li class="dac-card sr-item">
           <div class="dac-icon" aria-hidden="true">
             <?= $dac_cube_svg ?>
           </div>

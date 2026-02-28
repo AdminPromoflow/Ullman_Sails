@@ -111,6 +111,24 @@
 }
 
 /* =========================
+   Reveal only (IntersectionObserver + stagger)
+   (Adds ONLY: data-sr-reveal, .sr-item, .is-revealed + delays)
+========================= */
+
+.design-and-construction[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.design-and-construction[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
    Responsive
 ========================= */
 
@@ -147,5 +165,11 @@
   .design-and-construction *{
     transition: none !important;
     animation: none !important;
+  }
+
+  /* Make sure content is visible even with reduced motion */
+  .design-and-construction[data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

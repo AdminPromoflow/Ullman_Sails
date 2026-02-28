@@ -46,13 +46,14 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $sidCssPublic ?>?v=<?= $sidCssV ?>">
 
-<section class="strength-in-the-details" aria-labelledby="sid-title">
+<section class="strength-in-the-details" data-sr-reveal aria-labelledby="sid-title">
   <div class="sid-wrap">
 
     <header class="sid-header">
-      <p class="sid-tagline">Voyager Series</p>
-      <h2 id="sid-title" class="sid-title">Durability and Reinforcement</h2>
-      <p class="sid-intro">
+      <!-- Orden del reveal (decidido): tagline -> title -> intro -> items -->
+      <p class="sid-tagline sr-item">Voyager Series</p>
+      <h2 id="sid-title" class="sid-title sr-item">Durability and Reinforcement</h2>
+      <p class="sid-intro sr-item">
         Voyager sails are built for long offshore use, resisting UV, reefing and furling wear, with targeted reinforcements that protect load points, extend seam life and keep the sail’s shape reliable over time.
       </p>
     </header>
@@ -61,7 +62,7 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
     <div class="sid-grid">
       <?php foreach ($sid_items as $item): ?>
-        <article class="sid-item">
+        <article class="sid-item sr-item">
           <div class="sid-media" aria-hidden="true">
             <div class="sid-media-inner">
               <?= $dac_cube_svg ?>
@@ -78,3 +79,5 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
   </div>
 </section>
+
+<script defer src="<?= $sidJsPublic ?>?v=<?= $sidJsV ?>" type="text/javascript"></script>

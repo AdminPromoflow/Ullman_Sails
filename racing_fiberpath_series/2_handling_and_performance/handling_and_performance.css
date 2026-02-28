@@ -65,10 +65,6 @@
   padding-inline: clamp(0rem, 1.2vw, .5rem);
 }
 
-
-
-
-
 @supports (text-wrap: balance){
   .ph-title{ text-wrap: balance; }
 }
@@ -197,7 +193,38 @@
   }
 }
 
-/* Reduced motion support */
+/* Reduced motion support (base) */
 @media (prefers-reduced-motion: reduce){
   /* already no motion here; keep for consistency */
+}
+
+/* =========================
+   Reveal only (adds ONLY what’s needed)
+   - data-sr-reveal on section
+   - .sr-item on items to animate
+   - .is-revealed toggled by JS (once)
+   - delays via --sr-delay
+========================= */
+.performance-and-handling[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 700ms cubic-bezier(.2,.7,.2,1),
+    transform 700ms cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.performance-and-handling[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .performance-and-handling[data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+  }
 }

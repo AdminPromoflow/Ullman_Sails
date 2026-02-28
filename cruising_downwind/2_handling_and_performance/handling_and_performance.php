@@ -23,7 +23,6 @@ $ph_steps = [
   ],
 ];
 
-
 // Filesystem paths (for filemtime)
 $cssFile = __DIR__ . '/2_handling_and_performance/handling_and_performance.css';
 $jsFile  = __DIR__ . '/2_handling_and_performance/handling_and_performance.js';
@@ -35,7 +34,7 @@ $jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
 <link rel="stylesheet" href="2_handling_and_performance/handling_and_performance.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
-<section class="performance-and-handling" aria-labelledby="ph-title">
+<section class="performance-and-handling" data-sr-reveal aria-labelledby="ph-title">
   <div class="ph-grid">
 
     <header class="ph-left">
@@ -45,7 +44,7 @@ $jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
       <img
         class="ph-image"
         src="2_handling_and_performance/img/performance-and-handling.jpg"
-        alt="Navigator Series sails shown under load"
+        alt="Sails shown under load"
         loading="lazy"
         decoding="async"
       >
@@ -53,7 +52,7 @@ $jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
     <div class="ph-right">
       <ol class="ph-steps" role="list">
-        <?php foreach ($ph_steps as $i => $step): ?>
+        <?php foreach ($ph_steps as $step): ?>
           <li class="ph-step">
             <div class="ph-marker" aria-hidden="true">
               <span class="ph-cube-wrap">

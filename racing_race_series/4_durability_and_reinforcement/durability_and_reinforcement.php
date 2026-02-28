@@ -33,7 +33,6 @@ $sid_items = [
     'title' => 'Lite Skin finishing',
     'text'  => 'Optional Lite Skin finishing adds a protective outer layer for better abrasion resistance and longer life while keeping a crisp race feel.',
   ],
-
 ];
 
 // Filesystem paths (for filemtime)
@@ -51,22 +50,22 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $sidCssPublic ?>?v=<?= $sidCssV ?>">
 
-<section class="strength-in-the-details" aria-labelledby="sid-title">
+<section class="strength-in-the-details" data-sr-reveal aria-labelledby="sid-title">
   <div class="sid-wrap">
 
     <header class="sid-header">
-      <p class="sid-tagline">The Race Series</p>
-      <h2 id="sid-title" class="sid-title">Durability and Handling</h2>
-      <p class="sid-intro">
+      <p class="sid-tagline sr-item">The Race&nbsp;Series</p>
+      <h2 id="sid-title" class="sid-title sr-item">Durability and Handling</h2>
+      <p class="sid-intro sr-item">
         The Race Series — Radial-built sails with triple-step seams, stainless rings with Spectra/Dyneema webbing plus radial patches and slide reinforcements for hard racing, with a wide trim range.
       </p>
     </header>
 
-    <hr class="sid-divider" aria-hidden="true">
+    <hr class="sid-divider sr-item" aria-hidden="true">
 
     <div class="sid-grid">
       <?php foreach ($sid_items as $item): ?>
-        <article class="sid-item">
+        <article class="sid-item sr-item">
           <div class="sid-media" aria-hidden="true">
             <div class="sid-media-inner">
               <?= $dac_cube_svg ?>

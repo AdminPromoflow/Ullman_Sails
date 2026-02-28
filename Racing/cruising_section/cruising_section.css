@@ -1,5 +1,6 @@
 /* =========================
    CRUISING SECTION — ULLMAN elegant motion
+   Reveal + stagger + imagen con parallax (solo imagen)
 ========================= */
 
 .cruising-section{
@@ -14,6 +15,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +23,7 @@
   flex-direction: column;
 }
 
-/* sutil brillo diagonal más sutil */
+/* brillo diagonal sutil */
 .cruising-section::before{
   content:"";
   position:absolute;
@@ -32,53 +34,33 @@
   opacity: .7;
 }
 
-/* ---- Estado inicial (antes de revelar) ---- */
-.cruising-title,
-.cruising-subtitle,
-.cruising-icons,
-.cruising-image,
-.img-title-sailing-content {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-/* ---- Reveal ---- */
-.cruising-section.is-visible .img-title-sailing-content { transition-delay: .05s; opacity:1; transform: translateY(0); }
-.cruising-section.is-visible .cruising-title { transition-delay: .12s; opacity:1; transform: translateY(0); }
-.cruising-section.is-visible .cruising-subtitle { transition-delay: .18s; opacity:1; transform: translateY(0); }
-.cruising-section.is-visible .cruising-icons { transition-delay: .25s; opacity:1; transform: translateY(0); }
-.cruising-section.is-visible .cruising-image { transition-delay: .30s; opacity:1; transform: translateY(0); }
+/* =========================
+   Base styles (visible state)
+========================= */
 
 /* Logo container */
 .img-title-sailing-content{
   width: clamp(140px, 28vw, 240px);
   margin: 0 auto 1rem;
-  opacity: 0.9;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: .9;
+  transition: transform .3s ease, opacity .3s ease;
+  z-index: 1;
+  position: relative;
 }
+.img-title-sailing-content:hover{ opacity: 1; transform: scale(1.02); }
+.img-title-sailing-content img{ width:100%; height:auto; display:block; }
 
-.img-title-sailing-content:hover {
-  opacity: 1;
-  transform: scale(1.02);
-}
-
-.img-title-sailing-content img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-/* Title - Specific class for backward compatibility */
-.cruising-title {
+/* Title */
+.cruising-title{
   font-size: clamp(2.4rem, 3.6vw, 4.8rem);
-line-height: 1.2;
-margin: 0.5rem 0 1.25rem 0;
-color: #005598;
-text-align: center;
-max-width: 22ch;
-margin-inline: auto;
+  line-height: 1.2;
+  margin: 0.5rem 0 1.25rem 0;
+  color: #005598;
+  text-align: center;
+  max-width: 22ch;
+  margin-inline: auto;
+  z-index: 1;
+  position: relative;
 }
 
 /* subrayado elegante */
@@ -115,12 +97,9 @@ margin-inline: auto;
   position: relative;
 }
 
-/* Cada item */
-.cruising-icon{
-  padding: 0;
-}
+.cruising-icon{ padding: 0; }
 
-/* Link estilo “pill” premium */
+/* Pill */
 .cruising-link{
   display: inline-flex;
   align-items: center;
@@ -139,37 +118,29 @@ margin-inline: auto;
   will-change: transform;
   backdrop-filter: blur(6px);
 }
-
 .cruising-link:hover{
   transform: translateY(-4px);
   box-shadow: var(--cs-soft);
   border-color: rgba(15,33,64,.18);
-  background: #ffffff;
+  background: #fff;
 }
-
-.cruising-link:active{
-  transform: translateY(-1px);
-}
-
+.cruising-link:active{ transform: translateY(-1px); }
 .cruising-link:focus-visible{
   outline: 3px solid rgba(15,33,64,.25);
   outline-offset: 3px;
 }
 
-/* Icon */
 .cruising-link img{
   width: 26px;
   height: 26px;
   transition: transform .35s ease, filter .35s ease;
   transform: translateZ(0);
 }
-
 .cruising-link:hover img{
   transform: rotate(-6deg) scale(1.06);
   filter: contrast(1.05);
 }
 
-/* Texto */
 .cruising-link h3{
   margin: 0;
   font-size: 1.2rem;
@@ -178,26 +149,8 @@ margin-inline: auto;
   letter-spacing: .01em;
 }
 
-/* Stagger (suave) en los 5 items */
-.cruising-section.is-visible .cruising-icons .cruising-icon{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.cruising-icons .cruising-icon{
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(1){ transition-delay: .30s; }
-.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(2){ transition-delay: .36s; }
-.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(3){ transition-delay: .42s; }
-.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(4){ transition-delay: .48s; }
-.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(5){ transition-delay: .54s; }
-
 /* =========================
-   Imagen — wrapper + movimiento por scroll
+   Imagen
 ========================= */
 
 .cruising-image{
@@ -214,26 +167,64 @@ margin-inline: auto;
   overflow: hidden;
   box-shadow: var(--cs-shadow);
 
-  /* reveal */
   transform: scale(1.03);
   transition: transform .9s ease;
 }
 
-.cruising-section.is-visible .cruising-image-inner{
-  transform: scale(1);
-}
-
-/* Importante: la imagen está ligeramente más grande para que al moverla no se vean bordes */
 .cruising-image img{
   width: 100%;
   height: auto;
   display: block;
 
-  /* Estado inicial (se ajusta con JS al hacer scroll) */
+  /* base: más grande para permitir movimiento sin bordes */
   transform: translate3d(0, 0px, 0) scale(1.08);
   will-change: transform;
   filter: contrast(1.02) saturate(1.02);
 }
+
+/* =========================
+   REVEAL (estado inicial)
+   OJO: lo ponemos con :not(.is-visible) para que el logo NO pierda el fade
+========================= */
+
+.cruising-section:not(.is-visible) .img-title-sailing-content,
+.cruising-section:not(.is-visible) .cruising-title,
+.cruising-section:not(.is-visible) .cruising-subtitle,
+.cruising-section:not(.is-visible) .cruising-icons,
+.cruising-section:not(.is-visible) .cruising-image{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+/* Reveal delays */
+.cruising-section.is-visible .img-title-sailing-content{ transition-delay: .05s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .cruising-title{            transition-delay: .12s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .cruising-subtitle{         transition-delay: .18s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .cruising-icons{            transition-delay: .25s; opacity:1; transform: translateY(0); }
+.cruising-section.is-visible .cruising-image{            transition-delay: .30s; opacity:1; transform: translateY(0); }
+
+.cruising-section.is-visible .cruising-image-inner{
+  transform: scale(1);
+}
+
+/* Stagger items */
+.cruising-section:not(.is-visible) .cruising-icons .cruising-icon{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: transform, opacity;
+}
+.cruising-section.is-visible .cruising-icons .cruising-icon{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(1){ transition-delay: .30s; }
+.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(2){ transition-delay: .36s; }
+.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(3){ transition-delay: .42s; }
+.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(4){ transition-delay: .48s; }
+.cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(5){ transition-delay: .54s; }
 
 /* Responsive */
 @media (max-width: 900px){
@@ -243,7 +234,8 @@ margin-inline: auto;
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce){
-  .cruising-label,
+  .cruising-section::before,
+  .img-title-sailing-content,
   .cruising-title,
   .cruising-subtitle,
   .cruising-icons,
@@ -256,5 +248,6 @@ margin-inline: auto;
     transition: none !important;
     animation: none !important;
     transform: none !important;
+    opacity: 1 !important;
   }
 }

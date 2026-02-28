@@ -18,10 +18,11 @@ $introImgVersion = is_file($introImgFile) ? filemtime($introImgFile) : null;
   class="sailing-types-introduction"
   id="sailing-types-introduction"
   aria-labelledby="navigator-title"
+  data-sr-reveal
 >
   <div class="sailing-content">
     <!-- Brand mark: provide meaningful alt text for accessibility -->
-    <div class="img-title-sailing-content">
+    <div class="img-title-sailing-content sr-item">
       <img
         src="1_introduction/img/ullman_sails.png<?= $introImgVersion ? '?v='.$introImgVersion : '' ?>"
         alt="Ullman Sails"
@@ -32,10 +33,10 @@ $introImgVersion = is_file($introImgFile) ? filemtime($introImgFile) : null;
     </div>
 
     <!-- The main heading for this section; referenced by aria-labelledby -->
-    <h1 id="navigator-title">Endurance Series</h1>
+    <h1 id="navigator-title" class="sr-item">Endurance Series</h1>
 
     <!-- Keep the intro copy as a single paragraph for clean semantics -->
-    <p>
+    <p class="sr-item">
       Endurance Series sails are Ullman’s most durable cruising option for offshore and passagemaking. Custom-designed and reinforced for long-distance exposure, they deliver dependable bluewater strength and control.
     </p>
   </div>
@@ -43,5 +44,5 @@ $introImgVersion = is_file($introImgFile) ? filemtime($introImgFile) : null;
 
 <script
   defer
-  src="1_introduction/introduction.css<?= $introJsVersion ? '?v='.$introJsVersion : '' ?>"
+  src="1_introduction/introduction.js<?= $introJsVersion ? '?v='.$introJsVersion : '' ?>"
 ></script>

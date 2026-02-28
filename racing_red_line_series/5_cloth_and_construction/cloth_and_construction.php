@@ -16,8 +16,8 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
 
-<section class="nav-specsheet" aria-label="Downwind cloth selection and construction">
-  <h2 id="csp-title" class="csp-title">Cloth Selection &amp; Construction</h2>
+<section class="nav-specsheet" data-sr-reveal aria-label="Downwind cloth selection and construction">
+  <h2 id="csp-title" class="csp-title sr-item">Cloth Selection &amp; Construction</h2>
 
   <!-- =========================
        1) CODE SAILS (3 images)
@@ -26,7 +26,7 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
 
-        <figure class="nav-rotator" aria-label="Code sails image rotator" data-interval="3000">
+        <figure class="nav-rotator sr-item" aria-label="Code sails image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
                  src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
@@ -56,7 +56,7 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
           </figcaption>
         </figure>
 
-        <div class="nav-specsheet__text">
+        <div class="nav-specsheet__text sr-item">
           <div class="nav-specsheet__meta">
             <div class="nav-specsheet__metaTop">CODE SAILS</div>
             <div class="nav-specsheet__metaSub">CLOTH SELECTION</div>
@@ -134,7 +134,7 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
 
-        <figure class="nav-rotator" aria-label="Classic spinnakers image rotator" data-interval="3000">
+        <figure class="nav-rotator sr-item" aria-label="Classic spinnakers image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
                  src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
@@ -158,7 +158,7 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
           </figcaption>
         </figure>
 
-        <div class="nav-specsheet__text">
+        <div class="nav-specsheet__text sr-item">
           <div class="nav-specsheet__meta">
             <div class="nav-specsheet__metaTop">CLASSIC SPINNAKERS</div>
             <div class="nav-specsheet__metaSub">CLOTH SELECTION</div>

@@ -1,16 +1,33 @@
-<!-- ENGINEERING FOR EXTREME ENVIRONMENTS -->
-<link rel="stylesheet"
-      href="9_engineering_for_extreme_environments/engineering_for_extreme_environments.css?v=<?= filemtime(__DIR__ . '/9_engineering_for_extreme_environments/engineering_for_extreme_environments.css'); ?>">
+<?php
+// Asset versioning for cache-busting (changes the URL whenever the file changes)
+$introCssVersion = filemtime(__DIR__ . '/9_engineering_for_extreme_environments/engineering_for_extreme_environments.css');
+$introJsVersion  = filemtime(__DIR__ . '/9_engineering_for_extreme_environments/engineering_for_extreme_environments.js');
+?>
 
-<section class="engineering_for_extreme_environments" aria-labelledby="efee-title">
+<link
+  rel="stylesheet"
+  href="9_engineering_for_extreme_environments/engineering_for_extreme_environments.css?v=<?= $introCssVersion ?>"
+>
+
+<section
+  class="engineering_for_extreme_environments"
+  data-sr-reveal
+  aria-labelledby="efee-title"
+>
   <div class="efee-wrap">
 
     <header class="efee-header">
-      <h2 id="efee-title" class="efee-title">Engineering for extreme environments</h2>
+      <h2
+        id="efee-title"
+        class="efee-title sr-item"
+        style="--sr-delay: 0ms"
+      >
+        Engineering for extreme environments
+      </h2>
     </header>
 
     <div class="efee-grid" role="list">
-      <article class="efee-item" role="listitem">
+      <article class="efee-item sr-item" role="listitem" style="--sr-delay: 70ms">
         <div class="efee-num" aria-hidden="true">01</div>
         <div class="efee-body">
           <h3 class="efee-item-title">Ultra-high performance membrane design</h3>
@@ -20,7 +37,7 @@
         </div>
       </article>
 
-      <article class="efee-item" role="listitem">
+      <article class="efee-item sr-item" role="listitem" style="--sr-delay: 140ms">
         <div class="efee-num" aria-hidden="true">02</div>
         <div class="efee-body">
           <h3 class="efee-item-title">Carbon-driven load management</h3>
@@ -30,7 +47,7 @@
         </div>
       </article>
 
-      <article class="efee-item" role="listitem">
+      <article class="efee-item sr-item" role="listitem" style="--sr-delay: 210ms">
         <div class="efee-num" aria-hidden="true">03</div>
         <div class="efee-body">
           <h3 class="efee-item-title">Lightweight without compromise</h3>
@@ -40,7 +57,7 @@
         </div>
       </article>
 
-      <article class="efee-item" role="listitem">
+      <article class="efee-item sr-item" role="listitem" style="--sr-delay: 280ms">
         <div class="efee-num" aria-hidden="true">04</div>
         <div class="efee-body">
           <h3 class="efee-item-title">Elite racing focus</h3>
@@ -53,3 +70,7 @@
 
   </div>
 </section>
+<script
+  defer
+  src="9_engineering_for_extreme_environments/engineering_for_extreme_environments.js?v=<?= $introJsVersion ?>"
+></script>

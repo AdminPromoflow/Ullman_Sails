@@ -1,20 +1,43 @@
-// design-and-construction.js
+// design-and-construction.js — Reveal only (IntersectionObserver + stagger)
 (() => {
-  const section = document.querySelector('.design-and-construction');
-  if (!section) return;
+  const STAGGER_MS = 70;     // requested stagger
+  const THRESHOLD = 0.15;    // similar to your previous setup
+
+  const sections = document.querySelectorAll('[data-sr-reveal]');
+  if (!sections.length) return;
+
+  const reduceMotion =
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const revealed = new WeakSet();
+
+  const revealSection = (section) => {
+    if (revealed.has(section)) return;   // run once per section
+    revealed.add(section);
+
+    const items = section.querySelectorAll('.sr-item');
+    items.forEach((el, idx) => {
+      el.style.setProperty('--sr-delay', `${idx * STAGGER_MS}ms`);
+      requestAnimationFrame(() => el.classList.add('is-revealed'));
+    });
+  };
+
+  if (reduceMotion) {
+    sections.forEach(revealSection);
+    return;
+  }
 
   const io = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        if (entry.isIntersecting) {
-          section.classList.add('is-visible');
-          io.disconnect();
-          break;
-        }
+        if (!entry.isIntersecting) continue;
+        revealSection(entry.target);
+        io.unobserve(entry.target);
       }
     },
-    { threshold: 0.15 }
+    { threshold: THRESHOLD }
   );
 
-  io.observe(section);
+  sections.forEach((section) => io.observe(section));
 })();

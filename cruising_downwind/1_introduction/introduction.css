@@ -1,271 +1,208 @@
 /* ============================================================================
-   Ullman Sails — Downwind (Single CSS file)
-   Merged + cleaned from:
-   - index <style> (global base)
-   - 1_introduction/introduction.css (intro section)
-
-   NOTE:
-   - This keeps the same selectors (no HTML changes).
-   - Later, you can safely remove the <style> block from index because
-     those rules are included here as well.
+   Ullman Sails — Downwind Intro (CSS)
 ============================================================================ */
 
-/* ============================================================================
-   1) Global base (from index inline <style>)
-============================================================================ */
-html {
-  scroll-behavior: smooth;
+/* ===== Global base ===== */
+.cac-num { color: #005598 !important; }
+.ss-num  { color: #202E52 !important; }
+
+/* ===== Tokens ===== */
+:root{
+  --cs-ink:#0f2140;
+  --cs-muted:#5f6b7a;
+  --u-container:72rem;
+  --u-gutter:clamp(1rem,4vw,3rem);
+  --u-sec-py:clamp(2.75rem,6vw,5rem);
+  --u-gap:clamp(.75rem,2vw,1.5rem);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #F8F8FA;
-  font-size: 15px;
-
-  /* Keeping your current behavior */
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Global headings/colors (as you had them) */
-h1,
-h2 {
-  color: #005598 !important;
-}
-
-h3 {
-  color: #202E52 !important;
-}
-
-.cac-num {
-  color: #005598 !important;
-}
-
-.ss-num {
-  color: #202E52 !important;
-}
-
-/* ============================================================================
-   2) Tokens (keep here for now; if you already define these globally elsewhere,
-      you can remove this block later to avoid re-defining them)
-============================================================================ */
-:root {
-  --cs-ink: #0f2140;
-  --cs-muted: #5f6b7a;
-
-  /* Container + gutters */
-  --u-container: 72rem; /* ~1152px */
-  --u-gutter: clamp(1rem, 4vw, 3rem);
-
-  /* Section vertical padding */
-  --u-sec-py: clamp(2.75rem, 6vw, 5rem);
-
-  /* Element spacing */
-  --u-gap: clamp(0.75rem, 2vw, 1.5rem);
-}
-
-/* ============================================================================
-   3) Introduction section
-   Section: .sailing-types-introduction
-============================================================================ */
-.sailing-types-introduction {
+/* ===== Intro section ===== */
+.sailing-types-introduction{
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Mobile-first: fluid padding */
+  display:flex;
+  justify-content:center;
+  align-items:center;
   padding-block: var(--u-sec-py);
   padding-inline: var(--u-gutter);
+  background:#fafafa;
 
-  background: #fafafa;
+  overflow:hidden;
+  isolation:isolate;
 }
 
-.sailing-content {
-  width: min(100%, var(--u-container));
-  margin-inline: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-align: center;
+.sailing-content{
+  width:min(100%, var(--u-container));
+  margin-inline:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
   gap: var(--u-gap);
+  position:relative;
+  z-index:1;
 }
 
-/* Logo block */
-.img-title-sailing-content {
-  width: clamp(140px, 28vw, 240px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+/* Logo */
+.img-title-sailing-content{
+  width:clamp(140px,28vw,240px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0;
 }
 
-.sailing-content img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+.sailing-content img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:10px;
 }
 
 /* Title */
-.sailing-content h1 {
-  line-height: 1.12;
-  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
-
-  font-size: clamp(3rem, 4.5vw, 6rem);
-  font-weight: 600;
-
-  max-width: 18ch;
-  margin: auto;
-
-  /* Local colour kept (matches your current design) */
-  color: #005598;
+.sailing-content h1{
+  line-height:1.12;
+  padding-bottom:clamp(1.25rem,3vw,2.25rem);
+  font-size:clamp(3rem,4.5vw,6rem);
+  font-weight:600;
+  max-width:18ch;
+  margin:auto;
+  color:#005598;
 }
 
-@supports (text-wrap: balance) {
-  .sailing-content h1 {
-    text-wrap: balance;
-  }
+@supports (text-wrap: balance){
+  .sailing-content h1{ text-wrap:balance; }
 }
 
-.sailing-content h1::after {
-  content: "";
-  display: block;
-
-  width: clamp(72px, 18vw, 140px);
-  height: 2px;
-
-  margin: clamp(0.9rem, 2.2vw, 1.2rem) auto 0;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(15, 33, 64, 0.45),
-    transparent
-  );
-
-  transform: scaleX(0.9);
+.sailing-content h1::after{
+  content:"";
+  display:block;
+  width:clamp(72px,18vw,140px);
+  height:2px;
+  margin:clamp(.9rem,2.2vw,1.2rem) auto 0;
+  background:linear-gradient(90deg, transparent, rgba(15,33,64,.45), transparent);
+  transform:scaleX(.9);
 }
 
 /* Paragraph */
-.sailing-content p {
-  margin: 0;
-  font-size: clamp(1rem, 2.2vw, 1.5rem);
-  line-height: 1.6;
+.sailing-content p{
+  margin:0;
+  font-size:clamp(1rem,2.2vw,1.5rem);
+  line-height:1.6;
+  max-width:68ch;
+  color:var(--cs-muted);
+  position:relative;
+  z-index:1;
+  padding-inline:clamp(0rem,2vw,1rem);
+}
 
-  max-width: 68ch;
-  color: var(--cs-muted);
+/* ===== Breakpoints ===== */
+@media (max-width: 360px){
+  .sailing-types-introduction{ padding-inline:1rem; }
+  .sailing-content h1{
+    font-size:clamp(1.75rem,9vw,2.35rem);
+    max-width:18ch;
+  }
+}
 
-  position: relative;
-  z-index: 1;
+@media (max-width: 480px){
+  .sailing-content{ gap:.9rem; }
+  .sailing-content p{ font-size:1.02rem; }
+}
 
-  /* Small screens breathing room */
-  padding-inline: clamp(0rem, 2vw, 1rem);
+@media (min-width: 768px){
+  .sailing-types-introduction{
+    padding-block:clamp(3.5rem,5vw,5.5rem);
+  }
+}
+
+@media (min-width: 1200px){
+  .sailing-content h1{ max-width:24ch; }
 }
 
 /* ============================================================================
-   4) Breakpoints (fine tuning)
+   Parallax (basic) — uses CSS vars set by JS
 ============================================================================ */
 
-/* Small phones (<= 360px) */
-@media (max-width: 360px) {
-  .sailing-types-introduction {
-    padding-inline: 1rem;
-  }
+/* Background layer */
+.sailing-types-introduction::before{
+  content:"";
+  position:absolute;
+  inset:-12%;
+  z-index:0;
+  pointer-events:none;
 
-  .sailing-content h1 {
-    font-size: clamp(1.75rem, 9vw, 2.35rem);
-    max-width: 18ch;
-  }
-}
-
-/* Phone (<= 480px) */
-@media (max-width: 480px) {
-  .sailing-content {
-    gap: 0.9rem;
-  }
-
-  .sailing-content p {
-    font-size: 1.02rem;
-  }
-}
-
-/* Tablet (>= 768px) */
-@media (min-width: 768px) {
-  .sailing-types-introduction {
-    padding-block: clamp(3.5rem, 5vw, 5.5rem);
-  }
-}
-
-/* Large desktop (>= 1200px) */
-@media (min-width: 1200px) {
-  .sailing-content h1 {
-    max-width: 24ch;
-  }
-}
-/* ============================================================================
-   Parallax (basic) — Downwind Intro
-   (no HTML changes)
-============================================================================ */
-
-.sailing-types-introduction {
-  overflow: hidden;
-  isolation: isolate; /* asegura capas limpias */
-}
-
-/* Fondo "parallax" sutil */
-.sailing-types-introduction::before {
-  content: "";
-  position: absolute;
-  inset: -12%;
-  z-index: 0;
-  pointer-events: none;
-
-  /* Fondo suave (puedes ajustar intensidades sin cambiar el diseño) */
   background:
-    radial-gradient(40rem 26rem at 18% 15%, rgba(0, 85, 152, 0.10), transparent 55%),
-    radial-gradient(34rem 24rem at 80% 70%, rgba(15, 33, 64, 0.10), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.15));
+    radial-gradient(40rem 26rem at 18% 15%, rgba(0,85,152,.10), transparent 55%),
+    radial-gradient(34rem 24rem at 80% 70%, rgba(15,33,64,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.15));
 
-  /* La magia: se mueve por variable */
   transform: translate3d(0, var(--p-bg, 0px), 0) scale(1.03);
   will-change: transform;
 }
 
-/* Asegura que el contenido quede encima del fondo */
-.sailing-content {
-  position: relative;
-  z-index: 1;
+/* Combine Parallax + Reveal using vars (no transform fights) */
+.img-title-sailing-content{ --p-shift: var(--p-logo, 0px); }
+.sailing-content h1{        --p-shift: var(--p-title, 0px); }
+.sailing-content p{         --p-shift: var(--p-text, 0px); }
 
-}
-
-/* Capas con parallax: logo, título, texto */
-.img-title-sailing-content {
-  transform: translate3d(0, var(--p-logo, 0px), 0);
+.img-title-sailing-content,
+.sailing-content h1,
+.sailing-content p{
+  transform: translate3d(0, calc(var(--p-shift, 0px) + var(--sr-y, 0px)), 0)
+             scale(var(--sr-scale, 1));
   will-change: transform;
 }
 
-.sailing-content h1 {
-  transform: translate3d(0, var(--p-title, 0px), 0);
-  will-change: transform;
+/* ============================================================================
+   REVEAL (stagger) — compatible with parallax
+============================================================================ */
+
+.js-sr [data-sr-reveal] .sr-item{
+  opacity:0;
+  --sr-y: 16px;
+  --sr-scale: .985;
+  filter: blur(2);
+
+  transition:
+    opacity 650ms cubic-bezier(.22,.61,.36,1),
+    filter 650ms cubic-bezier(.22,.61,.36,1),
+    transform 650ms cubic-bezier(.22,.61,.36,1);
+  transition-delay: var(--sr-delay, 0ms);
+
+  will-change: opacity, filter, transform;
 }
 
-.sailing-content p {
-  transform: translate3d(0, var(--p-text, 0px), 0);
-  will-change: transform;
+.js-sr [data-sr-reveal].is-revealed .sr-item{
+  opacity:1;
+  --sr-y: 0px;
+  --sr-scale: 1;
+  filter: blur(0);
 }
 
-/* Accesibilidad: respeta reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .sailing-types-introduction::before,
+/* HR reveal clean */
+.js-sr [data-sr-reveal] .sr-item.sr-hr{
+  transform: translate3d(0, 14px, 0) scaleX(.92);
+  transform-origin:left center;
+  filter:none;
+}
+.js-sr [data-sr-reveal].is-revealed .sr-item.sr-hr{
+  transform: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .sailing-types-introduction::before{ transform:none !important; }
+  .js-sr [data-sr-reveal] .sr-item{
+    opacity:1 !important;
+    --sr-y:0px !important;
+    --sr-scale:1 !important;
+    filter:none !important;
+    transition:none !important;
+  }
   .img-title-sailing-content,
   .sailing-content h1,
-  .sailing-content p {
-    transform: none !important;
-    will-change: auto;
+  .sailing-content p{
+    transform:none !important;
+    will-change:auto;
   }
 }

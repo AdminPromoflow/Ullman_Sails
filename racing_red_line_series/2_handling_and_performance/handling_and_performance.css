@@ -65,10 +65,6 @@
   padding-inline: clamp(0rem, 1.2vw, .5rem);
 }
 
-
-
-
-
 @supports (text-wrap: balance){
   .ph-title{ text-wrap: balance; }
 }
@@ -197,7 +193,33 @@
   }
 }
 
+/* =========================
+   Reveal only (IntersectionObserver + stagger)
+   Requires:
+   - data-sr-reveal on section
+   - .sr-item on reveal elements
+   - .is-revealed on section (added by JS once)
+   - delays via --sr-delay inline style
+========================= */
+
+.performance-and-handling[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.performance-and-handling.is-revealed .sr-item{
+  opacity: 1;
+  transform: none;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce){
-  /* already no motion here; keep for consistency */
+  .performance-and-handling[data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

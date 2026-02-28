@@ -35,14 +35,14 @@
 
 .ss-title{
   line-height: 1.12;
-text-align: center;
-padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
-font-size: clamp(3rem, 4.5vw, 6rem);
-font-weight: 600;
-max-width: 18ch;
-margin: auto;
-color: #005598;
-text-align: center;
+  text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
+  max-width: 18ch;
+  margin: auto;
+  color: #005598;
+  text-align: center;
 }
 
 .ss-subtitle{
@@ -188,4 +188,23 @@ text-align: center;
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* =========================
+   Reveal only (ADD-ON)
+   SOLO lo necesario: data-sr-reveal + .sr-item + .is-revealed + delays
+========================= */
+
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 650ms cubic-bezier(.2,.7,.2,1),
+    transform 650ms cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
 }

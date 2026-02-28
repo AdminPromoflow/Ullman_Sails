@@ -1,27 +1,49 @@
 <?php
-$cssTime = filemtime('../Racing/cruising_section/cruising_section.css');
-$jsTime  = filemtime('../Racing/cruising_section/cruising_section.js');
+declare(strict_types=1);
 
-$img1Time = filemtime('../Racing/cruising_section/img/navigator.png');
-$img2Time = filemtime('../Racing/cruising_section/img/Endurance.png');
-$img3Time = filemtime('../Racing/cruising_section/img/voyager.png');
-$img4Time = filemtime('../Racing/cruising_section/img/racing_section.jpg');
+$cssFs = __DIR__ . '/../Racing/cruising_section/cruising_section.css';
+$jsFs  = __DIR__ . '/../Racing/cruising_section/cruising_section.js';
+
+$cssUrl = '../Racing/cruising_section/cruising_section.css';
+$jsUrl  = '../Racing/cruising_section/cruising_section.js';
+
+$cssV = is_file($cssFs) ? filemtime($cssFs) : null;
+$jsV  = is_file($jsFs)  ? filemtime($jsFs)  : null;
+
+function with_v(string $url, ?int $v): string {
+  return $v ? ($url . '?v=' . $v) : $url;
+}
+
+$img1Fs = __DIR__ . '/../Racing/cruising_section/img/navigator.png';
+$img2Fs = __DIR__ . '/../Racing/cruising_section/img/Endurance.png';
+$img3Fs = __DIR__ . '/../Racing/cruising_section/img/voyager.png';
+$img4Fs = __DIR__ . '/../Racing/cruising_section/img/racing_section.jpg';
+
+$img1Url = '../Racing/cruising_section/img/navigator.png';
+$img2Url = '../Racing/cruising_section/img/Endurance.png';
+$img3Url = '../Racing/cruising_section/img/voyager.png';
+$img4Url = '../Racing/cruising_section/img/racing_section.jpg';
+
+$img1V = is_file($img1Fs) ? filemtime($img1Fs) : null;
+$img2V = is_file($img2Fs) ? filemtime($img2Fs) : null;
+$img3V = is_file($img3Fs) ? filemtime($img3Fs) : null;
+$img4V = is_file($img4Fs) ? filemtime($img4Fs) : null;
 ?>
 
-<link rel="stylesheet" href="../Racing/cruising_section/cruising_section.css?v=<?= $cssTime ?>">
+<link rel="stylesheet" href="<?= with_v($cssUrl, $cssV) ?>">
 
 <section class="cruising-section" aria-labelledby="cruising-title">
   <div class="img-title-sailing-content">
-      <img
-        src="../cruising_navigator/1_introduction/img/ullman_sails.png"
-        alt="Ullman Sails"
-        decoding="async"
-        width="240"
-        height="72"
-      >
-    </div>
+    <img
+      src="../cruising_navigator/1_introduction/img/ullman_sails.png"
+      alt="Ullman Sails"
+      decoding="async"
+      width="240"
+      height="72"
+    >
+  </div>
 
-    <h2 id="cruising-title" class="cruising-title">Racing Sails</h2>
+  <h2 id="cruising-title" class="cruising-title">Racing Sails</h2>
 
   <p class="cruising-subtitle">
     When it comes to cruising sails, durability and ease of use are key. The Navigator Series, Endurance Series,
@@ -32,21 +54,21 @@ $img4Time = filemtime('../Racing/cruising_section/img/racing_section.jpg');
   <ul class="cruising-icons" role="list">
     <li class="cruising-icon">
       <a class="cruising-link" href="../racing_race_series/index.php">
-        <img src="../Racing/cruising_section/img/navigator.png?v=<?= $img1Time ?>" alt="Navigator Icon">
+        <img src="<?= with_v($img1Url, $img1V) ?>" alt="Race Icon">
         <h3 class="series">Race</h3>
       </a>
     </li>
 
     <li class="cruising-icon">
       <a class="cruising-link" href="../racing_fiberpath_series/index.php">
-        <img src="../Racing/cruising_section/img/Endurance.png?v=<?= $img2Time ?>" alt="Endurance Icon">
+        <img src="<?= with_v($img2Url, $img2V) ?>" alt="FiberPath Icon">
         <h3 class="series">FiberPath</h3>
       </a>
     </li>
 
     <li class="cruising-icon">
       <a class="cruising-link" href="../racing_red_line_series/index.php">
-        <img src="../Racing/cruising_section/img/voyager.png?v=<?= $img3Time ?>" alt="Voyager Icon">
+        <img src="<?= with_v($img3Url, $img3V) ?>" alt="Red Line Icon">
         <h3 class="series">The Axia Series - Red Line</h3>
       </a>
     </li>
@@ -54,9 +76,9 @@ $img4Time = filemtime('../Racing/cruising_section/img/racing_section.jpg');
 
   <figure class="cruising-image">
     <div class="cruising-image-inner">
-      <img src="../Racing/cruising_section/img/racing_section.jpg?v=<?= $img4Time ?>" alt="Racing Sails">
+      <img src="<?= with_v($img4Url, $img4V) ?>" alt="Racing Sails">
     </div>
   </figure>
 </section>
 
-<script src="../Racing/cruising_section/cruising_section.js?v=<?= $jsTime ?>" defer></script>
+<script defer src="<?= with_v($jsUrl, $jsV) ?>"></script>

@@ -113,3 +113,28 @@ h2{
     animation: none !important;
   }
 }
+
+/* =========================
+   Reveal only — ADD-ON (no parallax)
+   - Uses: data-sr-reveal + .sr-item + .is-revealed + stagger delays
+========================= */
+.js-sr [data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.js-sr [data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .js-sr [data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

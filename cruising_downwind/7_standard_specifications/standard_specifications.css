@@ -189,3 +189,27 @@
     animation: none !important;
   }
 }
+
+/* =========================
+   Reveal only (add-on)
+   - data-sr-reveal, .sr-item, .is-revealed, delays
+========================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    transition: none !important;
+    transform: none !important;
+  }
+}

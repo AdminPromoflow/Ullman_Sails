@@ -1,20 +1,30 @@
-// design-and-construction.js
+// engineering_for_extreme_environments_reveal.js
 (() => {
-  const section = document.querySelector('.design-and-construction');
-  if (!section) return;
+  const sections = document.querySelectorAll('[data-sr-reveal]');
+  if (!sections.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Si reduce motion, revela todo inmediatamente (sin animar)
+  if (prefersReduced) {
+    sections.forEach((s) => s.classList.add('is-revealed'));
+    return;
+  }
 
   const io = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        if (entry.isIntersecting) {
-          section.classList.add('is-visible');
-          io.disconnect();
-          break;
-        }
+        if (!entry.isIntersecting) continue;
+
+        const section = entry.target;
+        section.classList.add('is-revealed');
+
+        // UNA sola vez por sección
+        io.unobserve(section);
       }
     },
     { threshold: 0.15 }
   );
 
-  io.observe(section);
+  sections.forEach((s) => io.observe(s));
 })();

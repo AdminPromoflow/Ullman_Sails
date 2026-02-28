@@ -1,3 +1,10 @@
+/* =========================================================
+   File: cruising_navigator/6_cloth_and_construction/cloth_and_construction.js
+   - Rotator (your logic)
+   - Reveal only (IntersectionObserver + stagger 70ms) — once per section
+========================================================= */
+
+/* ===== Rotator ===== */
 document.addEventListener("DOMContentLoaded", () => {
   const rotator = document.querySelector(".nav-rotator");
   if (!rotator) return;
@@ -31,4 +38,45 @@ document.addEventListener("DOMContentLoaded", () => {
     i = (i + 1) % imgs.length;
     setActive(i);
   }, interval);
+});
+
+/* ===== Reveal only (once per section) ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const STAGGER_MS = 70;
+
+  const roots = document.querySelectorAll("[data-sr-reveal]");
+  if (!roots.length) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const applyDelays = (root) => {
+    const items = root.querySelectorAll(".sr-item");
+    items.forEach((el, idx) => {
+      el.style.setProperty("--sr-delay", `${idx * STAGGER_MS}ms`);
+    });
+  };
+
+  roots.forEach(applyDelays);
+
+  if (reducedMotion) {
+    roots.forEach((root) => root.classList.add("is-revealed"));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries, obs) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+
+      const root = entry.target;
+      root.classList.add("is-revealed");
+
+      // Run ONCE per section
+      obs.unobserve(root);
+    }
+  }, {
+    threshold: 0.18,
+    rootMargin: "0px 0px -10% 0px",
+  });
+
+  roots.forEach((root) => io.observe(root));
 });

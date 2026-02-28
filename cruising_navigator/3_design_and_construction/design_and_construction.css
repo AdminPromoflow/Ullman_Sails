@@ -151,4 +151,31 @@
     animation: none !important;
   }
 }
-/* El grid centra las celdas y su contenido */
+
+/* =========================
+   Reveal only (IntersectionObserver + stagger)
+   - Adds only: data-sr-reveal, .sr-item, .is-revealed, delays via --sr-delay
+========================= */
+
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(.2,.8,.2,1);
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure content is visible for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

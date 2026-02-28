@@ -7,8 +7,6 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 ?>
 
 <link rel="stylesheet" href="../Cruising/cruising_section/cruising_section.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
-
-
 <section class="cruising-section" aria-labelledby="cruising-title">
   <div class="img-title-sailing-content">
       <img
@@ -71,5 +69,4 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
     </div>
   </figure>
 </section>
-
 <script defer src="../Cruising/cruising_section/cruising_section.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>

@@ -21,13 +21,13 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
 
 <link rel="stylesheet" href="5_cloth_and_construction/cloth_and_construction.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
 
-<section class="nav-specsheet" aria-label="Downwind cloth selection and construction">
-  <h2 id="csp-title" class="csp-title">Cloth Selection &amp; Construction</h2>
+<section class="nav-specsheet" data-sr-reveal aria-label="Downwind cloth selection and construction">
+  <h2 id="csp-title" class="csp-title sr-item">Cloth Selection &amp; Construction</h2>
 
   <!-- =========================
        1) CODE SAILS (3 images)
   ========================== -->
-  <div class="nav-specsheet__wrap">
+  <div class="nav-specsheet__wrap sr-item">
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
 
@@ -135,7 +135,7 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
   <!-- =========================
        2) CLASSIC SPINNAKERS (2 images)
   ========================== -->
-  <div class="nav-specsheet__wrap">
+  <div class="nav-specsheet__wrap sr-item">
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
 

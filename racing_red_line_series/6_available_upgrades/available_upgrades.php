@@ -19,6 +19,10 @@ $cssPublic = '6_available_upgrades/available_upgrades.css';
 $cssFs     = __DIR__ . '/6_available_upgrades/available_upgrades.css';
 $cssHref   = versioned_asset($cssPublic, $cssFs);
 
+$jsPublic  = '6_available_upgrades/available_upgrades.js';
+$jsFs      = __DIR__ . '/6_available_upgrades/available_upgrades.js';
+$jsSrc     = versioned_asset($jsPublic, $jsFs);
+
 $upgrades = [
   [
     'title' => 'V trim stripes (standard / glow option)',
@@ -56,9 +60,6 @@ $upgrades = [
     'title' => 'Glued-only seams (if specified)',
     'text'  => 'Adhesive-only seam construction available by request where the build spec prioritises minimal stitch lines and a clean finish.',
   ],
-
-
-
 ];
 
 $total = count($upgrades);
@@ -66,13 +67,13 @@ $total = count($upgrades);
 
 <link rel="stylesheet" href="<?= esc($cssHref) ?>">
 
-<section class="available_upgrades" aria-labelledby="au-title">
+<section class="available_upgrades" aria-labelledby="au-title" data-sr-reveal>
   <div class="au-wrap">
 
     <header class="au-header">
-      <p class="au-tagline">The Axia Series - Red Line</p>
-      <h2 id="au-title" class="au-title">Available Options and Upgrades</h2>
-      <p class="au-subtitle">
+      <p class="au-tagline sr-item">The Axia&nbsp;Series&nbsp;- Red Line</p>
+      <h2 id="au-title" class="au-title sr-item">Available Options and Upgrades</h2>
+      <p class="au-subtitle sr-item">
         Downwind racing codes and spinnakers: quick launch, clean rotation, and Active Luff furling options.
       </p>
     </header>
@@ -81,7 +82,7 @@ $total = count($upgrades);
       <?php foreach ($upgrades as $i => $item): ?>
         <?php $num = str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT); ?>
 
-        <article class="au-row" role="listitem">
+        <article class="au-row sr-item" role="listitem">
           <div class="au-num" aria-hidden="true"><?= esc($num) ?></div>
 
           <div class="au-body">
@@ -91,10 +92,12 @@ $total = count($upgrades);
         </article>
 
         <?php if ($i < $total - 1): ?>
-          <hr class="au-divider" aria-hidden="true">
+          <hr class="au-divider sr-item" aria-hidden="true">
         <?php endif; ?>
       <?php endforeach; ?>
     </div>
 
   </div>
 </section>
+
+<script defer src="<?= esc($jsSrc) ?>"></script>

@@ -24,15 +24,18 @@ $sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
 
-<section class="nav-specsheet" aria-label="Navigator cloth and components">
-  <h2 id="csp-title" class="csp-title">Cloth Selection</h2>
+<section
+  class="nav-specsheet"
+  data-sr-reveal
+  aria-label="Navigator cloth and components"
+>
+  <h2 id="csp-title" class="csp-title sr-item">Cloth Selection</h2>
 
   <div class="nav-specsheet__wrap">
     <div class="nav-specsheet__panel">
-
       <div class="nav-specsheet__grid">
 
-        <figure class="nav-rotator" aria-label="Navigator sail image rotator" data-interval="3000">
+        <figure class="nav-rotator sr-item" aria-label="Navigator sail image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
                  src="5_cloth_and_construction/img/sail_1.png?v=<?= $sail1V ?>"
@@ -63,40 +66,40 @@ $sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
         </figure>
 
         <div class="nav-specsheet__text">
-          <div class="nav-specsheet__meta">
+          <div class="nav-specsheet__meta sr-item">
             <div class="nav-specsheet__metaTop">NAVIGATOR DACRON</div>
             <div class="nav-specsheet__metaSub">CROSSCUT WOVEN POLYESTER</div>
           </div>
 
-          <h3 class="nav-specsheet__subtitle">Standard Components</h3>
+          <h3 class="nav-specsheet__subtitle sr-item">Standard Components</h3>
 
           <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row sr-item">
               <div class="nav-specsheet__key">STITCHING</div>
               <div class="nav-specsheet__val">TRIPLE-STEP</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row sr-item">
               <div class="nav-specsheet__key">RINGS</div>
               <div class="nav-specsheet__val">STAINLESS STEEL</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row sr-item">
               <div class="nav-specsheet__key">THREAD</div>
               <div class="nav-specsheet__val">HIGH PERFORMANCE DURABLE THREAD</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row sr-item">
               <div class="nav-specsheet__key">SLIDES</div>
               <div class="nav-specsheet__val">HANKS OR SLIDES</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row sr-item">
               <div class="nav-specsheet__key">BATTEN POCKETS</div>
               <div class="nav-specsheet__val">REINFORCED POCKETS &amp; BATTENS</div>
             </div>
 
-            <div class="nav-specsheet__row">
+            <div class="nav-specsheet__row sr-item">
               <div class="nav-specsheet__key">PATCHES</div>
               <div class="nav-specsheet__val">BLOCK PATCHES</div>
             </div>
@@ -104,7 +107,6 @@ $sail3V  = is_file($sail3Fs) ? filemtime($sail3Fs) : time();
         </div>
 
       </div>
-
     </div>
   </div>
 </section>

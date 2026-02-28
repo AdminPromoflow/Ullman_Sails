@@ -19,6 +19,10 @@ $cssPublic = '6_available_upgrades/available_upgrades.css';
 $cssFs     = __DIR__ . '/6_available_upgrades/available_upgrades.css';
 $cssHref   = versioned_asset($cssPublic, $cssFs);
 
+$jsPublic = '6_available_upgrades/available_upgrades.js';
+$jsFs     = __DIR__ . '/6_available_upgrades/available_upgrades.js';
+$jsSrc    = versioned_asset($jsPublic, $jsFs);
+
 $upgrades = [
   [
     'title' => 'Race Dacron cloth',
@@ -60,7 +64,6 @@ $upgrades = [
     'title' => 'Carbon battens',
     'text'  => 'Carbon battens reduce weight aloft and increase stiffness for a sharper stable profile now.',
   ],
-
 ];
 
 $total = count($upgrades);
@@ -68,13 +71,13 @@ $total = count($upgrades);
 
 <link rel="stylesheet" href="<?= esc($cssHref) ?>">
 
-<section class="available_upgrades" aria-labelledby="au-title">
+<section class="available_upgrades" aria-labelledby="au-title" data-sr-reveal>
   <div class="au-wrap">
 
     <header class="au-header">
-      <p class="au-tagline">The Race Series</p>
-      <h2 id="au-title" class="au-title">Available Options and Upgrades</h2>
-      <p class="au-subtitle">
+      <p class="au-tagline sr-item">The Race&nbsp;Series</p>
+      <h2 id="au-title" class="au-title sr-item">Available Options and Upgrades</h2>
+      <p class="au-subtitle sr-item">
         Radial-built club/class race sails: broad trim range, responsive handling, durable upgrades.
       </p>
     </header>
@@ -83,7 +86,7 @@ $total = count($upgrades);
       <?php foreach ($upgrades as $i => $item): ?>
         <?php $num = str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT); ?>
 
-        <article class="au-row" role="listitem">
+        <article class="au-row sr-item" role="listitem">
           <div class="au-num" aria-hidden="true"><?= esc($num) ?></div>
 
           <div class="au-body">
@@ -93,10 +96,12 @@ $total = count($upgrades);
         </article>
 
         <?php if ($i < $total - 1): ?>
-          <hr class="au-divider" aria-hidden="true">
+          <hr class="au-divider sr-item" aria-hidden="true">
         <?php endif; ?>
       <?php endforeach; ?>
     </div>
 
   </div>
 </section>
+
+<script defer src="<?= esc($jsSrc) ?>"></script>

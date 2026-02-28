@@ -1,5 +1,5 @@
 /* =========================
-   PERFORMANCE AND HANDLING — responsive (same pattern as before)
+   PERFORMANCE AND HANDLING — responsive + REVEAL ONLY
    File: cruising_navigator/2_handling_and_performance/handling_and_performance.css
 ========================= */
 
@@ -39,7 +39,6 @@
   justify-content: center;
   align-items: center;
 
-  /* Remove fixed height: keep layout flexible */
   gap: clamp(.75rem, 2vw, 1.25rem);
 }
 
@@ -64,10 +63,6 @@
   text-align: center;
 }
 
-
-
-
-
 @supports (text-wrap: balance){
   .ph-title{ text-wrap: balance; }
 }
@@ -76,10 +71,7 @@
   display: block;
   width: min(100%, 520px);
   height: auto;
-
   border-radius: 14px;
-
-  /* Keep it visible but controlled across devices */
   margin-top: clamp(.25rem, 1vw, .75rem);
 }
 
@@ -157,14 +149,6 @@
   max-width: 52ch;
 }
 
-/* Keep always visible (as requested) */
-.ph-left,
-.ph-step{
-  opacity: 1;
-  transform: none;
-  transition: none;
-}
-
 /* =========================
    Responsive
 ========================= */
@@ -196,7 +180,46 @@
   }
 }
 
+/* =========================================================
+   REVEAL ONLY (same system as series_section)
+   - Works with: data-sr-reveal + sr-item + is-revealed
+   ========================================================= */
+
+/* Default: if JS is NOT available, keep everything visible */
+html:not(.js-sr) .performance-and-handling .ph-left,
+html:not(.js-sr) .performance-and-handling .ph-step{
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* Reveal animation */
+.js-sr [data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translate3d(0, 16px, 0) scale(.985);
+  filter: blur(2px);
+
+  transition:
+    opacity 650ms cubic-bezier(.22,.61,.36,1),
+    transform 650ms cubic-bezier(.22,.61,.36,1),
+    filter 650ms cubic-bezier(.22,.61,.36,1);
+  transition-delay: var(--sr-delay, 0ms);
+
+  will-change: opacity, transform, filter;
+}
+
+.js-sr [data-sr-reveal].is-revealed .sr-item{
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce){
-  /* already no motion here; keep for consistency */
+  .js-sr [data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
 }

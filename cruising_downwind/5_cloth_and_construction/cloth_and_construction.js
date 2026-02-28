@@ -75,3 +75,55 @@
 
   document.querySelectorAll('.nav-rotator').forEach(initRotator);
 })();
+
+/* =========================
+   Reveal only (run once per section)
+   - data-sr-reveal + .sr-item + .is-revealed + stagger (70ms)
+========================= */
+(() => {
+  const sections = Array.from(document.querySelectorAll('[data-sr-reveal]'));
+  if (!sections.length) return;
+
+  const prefersReduced =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const STAGGER_MS = 70;
+  const done = new WeakSet();
+
+  function revealSection(section) {
+    if (done.has(section)) return;
+    done.add(section);
+
+    const items = Array.from(section.querySelectorAll('.sr-item'));
+    if (!items.length) return;
+
+    // Apply delays (CSS var) and reveal
+    for (let i = 0; i < items.length; i++) {
+      const el = items[i];
+      el.style.setProperty('--sr-delay', prefersReduced ? '0ms' : `${i * STAGGER_MS}ms`);
+
+      if (prefersReduced) {
+        el.classList.add('is-revealed');
+      } else {
+        window.setTimeout(() => el.classList.add('is-revealed'), i * STAGGER_MS);
+      }
+    }
+  }
+
+  // Fallback (no IO): reveal immediately
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(revealSection);
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const section = entry.target;
+      revealSection(section);
+      io.unobserve(section); // once per section
+    }
+  }, { threshold: 0.18 });
+
+  sections.forEach((section) => io.observe(section));
+})();

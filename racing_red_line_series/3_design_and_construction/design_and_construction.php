@@ -29,7 +29,6 @@ $dac_items = [
     'title' => 'Race materials',
     'text'  => ' Low-stretch laminates, nylons: crisp instant response.',
   ],
-
 ];
 
 // Filesystem paths (for filemtime)
@@ -47,21 +46,21 @@ $dacJsV  = is_file($dacJsFs)  ? filemtime($dacJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $dacCssPublic ?>?v=<?= $dacCssV ?>">
 
-<section class="design-and-construction" aria-labelledby="dac-title">
+<section class="design-and-construction" data-sr-reveal aria-labelledby="dac-title">
   <div class="dac-wrap">
 
     <header class="dac-header">
-      <p class="dac-tagline">The Axia Series - Red Line</p>
-      <h2 id="dac-title" class="dac-title">Reliable by Design</h2>
+      <p class="dac-tagline sr-item">The Axia&nbsp;Series&nbsp;- Red Line</p>
+      <h2 id="dac-title" class="dac-title sr-item">Reliable by Design</h2>
 
-      <p class="dac-subtitle">
+      <p class="dac-subtitle sr-item">
         High-octane downwind sails for race boats: Axia Red Line blends structured luffs with low-stretch laminates to deliver quicker rotation, stable flying shapes and confident furling, so you sail deeper, faster and with control. Built for modern rigs offshore.
       </p>
     </header>
 
     <ul class="dac-grid" role="list">
       <?php foreach ($dac_items as $item): ?>
-        <li class="dac-card">
+        <li class="dac-card sr-item">
           <div class="dac-icon" aria-hidden="true">
             <?= $dac_cube_svg ?>
           </div>

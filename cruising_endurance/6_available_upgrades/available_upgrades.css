@@ -41,14 +41,14 @@
 /* Section title format (as requested) */
 .au-title{
   line-height: 1.12;
-text-align: center;
-padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
-font-size: clamp(3rem, 4.5vw, 6rem);
-font-weight: 600;
-max-width: 18ch;
-margin: auto;
-color: #005598;
-text-align: center;
+  text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  font-size: clamp(3rem, 4.5vw, 6rem);
+  font-weight: 600;
+  max-width: 18ch;
+  margin: auto;
+  color: #005598;
+  text-align: center;
 }
 
 .au-subtitle{
@@ -134,5 +134,31 @@ text-align: center;
   .available_upgrades *{
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* =========================
+   Reveal only (ADD-ON)
+   - Uses: data-sr-reveal, .sr-item, .is-revealed, delays via --sr-delay
+========================= */
+[data-sr-reveal] .sr-item{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  transition-delay: var(--sr-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-sr-reveal] .sr-item.is-revealed{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-sr-reveal] .sr-item{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
   }
 }

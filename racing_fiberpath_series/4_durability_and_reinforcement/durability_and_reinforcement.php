@@ -33,7 +33,6 @@ $sid_items = [
     'title' => 'Reinforced load points',
     'text'  => 'Triple-step seams, radial patches, and stainless rings backed by Spectra/Dyneema webbing reinforce corners and reduce chafe at high-load points on every hoist.',
   ],
-
 ];
 
 // Filesystem paths (for filemtime)
@@ -51,22 +50,22 @@ $sidJsV  = is_file($sidJsFs)  ? filemtime($sidJsFs)  : time();
 
 <link rel="stylesheet" href="<?= $sidCssPublic ?>?v=<?= $sidCssV ?>">
 
-<section class="strength-in-the-details" aria-labelledby="sid-title">
+<section class="strength-in-the-details" data-sr-reveal aria-labelledby="sid-title">
   <div class="sid-wrap">
 
     <header class="sid-header">
-      <p class="sid-tagline">The FiberPath Series</p>
-      <h2 id="sid-title" class="sid-title">Durability and Handling</h2>
-      <p class="sid-intro">
-         String-mapped membrane race sails built with high-pressure, high-heat lamination carbon/aramid fibres and film or taffeta/NWT skins for low stretch and abrasion life afloat.
+      <p class="sid-tagline sr-item">The FiberPath&nbsp;Series</p>
+      <h2 id="sid-title" class="sid-title sr-item">Durability and Handling</h2>
+      <p class="sid-intro sr-item">
+        String-mapped membrane race sails built with high-pressure, high-heat lamination carbon/aramid fibres and film or taffeta/NWT skins for low stretch and abrasion life afloat.
       </p>
     </header>
 
-    <hr class="sid-divider" aria-hidden="true">
+    <hr class="sid-divider sr-item" aria-hidden="true">
 
     <div class="sid-grid">
       <?php foreach ($sid_items as $item): ?>
-        <article class="sid-item">
+        <article class="sid-item sr-item">
           <div class="sid-media" aria-hidden="true">
             <div class="sid-media-inner">
               <?= $dac_cube_svg ?>

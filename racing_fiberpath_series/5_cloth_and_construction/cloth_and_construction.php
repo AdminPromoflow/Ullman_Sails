@@ -33,13 +33,13 @@ $fpGrandPrixJibV  = is_file($fpGrandPrixJibFs)  ? filemtime($fpGrandPrixJibFs)  
 
 <link rel="stylesheet" href="<?= $nsCssPublic ?>?v=<?= $nsCssV ?>">
 
-<section class="nav-specsheet" aria-label="Downwind cloth selection and construction">
-  <h2 id="csp-title" class="csp-title">Cloth Selection &amp; Construction</h2>
+<section class="nav-specsheet" data-sr-reveal aria-label="Downwind cloth selection and construction">
+  <h2 id="csp-title" class="csp-title sr-item">Cloth Selection &amp; Construction</h2>
 
   <!-- =========================
        1) FIBERPATH (3 images)
   ========================== -->
-  <div class="nav-specsheet__wrap">
+  <div class="nav-specsheet__wrap sr-item">
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
 
@@ -50,19 +50,16 @@ $fpGrandPrixJibV  = is_file($fpGrandPrixJibFs)  ? filemtime($fpGrandPrixJibFs)  
                  alt="FiberPath sail view 1"
                  data-sub="THE FIBERPATH REGATTA SERIES — MAINSAIL">
 
-
             <img class="nav-rotator__img"
                  src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Head.2048_0_1.png?v=<?= $fpRegattaHeadV ?>"
                  alt="FiberPath sail view 2"
                  data-sub="THE FIBERPATH REGATTA SERIES — HEADSAIL">
-
 
             <img class="nav-rotator__img"
                  src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Jib.2048_0_1.png?v=<?= $fpRegattaJibV ?>"
                  alt="FiberPath sail view 3"
                  data-sub="THE FIBERPATH REGATTA SERIES — JIB">
           </div>
-
 
           <figcaption class="nav-rotator__caption">
             <span class="nav-rotator__capTitle">FIBERPATH</span>
@@ -132,7 +129,7 @@ $fpGrandPrixJibV  = is_file($fpGrandPrixJibFs)  ? filemtime($fpGrandPrixJibFs)  
   <!-- =========================
        2) FIBERPATH (2 images)
   ========================== -->
-  <div class="nav-specsheet__wrap">
+  <div class="nav-specsheet__wrap sr-item">
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
 
@@ -143,19 +140,16 @@ $fpGrandPrixJibV  = is_file($fpGrandPrixJibFs)  ? filemtime($fpGrandPrixJibFs)  
                  alt="FiberPath sail view A"
                  data-sub="THE FIBERPATH GRAND PRIX SERIES — MAINSAIL">
 
-
             <img class="nav-rotator__img"
                  src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png?v=<?= $fpGrandPrixHeadV ?>"
                  alt="FiberPath sail view B"
                  data-sub="THE FIBERPATH GRAND PRIX SERIES — HEADSAIL">
 
-
-           <img class="nav-rotator__img"
-                src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png?v=<?= $fpGrandPrixJibV ?>"
-                alt="FiberPath sail view B"
-                data-sub="THE FIBERPATH GRAND PRIX SERIES — JIB">
+            <img class="nav-rotator__img"
+                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png?v=<?= $fpGrandPrixJibV ?>"
+                 alt="FiberPath sail view B"
+                 data-sub="THE FIBERPATH GRAND PRIX SERIES — JIB">
           </div>
-
 
           <figcaption class="nav-rotator__caption">
             <span class="nav-rotator__capTitle">FIBERPATH</span>
@@ -223,6 +217,5 @@ $fpGrandPrixJibV  = is_file($fpGrandPrixJibFs)  ? filemtime($fpGrandPrixJibFs)  
   </div>
 
 </section>
-
 
 <script defer src="<?= $nsJsPublic ?>?v=<?= $nsJsV ?>"></script>
