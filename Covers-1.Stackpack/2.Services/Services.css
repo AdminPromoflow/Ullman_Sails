@@ -14,37 +14,12 @@
 
   background: var(--bg);
   color: var(--ink);
-  padding: clamp(28px, 4vw, 70px) 0;
 }
 
 .services__inner{
   width: min(1100px, 92vw);
   margin: 0 auto;
 }
-
-/* Back link */
-.services__back{
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  color: var(--muted);
-  font-weight: 700;
-  text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  transition: background .2s ease, border-color .2s ease, color .2s ease;
-}
-.services__back:hover{
-  background: rgba(0,85,152,.06);
-  border-color: rgba(0,85,152,.18);
-  color: var(--ink);
-}
-.services__back:focus-visible{
-  outline: 3px solid rgba(0,85,152,.28);
-  outline-offset: 3px;
-}
-
 /* Layout */
 .services__layout{
   margin-top: clamp(14px, 2.4vw, 22px);
@@ -58,6 +33,7 @@
   grid-template-columns: 1.15fr .85fr;
   gap: clamp(14px, 2.5vw, 28px);
   align-items: center;
+  background-color: red;
 }
 
 .services__title{
@@ -130,30 +106,4 @@
     order: -1;
     min-height: 240px;
   }
-}
-
-/* =========================
-   Reveal only animation
-========================= */
-.sr-item{
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity .7s ease var(--sr-delay, 0ms),
-    transform .7s ease var(--sr-delay, 0ms);
-  will-change: opacity, transform;
-}
-
-.sr-item.is-revealed{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce){
-  .sr-item{
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-  .btn{ transition: none !important; }
 }

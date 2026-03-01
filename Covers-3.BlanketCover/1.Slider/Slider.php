@@ -4,7 +4,7 @@
   height: 80vh;
   width: 100vw;
   background-color: red;
-  background-image: url("../Covers/2.Services/3.BlanketCover.jpg");
+  background-image: url("../Covers/2.Services/img/3.BlanketCover.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,8 +20,8 @@
     height: 100vh;
   }
 }
-</style>
 
+</style>
 <section id="slideHome" class="slideHome">
   <div class="gradientSlideHome">
 

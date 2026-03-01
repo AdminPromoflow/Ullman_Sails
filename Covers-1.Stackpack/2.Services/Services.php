@@ -12,10 +12,6 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 <section class="services services--single" aria-labelledby="services-title">
   <div class="services__inner">
 
-    <a class="services__back sr-item" href="../Covers/index.php" aria-label="Back to Boat Covers">
-      ← Boat Covers
-    </a>
-
     <div class="services__layout">
       <div class="services__copy">
         <h1 id="services-title" class="services__title sr-item">Stack Pack</h1>

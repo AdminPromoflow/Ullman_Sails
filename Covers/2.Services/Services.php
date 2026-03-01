@@ -9,11 +9,10 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 <link rel="stylesheet" href="../Covers/2.Services/Services.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
 
 <section class="services" aria-labelledby="services-title">
+
   <div class="services__inner">
 
     <header class="services__intro sr-item">
-      <a class="services__back" href="../Home/index.php" aria-label="Back to Home">← Home</a>
-
       <h1 id="services-title">Bespoke Boat Covers, Built to Last</h1>
 
       <p class="services__lead">

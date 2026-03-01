@@ -177,7 +177,7 @@
   aspect-ratio: 4 / 3;
 
   /* fallback (si no asignas pictureCruisingX, usa no_image) */
-  background-image: url("../../Covers/2.Services/no_image.jpg");
+  background-image: url("../../Covers/2.Services/img/no_image.jpg");
 }
 
 /* =========================
@@ -222,23 +222,23 @@
 /* =========================
    IMAGES (as requested)
 ========================= */
-.pictureCruising1  { background-image: url("../../Covers/2.Services/Stackpack.jpg"); }
-.pictureCruising2  { background-image: url("../../Covers/2.Services/Boom_cover3.jpg"); }
-.pictureCruising3  { background-image: url("../../Covers/2.Services/3.BlanketCover.jpg"); }
-.pictureCruising4  { background-image: url("../../Covers/2.Services/Sprayhood.jpg"); }
-.pictureCruising5  { background-image: url("../../Covers/2.Services/Cockpit_cover.jpg"); }
-.pictureCruising6  { background-image: url("../../Covers/2.Services/Cockpit_enclosure2.jpg"); }
-.pictureCruising7  { background-image: url("../../Covers/2.Services/Cockpit_cushions.jpg"); }
-.pictureCruising9  { background-image: url("../../Covers/2.Services/Wheel_leathering.jpg"); }
-.pictureCruising10 { background-image: url("../../Covers/2.Services/Wheel_Binnical_cover.jpg"); }
-.pictureCruising11 { background-image: url("../../Covers/2.Services/Winch_covers.jpg"); }
-.pictureCruising12 { background-image: url("../../Covers/2.Services/Windo_and_hatch_covers.jpg"); }
-.pictureCruising13 { background-image: url("../../Covers/2.Services/Rib_cover.jpg"); }
-.pictureCruising16 { background-image: url("../../Covers/2.Services/Bimini.jpg"); }
-.pictureCruising17 { background-image: url("../../Covers/2.Services/jib_sock.png"); }
-.pictureCruising18 { background-image: url("../../Covers/2.Services/Wind_Scoop.png"); }
-.pictureCruising19 { background-image: url("../../Covers/2.Services/Dinghy_Cover.png"); }
-.pictureCruising20 { background-image: url("../../Covers/2.Services/Guardrail_Lifeline_Covers.png"); }
-.pictureCruising21 { background-image: url("../../Covers/2.Services/Dodgers.png"); }
+.pictureCruising1  { background-image: url("../../Covers/2.Services/img/Stackpack.jpg"); }
+.pictureCruising2  { background-image: url("../../Covers/2.Services/img/Boom_cover3.jpg"); }
+.pictureCruising3  { background-image: url("../../Covers/2.Services/img/3.BlanketCover.jpg"); }
+.pictureCruising4  { background-image: url("../../Covers/2.Services/img/Sprayhood.jpg"); }
+.pictureCruising5  { background-image: url("../../Covers/2.Services/img/Cockpit_cover.jpg"); }
+.pictureCruising6  { background-image: url("../../Covers/2.Services/img/Cockpit_enclosure2.jpg"); }
+.pictureCruising7  { background-image: url("../../Covers/2.Services/img/Cockpit_cushions.jpg"); }
+.pictureCruising9  { background-image: url("../../Covers/2.Services/img/Wheel_leathering.jpg"); }
+.pictureCruising10 { background-image: url("../../Covers/2.Services/img/Wheel_Binnical_cover.jpg"); }
+.pictureCruising11 { background-image: url("../../Covers/2.Services/img/Winch_covers.jpg"); }
+.pictureCruising12 { background-image: url("../../Covers/2.Services/img/Windo_and_hatch_covers.jpg"); }
+.pictureCruising13 { background-image: url("../../Covers/2.Services/img/Rib_cover.jpg"); }
+.pictureCruising16 { background-image: url("../../Covers/2.Services/img/Bimini.jpg"); }
+.pictureCruising17 { background-image: url("../../Covers/2.Services/img/jib_sock.png"); }
+.pictureCruising18 { background-image: url("../../Covers/2.Services/img/Wind_Scoop.png"); }
+.pictureCruising19 { background-image: url("../../Covers/2.Services/img/Dinghy_Cover.png"); }
+.pictureCruising20 { background-image: url("../../Covers/2.Services/img/Guardrail_Lifeline_Covers.png"); }
+.pictureCruising21 { background-image: url("../../Covers/2.Services/img/Dodgers.png"); }
 
-.no_image{ background-image: url("../../Covers/2.Services/no_image.jpg"); }
+.no_image{ background-image: url("../../Covers/2.Services/img/no_image.jpg"); }

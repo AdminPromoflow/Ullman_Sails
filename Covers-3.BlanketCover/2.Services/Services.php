@@ -1,92 +1,37 @@
-<style media="screen">
-  .services {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    overflow: hidden;
-  }
+<?php
+$cssFile = __DIR__ . '/../Covers/2.Services/Services.css';
+$jsFile  = __DIR__ . '/../Covers/2.Services/Services.js';
 
-  .text {
-    position: relative;
-    background-color: #FDF6F8;
-    padding: 4vw 6vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+$cssVer = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+?>
 
-  .link_a {
-    all: unset;
-    margin-left: 100px;
-    color: #202E52;
-    font-weight: 600;
-    font-size: 1.1em;
-    cursor: pointer;
-    text-align: left;
-    width: 100vw;
-  }
+<link rel="stylesheet" href="../Covers/2.Services/Services.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
 
-  .link_a:hover {
-    text-decoration: underline;
-  }
+<script defer src="../Covers/2.Services/Services.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
 
-  .text h1 {
-    color: #005598;
-    padding: 0 0 2vw 0;
-    font-size: 2.3em;
-    text-align: center;
-  }
+<section class="services services--single services--blanket" aria-labelledby="services-title" data-sr-reveal>
+  <div class="services__inner">
 
-  .text p {
-    text-align: justify;
-    padding-left: 1vw;
-    font-size: 1.2em;
-    width: 100%;
-    margin: 1vw 0;
-  }
+    <div class="services__layout">
+      <div class="services__copy">
 
-  .link_contact_us {
-    all: unset;
-    cursor: pointer;
-  }
+        <h1 id="services-title" class="services__title sr-item">Blanket Cover</h1>
 
-  .buttonTitle {
-    width: 200px;
-    background-color: #005598;
-    padding: 14px 0;
-    cursor: pointer;
-    border: 1px solid #202E52;
-  }
+        <p class="services__lead sr-item">
+          Perfect for short stays or weekends afloat, a blanket cover offers quick,
+          effective protection for your mainsail when it’s left on the boom. Made from
+          durable acrylic canvas and secured underneath, it’s easy to fit and remove.
+          Add your boat name on either side to make it your own.
+        </p>
 
-  .buttonTitle:hover {
-    background-color: #202E52;
-  }
-
-  .buttonTitle h3 {
-    text-align: center;
-    font-size: 1.3em;
-    font-weight: 500;
-    color: #F2F2F2;
-    margin: 0;
-  }
-</style>
-
-<section class="services">
-  <div class="text">
-    <a class="link_a" href="../Covers/index.php">&lt; Boat Covers</a>
-    <h1>Blanket Cover</h1>
-    <p>
-      Perfect for short stays or weekends afloat, a blanket cover offers quick,
-      effective protection for your mainsail when it’s left on the boom. Made from
-      durable acrylic canvas and secured underneath, it’s easy to fit and remove.
-      Add your boat name on either side to make it your own.<br><br>
-    </p>
-    <a class="link_contact_us" href="../ContactUs/index.php">
-      <div class="buttonTitle">
-        <h3>Contact us</h3>
+        <div class="services__actions sr-item">
+          <a class="btn" href="../ContactUs/index.php">Contact us</a>
+        </div>
       </div>
-    </a>
+
+      <div class="services__media services__media--blanketcover sr-item" aria-hidden="true"></div>
+    </div>
+
   </div>
 </section>
