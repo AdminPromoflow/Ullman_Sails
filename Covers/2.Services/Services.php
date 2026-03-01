@@ -1,337 +1,198 @@
-<style media="screen">
-.services {
-  position: relative;
-  padding: 2vw 6vw;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #F8F8FA;
-}
+<?php
+$cssFile = __DIR__ . '/../Covers/2.Services/Services.css';
+$jsFile  = __DIR__ . '/../Covers/2.Services/Services.js';
 
-.text {
-  background-color: #F8F8FA;
-  padding: 4vw 6vw;
-}
+$cssVer = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+?>
 
-.text h1 {
-  color: #005598;
-  padding-bottom: 2vw;
-  font-size: 2.3em;
-  text-align: center;
-}
+<link rel="stylesheet" href="../Covers/2.Services/Services.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
 
-.text h2 {
-  text-align: left;
-  width: 100%;
-  padding-top: 2vw;
-  margin-bottom: 10px;
-  font-weight: 400;
-  color: #005598;
-}
+<section class="services" aria-labelledby="services-title">
+  <div class="services__inner">
 
-.text p {
-  text-align: justify;
-  padding-left: 1vw;
-  font-size: 1.2em;
-  margin: 1vw 0;
-}
+    <header class="services__intro sr-item">
+      <a class="services__back" href="../Home/index.php" aria-label="Back to Home">← Home</a>
 
-.text ul {
-  width: 100%;
-  padding-left: 35px;
-  padding-bottom: 10px;
-  font-size: 1.2em;
-}
+      <h1 id="services-title">Bespoke Boat Covers, Built to Last</h1>
 
-.link_a {
-  all: unset;
-  margin-left: -20px;
-  color: #202E52;
-  font-weight: 600;
-  font-size: 1.1em;
-  cursor: pointer;
-  text-align: left;
-  width: 100vw;
-}
+      <p class="services__lead">
+        Whether you're protecting your sails, cockpit, or comfort on board, we make covers to suit your boat and how you use it.
+        From stack packs and sprayhoods to hatch covers and helm leathering, everything is made to fit and made to last.
+      </p>
 
-.link_a:hover {
-  text-decoration: underline;
-}
+      <p class="services__lead">
+        We’re a small, experienced team who care about the details—and we’re always happy to chat through what you need.
+        Give us a call or drop us a message, and we’ll help you get sorted.
+      </p>
+    </header>
 
-.container-box {
-  padding: 1px 0;
-  width: 100%;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+    <div class="services__grid" role="list">
 
-.container-box a {
-  text-decoration: none;
-  height: 200px;
-  min-height: 200px;
-  width: 340px;
-  min-width: 300px;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      <a class="service-card sr-item" href="../Covers-1.Stackpack/index.php" role="listitem" aria-label="Stack pack — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Stack pack</span>
+          <span class="service-card__desc">Keep your mainsail neatly flaked and protected with a made-to-measure stack pack designed for quick, tidy stowage.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising1" aria-hidden="true"></span>
+      </a>
 
-.box-services {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  text-align: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+      <a class="service-card sr-item" href="../Covers-2.BoomCover/index.php" role="listitem" aria-label="Boom cover — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Boom cover</span>
+          <span class="service-card__desc">A tailored boom cover that shields your mainsail from UV, salt and grime—ideal for day sailing and longer spells at mooring.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising2" aria-hidden="true"></span>
+      </a>
 
-.wrap-box-services {
-  padding: 7px 2px;
-  background-color: rgba(197, 35, 74, 0.1);
-  height: 70%;
-  width: 80%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
+      <a class="service-card sr-item" href="../Covers-3.BlanketCover/index.php" role="listitem" aria-label="Blanket cover — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Blanket cover</span>
+          <span class="service-card__desc">A practical protective blanket cover that helps reduce chafe and weathering where you need it most, built to suit your setup.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising3" aria-hidden="true"></span>
+      </a>
 
-.wrap-box-services:hover {
-  background-color: rgba(197, 35, 74, 0.3);
-}
+      <a class="service-card sr-item" href="../Covers-4.Sprayhood/index.php" role="listitem" aria-label="Sprayhood — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Sprayhood</span>
+          <span class="service-card__desc">Stay drier and more comfortable with a well-fitting sprayhood—clear visibility, smart detailing, and strong weather protection.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising4" aria-hidden="true"></span>
+      </a>
 
-.wrap-box-services h3 {
-  text-align: center;
-  color: white;
-  font-weight: 500;
-  font-size: 1.9em;
-  text-shadow: 1px 1px 1px black;
-  cursor: pointer;
-  margin: auto;
-}
+      <a class="service-card sr-item" href="../Covers-5.CockpitCover/index.php" role="listitem" aria-label="Cockpit cover — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Cockpit cover</span>
+          <span class="service-card__desc">Keep the cockpit clean, dry and ready to go—custom cockpit covers that protect cushions, instruments and teak from the elements.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising5" aria-hidden="true"></span>
+      </a>
 
-.wrap-box-services h4 {
-  text-align: center;
-  font-weight: 200;
-  font-size: 1.1em;
-  color: white;
-  text-shadow: 1px 1px 1px black;
-  opacity: 0;
-  transition: 0.4s;
-  margin:auto;
-  cursor: pointer;
-}
+      <a class="service-card sr-item" href="../Covers-6.CockpitEnclosure/index.php" role="listitem" aria-label="Cockpit enclosure — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Cockpit enclosure</span>
+          <span class="service-card__desc">Extend your season with a cockpit enclosure—more shelter, more warmth, and more usable space when the weather turns.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising6" aria-hidden="true"></span>
+      </a>
 
-.wrap-box-services:hover h4 {
-  text-decoration: underline;
-  opacity: 1;
-}
+      <a class="service-card sr-item" href="../Covers-7.CockpitCushions/index.php" role="listitem" aria-label="Cockpit cushions — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Cockpit cushions</span>
+          <span class="service-card__desc">Comfort that lasts—cockpit cushions cut to fit, finished neatly, and made in marine-grade materials for life on the water.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising7" aria-hidden="true"></span>
+      </a>
 
-.pictureCruising1 { background-image: url("../Covers/2.Services/Stackpack.jpg"); }
-.pictureCruising2 { background-image: url("../Covers/2.Services/Boom_cover3.jpg"); }
-.pictureCruising3 { background-image: url("../Covers/2.Services/3.BlanketCover.jpg"); }
-.pictureCruising4 { background-image: url("../Covers/2.Services/Sprayhood.jpg"); }
-.pictureCruising5 { background-image: url("../Covers/2.Services/Cockpit_cover.jpg"); }
-.pictureCruising6 { background-image: url("../Covers/2.Services/Cockpit_enclosure2.jpg"); }
-.pictureCruising7 { background-image: url("../Covers/2.Services/Cockpit_cushions.jpg"); }
-.pictureCruising9 { background-image: url("../Covers/2.Services/Wheel_leathering.jpg"); }
-.pictureCruising10 { background-image: url("../Covers/2.Services/Wheel_Binnical_cover.jpg"); }
-.pictureCruising11 { background-image: url("../Covers/2.Services/Winch_covers.jpg"); }
-.pictureCruising12 { background-image: url("../Covers/2.Services/Windo_and_hatch_covers.jpg"); }
-.pictureCruising13 { background-image: url("../Covers/2.Services/Rib_cover.jpg"); }
-.pictureCruising16 { background-image: url("../Covers/2.Services/Bimini.jpg"); }
-.pictureCruising17 { background-image: url("../Covers/2.Services/jib_sock.png"); }
-.pictureCruising18 { background-image: url("../Covers/2.Services/Wind_Scoop.png"); }
-.pictureCruising19 { background-image: url("../Covers/2.Services/Dinghy_Cover.png"); }
-.pictureCruising20 { background-image: url("../Covers/2.Services/Guardrail_Lifeline_Covers.png"); }
-.pictureCruising21 { background-image: url("../Covers/2.Services/Dodgers.png"); }
-.no_image { background-image: url("../Covers/2.Services/no_image.jpg"); }
-</style>
-</style>
-<section class="services">
-  <div class="text">
-    <a class="link_a"href="../Home/index.php">&lt; Home</a>
-    <h1>Bespoke Boat Covers, Built to Last </h1>
-    <p>Whether you're protecting your sails, cockpit, or comfort on board, we make
-      covers to suit your boat and how you use it. From stack packs and sprayhoods
-      to hatch covers and helm leathering, everything is made to fit and made to last.
-<br>
-      We’re a small, experienced team who care about the details—and we’re always
-      happy to chat through what you need. Give us a call or drop us a message,
-      and we’ll help you get sorted. </p>
-</div>
-<div class="container-box">
-  <a href="../Covers-1.Stackpack/index.php">
-    <div class="box-services pictureCruising1">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2"> Stack pack</h3>
-        <h4>See more</h4>
-      </div>
+      <a class="service-card sr-item" href="../Covers-9.WheelLeathering/index.php" role="listitem" aria-label="Wheel leathering — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Wheel leathering</span>
+          <span class="service-card__desc">Upgrade grip and feel at the helm with professional wheel leathering—clean stitching, smart finish, and a premium touch.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising9" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-10.WheelBinnacleCover/index.php" role="listitem" aria-label="Wheel binnacle cover — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Wheel binnacle cover</span>
+          <span class="service-card__desc">Protect your wheel and helm station from UV and rain with a snug binnacle cover designed around your instruments.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising10" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-11.WinchCovers/index.php" role="listitem" aria-label="Winch covers — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Winch covers</span>
+          <span class="service-card__desc">Keep winches cleaner and running smoother—durable winch covers that reduce corrosion and protect from sun and spray.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising11" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-12.WindowandHatchCovers/index.php" role="listitem" aria-label="Window and hatch covers — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Window and hatch covers</span>
+          <span class="service-card__desc">Reduce heat and UV below deck with smart window and hatch covers—made to fit and easy to use day-to-day.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising12" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-13.RIBCover/index.php" role="listitem" aria-label="RIB cover — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">RIB cover</span>
+          <span class="service-card__desc">A robust RIB cover to protect tubes, console and seating from UV and weather—built for towing, storage and regular use.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising13" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-16.Bimini/index.php" role="listitem" aria-label="Bimini sunshade — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Bimini sunshade</span>
+          <span class="service-card__desc">Shade where it matters—custom biminis designed for your cockpit layout, with strong frames and tidy, marine-grade finishing.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising16" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-17.Jib_Sock/index.php" role="listitem" aria-label="Jib sock — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Jib sock</span>
+          <span class="service-card__desc">Protect your headsail from UV with an easy-to-hoist jib sock—simple handling and a neat finish built to last.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising17" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-18.Wind_Scoop/index.php" role="listitem" aria-label="Wind scoop — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Wind scoop</span>
+          <span class="service-card__desc">Improve airflow at anchor with a wind scoop tailored to your hatch—more comfort below deck, especially in warmer climates.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising18" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-19.Dinghy_Cover/index.php" role="listitem" aria-label="Dinghy cover — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Dinghy cover</span>
+          <span class="service-card__desc">Keep your dinghy protected in storage or on deck—hard-wearing covers that help prevent UV damage and water pooling.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising19" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-20.Guardrail_and_Lifeline_Covers/index.php" role="listitem" aria-label="Guardrail and lifeline covers — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Guardrail &amp; lifeline covers</span>
+          <span class="service-card__desc">Smart protection against chafe—guardrail and lifeline covers that help preserve sails, covers and clothing around the deck.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising20" aria-hidden="true"></span>
+      </a>
+
+      <a class="service-card sr-item" href="../Covers-21.Dodgers/index.php" role="listitem" aria-label="Dodgers — See more">
+        <span class="service-card__info">
+          <span class="service-card__title">Dodgers</span>
+          <span class="service-card__desc">Extra shelter with a clean look—dodgers built to suit your deck layout, improving protection without compromising visibility.</span>
+          <span class="service-card__cta">See more</span>
+        </span>
+        <span class="service-card__media pictureCruising21" aria-hidden="true"></span>
+      </a>
+
     </div>
-  </a>
-  <a href="../Covers-2.BoomCover/index.php">
-    <div class="box-services pictureCruising2">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Boom cover</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-3.BlanketCover/index.php">
-    <div class="box-services pictureCruising3">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Blanket Cover</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-4.Sprayhood/index.php">
-    <div class="box-services pictureCruising4">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Sprayhood</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-5.CockpitCover/index.php">
-    <div class="box-services pictureCruising5">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Cockpit cover</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-6.CockpitEnclosure/index.php">
-    <div class="box-services pictureCruising6">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Cockpit enclosure</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-7.CockpitCushions/index.php">
-    <div class="box-services pictureCruising7">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Cockpit cushions</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-
-  <a href="../Covers-9.WheelLeathering/index.php">
-    <div class="box-services pictureCruising9">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Wheel leathering</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-10.WheelBinnacleCover/index.php">
-    <div class="box-services pictureCruising10">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Wheel Binnical cover</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-11.WinchCovers/index.php">
-    <div class="box-services pictureCruising11">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Winch covers</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-12.WindowandHatchCovers/index.php">
-    <div class="box-services pictureCruising12">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Window and hatch covers</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-13.RIBCover/index.php">
-    <div class="box-services pictureCruising13">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Rib cover</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-
-  <a href="../Covers-16.Bimini/index.php">
-    <div class="box-services pictureCruising16">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Bimini Sunshade</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-  <a href="../Covers-17.Jib_Sock/index.php">
-    <div class="box-services pictureCruising17">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Jib Sock</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-
-  <a href="../Covers-18.Wind_Scoop/index.php">
-    <div class="box-services pictureCruising18">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Wind Scoop</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-
-  <a href="../Covers-19.Dinghy_Cover/index.php">
-    <div class="box-services pictureCruising19">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Dinghy Cover</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-
-  <a href="../Covers-20.Guardrail_and_Lifeline_Covers/index.php">
-    <div class="box-services pictureCruising20">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Guardrail & Lifeline Covers</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-
-  <a href="../Covers-21.Dodgers/index.php">
-    <div class="box-services pictureCruising21">
-      <div class="wrap-box-services">
-        <h3 class="smallFont2">Dodgers</h3>
-        <h4>See more</h4>
-      </div>
-    </div>
-  </a>
-
-
-
-</div>
-
+  </div>
 </section>
 
-<!-- Tu sección HTML está bien, así que no la modifico. -->
-
-<script type="text/javascript">
-const buttonTitle = document.querySelectorAll(".OpenContactUs");
-
-for (let i = 0; i < buttonTitle.length; i++) {
-  buttonTitle[i].addEventListener("click", function() {
-    window.open("../ContactUs/index.php", "_self");
-  });
-}
-</script>
+<script defer src="../Covers/2.Services/Services.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>

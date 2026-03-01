@@ -1,92 +1,41 @@
-<style media="screen">
-  .services {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    overflow: hidden;
-  }
+<?php
+$cssFile = __DIR__ . '/../Covers/2.Services/Services.css';
+$jsFile  = __DIR__ . '/../Covers/2.Services/Services.js';
 
-  .text {
-    position: relative;
-    background-color: #F8F8FA;
-    padding: 4vw 6vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+$cssVer = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+?>
 
-  .link_a {
-    all: unset;
-    color: #202E52;
-    font-weight: 600;
-    font-size: 1.1em;
-    cursor: pointer;
-    text-align: left;
-    width: 100vw;
-    margin-left: 100px;
-  }
+<link rel="stylesheet" href="../Covers/2.Services/Services.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
 
-  .link_a:hover {
-    text-decoration: underline;
-  }
 
-  .text h1 {
-    color: #005598;
-    padding: 0 0 2vw 0;
-    font-size: 2.3em;
-    text-align: center;
-  }
+<section class="services services--single" aria-labelledby="services-title">
+  <div class="services__inner">
 
-  .text p {
-    text-align: justify;
-    padding-left: 1vw;
-    font-size: 1.2em;
-    width: 100%;
-    margin: 1vw 0;
-  }
-
-  .link_contact_us {
-    all: unset;
-    cursor: pointer;
-  }
-
-  .buttonTitle {
-    width: 200px;
-    background-color: #005598;
-    padding: 14px 0;
-    cursor: pointer;
-    border: 1px solid #202E52;
-  }
-
-  .buttonTitle:hover {
-    background-color: #202E52;
-  }
-
-  .buttonTitle h3 {
-    text-align: center;
-    font-size: 1.3em;
-    font-weight: 500;
-    color: #F2F2F2;
-    margin: 0;
-  }
-</style>
-
-<section class="services">
-  <div class="text">
-    <a class="link_a" href="../Covers/index.php">&lt; Boat Covers</a>
-    <h1>Stack Pack</h1>
-    <p>
-      A stack pack works with your lazyjacks to make lowering and stowing your
-      mainsail simple, guiding it straight into the bag. Once zipped closed, it
-      keeps the sail protected and tidy, so you can enjoy a clutter-free cockpit.
-      Made to fit your rig and rigging — just get in touch to start the conversation.<br><br>
-    </p>
-    <a class="link_contact_us" href="../ContactUs/index.php">
-      <div class="buttonTitle">
-        <h3>Contact us</h3>
-      </div>
+    <a class="services__back sr-item" href="../Covers/index.php" aria-label="Back to Boat Covers">
+      ← Boat Covers
     </a>
+
+    <div class="services__layout">
+      <div class="services__copy">
+        <h1 id="services-title" class="services__title sr-item">Stack Pack</h1>
+
+        <p class="services__lead sr-item">
+          A stack pack works with your lazyjacks to make lowering and stowing your mainsail simple, guiding it
+          straight into the bag. Once zipped closed, it keeps the sail protected and tidy, so you can enjoy a
+          clutter-free cockpit. Made to fit your rig and rigging — just get in touch to start the conversation.
+        </p>
+
+        <div class="services__actions sr-item">
+          <a class="btn" href="../ContactUs/index.php">Contact us</a>
+        </div>
+      </div>
+
+      <!-- Optional image panel -->
+      <div class="services__media services__media--stackpack sr-item" aria-hidden="true"></div>
+    </div>
+
   </div>
 </section>
+
+<script defer src="../Covers/2.Services/Services.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
