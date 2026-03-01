@@ -12,19 +12,19 @@ $st_items = [
     'title' => 'Racing Sails',
     'text'  => 'Built for speed and control—lightweight shapes, crisp trim response, and race-ready materials that help you secure seconds each leg.',
     'icon'  => '../SailTypes/3_design_and_construction/img/racing_section.jpg',
-    'url'   => '#',
+    'url'   => '../Racing/index.php',
   ],
   [
     'title' => 'Cruising Sails',
     'text'  => 'Made for relaxed, reliable miles—hardwearing cloth, easy handling, and balanced power so you sail comfortably, day after day at sea.',
     'icon'  => '../SailTypes/3_design_and_construction/img/cruising_section.jpg',
-    'url'   => '#',
+    'url'   => '../Cruising/index.php',
   ],
   [
     'title' => 'The Axia Series',
     'text'  => 'A high-end performance range—advanced construction, excellent shape retention, and meticulous detailing for sailors who demand more.',
     'icon'  => '../SailTypes/3_design_and_construction/img/axia_series.jpg',
-    'url'   => '#',
+    'url'   => '../the_axia_series/index.php',
   ],
 ];
 

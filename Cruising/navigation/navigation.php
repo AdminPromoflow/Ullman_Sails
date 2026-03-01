@@ -2,12 +2,12 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$navCssFs = __DIR__ . '/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/navigation/navigation.js';
+$navCssFs = __DIR__ . '/../cruising_navigator/navigation/navigation.css';
+$navJsFs  = __DIR__ . '/../cruising_navigator/navigation/navigation.js';
 
 /* Public paths (as used in HTML) */
-$navCssPublic = 'navigation/navigation.css';
-$navJsPublic  = 'navigation/navigation.js';
+$navCssPublic = '../cruising_navigator/navigation/navigation.css';
+$navJsPublic  = '../cruising_navigator/navigation/navigation.js';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
@@ -24,8 +24,7 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
 $breadcrumbs = $breadcrumbs ?? [
   ['label' => 'Home',          'href' => '../Home/index.php'],
   ['label' => 'Sail Types','href' => '../SailTypes/index.php'],
-  ['label' => 'Cruising Sails','href' => '../Cruising/index.php'],
-  ['label' => 'Endurance Sails','href' => null],
+  ['label' => 'Cruising Sails','href' => null],
 ];
 ?>
 
