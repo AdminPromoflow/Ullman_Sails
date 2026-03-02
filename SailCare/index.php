@@ -6,6 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -51,8 +53,6 @@
         background-color: #F2F2F2;
         color: #111C42;
       }
-
-
       header {
         padding: 50px;
         background-color: aquamarine;
@@ -76,8 +76,14 @@
     <?php include "../General/Menu/Menu.php" ?>
 
     <div id="searchHide" class="searchHide">
-    <?php include "1.Slider/Slider.php" ?>
+    <?php include "../SailCare/1_slider/slider.php" ?>
+    <?php include "../SailCare/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
+    <?php include "../SailCare/3.material/material.php" ?>
+    <?php include "../SailCare/4.image/image.php" ?>
+    <?php include "../SailCare/5.type/type.php" ?>
+    <?php include "../SailCare/6.tips/tips.php" ?>
+    <?php include "../SailCare/7.type/type.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>
 
