@@ -17,7 +17,7 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
       <p class="tips__kicker">TIPS</p> <br>
 
       <h1 id="tips-title" class="tips__title">
-        Extend Sail Life: Tips to Guard Against <em>UV Damage and Mildew</em> <br><br>
+        Extend Sail Life: Tips to Guard Against UV Damage and Mildew <br><br>
       </h1>
 
       <p class="tips__lead">

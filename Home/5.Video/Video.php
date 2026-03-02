@@ -5,7 +5,7 @@ $jsTime = filemtime('../Home/5.Video/video.js');
 
 <link rel="stylesheet" href="../Home/5.Video/video.css?v=<?= $cssTime ?>">
 <section class="videoHome">
-  <video id="videoHover" src="../../UllmanSails/Home/5.Video/videoUpdated.mp4" controls muted playsinline></video>
+  <video id="videoHover" src="..//Home/5.Video/videoUpdated.mp4" controls muted playsinline></video>
 
   <!--
   <video  style="position: relative; left: 50%; transform: translateX(-50%); width: calc(68vw + 20px); height: auto" controls>
@@ -14,6 +14,6 @@ $jsTime = filemtime('../Home/5.Video/video.js');
       Your browser does not support the video tag.
   </video>
   -->
-</section>   
+</section>
 
 <script src="../Home/5.Video/video.js?v=<?= $jsTime ?>" type="text/javascript"></script>

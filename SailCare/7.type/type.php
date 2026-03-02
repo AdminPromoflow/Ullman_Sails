@@ -91,7 +91,7 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
       <div class="series-text">
         <h3 class="series-code">Keelboat and Multihull Racing Sails</h3><br>
-        <p class="series-tagline">Caring for these sail types requires more attention. Protect them from UV exposure, avoid repeated folding in the same areas, and store properly to prevent damage. Regular maintenance is essential for maintaining optimal performance.</p> <br>
+        <h4 class="series-tagline">Caring for these sail types requires more attention. Protect them from UV exposure, avoid repeated folding in the same areas, and store properly to prevent damage. Regular maintenance is essential for maintaining optimal performance.</h4> <br>
         <p>Flake mainsails neatly onto the boom for storage.</p>
         <p>When stored on the boom, a quality cover will protect the mainsail from UV exposure, ensuring the entire sail, including the clew and luff, is covered.</p>
         <p>Keep the boom cover in place until you can hoist the mainsail.</p>

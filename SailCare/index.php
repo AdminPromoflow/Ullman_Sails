@@ -25,7 +25,10 @@
         box-sizing: border-box;
       }
       p {
-        font-size: 0.9em;
+        margin: 0 0 14px 0;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: rgba(15,33,64,.86);
       }
       h1 {
         color: #111C42;
@@ -84,6 +87,7 @@
     <?php include "../SailCare/5.type/type.php" ?>
     <?php include "../SailCare/6.tips/tips.php" ?>
     <?php include "../SailCare/7.type/type.php" ?>
+    <?php include "../SailCare/8.FAQS/FAQS.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>
 

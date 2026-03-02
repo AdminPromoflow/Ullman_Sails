@@ -90,7 +90,8 @@
 .series-text h2,
 .series-text h3,
 .series-text h4{
-  color: var(--title);
+  color: #202E52!important;
+
 }
 
 .series-text p{

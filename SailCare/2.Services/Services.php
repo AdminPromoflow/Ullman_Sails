@@ -24,7 +24,7 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
       </figure>
 
       <div class="sailcare__copy">
-        <p class="sailcare__kicker">SAIL CARE</p>
+        <p class="sailcare__kicker"> SAIL CARE</p>
         <h1 id="sailcare-title" class="sailcare__title">Best Practices</h1>
 
         <p class="sailcare__p">

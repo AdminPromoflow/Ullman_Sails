@@ -22,7 +22,7 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
  * - If 'href' is null (or missing), it will render as the current page (no link).
  */
 $breadcrumbs = $breadcrumbs ?? [
-  ['label' => 'Home',  'href' => '../Covers/index.php'],
+  ['label' => 'Home',  'href' => '../Home/index.php'],
   ['label' => 'Covers','href' => '../Covers/index.php'],
 
 ];

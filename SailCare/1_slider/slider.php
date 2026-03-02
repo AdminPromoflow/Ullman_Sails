@@ -61,14 +61,14 @@ $slides = [
   [
     'bg'          => 'bg-racing-1',
     'captionLeft' => true,
-    'title'       => 'ULLMAN SAILS',
+    'title'       => 'Keep Performance Longe',
     'subtitle'    => 'Sail Care',
   ],
   [
     'bg'          => 'bg-services',
     'captionLeft' => false,
-    'title'       => 'ULLMAN SAILS',
-    'subtitle'    => 'Sail Care',
+    'title'       => 'Protect performance. Extend lifespan.',
+    'subtitle'    => 'Sail Care Essentials',
   ],
 ];
 

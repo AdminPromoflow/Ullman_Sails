@@ -82,7 +82,7 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
       <div class="series-text">
         <h3 class="series-code">Spinnaker Cloth</h3><br>
-        <p class="series-tagline">Handle with care, as spinnaker cloth is especially sensitive to UV rays and stress. Its lightweight properties are achieved using extremely thin material, making it more fragile and particularly vulnerable to UV exposure and damage from flogging.</p> <br>
+        <h4 class="series-tagline">Handle with care, as spinnaker cloth is especially sensitive to UV rays and stress. Its lightweight properties are achieved using extremely thin material, making it more fragile and particularly vulnerable to UV exposure and damage from flogging.</h4> <br>
         <p>Modern spinnaker cloth is generally color-stable, but "bleeding" can still occur if colored spinnakers are stored wet.</p>
         <p>Avoid hoisting spinnakers at the dock to dry by flapping, as this can cause destructive "flutter and impact" damage similar to manufacturer tests.</p>
         <p>Nylon is a robust and lightweight fiber that can stretch significantly under load, but using a spinnaker beyond its recommended wind range or during broaching with explosive refills can lead to blowouts.</p>

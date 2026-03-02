@@ -30,20 +30,21 @@
 }
 
 .sci__kicker{
-  margin: 0 0 10px 0;
-  font: 700 .90rem/1.2;
-  letter-spacing: .22em;
+  margin: auto;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: rgba(190, 19, 59);
 }
 
 .sci__pageTitle{
-  margin: 0;
-  font-size: clamp(2.3rem, 4.2vw, 4.1rem);
-  line-height: 1.05;
-  font-weight: 520;
-  letter-spacing: .01em;
-  color: var(--ink);
+  font-size: clamp(2.4rem, 3.6vw, 4.8rem);
+  line-height: 1.08;
+  font-weight: 800;
+  width: min(80%, 1120px);
+  margin: 0 auto clamp(18px, 2vw, 28px);
+  color: #005598;
+  text-wrap: balance;
 }
 
 .sci__pageTitle em{
@@ -87,7 +88,7 @@
   font-size: clamp(1.85rem, 2.6vw, 2.55rem);
   line-height: 1.08;
   font-weight: 520;
-  color: var(--ink);
+  color: #202E52;
 }
 
 .sci-card__title em{
@@ -131,6 +132,7 @@
 
 .sci-link__text{
   opacity: .92;
+  font-weight: 500;
 }
 
 .sci-link:hover{

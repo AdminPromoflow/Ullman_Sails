@@ -12,7 +12,7 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
   <div class="sci__inner">
 
     <header class="sci__header sr-item">
-      <p class="sci__kicker">SAIL CARE</p>
+      <p class="sci__kicker"> SAIL CARE</p>
       <h1 class="sci__pageTitle" id="sci-title">
         Sail Care by <em>Material</em> &amp; <em>Boat Type</em>
       </h1>
@@ -62,17 +62,17 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
           </h2>
 
           <nav class="sci-card__nav" aria-label="Sail care by boat type">
-            <a class="sci-link" href="#">
+            <a class="sci-link" href="#Keelboat_Multihull">
               <span class="sci-link__text">Keelboat and Multihull Cruising Sails</span>
               <span class="sci-link__chev" aria-hidden="true"></span>
             </a>
 
-            <a class="sci-link" href="#">
+            <a class="sci-link" href="#Dinghy_Sails">
               <span class="sci-link__text">Dinghy and One Design Sails</span>
               <span class="sci-link__chev" aria-hidden="true"></span>
             </a>
 
-            <a class="sci-link" href="#">
+            <a class="sci-link" href="#Keelboat_Sails">
               <span class="sci-link__text">Keelboat and Multihull Racing Sails</span>
               <span class="sci-link__chev" aria-hidden="true"></span>
             </a>
