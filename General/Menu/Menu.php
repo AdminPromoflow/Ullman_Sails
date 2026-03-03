@@ -258,6 +258,7 @@ body.is-drawer-open{overflow:hidden}
           <div class="ull-nav__submenu" id="subItemsMenu" role="menu" aria-label="Sail Types submenu">
             <a href="../Cruising/index.php" role="menuitem">Cruising Sails</a>
             <a href="../Racing/index.php" role="menuitem">Racing Sails</a>
+            <a href="../the_axia_series/index.php" role="menuitem">The Axia Series</a>
           </div>
         </li>
 
@@ -301,6 +302,8 @@ body.is-drawer-open{overflow:hidden}
         <a class="ull-drawer__sublink" href="../SailTypes/index.php">All Sail Types</a>
         <a class="ull-drawer__sublink" href="../Cruising/index.php">Cruising Sails</a>
         <a class="ull-drawer__sublink" href="../Racing/index.php">Racing Sails</a>
+        <a class="ull-drawer__sublink" href="../the_axia_series/index.php">The Axia Series</a>
+
       </div>
 
       <a class="ull-drawer__link" href="../Covers/index.php">Boat covers</a>

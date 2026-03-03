@@ -77,40 +77,43 @@
 })();
 
 /* =========================
-   Reveal only (run once per section)
-   - data-sr-reveal + .sr-item + .is-revealed + stagger (70ms)
+   Reveal only (ADD-ON)
+   - IntersectionObserver + stagger + prefers-reduced-motion
+   - executes once per section
 ========================= */
 (() => {
+  const STAGGER_MS = 70;
+  const prefersReducedMotion =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const sections = Array.from(document.querySelectorAll('[data-sr-reveal]'));
   if (!sections.length) return;
 
-  const prefersReduced =
-    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const STAGGER_MS = 70;
-  const done = new WeakSet();
-
   function revealSection(section) {
-    if (done.has(section)) return;
-    done.add(section);
+    if (section.dataset.srDone === '1') return;
+    section.dataset.srDone = '1';
 
     const items = Array.from(section.querySelectorAll('.sr-item'));
-    if (!items.length) return;
-
-    // Apply delays (CSS var) and reveal
     for (let i = 0; i < items.length; i++) {
       const el = items[i];
-      el.style.setProperty('--sr-delay', prefersReduced ? '0ms' : `${i * STAGGER_MS}ms`);
-
-      if (prefersReduced) {
-        el.classList.add('is-revealed');
-      } else {
-        window.setTimeout(() => el.classList.add('is-revealed'), i * STAGGER_MS);
-      }
+      el.style.setProperty('--sr-delay', prefersReducedMotion ? '0ms' : `${i * STAGGER_MS}ms`);
     }
+
+    // next frame to ensure transitions apply
+    requestAnimationFrame(() => {
+      for (let i = 0; i < items.length; i++) {
+        items[i].classList.add('is-revealed');
+      }
+    });
   }
 
-  // Fallback (no IO): reveal immediately
+  // Reduced motion: show immediately (still "once per section")
+  if (prefersReducedMotion) {
+    sections.forEach(revealSection);
+    return;
+  }
+
+  // No IO support: reveal immediately
   if (!('IntersectionObserver' in window)) {
     sections.forEach(revealSection);
     return;
@@ -121,9 +124,9 @@
       if (!entry.isIntersecting) continue;
       const section = entry.target;
       revealSection(section);
-      io.unobserve(section); // once per section
+      io.unobserve(section); // execute once per section
     }
   }, { threshold: 0.18 });
 
-  sections.forEach((section) => io.observe(section));
+  sections.forEach(sec => io.observe(sec));
 })();

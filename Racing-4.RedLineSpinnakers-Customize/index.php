@@ -80,6 +80,8 @@
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
+    <?php include "../Racing-4.RedLineSpinnakers-Customize/navigation/navigation.php" ?>
+
     <?php include "2.Services/Services.php" ?>
     <?php include "Customize/Customize.php" ?>
     </div>

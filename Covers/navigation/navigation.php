@@ -10,11 +10,11 @@ $navCssPublic = 'navigation/navigation.css';
 $navJsPublic  = 'navigation/navigation.js';
 
 /* Version values (cache-busting) */
-$navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
-$navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
+$navCssV = is_file($navCssFs) ? filemtime($navCssFs) : null;
+$navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : null;
 ?>
 
-<link rel="stylesheet" href="<?= $navCssPublic ?>?v=<?= $navCssV ?>">
+<link rel="stylesheet" href="<?= $navCssPublic ?><?= $navCssV ? '?v='.$navCssV : '' ?>">
 
 <?php
 /**
@@ -23,9 +23,7 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
  */
 $breadcrumbs = $breadcrumbs ?? [
   ['label' => 'Home',          'href' => '../Home/index.php'],
-  ['label' => 'Sail Types','href' => '../SailTypes/index.php'],
-  ['label' => 'Racing Sails','href' => '../Racing/index.php'],
-  ['label' => 'FiberPath Sails','href' => null],
+  ['label' => 'Covers','href' => null],
 ];
 ?>
 
@@ -54,4 +52,4 @@ $breadcrumbs = $breadcrumbs ?? [
   </nav>
 </section>
 
-<script defer src="<?= $navJsPublic ?>?v=<?= $navJsV ?>" type="text/javascript"></script>
+<script defer src="<?= $navJsPublic ?><?= $navJsV ? '?v='.$navJsV : '' ?>" type="text/javascript"></script>

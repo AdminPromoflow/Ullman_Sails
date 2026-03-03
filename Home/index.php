@@ -112,7 +112,7 @@
     <?php include "../General/Menu/Menu.php" ?>
     <?php include "../Home/1.Slider/Slider.php" ?>
     <?php include "../Home/buttom/buttom.php" ?>
-    <?php include "2.Services/Services.php" ?>
+    <?php include "../Home/3_design_and_construction/design_and_construction.php" ?>
     <?php include "../Home/Picture/Picture.php" ?>
     <?php include "5.Video/Video.php" ?>
     <?php include "4.News/News.php" ?>

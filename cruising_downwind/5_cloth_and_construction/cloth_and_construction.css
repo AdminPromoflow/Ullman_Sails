@@ -24,15 +24,19 @@
 
 /* Title (section title format as requested) */
 .csp-title{
-  line-height: 1.12;
-  text-align: center;
-  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  margin: 0;
+
   font-size: clamp(3rem, 4.5vw, 6rem);
   font-weight: 600;
-  max-width: 18ch;
-  margin: auto;
-  color: #005598;
+  line-height: 1.12;
+
+  color: var(--cs-ink);
+  max-width: 26ch;
+  padding-inline: clamp(0rem, 1.2vw, .5rem);
+
+  margin-inline: auto;
   text-align: center;
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
 }
 
 .nav-specsheet__wrap{
@@ -230,25 +234,32 @@
 }
 
 /* =========================
-   Reveal only (IntersectionObserver + stagger)
-   - ONLY: data-sr-reveal, .sr-item, .is-revealed, delays
+   Reveal only (ADD-ON)
+   - uses: data-sr-reveal, .sr-item, .is-revealed, delays
 ========================= */
 [data-sr-reveal] .sr-item{
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 700ms ease, transform 700ms ease;
+  transform: translateY(18px);
+  filter: blur(6px);
+
+  transition: opacity 650ms ease, transform 650ms ease, filter 650ms ease;
   transition-delay: var(--sr-delay, 0ms);
-  will-change: opacity, transform;
+  will-change: opacity, transform, filter;
 }
 
 [data-sr-reveal] .sr-item.is-revealed{
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
 
+/* prefers-reduced-motion: show instantly */
 @media (prefers-reduced-motion: reduce){
   [data-sr-reveal] .sr-item{
+    opacity: 1;
+    transform: none;
+    filter: none;
     transition: none !important;
-    transform: none !important;
+    transition-delay: 0ms !important;
   }
 }

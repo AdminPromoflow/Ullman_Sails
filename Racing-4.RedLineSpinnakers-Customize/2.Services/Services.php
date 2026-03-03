@@ -7,7 +7,6 @@ $introJsVersion  = filemtime(__DIR__ . '/2.Services/Services.js');
 <link rel="stylesheet" href="2.Services/Services.css?v=<?= $introCssVersion ?>" >
 
 <section class="textRed" data-sr-reveal>
-  <a class="comeBackRed sr-item" href="../Racing-4.RedLineSpinnakers/index.php">&lt; Red Line Spinnakers</a>
 
   <div class="servicesRed">
     <h1 class="sr-item">Custom Spinnaker Graphics</h1>

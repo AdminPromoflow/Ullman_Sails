@@ -24,8 +24,9 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
 $breadcrumbs = $breadcrumbs ?? [
   ['label' => 'Home',          'href' => '../Home/index.php'],
   ['label' => 'Sail Types','href' => '../SailTypes/index.php'],
-  ['label' => 'Racing Sails','href' => '../Racing/index.php'],
-  ['label' => 'FiberPath Sails','href' => null],
+  ['label' => 'The Axia Series','href' => '../the_axia_series/index.php'],
+  ['label' => 'Blue Line Spinnakers','href' => '../cruising_downwind/index.php'],
+  ['label' => 'Customize Blue Line','href' => null],
 ];
 ?>
 

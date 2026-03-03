@@ -1,15 +1,10 @@
-/* =======================
-   sail_types_section.css — COPY & PASTE
-   (Tu CSS + ADD-ON al final)
-   ======================= */
+/* sail_types_section.css — MINIMAL (2 imágenes centradas) */
 
 .sail-types-section{
-  position: relative;
   padding: 6vw 2vw;
 }
 
-/* Section specific styles */
-.sail-types-section h2 {
+.sail-types-section h2{
   font-size: clamp(2.4rem, 3.6vw, 4.8rem);
   line-height: 1.2;
   margin: 0.5rem 0 1.25rem 0;
@@ -22,129 +17,43 @@
 .sail-types-subtitle{
   font-size: clamp(1rem, 1.2vw, 1.4rem);
   line-height: 1.3;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.75rem 0;
   color: #5f6b7a;
   text-align: center;
   max-width: 65ch;
   margin-inline: auto;
 }
 
-.sail-types-container {
-  width: 90%;
-  padding: 1vw;
-  margin: 1vw auto;
-  overflow: hidden;
+/* ✅ Solo 2 imágenes centradas */
+.sail-types-axia-grid{
   position: relative;
-}
-
-.sail-types-link{
-  text-decoration: none;
-  color: inherit;
-}
-
-.sail-types-box{
-  position: relative;
-  height: 450px;
-  width: 510px;
-  margin: 20px;
-  flex: 0 0 auto;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.sail-types-box img{
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: block;
-}
-
-/* ✅ FIX: antes este <p> tenía el mismo tamaño del slide y rompía el layout/clicks */
-.sail-types-title{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  padding: 14px 16px;
-  text-align: center;
-  color: #fff;
-  font-size: clamp(1.05rem, 1.25vw, 1.35rem);
-  line-height: 1.2;
-  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
-}
-
-.sail-types-scroller-container {
-  display: flex;
-  flex-wrap: nowrap;
-  position: relative;
-  transition: transform 0.55s cubic-bezier(.22,.61,.36,1);
-  will-change: transform;
-}
-
-.sail-types-scroller-container.no-transition{
-  transition: none !important;
-}
-
-.sail-types-dots {
-  position: relative;
+  padding: 5px;
+  margin: auto 0;
   display: flex;
   justify-content: center;
-  margin-top: 15px;
-  z-index: 5;
-}
-
-.sail-types-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 6px;
-  cursor: pointer;
-}
-
-.sail-types-dot.is-active {
-  background-color: #000;
-}
-
-/* Flechas */
-.sail-types-arrow{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(0,0,0,0.15);
-  background: rgba(255,255,255,0.9);
-  display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.image-axia-container{
+  position: relative;
+  width: 500px;
+  margin: 20px;
   cursor: pointer;
-  z-index: 10;
-  padding: 0;
 }
-
-.sail-types-arrow img{
-  width: 18px;
-  height: 18px;
-  display: block;
+.image-axia-container img{
+  position: relative;
+  width: 100%;
+  height:420px;
 }
-
-.sail-types-arrow-left{ left: 12px; }
-.sail-types-arrow-right{ right: 12px; }
-
-/* =========================================================
-   ADD-ON — Parallax tipo HERO
-   ========================================================= */
-.sail-types-section [data-st-parallax-text],
-.sail-types-section [data-st-parallax-img]{
-  will-change: transform, opacity;
+.image-axia-container a{
+  text-decoration: none;
 }
-
-@media (prefers-reduced-motion: reduce){
-  .sail-types-section [data-st-parallax-text],
-  .sail-types-section [data-st-parallax-img]{
-    transform: none !important;
-    opacity: 1 !important;
-  }
+/* label simple (si lo quieres quitar, lo eliminas y ya) */
+.sail-types-title{
+  margin: 12px 0 0 0;
+  text-align: center;
+  color: #202E52;
+  font-weight: 600;
+  font-size: 1.1rem;
 }

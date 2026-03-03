@@ -65,11 +65,11 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
           <h3 class="nav-specsheet__subtitle">Cloth Selection</h3>
           <div class="nav-specsheet__list">
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CLOTH</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">CODE ZERO LAMINATE</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CLOTH</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">NYLON &amp; POLYESTER SPINNAKER CLOTH</div>
             </div>
           </div>
@@ -77,15 +77,15 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
           <h3 class="nav-specsheet__subtitle">Construction</h3>
           <div class="nav-specsheet__list">
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">RADIAL</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">CABLED LUFF</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">ACTIVE LUFF</div>
             </div>
           </div>
@@ -93,31 +93,31 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
           <h3 class="nav-specsheet__subtitle">Upgrades</h3>
           <div class="nav-specsheet__list">
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">V TRIM STRIPES</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">CUSTOM DRAFT STRIPES AND NUMBERS</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">TOP-DOWN FURLING SETUP</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">TORSIONAL LUFF CABLES</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">FURLING CLEW VELCRO TABS</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">SOFT CLEW</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">CUSTOM GRAPHICS</div>
             </div>
           </div>
@@ -167,7 +167,7 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
           <h3 class="nav-specsheet__subtitle">Cloth Selection</h3>
           <div class="nav-specsheet__list">
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CLOTH</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">NYLON SPINNAKER CLOTH</div>
             </div>
           </div>
@@ -175,15 +175,15 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
           <h3 class="nav-specsheet__subtitle">Construction</h3>
           <div class="nav-specsheet__list">
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">RADIAL</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">CABLED LUFF</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">ACTIVE LUFF</div>
             </div>
           </div>
@@ -191,31 +191,31 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
           <h3 class="nav-specsheet__subtitle">Upgrades</h3>
           <div class="nav-specsheet__list">
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">V TRIM STRIPES</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">CUSTOM DRAFT STRIPES AND NUMBERS</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">TOP-DOWN FURLING SETUP</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">TORSIONAL LUFF CABLES</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">FURLING CLEW VELCRO TABS</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">SOFT CLEW</div>
             </div>
             <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
+              <div class="nav-specsheet__key"></div>
               <div class="nav-specsheet__val">CUSTOM GRAPHICS</div>
             </div>
           </div>

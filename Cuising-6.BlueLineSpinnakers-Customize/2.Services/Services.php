@@ -8,7 +8,6 @@ $introJsVersion  = filemtime(__DIR__ . '/2.Services/Services.js');
 <script defer src="2.Services/Services.js?v=<?= $introJsVersion ?>"></script>
 
 <section class="textblue" data-sr-reveal>
-  <a class="comeBackBlue sr-item" href="../Racing-4.RedLineSpinnakers/index.php">&lt; Blue Line Spinnakers</a>
 
   <div class="servicesblue">
     <h1 class="sr-item">Custom Spinnaker Graphics</h1>
