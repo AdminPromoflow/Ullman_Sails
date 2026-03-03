@@ -3,7 +3,7 @@
   position: relative;
   height: 80vh;
   width: 100vw;
-  background-image: url("../Cruising-5.BlueLineSpinnakers/1.Slider/SlideHome.jpg");
+  background-image: url("../Cruising-5.BlueLineSpinnakers/1.Slider/SlideHome2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
