@@ -1,6 +1,7 @@
 /* =========================
    CRUISING SECTION — ULLMAN elegant motion (SIN parallax)
 ========================= */
+
 .cruising-section{
   --cs-ink:#0f2140;
   --cs-muted:#5f6b7a;
@@ -14,6 +15,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +34,7 @@
   opacity: .75;
 }
 
-/* glow sutil flotando */
+/* glow sutil flotando (opcional si lo agregas en HTML) */
 .cs-glow{
   position:absolute;
   inset:-30%;
@@ -52,13 +54,13 @@
 }
 
 /* ---------------------------------
-   Estado inicial (antes de revelar)
+   Reveal seguro:
+   Solo ocultamos si JS está activo (html.js)
 ---------------------------------- */
-.img-title-sailing-content,
-.cruising-title,
-.cruising-subtitle,
-.cruising-icons,
-.cruising-image{
+html.js .cruising-section:not(.is-visible) .img-title-sailing-content,
+html.js .cruising-section:not(.is-visible) .cruising-title,
+html.js .cruising-section:not(.is-visible) .cruising-subtitle,
+html.js .cruising-section:not(.is-visible) .cruising-icons{
   opacity: 0;
   transform: translate3d(0, 16px, 0);
   transition: opacity .75s ease, transform .75s ease;
@@ -86,11 +88,6 @@
   opacity: 1;
   transform: translate3d(0,0,0);
 }
-.cruising-section.is-visible .cruising-image{
-  transition-delay: .45s;
-  opacity: 1;
-  transform: translate3d(0,0,0);
-}
 
 /* Logo container */
 .img-title-sailing-content{
@@ -99,6 +96,7 @@
   opacity: .95;
   transition: transform .25s ease, opacity .25s ease;
   z-index: 1;
+  position: relative;
 }
 .img-title-sailing-content:hover{ opacity: 1; transform: scale(1.02); }
 .img-title-sailing-content img{ width:100%; height:auto; display:block; }
@@ -116,6 +114,7 @@
   margin-right: auto;
   text-transform: none;
   z-index: 1;
+  position: relative;
 }
 
 /* subrayado “se dibuja” */
@@ -147,6 +146,7 @@
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
+  position: relative;
 }
 
 /* Icons list */
@@ -163,8 +163,7 @@
 }
 
 .cruising-icon{
-  padding:0;
-  min-width: 200px;
+  padding: 0;
 }
 
 /* pills */
@@ -187,7 +186,6 @@
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
   will-change: transform;
   backdrop-filter: blur(6px);
-
 }
 
 .cruising-link:hover{
@@ -218,8 +216,8 @@
   letter-spacing:.01em;
 }
 
-/* Stagger de los 5 items (solo con clase is-visible) */
-.cruising-icons .cruising-icon{
+/* Stagger de los 5 items */
+html.js .cruising-icons .cruising-icon{
   opacity: 0;
   transform: translate3d(0, 10px, 0);
   transition: opacity .65s ease, transform .65s ease;
@@ -235,65 +233,8 @@
 .cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(4){ transition-delay: .52s; }
 .cruising-section.is-visible .cruising-icons .cruising-icon:nth-child(5){ transition-delay: .58s; }
 
-/* =========================
-   Imagen — wipe + zoom suave (SIN parallax)
-========================= */
-.cruising-image{
-  width: 100%;
-  margin-top: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.cruising-image-inner{
-  width: min(980px, 70%);
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--cs-shadow);
-  position: relative;
-
-  /* estado inicial */
-  transform: scale(1.03);
-  transition: transform .9s ease;
-}
-
-/* “wipe” overlay */
-.cruising-image-inner::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(90deg, rgba(250,250,250,.95), rgba(250,250,250,.65), rgba(250,250,250,0));
-  transform: translate3d(-105%,0,0);
-  transition: transform 1.05s ease;
-  pointer-events:none;
-}
-
-.cruising-section.is-visible .cruising-image-inner{
-  transform: scale(1);
-}
-.cruising-section.is-visible .cruising-image-inner::after{
-  transform: translate3d(105%,0,0);
-}
-
-.cruising-image img{
-  width: 100%;
-  height: auto;
-  display: block;
-
-  /* pequeño “breath” */
-  transform: scale(1.06);
-  transition: transform 1.2s ease;
-  will-change: transform;
-  filter: contrast(1.02) saturate(1.02);
-}
-.cruising-section.is-visible .cruising-image img{
-  transform: scale(1.02);
-}
-
 /* Responsive */
 @media (max-width: 900px){
-  .cruising-image-inner{ width: 92%; }
   .cruising-icons{ margin: 40px 0 55px; }
 }
 
@@ -307,10 +248,6 @@
   .cruising-icons .cruising-icon,
   .cruising-link,
   .cruising-link img,
-  .cruising-image,
-  .cruising-image-inner,
-  .cruising-image-inner::after,
-  .cruising-image img,
   .cruising-title::after{
     animation: none !important;
     transition: none !important;
