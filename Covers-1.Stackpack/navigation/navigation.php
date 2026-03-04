@@ -2,12 +2,12 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$navCssFs = __DIR__ . '/Covers/2.Services/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/Covers/2.Services/navigation/navigation.js';
+$navCssFs = __DIR__ . '/Covers/navigation/navigation.css';
+$navJsFs  = __DIR__ . '/Covers/navigation/navigation.js';
 
 /* Public paths (as used in HTML) */
-$navCssPublic = '../Covers/2.Services/navigation/navigation.css';
-$navJsPublic  = '../Covers/2.Services/navigation/navigation.js';
+$navCssPublic = '../Covers/navigation/navigation.css';
+$navJsPublic  = '../Covers/navigation/navigation.js';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
@@ -23,6 +23,8 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
  */
 $breadcrumbs = $breadcrumbs ?? [
   ['label' => 'Home',          'href' => '../Home/index.php'],
+  ['label' => 'Cover',          'href' => '../Home/index.php'],
+  ['label' => 'Stack Pack','href' => null],
 ];
 ?>
 

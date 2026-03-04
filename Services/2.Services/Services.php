@@ -122,13 +122,13 @@
   opacity: 1;
 }
 .pictureCruising1{
-  background-image: url("../Services/2.Services/CanvasRepairs.jpg");
+  background-image: url("../Services/2.Services/img/CanvasRepairs.jpg");
 }
 .pictureCruising2{
-  background-image: url("../Services/2.Services/CanvasCleaning.jpg");
+  background-image: url("../Services/2.Services/img/CanvasCleaning.jpg");
 }
 .pictureCruising3{
-  background-image: url("../Services/2.Services/Headercovers.jpg");
+  background-image: url("../Services/2.Services/img/Headercovers.jpg");
 }
 
 .comeBack {

@@ -76,7 +76,7 @@
     <?php include "../General/Menu/Menu.php" ?>
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
-    <?php include "../General/navigation/navigation.php" ?>
+    <?php include "../Covers-1.Stackpack/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
 
     </div>

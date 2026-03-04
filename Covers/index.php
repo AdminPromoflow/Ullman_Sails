@@ -80,7 +80,7 @@
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
-    <?php include "../Covers/2.Services/navigation/navigation.php" ?>
+    <?php include "../Covers/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>
