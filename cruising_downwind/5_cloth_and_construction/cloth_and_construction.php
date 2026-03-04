@@ -1,25 +1,47 @@
 <?php
 declare(strict_types=1);
 
-/* Filesystem paths (for filemtime) */
-$cssFile = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
-$jsFile  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
+/* =========================
+   Filesystem paths (filemtime)
+========================= */
+$nsCssFs = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
+$nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
+
+/* =========================
+   Public paths (IMPORTANT)
+   (porque estás usando ../cruising_downwind/)
+========================= */
+$basePublic = '../cruising_downwind/5_cloth_and_construction';
+
+$nsCssPublic = $basePublic . '/cloth_and_construction.css';
+$nsJsPublic  = $basePublic . '/cloth_and_construction.js';
 
 /* Versions */
-$cssVersion = is_file($cssFile) ? filemtime($cssFile) : null;
-$jsVersion  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+$nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
+$nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
 
-/* Images (filesystem for filemtime) */
-$imgSail1File = __DIR__ . '/../cruising_navigator/5_cloth_and_construction/img/sail_1.png';
-$imgSail2File = __DIR__ . '/../cruising_navigator/5_cloth_and_construction/img/sail_2.png';
-$imgSail3File = __DIR__ . '/../cruising_navigator/5_cloth_and_construction/img/sail_3.png';
+/* Images (filesystem + public) */
+$img1Fs = __DIR__ . '/5_cloth_and_construction/img/sail_1.png';
+$img2Fs = __DIR__ . '/5_cloth_and_construction/img/sail_2.png';
+$img3Fs = __DIR__ . '/5_cloth_and_construction/img/sail_3.png';
 
-$imgSail1V = is_file($imgSail1File) ? filemtime($imgSail1File) : null;
-$imgSail2V = is_file($imgSail2File) ? filemtime($imgSail2File) : null;
-$imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
+$img1V = is_file($img1Fs) ? filemtime($img1Fs) : null;
+$img2V = is_file($img2Fs) ? filemtime($img2Fs) : null;
+$img3V = is_file($img3Fs) ? filemtime($img3Fs) : null;
+
+$img1Url = $basePublic . '/img/sail_1.png';
+$img2Url = $basePublic . '/img/sail_2.png';
+$img3Url = $basePublic . '/img/sail_3.png';
+
+/* Helper */
+if (!function_exists('with_v')) {
+  function with_v(string $url, ?int $v): string {
+    return $v ? ($url . '?v=' . $v) : $url;
+  }
+}
 ?>
 
-<link rel="stylesheet" href="5_cloth_and_construction/cloth_and_construction.css<?= $cssVersion ? '?v='.$cssVersion : '' ?>">
+<link rel="stylesheet" href="<?= htmlspecialchars($nsCssPublic, ENT_QUOTES) ?>?v=<?= (int)$nsCssV ?>">
 
 <section class="nav-specsheet" data-sr-reveal aria-label="Downwind cloth selection and construction">
   <h2 id="csp-title" class="csp-title sr-item">Cloth Selection &amp; Construction</h2>
@@ -27,24 +49,24 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
   <!-- =========================
        1) CODE SAILS (3 images)
   ========================== -->
-  <div class="nav-specsheet__wrap sr-item">
+  <div class="nav-specsheet__wrap">
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
 
-        <figure class="nav-rotator" aria-label="Code sails image rotator" data-interval="3000">
+        <figure class="nav-rotator sr-item" aria-label="Code sails image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png<?= $imgSail1V ? '?v='.$imgSail1V : '' ?>"
+                 src="<?= htmlspecialchars(with_v($img1Url, $img1V), ENT_QUOTES) ?>"
                  alt="Axia Code 50 sail view"
                  data-sub="AXIA CODE 50 — 50–60% MID-GIRTH">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png<?= $imgSail2V ? '?v='.$imgSail2V : '' ?>"
+                 src="<?= htmlspecialchars(with_v($img2Url, $img2V), ENT_QUOTES) ?>"
                  alt="Axia Code 60 sail view"
                  data-sub="AXIA CODE 60 — 60–70% MID-GIRTH">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_3.png<?= $imgSail3V ? '?v='.$imgSail3V : '' ?>"
+                 src="<?= htmlspecialchars(with_v($img3Url, $img3V), ENT_QUOTES) ?>"
                  alt="Axia Code 70 sail view"
                  data-sub="AXIA CODE 70 — 70–83% MID-GIRTH">
           </div>
@@ -61,7 +83,7 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
           </figcaption>
         </figure>
 
-        <div class="nav-specsheet__text">
+        <div class="nav-specsheet__text sr-item">
           <div class="nav-specsheet__meta">
             <div class="nav-specsheet__metaTop">CODE SAILS</div>
             <div class="nav-specsheet__metaSub">CLOTH SELECTION</div>
@@ -81,50 +103,20 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
 
           <h3 class="nav-specsheet__subtitle">Construction</h3>
           <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
-              <div class="nav-specsheet__val">RADIAL</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
-              <div class="nav-specsheet__val">CABLED LUFF</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
-              <div class="nav-specsheet__val">ACTIVE LUFF</div>
-            </div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">RADIAL</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">CABLED LUFF</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">ACTIVE LUFF</div></div>
           </div>
 
           <h3 class="nav-specsheet__subtitle">Upgrades</h3>
           <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">V TRIM STRIPES</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">CUSTOM DRAFT STRIPES AND NUMBERS</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">TOP-DOWN FURLING SETUP</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">TORSIONAL LUFF CABLES</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">FURLING CLEW VELCRO TABS</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">SOFT CLEW</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">CUSTOM GRAPHICS</div>
-            </div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">V TRIM STRIPES</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">CUSTOM DRAFT STRIPES AND NUMBERS</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">TOP-DOWN FURLING SETUP</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">TORSIONAL LUFF CABLES</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">FURLING CLEW VELCRO TABS</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">SOFT CLEW</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">CUSTOM GRAPHICS</div></div>
           </div>
         </div>
 
@@ -135,19 +127,19 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
   <!-- =========================
        2) CLASSIC SPINNAKERS (2 images)
   ========================== -->
-  <div class="nav-specsheet__wrap sr-item">
+  <div class="nav-specsheet__wrap">
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
 
-        <figure class="nav-rotator" aria-label="Classic spinnakers image rotator" data-interval="3000">
+        <figure class="nav-rotator sr-item" aria-label="Classic spinnakers image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png<?= $imgSail1V ? '?v='.$imgSail1V : '' ?>"
+                 src="<?= htmlspecialchars(with_v($img1Url, $img1V), ENT_QUOTES) ?>"
                  alt="Axia Asymm sail view"
                  data-sub="AXIA ASYMM — 80%+ MID-GIRTH">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png<?= $imgSail2V ? '?v='.$imgSail2V : '' ?>"
+                 src="<?= htmlspecialchars(with_v($img2Url, $img2V), ENT_QUOTES) ?>"
                  alt="Axia Symm sail view"
                  data-sub="AXIA SYMM — SYMMETRICAL DOWNWIND">
           </div>
@@ -163,7 +155,7 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
           </figcaption>
         </figure>
 
-        <div class="nav-specsheet__text">
+        <div class="nav-specsheet__text sr-item">
           <div class="nav-specsheet__meta">
             <div class="nav-specsheet__metaTop">CLASSIC SPINNAKERS</div>
             <div class="nav-specsheet__metaSub">CLOTH SELECTION</div>
@@ -179,50 +171,20 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
 
           <h3 class="nav-specsheet__subtitle">Construction</h3>
           <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
-              <div class="nav-specsheet__val">RADIAL</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
-              <div class="nav-specsheet__val">CABLED LUFF</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">CONSTRUCTION</div>
-              <div class="nav-specsheet__val">ACTIVE LUFF</div>
-            </div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">RADIAL</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">CABLED LUFF</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">ACTIVE LUFF</div></div>
           </div>
 
           <h3 class="nav-specsheet__subtitle">Upgrades</h3>
           <div class="nav-specsheet__list">
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">V TRIM STRIPES</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">CUSTOM DRAFT STRIPES AND NUMBERS</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">TOP-DOWN FURLING SETUP</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">TORSIONAL LUFF CABLES</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">FURLING CLEW VELCRO TABS</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">SOFT CLEW</div>
-            </div>
-            <div class="nav-specsheet__row">
-              <div class="nav-specsheet__key">UPGRADES</div>
-              <div class="nav-specsheet__val">CUSTOM GRAPHICS</div>
-            </div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">V TRIM STRIPES</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">CUSTOM DRAFT STRIPES AND NUMBERS</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">TOP-DOWN FURLING SETUP</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">TORSIONAL LUFF CABLES</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">FURLING CLEW VELCRO TABS</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">SOFT CLEW</div></div>
+            <div class="nav-specsheet__row"><div class="nav-specsheet__key"></div><div class="nav-specsheet__val">CUSTOM GRAPHICS</div></div>
           </div>
         </div>
 
@@ -232,4 +194,5 @@ $imgSail3V = is_file($imgSail3File) ? filemtime($imgSail3File) : null;
 
 </section>
 
-<script defer src="5_cloth_and_construction/cloth_and_construction.js<?= $jsVersion ? '?v='.$jsVersion : '' ?>"></script>
+<!-- ✅ AQUÍ estaba el bug: comillas y ?v mal pegados -->
+<script defer src="<?= htmlspecialchars($nsJsPublic, ENT_QUOTES) ?>?v=<?= (int)$nsJsV ?>"></script>

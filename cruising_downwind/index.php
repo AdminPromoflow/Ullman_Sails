@@ -52,6 +52,7 @@
     <?php include "navigation/navigation.php"?>
 
     <?php include "1_introduction/introduction.php";?>
+    <?php include "customize_your_own_sail/customize_your_own_sail.php" ?>
     <?php include "2_handling_and_performance/handling_and_performance.php";?>
     <?php include "3_design_and_construction/design_and_construction.php";?>
     <?php include "4_durability_and_reinforcement/durability_and_reinforcement.php";?>

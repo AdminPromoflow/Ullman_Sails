@@ -14,11 +14,11 @@ SVG;
 
 $ph_steps = [
   [
-    'title' => 'Blue Line',
+    'title' => 'Safe Speed Spinnakers',
     'text'  => 'Easy-to-trim cruising spinnakers for varied conditions, adding speed while keeping sailing safe; sock options ease hoists.',
   ],
   [
-    'title' => 'Axia Blue Line',
+    'title' => 'Smooth Stable Cruising',
     'text'  => 'Cruising sails with smooth rotation and stable flying shapes, delivering forgiving handling, comfort and confidence.',
   ],
 ];

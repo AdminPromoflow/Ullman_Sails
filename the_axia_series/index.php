@@ -10,6 +10,7 @@
   </head>
   <body>
     <style media="screen">
+
       body{
         margin: 0px;
         padding: 0px;
@@ -40,15 +41,12 @@
     <div id="searchHide" class="searchHide">
       <?php // include "navigation/navigation.php"; ?>
       <?php include "../General/new_sail_quote/new_sail_quote.php"; ?>
-
       <?php include "../General/arrows_up_down/arrows_up_down.php" ?>
-      <?php include "cruising_section/cruising_section.php" ?>
+      <?php include "../the_axia_series/navigation/navigation.php" ?>
+      
+      <?php include "the_axia_series_section/the_axia_series_section.php" ?>
       <?php include "sail_types_section/sail_types_section.php" ?>
       <?php include "series_section/series_section.php" ?>
-
-
-
-    <?php //include "2.Services/Services.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>
 

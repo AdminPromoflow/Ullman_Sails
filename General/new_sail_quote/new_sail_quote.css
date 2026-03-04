@@ -20,7 +20,7 @@
 }
 .button_quote {
   width: 200px;
-  padding: 10px;
+  max-height: 80px;
   border-radius: 5px;
   cursor: pointer;
   border: 1px solid #202E52;
