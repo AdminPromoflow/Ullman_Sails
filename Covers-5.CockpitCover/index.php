@@ -78,7 +78,7 @@
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
-    <?php include "../General/navigation/navigation.php" ?>
+    <?php include "../Covers-5.CockpitCover/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>

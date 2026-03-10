@@ -1,214 +1,91 @@
-<style media="screen">
+<?php
+declare(strict_types=1);
 
-.text{
-  position: relative;
-  background-color: #F8F8FA;
-  padding: 4vw 6vw  4vw 6vw;
+/**
+ * Ajusta SOLO estos 2 URLs si esta sección se incluye desde otra ruta.
+ * (El filemtime asume que Services.css y Services.js están en la misma carpeta que este index.php)
+ */
+$cssFs  = __DIR__ . '/Services.css';
+$jsFs   = __DIR__ . '/Services.js';
 
-}
-.text h1{
-  color: #005598;
-  padding: 0vw 0 2vw 0;
-  font-size: 2.3em;
-  text-align: center;
+$cssUrl = '../Services/2.Services/Services.css';
+$jsUrl  = '../Services/2.Services/Services.js';
 
-}
-.text h2{
-  color: #202E52;
-  text-align: left;
-  width: 100%;
-  padding: 2vw 0 0vw 0;
-  margin-bottom: 10px;
-  font-weight: 400;
-  color: #005598;
-}
-.text p{
-  position: relative;
-  text-align:;justify;
-  padding-left: 1vw;
-  font-size: 1.2em;
-  left: 0px;
-  margin: 1vw 0 1vw 0;
-}
-.text  ul{
-  width: 100%;
-  padding-left: 35px;
-  padding-bottom: 10px;
-  font-size: 1.2em;
-}
+$cssVer = is_file($cssFs) ? filemtime($cssFs) : null;
+$jsVer  = is_file($jsFs)  ? filemtime($jsFs)  : null;
+?>
 
-.services{
-  position: relative;
-  padding: 2vw 6vw;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.services a{
-   all: unset;
-   color:#202E52;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.smallFont{
-  position: relative;
-  margin: auto;
-  height: 100%;
-  width: 100%;
+<link rel="stylesheet" href="<?= $cssUrl ?><?= $cssVer ? '?v='.$cssVer : '' ?>">
+<script defer src="<?= $jsUrl ?><?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
 
-}
-.smallFont2{
-  position: absolute;
-  font-size: 2;
-  left: 1px;
-}
-.box-services{
-  position: relative;
-  width: 300px;
-  height: 200px;
-  min-width: 300px;
-  min-height: 200px;
-  margin: 10px;
+<section class="services-section" aria-labelledby="services-title" data-sr-section>
+  <div class="services-shell">
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+    <header class="services-head">
+      <p class="services-brand" data-sr-item>ULLMAN SAILS</p>
 
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
-.wrap-box-services{
-  position: relative;
-  padding: 7px 14px;
-  background-color: rgba(197, 35, 74, .1);
-  height: 70%;
-  width: 70%;
-  margin: auto;
-}
+      <h1 id="services-title" class="services-title" data-sr-item>Services</h1>
 
-.wrap-box-services:hover{
-  background-color: rgba(197, 35, 74, .3);
-}
+      <span class="services-divider" aria-hidden="true" data-sr-item></span>
 
-.wrap-box-services h3{
-  position: relative;
-  margin: auto;
-  text-align: center;
-  color: white;
-  font-weight: 500;
-  font-size: 1.9em;
-  text-shadow: 1px 1px 1px black;
-  cursor: pointer;
-}
-.wrap-box-services h4{
-  position: relative;
-  margin: auto;
-  text-align: center;
-  font-weight: 200;
-  font-size: 1.1em;
-  color: white;
-  text-shadow: 1px 1px 1px black;
-  opacity: 0;
-  transition: .4s;
-  cursor: pointer;
-}
-.wrap-box-services:hover h4{
-  text-decoration: underline;
-  opacity: 1;
-}
-.pictureCruising1{
-  background-image: url("../Services/2.Services/img/CanvasRepairs.jpg");
-}
-.pictureCruising2{
-  background-image: url("../Services/2.Services/img/CanvasCleaning.jpg");
-}
-.pictureCruising3{
-  background-image: url("../Services/2.Services/img/Headercovers.jpg");
-}
+      <p class="services-subtitle" data-sr-item>
+        Ullman Sails offers a range of services to help you maintain and extend the life of your sail inventory.
+        Our loft experts will recommend the right solution for your goals and your budget — and a new sail isn’t always the answer.
+      </p>
+    </header>
 
-.comeBack {
-  all: unset !important;
-  color: #202E52 !important;
-  font-weight: 600 !important;
-  font-size: 1.1em !important;
-  cursor: pointer !important;
-  text-align: left !important;
-  width: 100vw !important;
-}
-.comeBack:hover{
-  text-decoration: underline !important;
-}
-</style>
-<section class="services">
-  <div class="text">
-    <a class="comeBack"href="../Home/index.php">&lt; Home</a>
-    <h1>Services</h1>
-    <p>Ullman Sails offers a variety of services to help you maintain the quality
-      of your current sail inventory. We apply our extensive knowledge and experience
-      to make sure you ..... details. The answer isn't always a brand new sail.
-      We'll find the right solution that meets your goals and your budget. </p>
+    <div class="services-grid" role="list">
+      <!-- Card 1 -->
+      <a class="svc-card" href="../Services-1.SailsRepair/index.php" role="listitem" aria-label="All Sail Repairs" data-sr-item>
+        <figure class="svc-media">
+          <img src="../Services/2.Services/img/CanvasRepairs.jpg" alt="All Sail Repairs" loading="lazy" decoding="async">
+        </figure>
 
-</div>
-<a href="../Services-1.SailsRepair/index.php">
-  <div class="box-services pictureCruising1">
-    <div class="wrap-box-services">
-      <h3>All Sail Repairs</h3>
+        <div class="svc-body">
+          <p class="svc-kicker">ALL SAIL</p>
+          <h2 class="svc-title">REPAIRS</h2>
+          <span class="svc-rule" aria-hidden="true"></span>
+          <p class="svc-text">From small tears to major damage, we repair and restore sails of all types.</p>
+          <span class="svc-link">LEARN MORE <span aria-hidden="true">→</span></span>
+        </div>
+
+        <span class="svc-bottomline" aria-hidden="true"></span>
+      </a>
+
+      <!-- Card 2 -->
+      <a class="svc-card" href="../Services-2.SailsCleaning/index.php" role="listitem" aria-label="Sail and Canvas Cleaning" data-sr-item>
+        <figure class="svc-media">
+          <img src="../Services/2.Services/img/CanvasCleaning.jpg" alt="Sail and Canvas Cleaning" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="svc-body">
+          <p class="svc-kicker">SAIL AND CANVAS</p>
+          <h2 class="svc-title">CLEANING</h2>
+          <span class="svc-rule" aria-hidden="true"></span>
+          <p class="svc-text">Thorough cleaning to remove dirt, salt and mildew from sails and canvas.</p>
+          <span class="svc-link">LEARN MORE <span aria-hidden="true">→</span></span>
+        </div>
+
+        <span class="svc-bottomline" aria-hidden="true"></span>
+      </a>
+
+      <!-- Card 3 -->
+      <a class="svc-card" href="../Services-3.CanvasRepair/index.php" role="listitem" aria-label="Canvas Repairs" data-sr-item>
+        <figure class="svc-media">
+          <img src="../Services/2.Services/img/Headercovers.jpg" alt="Canvas Repairs" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="svc-body">
+          <p class="svc-kicker">CANVAS</p>
+          <h2 class="svc-title">REPAIRS</h2>
+          <span class="svc-rule" aria-hidden="true"></span>
+          <p class="svc-text">Expert repair services for boat covers, biminis, and other marine canvas.</p>
+          <span class="svc-link">LEARN MORE <span aria-hidden="true">→</span></span>
+        </div>
+
+        <span class="svc-bottomline" aria-hidden="true"></span>
+      </a>
     </div>
-  </div>
-</a>
-<a href="../Services-2.SailsCleaning/index.php">
-  <div class="box-services pictureCruising2">
-    <div class="wrap-box-services">
-      <h3 class="smallFont">Sail and Canvas Cleaning</h3>
-    </div>
-  </div>
-</a>
-<a href="../Services-3.CanvasRepair/index.php">
-  <div class="box-services pictureCruising3">
-    <div class="wrap-box-services">
-      <h3>Canvas Repairs</h3>
-    </div>
-  </div>
-</a>
 
-<!--<a href="../Services-4.HarwareUpgrades/index.php">
-  <div class="box-services pictureCruising4">
-    <div class="wrap-box-services">
-      <h3>Hardware Upgrades</h3>
-    </div>
   </div>
-</a>
-<a href="../Services-5.FurlingSystem/index.php">
-  <div class="box-services pictureCruising5">
-    <div class="wrap-box-services">
-      <h3 class="smallFont">Furling System Installation </h3>
-    </div>
-  </div>
-</a>
-<a href="../Services-6.HandlingSystem/index.php">
-  <div class="box-services pictureCruising6">
-    <div class="wrap-box-services">
-      <h3 class="smallFont2">Sail Handling System  </h3>
-    </div>
-  </div>
-</a>-->
 </section>
-
-<script type="text/javascript">
-const buttonTitle = document.querySelectorAll(".OpenContactUs");
-
-for (let i = 0; i < buttonTitle.length; i++) {
- buttonTitle[i].addEventListener("click", function(){
-    window.open("../ContactUs/index.php", "_self");
- })
-}
-
-
-
-
-</script>

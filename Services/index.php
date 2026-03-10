@@ -56,7 +56,6 @@
 
     header {
       padding: 50px;
-      background-color: aquamarine;
       text-align: center;
     }
 
@@ -77,7 +76,8 @@
     <?php include "../General/Menu/Menu.php" ?>
 
     <div id="searchHide" class="searchHide">
-    <?php include "1.Slider/Slider.php" ?>
+    <?php include "../Services/1.slider/slider.php" ?>
+    <?php include "../Services/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>
