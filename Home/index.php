@@ -110,8 +110,7 @@
 
     <div id="searchHide" class="searchHide">
     <?php include "../General/Menu/Menu.php" ?>
-    <?php include "../Home/1.Slider/Slider.php" ?>
-    <?php include "../Home/buttom/buttom.php" ?>
+    <?php include "../home/1_slider/slider.php" ?>
     <?php include "../Home/3_design_and_construction/design_and_construction.php" ?>
     <?php include "../Home/Picture/Picture.php" ?>
     <?php include "5.Video/Video.php" ?>
