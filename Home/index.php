@@ -109,7 +109,7 @@
     </div>
 
     <div id="searchHide" class="searchHide">
-    <?php include "../General/Menu/Menu.php" ?>
+    <?php include "../general/menu/menu.php" ?>
     <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
 
 
