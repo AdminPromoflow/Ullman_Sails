@@ -57,6 +57,27 @@ nav a {
   text-decoration: none;
 }
 
+
+/* Estilo para la barra de desplazamiento en WebKit */
+body::-webkit-scrollbar {
+    width: 13px; /* Ancho de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #091d2c; /* Color azul oscuro para la parte que se mueve */
+    border-radius: 5px; /* Radio de borde para hacerla redondeada */
+    border: 1px solid rgba(255, 255, 255, .5); /* Borde blanco para un contraste mejor */
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .4); /* Color gris oscuro para el fondo */
+    border-radius: 10px; /* Radio de borde para hacerla redondeada */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #132735; /* Color más oscuro cuando el mouse está encima */
+}
+
 .img_arrow_bottom{
   position:fixed;
   height: 40px;
