@@ -111,10 +111,10 @@
     <div id="searchHide" class="searchHide">
     <?php include "../general/menu/menu.php" ?>
     <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
-
-
     <?php include "../home/1_slider/slider.php" ?>
-    <?php include "../Home/3_design_and_construction/design_and_construction.php" ?>
+    <?php include "../home/2_sail_types/sail_types.php" ?>
+
+
     <?php include "../Home/Picture/Picture.php" ?>
     <?php include "5.Video/Video.php" ?>
     <?php include "4.News/News.php" ?>
