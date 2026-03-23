@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="home/style.css?v=<?= file_exists('home/style.css') ? filemtime('home/style.css') : time() ?>">
+
   </head>
   <body id="container_accessories_home">
 
-  
 
     <div id="searchHide" class="searchHide">
     <?php include "../general/menu/menu.php" ?>
@@ -31,10 +32,8 @@
 
     <?php include "../General/Footer/Footer.php" ?>
 
+    <script defer src="home/app.js?v=<?= file_exists('home/app.js') ? filemtime('home/app.js') : time() ?>"></script>
 
-    <script type="text/javascript">
-
-    </script>
 
   </body>
 
