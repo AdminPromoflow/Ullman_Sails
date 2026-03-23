@@ -48,7 +48,7 @@
       <?php include "sail_types_section/sail_types_section.php" ?>
       <?php include "series_section/series_section.php" ?>
     </div>
-    <?php include "../General/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.php"; ?>
 
 
 
