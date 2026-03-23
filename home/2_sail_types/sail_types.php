@@ -29,12 +29,12 @@ $st_items = [
 ];
 
 // Filesystem paths (for filemtime)
-$stCssFs ='../2_sail_types/sail_types.css';
-$stJsFs  = '../2_sail_types/sail_types.js';
+$stCssFs ='../home/2_sail_types/sail_types.css';
+$stJsFs  = '../home/2_sail_types/sail_types.js';
 
 // Public paths
-$stCssPublic = '../2_sail_types/sail_types.css';
-$stJsPublic  = '../2_sail_types/sail_types.js';
+$stCssPublic = '../home/2_sail_types/sail_types.css';
+$stJsPublic  = '../home/2_sail_types/sail_types.js';
 
 // Versions
 $stCssV = is_file($stCssFs) ? filemtime($stCssFs) : time();
