@@ -24,6 +24,11 @@
   padding-inline: var(--st-gutter);
   background: #EEF1F6;
   text-align: center;
+
+  /* Section load animation */
+  opacity: 0;
+  transform: translateY(18px);
+  animation: stSectionIn 900ms cubic-bezier(.2,.8,.2,1) forwards;
 }
 
 .st-wrap{
@@ -31,13 +36,17 @@
   margin-inline: auto;
 }
 
-/* Accesible: título oculto */
+/* Accessible hidden title */
 .sr-only{
   position:absolute !important;
-  width:1px; height:1px;
-  padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0);
-  white-space:nowrap; border:0;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
 }
 
 /* GRID */
@@ -53,7 +62,7 @@
   align-items: stretch;
 }
 
-/* CARD (más visible) */
+/* CARD */
 .st-card{
   width: 100%;
   max-width: 26rem;
@@ -65,12 +74,47 @@
   flex-direction: column;
   align-items: center;
 
-  /* animación al recargar (stagger con --i desde PHP) */
+  border: 1px solid var(--st-card-border);
+  border-radius: var(--st-radius);
+  box-shadow: var(--st-card-shadow);
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  transform: translateY(24px) scale(.985);
+  animation: stCardIn 750ms cubic-bezier(.2,.8,.2,1) forwards;
+  animation-delay: calc(var(--i, 0) * 120ms + 180ms);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease,
+    background-color .35s ease;
+}
+
+/* Card content load sequence */
+.st-card .st-icon,
+.st-card .st-card-title,
+.st-card .st-card-text,
+.st-card .st-btn{
   opacity: 0;
   transform: translateY(14px);
-  animation: stCardIn 700ms cubic-bezier(.2,.8,.2,1) forwards;
-  animation-delay: calc(var(--i, 0) * 90ms);
-  transition: all .4s;
+  animation: stInnerIn 650ms cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.st-card .st-icon{
+  animation-delay: calc(var(--i, 0) * 120ms + 280ms);
+}
+
+.st-card .st-card-title{
+  animation-delay: calc(var(--i, 0) * 120ms + 380ms);
+}
+
+.st-card .st-card-text{
+  animation-delay: calc(var(--i, 0) * 120ms + 480ms);
+}
+
+.st-card .st-btn{
+  animation-delay: calc(var(--i, 0) * 120ms + 580ms);
 }
 
 /* HOVER */
@@ -79,14 +123,16 @@
   transform: translateY(-6px);
   box-shadow: var(--st-card-shadow-hover);
   border-color: rgba(15,33,64,.22);
+  background: rgba(255,255,255,.82);
 }
 
-.st-card:hover:hover .st-btn{
-  transform: translateY(5px);
+.st-card:hover .st-btn,
+.st-card:focus-within .st-btn{
+  transform: translateY(-2px);
   box-shadow: 0 18px 44px rgba(15,33,64,.20);
 }
 
-/* Imagen GRANDE */
+/* Large image */
 .st-icon{
   display: flex;
   justify-content: center;
@@ -97,10 +143,8 @@
   width: clamp(170px, 18vw, 220px);
   height: clamp(170px, 18vw, 220px);
   display: block;
-  object-fit: contain; /* NO recorta */
+  object-fit: contain;
   border-radius: 30px;
-
-  /* para que parezca "card dentro de card" */
 }
 
 .st-card-title{
@@ -121,7 +165,7 @@
   max-width: 34ch;
 }
 
-/* BOTÓN "SEE MORE" */
+/* CTA button */
 .st-btn{
   margin-top: clamp(1rem, 2.2vw, 1.25rem);
   display: inline-flex;
@@ -140,11 +184,14 @@
   border: 1px solid rgba(15,33,64,.20);
 
   box-shadow: 0 14px 34px rgba(15,33,64,.16);
-  transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    background-color .22s ease;
 }
 
 .st-btn:hover{
-  transform: translateY(-2px)!important;
+  transform: translateY(-2px);
   box-shadow: 0 18px 44px rgba(15,33,64,.20);
 }
 
@@ -159,9 +206,23 @@
 }
 
 /* =========================
-   Animación (reload)
+   Load animations
 ========================= */
+@keyframes stSectionIn{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes stCardIn{
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes stInnerIn{
   to{
     opacity: 1;
     transform: translateY(0);
@@ -172,7 +233,9 @@
    Responsive
 ========================= */
 @media (max-width: 360px){
-  .sail-types{ padding-inline: 1rem; }
+  .sail-types{
+    padding-inline: 1rem;
+  }
 }
 
 @media (max-width: 1100px){
@@ -182,17 +245,29 @@
 }
 
 @media (max-width: 640px){
-  .st-grid{ grid-template-columns: 1fr; }
-  .st-card-text{ max-width: 52ch; }
+  .st-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .st-card-text{
+    max-width: 52ch;
+  }
 }
 
-/* Reduce motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
+  .sail-types,
   .sail-types *{
     transition: none !important;
     animation: none !important;
   }
-  .st-card{
+
+  .sail-types,
+  .st-card,
+  .st-card .st-icon,
+  .st-card .st-card-title,
+  .st-card .st-card-text,
+  .st-card .st-btn{
     opacity: 1 !important;
     transform: none !important;
   }
