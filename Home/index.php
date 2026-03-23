@@ -112,6 +112,9 @@
     <?php include "../general/menu/menu.php" ?>
     <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
     <?php include "../home/1_slider/slider.php" ?>
+    <?php include "../home/navigation/navigation.php" ?>
+
+
     <?php include "../home/2_sail_types/sail_types.php" ?>
 
 

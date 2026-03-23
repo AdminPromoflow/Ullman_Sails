@@ -1,10 +1,10 @@
 .Container_bottom {
   position: fixed;
   bottom: 10px ;
-  right: 100px;
-  width: 100px;
-  height: 10px;
-  padding: 10px 0;
+  right: 50px;
+  min-width: 0px;
+  min-height: 0px;
+  padding: 30px 0;
   margin: 20px 0 80px 0;
 
   display: flex;
@@ -27,7 +27,7 @@
   margin: auto;
 }
 .button_quote1 {
-  background-color: #005596;
+  background-color: green;
 }
 .button_quote1:hover {
   background-color: #245580;
