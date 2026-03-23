@@ -70,11 +70,11 @@
 }
 
 /* Slide background images */
-.home-slider__slide.bg-racing-1  { background-image: url("img/thumbnail.jpg"); }
-.home-slider__slide.bg-racing-2  { background-image: url("img/img2.jpg"); }
-.home-slider__slide.bg-cruising-1{ background-image: url("img/CruisingSails.jpg"); }
-.home-slider__slide.bg-cruising-2{ background-image: url("img/CrusingSails2.jpg"); }
-.home-slider__slide.bg-covers    { background-image: url("img/Headercovers.jpg"); }
+.home-slider__slide.bg-racing-1  { background-image: url("img/racing_1.jpg"); }
+.home-slider__slide.bg-racing-2  { background-image: url("img/racing_2.jpg"); }
+.home-slider__slide.bg-cruising-1{ background-image: url("img/cruising_sails_1.jpg"); }
+.home-slider__slide.bg-cruising-2{ background-image: url("img/cruising_sails_2.jpg"); }
+.home-slider__slide.bg-covers    { background-image: url("img/covers.jpg"); }
 .home-slider__slide.bg-services  { background-image: url("img/services.jpg"); }
 
 /* Soft image overlay for readability */
@@ -229,19 +229,38 @@
   border-radius: 50%;
 }
 
-/* Initial text animation state */
+/* Initial hidden state */
 .home-slider__caption > *{
   opacity: 0;
   transform: translateY(22px);
 }
 
-/* Active slide text reveal */
-.home-slider__slide.is-active .home-slider__kicker   { animation: showContent .55s 0s   ease forwards; }
-.home-slider__slide.is-active .home-slider__title    { animation: showContent .55s .18s ease forwards; }
-.home-slider__slide.is-active .home-slider__subtitle { animation: showContent .55s .36s ease forwards; }
-.home-slider__slide.is-active .home-slider__line     { animation: showContent .55s .54s ease forwards; }
-.home-slider__slide.is-active .home-slider__btn      { animation: showContent .55s .72s ease forwards; }
+/* Active slide shown instantly when animation is disabled */
+.home-slider__slide.is-active[data-animate="false"] .home-slider__caption > *{
+  opacity: 1;
+  transform: translateY(0);
+}
 
+/* Active slide animated only when allowed */
+.home-slider__slide.is-active[data-animate="true"] .home-slider__kicker{
+  animation: showContent .55s 0s ease forwards;
+}
+
+.home-slider__slide.is-active[data-animate="true"] .home-slider__title{
+  animation: showContent .55s .18s ease forwards;
+}
+
+.home-slider__slide.is-active[data-animate="true"] .home-slider__subtitle{
+  animation: showContent .55s .36s ease forwards;
+}
+
+.home-slider__slide.is-active[data-animate="true"] .home-slider__line{
+  animation: showContent .55s .54s ease forwards;
+}
+
+.home-slider__slide.is-active[data-animate="true"] .home-slider__btn{
+  animation: showContent .55s .72s ease forwards;
+}
 /* Fade-up animation */
 @keyframes showContent{
   to{

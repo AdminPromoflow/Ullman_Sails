@@ -4,16 +4,17 @@ class HomeSlider {
     this.root = document.querySelector(rootSelector);
     if (!this.root) return;
 
-    this.track   = this.root.querySelector("#homeSliderTrack");
+    this.track = this.root.querySelector("#homeSliderTrack");
     this.btnPrev = this.root.querySelector("#homeSliderPrev");
     this.btnNext = this.root.querySelector("#homeSliderNext");
     if (!this.track) return;
 
-    this.intervalMs   = options.intervalMs ?? 8000;
-    this.reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+    this.intervalMs = options.intervalMs ?? 8000;
+    this.reduceMotion =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
 
     this.slides = Array.from(this.track.querySelectorAll(".home-slider__slide"));
-    this.total  = this.slides.length;
+    this.total = this.slides.length;
 
     this.hasClones =
       this.total >= 3 &&
@@ -21,18 +22,26 @@ class HomeSlider {
       this.slides[this.total - 1]?.dataset.clone === "first";
 
     this.index = this.hasClones ? 1 : 0;
-
     this.isAnimating = false;
     this.paused = false;
     this.timer = null;
+    this.resizeTimer = null;
+
+    this.slideData = this.slides.map((slide) => ({
+      el: slide,
+      isClone: Boolean(slide.dataset.clone),
+    }));
 
     this.updateMetrics();
     this.bind();
 
-    // Initial position (no animation)
-    this.jumpTo(this.index);
+    // Initial render
+    this.render({
+      useTransition: false,
+      animateCaption: false,
+    });
 
-    // Autoplay (optional)
+    // Autoplay
     if (!this.reduceMotion) this.start();
   }
 
@@ -40,79 +49,111 @@ class HomeSlider {
     this.slideW = this.root.getBoundingClientRect().width || window.innerWidth;
   }
 
-  setTransition(on) {
-    if (this.reduceMotion) {
-      this.track.style.transition = "none";
-      return;
-    }
-    this.track.style.transition = on
-      ? "transform .9s cubic-bezier(.2,.9,.2,1)"
-      : "none";
+  setTransition(enabled) {
+    this.track.style.transition =
+      enabled && !this.reduceMotion
+        ? "transform .9s cubic-bezier(.2,.9,.2,1)"
+        : "none";
   }
 
   applyTransform() {
     this.track.style.transform = `translate3d(${-this.index * this.slideW}px, 0, 0)`;
   }
 
-  setActive() {
-    this.slides.forEach((s) => s.classList.remove("is-active"));
-    const active = this.slides[this.index];
-    if (!active) return;
-    void active.offsetWidth; // restart caption animations
-    active.classList.add("is-active");
+  clearSlides() {
+    this.slideData.forEach(({ el }) => {
+      el.classList.remove("is-active");
+      el.dataset.animate = "false";
+    });
   }
 
-  jumpTo(i) {
-    this.index = i;
-    this.setTransition(false);
+  render({ useTransition = true, animateCaption = true } = {}) {
+    const current = this.slideData[this.index];
+    if (!current) return;
+
+    this.clearSlides();
+    this.setTransition(useTransition);
     this.applyTransform();
-    this.track.offsetHeight; // reflow
-    this.setTransition(true);
-    this.setActive();
-    this.isAnimating = false;
+
+    // Force reflow so CSS animation can restart cleanly
+    void this.track.offsetHeight;
+
+    current.el.dataset.animate =
+      animateCaption && !this.reduceMotion ? "true" : "false";
+
+    current.el.classList.add("is-active");
   }
 
-  goTo(i) {
-    if (this.total < 2) return;
+  goTo(targetIndex) {
+    if (this.total < 2 || this.isAnimating) return;
 
     if (this.reduceMotion) {
       if (this.hasClones) {
-        if (i <= 0) i = this.total - 2;
-        if (i >= this.total - 1) i = 1;
+        if (targetIndex <= 0) targetIndex = this.total - 2;
+        if (targetIndex >= this.total - 1) targetIndex = 1;
       } else {
-        if (i < 0) i = this.total - 1;
-        if (i > this.total - 1) i = 0;
+        if (targetIndex < 0) targetIndex = this.total - 1;
+        if (targetIndex > this.total - 1) targetIndex = 0;
       }
-      this.index = i;
-      this.setTransition(false);
-      this.applyTransform();
-      this.setActive();
+
+      this.index = targetIndex;
+      this.render({
+        useTransition: false,
+        animateCaption: false,
+      });
       return;
     }
 
-    if (this.isAnimating) return;
+    this.index = targetIndex;
+
+    const targetSlide = this.slideData[this.index];
+    const animateCaption = !targetSlide?.isClone;
+
     this.isAnimating = true;
 
-    this.index = i;
-    this.setTransition(true);
-    this.applyTransform();
-    this.setActive();
+    this.render({
+      useTransition: true,
+      animateCaption,
+    });
   }
 
-  next() { this.goTo(this.index + 1); }
-  prev() { this.goTo(this.index - 1); }
+  next() {
+    this.goTo(this.index + 1);
+  }
+
+  prev() {
+    this.goTo(this.index - 1);
+  }
 
   fixLoopIfNeeded() {
-    if (!this.hasClones) return;
+    if (!this.hasClones) {
+      this.isAnimating = false;
+      return;
+    }
 
+    // Jump from cloned last -> real last
     if (this.index === 0) {
-      this.jumpTo(this.total - 2); // last REAL
+      this.index = this.total - 2;
+      this.render({
+        useTransition: false,
+        animateCaption: false,
+      });
+      this.isAnimating = false;
       return;
     }
+
+    // Jump from cloned first -> real first
     if (this.index === this.total - 1) {
-      this.jumpTo(1); // first REAL
+      this.index = 1;
+      this.render({
+        useTransition: false,
+        animateCaption: false,
+      });
+      this.isAnimating = false;
       return;
     }
+
+    this.isAnimating = false;
   }
 
   bind() {
@@ -120,42 +161,63 @@ class HomeSlider {
     this.btnPrev?.addEventListener("click", () => this.prev());
 
     this.track.addEventListener("transitionend", (e) => {
+      if (e.target !== this.track) return;
       if (e.propertyName !== "transform") return;
       this.fixLoopIfNeeded();
-      this.isAnimating = false;
     });
 
-    // Pause on hover / focus
-    this.root.addEventListener("mouseenter", () => (this.paused = true));
-    this.root.addEventListener("mouseleave", () => (this.paused = false));
-    this.root.addEventListener("focusin", () => (this.paused = true));
-    this.root.addEventListener("focusout", () => (this.paused = false));
+    this.root.addEventListener("mouseenter", () => {
+      this.paused = true;
+    });
 
-    // Pause when tab hidden
+    this.root.addEventListener("mouseleave", () => {
+      this.paused = false;
+    });
+
+    this.root.addEventListener("focusin", () => {
+      this.paused = true;
+    });
+
+    this.root.addEventListener("focusout", (e) => {
+      if (!this.root.contains(e.relatedTarget)) {
+        this.paused = false;
+      }
+    });
+
     document.addEventListener("visibilitychange", () => {
       this.paused = document.hidden;
     });
 
-    // Resize
-    let t = null;
     window.addEventListener("resize", () => {
-      clearTimeout(t);
-      t = setTimeout(() => {
+      clearTimeout(this.resizeTimer);
+
+      this.resizeTimer = setTimeout(() => {
         this.updateMetrics();
-        this.jumpTo(this.index);
+        this.render({
+          useTransition: false,
+          animateCaption: false,
+        });
       }, 120);
     });
 
-    // Keyboard support
     this.root.setAttribute("tabindex", "0");
+
     this.root.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") this.next();
-      if (e.key === "ArrowLeft") this.prev();
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        this.next();
+      }
+
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        this.prev();
+      }
     });
   }
 
   start() {
     this.stop();
+
     this.timer = setInterval(() => {
       if (!this.paused) this.next();
     }, this.intervalMs);
