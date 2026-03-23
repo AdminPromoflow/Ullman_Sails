@@ -46,8 +46,6 @@ $stJsV  = is_file($stJsFs)  ? filemtime($stJsFs)  : time();
 <section class="sail-types" aria-labelledby="st-title">
   <div class="st-wrap">
 
-    <h2 id="st-title" class="sr-only">Design and Construction</h2>
-
     <ul class="st-grid" role="list">
       <?php foreach ($st_items as $i => $item): ?>
         <?php
