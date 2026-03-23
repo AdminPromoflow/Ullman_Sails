@@ -11,30 +11,30 @@ $st_items = [
   [
     'title' => 'Racing Sails',
     'text'  => 'Built for speed and control—lightweight shapes, crisp trim response, and race-ready materials that help you secure seconds each leg.',
-    'icon'  => '../SailTypes/3_design_and_construction/img/racing_section.jpg',
+    'icon'  => '../home/2_sail_types/img/racing_section.jpg',
     'url'   => '../Racing/index.php',
   ],
   [
     'title' => 'Cruising Sails',
     'text'  => 'Made for relaxed, reliable miles—hardwearing cloth, easy handling, and balanced power so you sail comfortably, day after day at sea.',
-    'icon'  => '../SailTypes/3_design_and_construction/img/cruising_section.jpg',
+    'icon'  => '../home/2_sail_types/img/cruising_section.jpg',
     'url'   => '../Cruising/index.php',
   ],
   [
     'title' => 'The Axia Series',
     'text'  => 'A high-end performance range—advanced construction, excellent shape retention, and meticulous detailing for sailors who demand more.',
-    'icon'  => '../SailTypes/3_design_and_construction/img/axia_series.jpg',
+    'icon'  => '../home/2_sail_types/img/axia_series.jpg',
     'url'   => '../the_axia_series/index.php',
   ],
 ];
 
 // Filesystem paths (for filemtime)
-$stCssFs = __DIR__ . '/3_design_and_construction/design_and_construction.css';
-$stJsFs  = __DIR__ . '/3_design_and_construction/design_and_construction.js';
+$stCssFs = __DIR__ . '/2_sail_types/sail_types.css';
+$stJsFs  = __DIR__ . '/2_sail_types/sail_types.js';
 
 // Public paths
-$stCssPublic = '3_design_and_construction/design_and_construction.css';
-$stJsPublic  = '3_design_and_construction/design_and_construction.js';
+$stCssPublic = '2_sail_types/sail_types.css';
+$stJsPublic  = '2_sail_types/sail_types.js';
 
 // Versions
 $stCssV = is_file($stCssFs) ? filemtime($stCssFs) : time();
