@@ -174,7 +174,6 @@
   background: #c5244b;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 5px;
   box-shadow: var(--btn-shadow);
 
   font-size: var(--btn-size);
