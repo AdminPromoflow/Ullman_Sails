@@ -60,11 +60,11 @@ nav a {
 
 /* Estilo para la barra de desplazamiento en WebKit */
 body::-webkit-scrollbar {
-    width: 13px; /* Ancho de la barra de desplazamiento */
+    width: 18px; /* Ancho de la barra de desplazamiento */
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #091d2c; /* Color azul oscuro para la parte que se mueve */
+    background: rgba(32,46,82,.99); /* Color azul oscuro para la parte que se mueve */
     border-radius: 5px; /* Radio de borde para hacerla redondeada */
     border: 1px solid rgba(255, 255, 255, .5); /* Borde blanco para un contraste mejor */
 }
