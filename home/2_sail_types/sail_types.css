@@ -23,6 +23,7 @@
   padding-block: var(--st-py);
   padding-inline: var(--st-gutter);
   background: #EEF1F6;
+background: linear-gradient(180deg, rgba(238, 241, 246, 1) 0%, rgba(255, 255, 255, 1) 88%);
   text-align: center;
 
   /* Section load animation */

@@ -63,6 +63,7 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
       </div>
     </article>
 
+    <!-- REAL 4 -->
     <article class="home-slider__slide bg-cruising-2">
       <div class="home-slider__caption">
         <div class="home-slider__kicker">
@@ -75,7 +76,33 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
       </div>
     </article>
 
-    <!-- REAL 4 -->
+    <!-- REAL 5 -->
+    <article class="home-slider__slide bg-axia-1">
+      <div class="home-slider__caption">
+        <div class="home-slider__kicker">
+          <img src="../home/1_slider/img/ullman_sails.png" alt="">
+        </div>
+        <h1 class="home-slider__title">THE AXIA SERIES</h1>
+        <h2 class="home-slider__subtitle">Elegant shape. Easy handling.</h2>
+        <div class="home-slider__line" aria-hidden="true"></div>
+        <a class="home-slider__btn" href="../Cruising/index.php">Discover more</a>
+      </div>
+    </article>
+
+    <!-- REAL 6 -->
+    <article class="home-slider__slide bg-axia-2">
+      <div class="home-slider__caption">
+        <div class="home-slider__kicker">
+          <img src="../home/1_slider/img/ullman_sails.png" alt="">
+        </div>
+        <h1 class="home-slider__title">THE AXIA SERIES</h1>
+        <h2 class="home-slider__subtitle">Built for ease and confidence.</h2>
+        <div class="home-slider__line" aria-hidden="true"></div>
+        <a class="home-slider__btn" href="../Cruising/index.php">Discover more</a>
+      </div>
+    </article>
+
+    <!-- REAL 7 -->
     <article class="home-slider__slide bg-covers">
       <div class="home-slider__caption">
         <div class="home-slider__kicker">
@@ -88,7 +115,7 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
       </div>
     </article>
 
-    <!-- REAL 5 -->
+    <!-- REAL 8 -->
     <article class="home-slider__slide bg-services">
       <div class="home-slider__caption">
         <div class="home-slider__kicker">
