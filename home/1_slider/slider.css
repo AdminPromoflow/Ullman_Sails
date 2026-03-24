@@ -139,7 +139,7 @@
   position: relative;
   width: 100%;
   height: var(--slider-h);
-  min-height: 100vh;
+  min-height: var(--slider-h);
   margin: -1px 0 20px;
   overflow: hidden;
   font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -372,5 +372,11 @@
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait){
+  :root{
+    --slider-h: 70vh;
   }
 }

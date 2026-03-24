@@ -40,6 +40,7 @@
 .nav-breadcrumbs{
   width: min(100%, var(--nav-container));
 
+  border-radius: var(--nav-radius);
   overflow: hidden;
   position: relative;
 

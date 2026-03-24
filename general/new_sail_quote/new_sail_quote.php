@@ -1,17 +1,17 @@
-
 <?php
-$cssTime = filemtime('../General/new_sail_quote/new_sail_quote.css');
-$jsTime  = filemtime('../General/new_sail_quote/new_sail_quote.js');
+$css_file = __DIR__ . '/../general/new_sail_quote/new_sail_quote.css';
+$js_file  = __DIR__ . '/../general/new_sail_quote/new_sail_quote.js';
 
+$css_time = is_file($css_file) ? filemtime($css_file) : time();
+$js_time  = is_file($js_file) ? filemtime($js_file) : time();
 ?>
-<link rel="stylesheet" href="../General/new_sail_quote/new_sail_quote.css?v=<?= $cssTime ?>">
 
-<div class="Container_bottom">
-  <a class="link_quote" href="../New_Sail_Quote/index.php">
-    <div class="button_quote button_quote2">
-      <h3>New Sail Quote</h3>
-    </div>
+<link rel="stylesheet" href="../general/new_sail_quote/new_sail_quote.css?v=<?= $css_time ?>">
+
+<div class="container_bottom">
+  <a class="button_quote button_quote_2" href="../New_Sail_Quote/index.php">
+    New Sail Quote
   </a>
 </div>
 
-<script src="../General/new_sail_quote/new_sail_quote.js?v=<?= $jsTime ?>" defer></script>
+<script defer src="../general/new_sail_quote/new_sail_quote.js?v=<?= $js_time ?>"></script>

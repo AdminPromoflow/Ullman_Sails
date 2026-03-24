@@ -76,7 +76,6 @@ background: linear-gradient(180deg, rgba(238, 241, 246, 1) 0%, rgba(255, 255, 25
   align-items: center;
 
   border: 1px solid var(--st-card-border);
-  border-radius: var(--st-radius);
   box-shadow: var(--st-card-shadow);
   backdrop-filter: blur(8px);
 
@@ -168,23 +167,18 @@ background: linear-gradient(180deg, rgba(238, 241, 246, 1) 0%, rgba(255, 255, 25
 
 /* CTA button */
 .st-btn{
-  margin-top: clamp(1rem, 2.2vw, 1.25rem);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .55rem;
-
-  padding: .85rem 1.2rem;
-  border-radius: 999px;
-
-  font-weight: 800;
+  display: inline-block;
+  width: max-content;
+  margin-top: 1.2rem;
+  padding: 3px 20px;
+  background: rgb(0, 85, 152);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: var(--btn-shadow);
+  font-size: 1.3em;
+  font-weight: 300;
   text-decoration: none;
-
-  color: #ffffff;
-  background: #0f2140;
-  border: 1px solid rgba(15,33,64,.20);
-
-  box-shadow: 0 14px 34px rgba(15,33,64,.16);
+  cursor: pointer;
   transition:
     transform .22s ease,
     box-shadow .22s ease,
