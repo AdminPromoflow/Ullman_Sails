@@ -46,11 +46,7 @@ button:hover {
   transition: .6s;
 }
 
-header {
-  padding: 50px;
-  background-color: aquamarine;
-  text-align: center;
-}
+
 nav a {
   color: white;
   padding: 14px 20px;

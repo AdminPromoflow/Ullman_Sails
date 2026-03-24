@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="../home/style.css?v=<?= file_exists('../home/style.css') ? filemtime('home/style.css') : time() ?>">
+    <link rel="stylesheet" href="../home/style.css?v=<?= file_exists('../home/style.css') ? filemtime('../home/style.css') : time() ?>">
 
   </head>
   <body id="container_accessories_home">
@@ -23,8 +23,11 @@
     <?php include "../home/navigation/navigation.php" ?>
     <?php include "../home/2_sail_types/sail_types.php" ?>
     <?php include "../home/3_covers/covers.php" ?>
+    <?php include "../home/4_services/services.php" ?>
 
-    
+
+
+
     <?php include "5.Video/Video.php" ?>
     <?php include "4.News/News.php" ?>
     </div>

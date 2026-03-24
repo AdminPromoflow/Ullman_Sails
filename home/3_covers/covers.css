@@ -68,7 +68,6 @@
 
 .section_covers:hover .covers_button{
   transform: translateY(3px);
-
 }
 
 .img-title-sailing-content{
@@ -153,13 +152,16 @@
   background-color: #005598;
 
   opacity: 0;
+  transform: translateY(0);
   transition: .4s;
-  transition-delay: .0s!important;
+  transition-delay: 0s !important;
 }
+
 .covers_button:hover{
   background: rgb(32,46,82);
-  transform: translateY(-2px)!important;
+  transform: translateY(-2px) !important;
 }
+
 .covers_button h3{
   margin: 0;
   font-size: clamp(1rem, 2.4vw, 1.15rem);
@@ -168,37 +170,67 @@
   color: #fff;
 }
 
-body.is-loaded .covers::before{
+/* =========================
+   Visible state on scroll
+========================= */
+
+.covers.is-visible::before{
   opacity: 1;
 }
 
-body.is-loaded .section_covers{
+.covers.is-visible .section_covers{
   opacity: 1;
   transform: translateY(0);
 }
 
-body.is-loaded .img-title-sailing-content{
+.covers.is-visible .img-title-sailing-content{
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition-delay: .08s;
 }
 
-body.is-loaded .covers h1{
+.covers.is-visible h1{
   opacity: 1;
   transform: translateY(0);
   transition-delay: .30s;
 }
 
-body.is-loaded .covers h1::after{
+.covers.is-visible h1::after{
   opacity: 1;
   transform: scaleX(1);
   transition-delay: .55s;
 }
 
-body.is-loaded .covers_button{
+.covers.is-visible .covers_button{
   opacity: 1;
   transform: translateY(0);
   transition-delay: .70s;
+}
+
+@media (max-width: 900px){
+  .section_covers{
+    padding: 18vh 18vw;
+  }
+}
+
+@media (max-width: 640px){
+  .covers{
+    height: auto;
+    min-height: 360px;
+    background-attachment: scroll;
+  }
+
+  .section_covers{
+    padding: 4.5rem 1.5rem;
+  }
+
+  .img-title-sailing-content{
+    width: clamp(130px, 42vw, 210px);
+  }
+
+  .covers_button{
+    min-width: 110px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce){
