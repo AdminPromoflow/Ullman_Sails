@@ -1,12 +1,12 @@
 <?php
-$css_file = __DIR__ . '/../General/new_sail_quote/new_sail_quote.css';
-$js_file  = __DIR__ . '/../General/new_sail_quote/new_sail_quote.js';
+$css_file = __DIR__ . '/../general/new_sail_quote/new_sail_quote.css';
+$js_file  = __DIR__ . '/../general/new_sail_quote/new_sail_quote.js';
 
 $css_time = is_file($css_file) ? filemtime($css_file) : time();
 $js_time  = is_file($js_file) ? filemtime($js_file) : time();
 ?>
 
-<link rel="stylesheet" href="../General/new_sail_quote/new_sail_quote.css?v=<?= $css_time ?>">
+<link rel="stylesheet" href="../general/new_sail_quote/new_sail_quote.css?v=<?= $css_time ?>">
 
 <div class="container_bottom">
   <a
@@ -18,4 +18,4 @@ $js_time  = is_file($js_file) ? filemtime($js_file) : time();
   </a>
 </div>
 
-<script defer src="../General/new_sail_quote/new_sail_quote.js?v=<?= $js_time ?>"></script>
+<script defer src="../general/new_sail_quote/new_sail_quote.js?v=<?= $js_time ?>"></script>
