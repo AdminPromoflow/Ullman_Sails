@@ -49,6 +49,7 @@
 
 .button_quote:hover{
   transform: translateY(-2px);
+  background: rgb(0, 85, 152);
   filter: brightness(1.02);
 }
 

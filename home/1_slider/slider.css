@@ -285,13 +285,18 @@
   font-weight: 300;
   text-decoration: none;
   cursor: pointer;
+  transition-delay: .0s!important;
+  transition: all .4s!important;
 
-  transition: transform .18s ease, filter .18s ease;
 }
 
 .home-slider__btn:hover{
-  transform: translateY(-1px);
-  filter: brightness(1.06);
+    background: rgba(32,46,82,.99);
+  transform: translateY(-2px)!important;
+  transition-delay: .0s!important;
+  transition: all .4s!important;
+
+
 }
 
 .home-slider__btn:focus-visible{
