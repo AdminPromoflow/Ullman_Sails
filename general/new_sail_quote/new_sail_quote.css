@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
 
   padding: 0;
   margin: 0;
@@ -15,14 +14,14 @@
 }
 
 .button_quote{
-  width: 200px;
   max-height: 80px;
   padding: 14px 18px;
   box-sizing: border-box;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 
   text-align: center;
   text-decoration: none;
@@ -31,10 +30,21 @@
   line-height: 1.2;
   color: #fff !important;
 
-  border-radius: 0;
   cursor: pointer;
-  box-shadow: var(--btn-shadow, 0 10px 24px rgba(0,0,0,.18));
+  box-shadow: var(--btn_shadow, 0 10px 24px rgba(0,0,0,.18));
   transition: transform .18s ease, filter .18s ease, background-color .18s ease;
+}
+
+.button_quote::before{
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  background-image: url("img/contact_us.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .button_quote:hover{
@@ -51,25 +61,49 @@
 }
 
 .button_quote_2{
-  background-color: #D21241;
+  background-color: rgba(32,46,82,.99);
 }
 
 .button_quote_2:hover{
   background-color: #b92c28;
 }
 
+/* SOLO EN CELULAR */
 @media (max-width: 800px){
   .container_bottom{
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 14px;
-    width: calc(100% - 24px);
+    right: 12px;
+    bottom: 25px;
   }
 
   .button_quote{
-    width: 100%;
-    max-width: 320px;
-    min-height: 64px;
-    font-size: 1rem;
+    width: 52px;
+    min-height: 52px;
+    padding: 0;
+    font-size: 0;
+    overflow: hidden;
+  }
+
+  .button_quote::before{
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+  }
+}
+
+@media (max-width: 480px){
+  .container_bottom{
+    right: 10px;
+    bottom: 25px;
+  }
+
+  .button_quote{
+    width: 48px;
+    min-height: 48px;
+  }
+
+  .button_quote::before{
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
   }
 }
