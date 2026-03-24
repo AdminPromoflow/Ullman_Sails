@@ -1,9 +1,16 @@
-<?php $cssVer = file_exists(__DIR__ . '/../home/3_covers/covers.css') ? filemtime(__DIR__ . '/../home/3_covers/covers.css') : ''; ?>
-<?php $jsVer = file_exists(__DIR__ . '/../home/3_covers/covers.js') ? filemtime(__DIR__ . '/../home/3_covers/covers.js') : ''; ?>
+<?php
+$cssVer = file_exists(__DIR__ . '/../home/3_covers/covers.css')
+  ? filemtime(__DIR__ . '/../home/3_covers/covers.css')
+  : '';
+
+$jsVer = file_exists(__DIR__ . '/../home/3_covers/covers.js')
+  ? filemtime(__DIR__ . '/../home/3_covers/covers.js')
+  : '';
+?>
 
 <link rel="stylesheet" href="../home/3_covers/covers.css<?= $cssVer ? '?v=' . $cssVer : '' ?>">
 
-<section class="covers">
+<section class="covers" aria-labelledby="covers-title">
   <div class="section_covers">
     <div class="img-title-sailing-content">
       <img
@@ -15,7 +22,7 @@
       >
     </div>
 
-    <h1>Covers</h1>
+    <h1 id="covers-title">Covers</h1>
 
     <div class="covers_button">
       <a href="../Covers/index.php" class="covers_link">

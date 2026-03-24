@@ -56,10 +56,12 @@
   align-items: center;
   flex-direction: column;
 
-  transition: all .4s;
-
   opacity: 0;
   transform: translateY(28px);
+  transition:
+    opacity .65s ease,
+    transform .65s ease,
+    background-color .35s ease;
 }
 
 .section_covers:hover{
@@ -78,7 +80,9 @@
 
   opacity: 0;
   transform: translate3d(0, 12px, 0);
-  transition: transform .45s ease, opacity .45s ease;
+  transition:
+    transform .45s ease,
+    opacity .45s ease;
 }
 
 .img-title-sailing-content img{
@@ -106,7 +110,9 @@
 
   opacity: 0;
   transform: translateY(22px);
-  transition: transform .75s ease, opacity .75s ease;
+  transition:
+    transform .75s ease,
+    opacity .75s ease;
 }
 
 .covers h1::after{
@@ -131,7 +137,9 @@
   opacity: 0;
   transform: scaleX(.2);
   transform-origin: center;
-  transition: transform .95s ease, opacity .95s ease;
+  transition:
+    transform .95s ease,
+    opacity .95s ease;
 }
 
 .covers_button{
@@ -152,14 +160,16 @@
   background-color: #005598;
 
   opacity: 0;
-  transform: translateY(0);
-  transition: .4s;
-  transition-delay: 0s !important;
+  transform: translateY(18px);
+  transition:
+    opacity .55s ease,
+    transform .55s ease,
+    background-color .35s ease;
 }
 
 .covers_button:hover{
   background: rgb(32,46,82);
-  transform: translateY(-2px) !important;
+  transform: translateY(-2px);
 }
 
 .covers_button h3{
