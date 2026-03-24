@@ -4,16 +4,55 @@ $jsTime = filemtime('../Home/5.Video/video.js');
 ?>
 
 <link rel="stylesheet" href="../Home/5.Video/video.css?v=<?= $cssTime ?>">
-<section class="videoHome">
-  <video id="videoHover" src="..//Home/5.Video/videoUpdated.mp4" controls muted playsinline></video>
+<section class="contactus-hero" aria-labelledby="contactus-main-heading">
+  <!-- Left side -->
+  <div class="contactus-hero__media">
 
-  <!--
-  <video  style="position: relative; left: 50%; transform: translateX(-50%); width: calc(68vw + 20px); height: auto" controls>
-      <source src="5.Video/Image/Video.mp4" type="video/mp4">
-      <source src="movie.ogg" type="video/ogg">
-      Your browser does not support the video tag.
-  </video>
-  -->
+
+    <div class="contactus-video-card">
+      <video
+        class="contactus-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="../home/5.Video/img/contactus-poster.jpg"
+      >
+        <source src="../home/5.Video/videoUpdated.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="contactus-hero__content">
+    <div class="contactus-hero__content-inner">
+      <div class="contactus-hero__brand contactus-hero__brand--right">
+        <div class="img-title-sailing-content">
+          <img
+            src="../cruising_navigator/1_introduction/img/ullman_sails.png"
+            alt="Ullman Sails"
+            decoding="async"
+            width="240"
+            height="72"
+          >
+        </div>
+
+        <h1 id="contactus-title-right" class="contactus-side-title">Contact us</h1>
+      </div>
+
+      <p class="contactus-hero__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
+        elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla,
+        ut commodo diam libero vitae erat.
+      </p>
+
+      <div class="contactus-hero__actions">
+        <a href="#" class="contactus-btn contactus-btn--primary">Button</a>
+        <a href="#" class="contactus-btn contactus-btn--secondary">Button</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script src="../Home/5.Video/video.js?v=<?= $jsTime ?>" type="text/javascript"></script>
