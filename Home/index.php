@@ -22,9 +22,9 @@
 
     <?php include "../home/navigation/navigation.php" ?>
     <?php include "../home/2_sail_types/sail_types.php" ?>
+    <?php include "../home/3_covers/covers.php" ?>
 
-
-    <?php include "../Home/Picture/Picture.php" ?>
+    
     <?php include "5.Video/Video.php" ?>
     <?php include "4.News/News.php" ?>
     </div>

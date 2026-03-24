@@ -64,9 +64,7 @@
   background-color: rgba(32,46,82,.99);
 }
 
-.button_quote_2:hover{
-  background-color: #b92c28;
-}
+
 
 /* SOLO EN CELULAR */
 @media (max-width: 800px){
