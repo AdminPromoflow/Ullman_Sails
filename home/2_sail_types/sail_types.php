@@ -29,7 +29,7 @@ $st_items = [
 ];
 
 // Filesystem paths (for filemtime)
-$stCssFs ='../home/2_sail_types/sail_types.css';
+$stCssFs = '../home/2_sail_types/sail_types.css';
 $stJsFs  = '../home/2_sail_types/sail_types.js';
 
 // Public paths
@@ -38,19 +38,33 @@ $stJsPublic  = '../home/2_sail_types/sail_types.js';
 
 // Versions
 $stCssV = is_file($stCssFs) ? filemtime($stCssFs) : time();
-$stJsV  = is_file($stJsFs)  ? filemtime($stJsFs)  : time();
+$stJsV  = is_file($stJsFs) ? filemtime($stJsFs) : time();
 ?>
 
 <link rel="stylesheet" href="<?= $stCssPublic ?>?v=<?= $stCssV ?>">
 
-<section class="sail-types" aria-labelledby="st-title">
+<section class="sail-types" aria-labelledby="sail_types_title">
   <div class="st-wrap">
+
+    <div class="st-header">
+      <div class="img-title-sailing-content">
+        <img
+          src="../cruising_navigator/1_introduction/img/ullman_sails.png"
+          alt="Ullman Sails"
+          decoding="async"
+          width="240"
+          height="72"
+        >
+      </div>
+
+      <h1 id="sail_types_title" class="sail_types_title">Sail Types</h1>
+    </div>
 
     <ul class="st-grid" role="list">
       <?php foreach ($st_items as $i => $item): ?>
         <?php
           $icon = $item['icon'] ?? $st_default_icon;
-          $url  = $item['url']  ?? '#';
+          $url  = $item['url'] ?? '#';
         ?>
         <li class="st-card" style="--i: <?= (int)$i ?>;">
           <div class="st-icon" aria-hidden="true">

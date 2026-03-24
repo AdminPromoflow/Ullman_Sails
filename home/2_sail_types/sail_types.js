@@ -1,14 +1,18 @@
-// design-and-construction.js
 (() => {
-  const section = document.querySelector('.design-and-construction');
+  const section = document.querySelector('.sail-types');
   if (!section) return;
 
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    section.classList.add('is-visible');
+    return;
+  }
+
   const io = new IntersectionObserver(
-    (entries) => {
+    (entries, observer) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
           section.classList.add('is-visible');
-          io.disconnect();
+          observer.unobserve(section);
           break;
         }
       }
