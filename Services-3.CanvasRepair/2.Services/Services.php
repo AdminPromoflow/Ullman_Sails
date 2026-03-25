@@ -85,7 +85,6 @@
 </style>
 
 <section class="text">
-  <a class="link_a" href="../Services/index.php">&lt; Services</a>
   <h1>Canvas Repair Expertise for Uninterrupted Seafaring</h1>
   <p>
     Discover the highest level of canvas repair at Ullman Sails, where we excel in restoring your nautical equipment to its best condition.

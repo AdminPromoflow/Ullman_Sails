@@ -88,7 +88,6 @@
 </style>
 
 <section class="text">
-  <a class="link_a" href="../Services/index.php">&lt; Services</a>
   <h1>Expert Sail Repair Services for Optimal Performance</h1>
   <p>
     Welcome to your trusted destination for comprehensive sail repair solutions.

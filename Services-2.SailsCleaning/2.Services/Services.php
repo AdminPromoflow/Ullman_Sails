@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="../Services-2.SailsCleaning/2.Services/Services.css">
 <section class="text">
-  <a class="link_a" href="../Services/index.php">&lt; Services</a>
   <h1>Sail & Canvas Cleaning</h1>
   <p>
 Keep your sails and canvas in top condition with professional cleaning and
