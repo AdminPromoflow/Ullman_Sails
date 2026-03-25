@@ -53,9 +53,9 @@ $cssHref = '0_slider/slider.css' . ($cssVersion ? '?v='.$cssVersion : '');
 $jsSrc   = '0_slider/slider.js'  . ($jsVersion  ? '?v='.$jsVersion  : '');
 
 /* UI assets */
-$logoFile = __DIR__ . '/../Home/1.Slider/img/ullman_sails.png';
+$logoFile =  '../home/1_slider/img/ullman_sails.png';
 $logoVer  = is_file($logoFile) ? filemtime($logoFile) : null;
-$logoSrc  = '../Home/1.Slider/img/ullman_sails.png' . ($logoVer ? '?v='.$logoVer : '');
+$logoSrc  = '../home/1_slider/img/ullman_sails.png' . ($logoVer ? '?v='.$logoVer : '');
 
 $ctaHref = '#sailing-types-introduction';
 
@@ -105,14 +105,19 @@ $lastSlide  = $slides[count($slides) - 1];
   </div>
 
   <?php
-  $leftArrowFile  = __DIR__ . '/../Home/1.Slider/img/left.png';
-  $rightArrowFile = __DIR__ . '/../Home/1.Slider/img/right.png';
+  $leftArrowFile  = '../home/1_slider/img/left.png';
+  $rightArrowFile =  '../home/1_slider/img/right.png';
   $leftArrowVer   = is_file($leftArrowFile)  ? filemtime($leftArrowFile)  : null;
   $rightArrowVer  = is_file($rightArrowFile) ? filemtime($rightArrowFile) : null;
 
-  $leftArrowSrc  = '../Home/1.Slider/img/left.png'  . ($leftArrowVer  ? '?v='.$leftArrowVer  : '');
-  $rightArrowSrc = '../Home/1.Slider/img/right.png' . ($rightArrowVer ? '?v='.$rightArrowVer : '');
+  $leftArrowSrc  = '../home/1_slider/img/left.png'  . ($leftArrowVer  ? '?v='.$leftArrowVer  : '');
+  $rightArrowSrc = '../home/1_slider/img/right.png' . ($rightArrowVer ? '?v='.$rightArrowVer : '');
   ?>
+
+
+
+
+
 
   <button id="homeSliderPrev"
           class="home-slider__arrow home-slider__arrow--left"

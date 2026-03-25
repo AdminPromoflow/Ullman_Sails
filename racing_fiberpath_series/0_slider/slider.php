@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 /* ---------------------------------------------
-   Home Slider (Ullman Sails) — same pattern
+   home Slider (Ullman Sails) — same pattern
 ---------------------------------------------- */
 
 function asset_version(string $absolutePath): ?int {
@@ -53,13 +53,13 @@ $cssHref = with_version($cssPublic, asset_version($cssFs));
 $jsSrc   = with_version($jsPublic,  asset_version($jsFs));
 
 /* UI assets */
-$logoFs  = __DIR__ . '/../Home/1.Slider/img/ullman_sails.png';
-$leftFs  = __DIR__ . '/../Home/1.Slider/img/left.png';
-$rightFs = __DIR__ . '/../Home/1.Slider/img/right.png';
+$logoFs  = '../home/1_slider/img/ullman_sails.png';
+$leftFs  = '../home/1_slider/img/left.png';
+$rightFs = '../home/1_slider/img/right.png';
 
-$logoSrc   = with_version('../Home/1.Slider/img/ullman_sails.png', asset_version($logoFs));
-$leftIcon  = with_version('../Home/1.Slider/img/left.png',        asset_version($leftFs));
-$rightIcon = with_version('../Home/1.Slider/img/right.png',       asset_version($rightFs));
+$logoSrc   = with_version('../home/1_slider/img/ullman_sails.png', asset_version($logoFs));
+$leftIcon  = with_version('../home/1_slider/img/left.png',        asset_version($leftFs));
+$rightIcon = with_version('../home/1_slider/img/right.png',       asset_version($rightFs));
 
 $ctaHref = '#sailing-types-introduction';
 
@@ -87,7 +87,7 @@ $lastSlide  = $slides[count($slides) - 1];
 
 <link rel="stylesheet" href="<?= htmlspecialchars($cssHref, ENT_QUOTES, 'UTF-8') ?>">
 
-<section class="home-slider" aria-label="Home slider" aria-roledescription="carousel">
+<section class="home-slider" aria-label="home slider" aria-roledescription="carousel">
   <div id="homeSliderTrack" class="home-slider__track">
 
     <article class="<?= htmlspecialchars(slide_classes($lastSlide), ENT_QUOTES, 'UTF-8') ?>"

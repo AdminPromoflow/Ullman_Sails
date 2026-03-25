@@ -45,7 +45,7 @@ $menuCloseV      = is_file($menuCloseFs) ? filemtime($menuCloseFs) : time();
         <li class="ull-nav__item js-hide-when-search"><a class="ull-nav__link ull-caps" href="../Covers/index.php">Boat covers</a></li>
         <li class="ull-nav__item js-hide-when-search"><a class="ull-nav__link ull-caps" href="../SailCare/index.php">SailCare</a></li>
         <li class="ull-nav__item js-hide-when-search"><a class="ull-nav__link ull-caps" href="../Services/index.php">Services</a></li>
-        <li class="ull-nav__item js-hide-when-search"><a class="ull-nav__link ull-caps" href="../News/News.php">News</a></li>
+        <li class="ull-nav__item js-hide-when-search"><a class="ull-nav__link ull-caps" href="../News/index.php">News</a></li>
         <li class="ull-nav__item js-hide-when-search"><a class="ull-nav__link ull-caps" href="../AboutUs/index.php">About Us</a></li>
         <li class="ull-nav__item js-hide-when-search"><a class="ull-nav__link ull-caps" href="../ContactUs/index.php">Contact Us</a></li>
       </ul>
@@ -89,7 +89,7 @@ $menuCloseV      = is_file($menuCloseFs) ? filemtime($menuCloseFs) : time();
       <a class="ull-drawer__link" href="../Covers/index.php">Boat covers</a>
       <a class="ull-drawer__link" href="../SailCare/index.php">SailCare</a>
       <a class="ull-drawer__link" href="../Services/index.php">Services</a>
-      <a class="ull-drawer__link" href="../News/News.php">News</a>
+      <a class="ull-drawer__link" href="../News/index.php">News</a>
       <a class="ull-drawer__link" href="../AboutUs/index.php">About Us</a>
       <a class="ull-drawer__link" href="../ContactUs/index.php">Contact Us</a>
 

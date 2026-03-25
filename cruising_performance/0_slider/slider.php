@@ -43,17 +43,17 @@ function render_caption(string $logoSrc, string $title, string $subtitle, string
 <?php }
 
 /* Assets (absolute for filemtime, public for browser) */
-$cssFs = __DIR__ . '/0_slider/slider.css';
-$jsFs  = __DIR__ . '/../Home/1.Slider/Slider.js';
+$cssFs ='../cruising_performance/0_slider/slider.css';
+$jsFs  =  '../cruising_performance/0_slider/slider.js';
 
-$cssPublic = '0_slider/slider.css';
-$jsPublic  = '../Home/1.Slider/Slider.js';
+$cssPublic = '../cruising_performance/0_slider/slider.css';
+$jsPublic  = '../cruising_performance/0_slider/slider.js';
 
 $cssHref = with_version($cssPublic, asset_version($cssFs));
 $jsSrc   = with_version($jsPublic,  asset_version($jsFs));
 
 /* UI assets */
-$logoSrc = '../Home/1.Slider/img/ullman_sails.png';
+$logoSrc = '../home/1_Slider/img/ullman_sails.png';
 $ctaHref = '#sailing-types-introduction';
 
 /* Slides */
@@ -105,14 +105,14 @@ $lastSlide  = $slides[count($slides) - 1];
           class="home-slider__arrow home-slider__arrow--left"
           type="button"
           aria-label="Previous slide">
-    <img src="../Home/1.Slider/img/left.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="../home/1_slider/img/left.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 
   <button id="homeSliderNext"
           class="home-slider__arrow home-slider__arrow--right"
           type="button"
           aria-label="Next slide">
-    <img src="../Home/1.Slider/img/right.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <img src="../home/1_slider/img/right.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 </section>
 

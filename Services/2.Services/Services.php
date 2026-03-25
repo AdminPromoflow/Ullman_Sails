@@ -38,7 +38,7 @@ $jsVer  = is_file($jsFs)  ? filemtime($jsFs)  : null;
       <!-- Card 1 -->
       <a class="svc-card" href="../Services-1.SailsRepair/index.php" role="listitem" aria-label="All Sail Repairs" data-sr-item>
         <figure class="svc-media">
-          <img src="../Services/2.Services/img/CanvasRepairs.jpg" alt="All Sail Repairs" loading="lazy" decoding="async">
+          <img src="../Services/2.Services/img/services.jpg" alt="All Sail Repairs" loading="lazy" decoding="async">
         </figure>
 
         <div class="svc-body">
@@ -55,7 +55,7 @@ $jsVer  = is_file($jsFs)  ? filemtime($jsFs)  : null;
       <!-- Card 2 -->
       <a class="svc-card" href="../Services-2.SailsCleaning/index.php" role="listitem" aria-label="Sail and Canvas Cleaning" data-sr-item>
         <figure class="svc-media">
-          <img src="../Services/2.Services/img/CanvasCleaning.jpg" alt="Sail and Canvas Cleaning" loading="lazy" decoding="async">
+          <img src="../Services/2.Services/img/cleaning.jpg" alt="Sail and Canvas Cleaning" loading="lazy" decoding="async">
         </figure>
 
         <div class="svc-body">
@@ -72,7 +72,7 @@ $jsVer  = is_file($jsFs)  ? filemtime($jsFs)  : null;
       <!-- Card 3 -->
       <a class="svc-card" href="../Services-3.CanvasRepair/index.php" role="listitem" aria-label="Canvas Repairs" data-sr-item>
         <figure class="svc-media">
-          <img src="../Services/2.Services/img/Headercovers.jpg" alt="Canvas Repairs" loading="lazy" decoding="async">
+          <img src="../Services/2.Services/img/covers.jpg" alt="Canvas Repairs" loading="lazy" decoding="async">
         </figure>
 
         <div class="svc-body">

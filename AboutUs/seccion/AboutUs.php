@@ -29,7 +29,7 @@
     <div class="cart_perfiles_about">
       <a href="../AboutUs-Cat/index.php" target="_blank">
         <img src="../AboutUs/img/cat.jpg" alt="photograph of" />
-     </a>
+      </a>
       <div class="cart_text_about ">
         <a href="../AboutUs-Cat/index.php"><h3>Managing Director</h3></a>
         <a href="../AboutUs-Cat/index.php"><h4>Catrina Southworth</h4> </a>
@@ -41,7 +41,7 @@
      </a>
       <div class="cart_text_about ">
         <a href="../AboutUs-Rob/index.php"><h3>Sales and technical Hamble.</h3></a>
-        <a href="../AboutUs-Rob/index.php"><h4>Rob Lark</h4> </a>
+        <a href="../AboutUs-Rob/index.php"><h4>Robert Larke</h4> </a>
       </div>
     </div>
 
@@ -64,7 +64,7 @@
       <div class="text_data_about">
         <p><strong>Main office:</strong> </p>
         <p>01752 337131</p>
-        <p><strong>Jon Peg<br>Mobile:</strong> </p>
+        <p><strong>Jon Pegg<br>Mobile:</strong> </p>
         <p>07979 591999</p>
       </p>
       </div>
