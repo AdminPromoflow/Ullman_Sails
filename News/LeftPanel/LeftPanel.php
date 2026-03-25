@@ -1,116 +1,72 @@
-<style media="screen">
+<?php
+declare(strict_types=1);
 
-.contentLeftPanel{
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-  padding: 0px 0;
-  width: 100%;
-  margin-top: 10%;
-}
-.scrollLeftPanel{
-  height: 100vh;
-  overflow-y: scroll;
-}
-.itemsLeftPanel{
-  position: relative;
-  text-align: center;
-  color: white;
-  padding: 7px;
-  cursor: pointer;
-  margin: 1px 0;
-}
+/* Filesystem paths (for filemtime) */
+$navCssFs = __DIR__ . '/News/LeftPanel/LeftPanel.css';
+$navJsFs  = __DIR__ . '/News/LeftPanel/LeftPanel.js';
 
-.itemsLeftPanel:nth-child(odd){
-  background-color: #5E6771;
-  font-weight: 500;
-}
+/* Public paths (as used in HTML) */
+$navCssPublic = '../News/LeftPanel/LeftPanel.css';
+$navJsPublic  = '../News/LeftPanel/LeftPanel.js';
 
-.itemsLeftPanel:nth-child(odd):hover{
-  background-color: #555E67;
-}
-.itemsLeftPanel:nth-child(even){
-  background-color: #202E52;
-}
-.itemsLeftPanel:nth-child(even):hover{
-  background-color: #344162;
-}
+/* Version values (cache-busting) */
+$navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
+$navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
+?>
+
+<link rel="stylesheet" href="<?= $navCssPublic ?>?v=<?= $navCssV ?>">
 
 
-.logoNews{
-  position: relative;
-  width: 70%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.leftPanel h4{
-  color: white;
-  cursor: pointer;
-  margin: 0;
-  margin-top: 5px;
-  font-weight: 400;
+<script defer src="<?= $navJsPublic ?>?v=<?= $navJsV ?>" type="text/javascript"></script>
+<aside class="left-panel" id="leftPanel">
+  <div class="scroll-left-panel" id="scrollLeftPanel">
 
-}
-.leftPanel a{
-   all: unset;
-}
-.containerItemsLeftPanelGoHome{
-  position: relative;
-  height: 35px;
-  width: 100px;
-  padding-left: 10px;
-}
-.itemsLeftPanelGoHomeIcon{
-  position: relative;
-  height: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: inline-block;
-}
-.itemsLeftPanelGoHome{
-  position: relative!important;
-  text-align: left;
-  color: white;
-  cursor: pointer;
-  margin: 0!important;
-  top: 50%;
-  transform: translateY(-50%);
-  display: inline-block;
-}
-</style>
-<div class="scrollLeftPanel">
-  <img id="IconCloseMenuNews" class="IconCloseMenuNews" src="../News/LeftPanel/Images/close.png" alt="">
 
-<div id="goHome" class="containerItemsLeftPanelGoHome">
-  <img class="itemsLeftPanelGoHomeIcon" src="../News/LeftPanel/Images/LeftArrow.png" alt="">
-  <h4 class="itemsLeftPanelGoHome">  Home</h4>
-</div>
+    <button type="button" id="logoNews" class="left-panel-logo" aria-label="Go to home">
+      <img class="logo-news" src="../News/LeftPanel/Images/LogoUS.png" alt="Ullman Sails logo">
+    </button>
 
-<!--  <h2><a href="../Home/"><</a></h2>-->
-  <img class="logoNews" id="logoNews" src="../News/LeftPanel/Images/LogoUS.png" alt="">
-  <div class="contentLeftPanel">
-    <h4 class="itemsLeftPanel">Ullman Sails support RC1000</h4>
-    <h4 class="itemsLeftPanel">Ullman Sails Inshore & Offshore Race Series</h4>
-    <h4 class="itemsLeftPanel">Victory in the Quarter Ton Cup</h4>
-    <h4 class="itemsLeftPanel">Loft Updates</h4>
-    <h4 class="itemsLeftPanel">Customer Updates</h4>
-    <h4 class="itemsLeftPanel">Quarter Tonner Developments</h4>
-    <h4 class="itemsLeftPanel">London Boat Show</h4>
-    <h4 class="itemsLeftPanel">Welcome The Newest Member Of Our Team</h4>
-    <h4 class="itemsLeftPanel">Penarth – Cruising Code Zero</h4>
-    <h4 class="itemsLeftPanel">Hit By a Once in a Life Time Storm</h4>
+    <nav class="content-left-panel" aria-label="News navigation">
+      <button type="button" id="link-news-rc1000" class="item-left-panel" data-target="news-rc1000">
+        Ullman Sails support RC1000
+      </button>
+
+      <button type="button" id="link-news-inshore-offshore" class="item-left-panel" data-target="news-inshore-offshore">
+        Ullman Sails Inshore &amp; Offshore Race Series
+      </button>
+
+      <button type="button" id="link-news-quarter-ton-cup" class="item-left-panel" data-target="news-quarter-ton-cup">
+        Victory in the Quarter Ton Cup
+      </button>
+
+      <button type="button" id="link-news-loft-updates" class="item-left-panel" data-target="news-loft-updates">
+        Loft Updates
+      </button>
+
+      <button type="button" id="link-news-customer-updates" class="item-left-panel" data-target="news-customer-updates">
+        Customer Updates
+      </button>
+
+      <button type="button" id="link-news-quarter-tonner-developments" class="item-left-panel" data-target="news-quarter-tonner-developments">
+        Quarter Tonner Developments
+      </button>
+
+      <button type="button" id="link-news-london-boat-show" class="item-left-panel" data-target="news-london-boat-show">
+        London Boat Show
+      </button>
+
+      <button type="button" id="link-news-newest-team-member" class="item-left-panel" data-target="news-newest-team-member">
+        Welcome The Newest Member Of Our Team
+      </button>
+
+      <button type="button" id="link-news-penarth-code-zero" class="item-left-panel" data-target="news-penarth-code-zero">
+        Penarth – Cruising Code Zero
+      </button>
+
+      <button type="button" id="link-news-once-in-a-lifetime-storm" class="item-left-panel" data-target="news-once-in-a-lifetime-storm">
+        Hit By a Once in a Life Time Storm
+      </button>
+    </nav>
+
   </div>
-</div>
-
-  <script type="text/javascript">
-    goHome = document.getElementById('goHome');
-
-    goHome.addEventListener("click", function(){
-      window.open("../Home/", "_self");
-    })
-
-    var logoNews = document.getElementById('logoNews');
-    logoNews.addEventListener("click", function(){
-      window.open("../Home/", "_self");
-    })
-
-  </script>
+</aside>

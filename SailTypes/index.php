@@ -47,10 +47,7 @@
         border: none;
         color: #F2F2F2;
       }
-      button:hover {
-        background-color: #F2F2F2;
-        color: #111C42;
-      }
+
       header {
         padding: 50px;
         background-color: aquamarine;
@@ -76,7 +73,7 @@
     <?php include "navigation/navigation.php" ?>
 
 
-    <?php include "3_design_and_construction/design_and_construction.php" ?>
+    <?php include "../SailTypes/2_sail_types/sail_types.php" ?>
     <?php include "cruising_section/cruising_section.php" ?>
 
     </div>

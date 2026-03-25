@@ -222,13 +222,13 @@
 }
 
 .contactus-btn--primary{
-  background: #000000;
+  background: rgba(32,46,82,.99);
   color: #ffffff;
   border-color: #000000;
 }
 
 .contactus-btn--primary:hover{
-  background: #1a1a1a;
+  background: #005598;
 }
 
 .contactus-btn--secondary{
@@ -249,9 +249,15 @@
 .contactus-hero.is-visible .contactus-side-title,
 .contactus-hero.is-visible .contactus-video-card,
 .contactus-hero.is-visible .contactus-hero__text,
-.contactus-hero.is-visible .contactus-hero__actions{
+.contactus-hero.is-visible .contactus-hero__actions {
   opacity: 1;
   transform: translateY(0);
+}
+.contactus-hero__actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 /* =========================

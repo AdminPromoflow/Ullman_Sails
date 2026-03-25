@@ -41,15 +41,10 @@ $jsTime = filemtime('../Home/5.Video/video.js');
         <h1 id="contactus-title-right" class="contactus-side-title">Contact us</h1>
       </div>
 
-      <p class="contactus-hero__text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-        elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla,
-        ut commodo diam libero vitae erat.
-      </p>
 
       <div class="contactus-hero__actions">
-        <a href="#" class="contactus-btn contactus-btn--primary">Button</a>
-        <a href="#" class="contactus-btn contactus-btn--secondary">Button</a>
+        <a href="../ContactUs/index.php" class="contactus-btn contactus-btn--primary">Contact us</a>
+        <a href="../New_Sail_Quote/index.php" class="contactus-btn contactus-btn--secondary">New Sail Quote</a>
       </div>
     </div>
   </div>

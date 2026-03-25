@@ -15,7 +15,7 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
     <article class="home-slider__slide bg-axia is-caption-left" data-clone="last" aria-hidden="true">
       <div class="home-slider__caption">
         <div class="home-slider__kicker">
-          <img src="../SailTypes/1.Slider/img/axia_series.jpg" alt="">
+          <img src="../SailTypes/1.Slider/img/ullman_sails.png" alt="">
         </div>
         <h1 class="home-slider__title">THE AXIA SERIES</h1>
         <h2 class="home-slider__subtitle">High-performance sails built to respond when it matters.</h2>
@@ -28,7 +28,7 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
     <article class="home-slider__slide bg-racing-1 is-caption-left">
       <div class="home-slider__caption">
         <div class="home-slider__kicker">
-          <img src="../Home/1.Slider/img/ullman_sails.png" alt="">
+          <img src="../SailTypes/1.Slider/img/ullman_sails.png" alt="">
         </div>
         <h1 class="home-slider__title">RACING SAILS</h1>
         <h2 class="home-slider__subtitle">Built for speed. Tuned for results.</h2>
@@ -41,7 +41,7 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
     <article class="home-slider__slide bg-cruising-1">
       <div class="home-slider__caption">
         <div class="home-slider__kicker">
-          <img src="../Home/1.Slider/img/ullman_sails.png" alt="">
+          <img src="../SailTypes/1.Slider/img/ullman_sails.png" alt="">
         </div>
         <h1 class="home-slider__title">CRUISING SAILS</h1>
         <h2 class="home-slider__subtitle">Comfort at sea. Confidence in every mile.</h2>
@@ -54,7 +54,7 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
     <article class="home-slider__slide bg-axia">
       <div class="home-slider__caption">
         <div class="home-slider__kicker">
-          <img src="../Home/1.Slider/img/ullman_sails.png" alt="">
+          <img src="../SailTypes/1.Slider/img/ullman_sails.png" alt="">
         </div>
         <h1 class="home-slider__title">THE AXIA SERIES</h1>
         <h2 class="home-slider__subtitle">High-performance sails built to respond when it matters.</h2>
@@ -67,7 +67,7 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
     <article class="home-slider__slide bg-racing-1 is-caption-left" data-clone="first" aria-hidden="true">
       <div class="home-slider__caption">
         <div class="home-slider__kicker">
-          <img src="../Home/1.Slider/img/ullman_sails.png" alt="">
+          <img src="../SailTypes/1.Slider/img/ullman_sails.png" alt="">
         </div>
         <h1 class="home-slider__title">RACING SAILS</h1>
         <h2 class="home-slider__subtitle">Built for speed. Tuned for results.</h2>
@@ -79,11 +79,11 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
   </div>
 
   <button id="homeSliderPrev" class="home-slider__arrow home-slider__arrow--left" type="button" aria-label="Previous slide">
-    <img src="../Home/1.Slider/img/left.png" alt="">
+    <img src="../SailTypes/1.Slider/img/left.png" alt="">
   </button>
 
   <button id="homeSliderNext" class="home-slider__arrow home-slider__arrow--right" type="button" aria-label="Next slide">
-    <img src="../Home/1.Slider/img/right.png" alt="">
+    <img src="../SailTypes/1.Slider/img/right.png" alt="">
   </button>
 </section>
 

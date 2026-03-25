@@ -129,6 +129,9 @@
 
 
     </style>
+    <?php include "../General/Menu/Menu.php" ?>
+    <?php include "../General/button_contact_us/button_contact_us.php"; ?>
+
     <section class="news">
 
     <img id="IconMenuNews" class="IconMenuNews" src="../News/Images/Menu.png" alt="">
@@ -150,7 +153,6 @@
           })
       </script>
     </section>
-
 
     <section class="content">
       <?php  include "Content/Content.php" ?>

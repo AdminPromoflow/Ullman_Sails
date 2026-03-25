@@ -40,12 +40,6 @@ button {
   color: #F2F2F2;
   cursor: pointer;
 }
-button:hover {
-  background-color: #F2F2F2;
-  color: #111C42;
-  transition: .6s;
-}
-
 
 nav a {
   color: white;

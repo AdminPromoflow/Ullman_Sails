@@ -46,7 +46,7 @@
         </div>
 
         <div class="event-card__action">
-          <a href="#" class="st-btn st-btn-dark">See more</a>
+          <a href="../Services-1.SailsRepair/index.php" class="st-btn st-btn-dark">See more</a>
         </div>
       </article>
 
@@ -77,7 +77,7 @@
         </div>
 
         <div class="event-card__action">
-          <a href="#" class="st-btn st-btn-dark">See more</a>
+          <a href="../Services-2.SailsCleaning/index.php" class="st-btn st-btn-dark">See more</a>
         </div>
       </article>
 
@@ -110,7 +110,7 @@
         </div>
 
         <div class="event-card__action">
-          <a href="#" class="st-btn st-btn-dark">See more</a>
+          <a href="../Services-3.CanvasRepair/index.php" class="st-btn st-btn-dark">See more</a>
         </div>
       </article>
 
