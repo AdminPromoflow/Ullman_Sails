@@ -1,4 +1,14 @@
-<link rel="stylesheet" href="../Services-2.SailsCleaning/2.Services/Services.css">
+
+<?php
+$cssFs = __DIR__ . '/../Services-2.SailsCleaning/2.Services/Services.css';
+$jsFs  = __DIR__ . '/../Services-2.SailsCleaning/2.Services/Services.js';
+
+$cssVer = is_file($cssFs) ? filemtime($cssFs) : time();
+$jsVer  = is_file($jsFs)  ? filemtime($jsFs)  : time();
+?>
+
+<link rel="stylesheet" href="../Services-2.SailsCleaning/2.Services/Services.css?v=<?= $cssVer ?>">
+<script defer src="../Services-2.SailsCleaning/2.Services/Services.js?v=<?= $jsVer ?>"></script>
 <section class="text">
   <h1>Sail & Canvas Cleaning</h1>
   <p>
@@ -155,18 +165,9 @@ Don't delay treatment of your fabrics, the longer you leave it the less likely t
 
   </div>
 
-
-
-
-
-
-
-
-
   <a class="link_contact_us" href="../ContactUs/index.php">
     <div class="buttonTitle">
       <h3>Contact us</h3>
     </div>
   </a>
 </section>
-<script src="../Services-2.SailsCleaning/2.Services/Services.js" type="text/javascript"></script>

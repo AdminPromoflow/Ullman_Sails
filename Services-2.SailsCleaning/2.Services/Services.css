@@ -1,293 +1,380 @@
-/* Container section */
-.text {
+/* =========================
+   Sail & Canvas Cleaning
+   Modern white style + same visual language
+   HTML structure unchanged
+========================= */
+
+.text{
+  --sc-bg: #F8F8FA;
+  --sc-card: #ffffff;
+  --sc-ink: #202E52;
+  --sc-blue: #005598;
+  --sc-muted: #5f6b7a;
+  --sc-border: rgba(15, 33, 64, 0.10);
+  --sc-shadow: 0 18px 45px rgba(15, 33, 64, 0.08);
+  --sc-shadow-hover: 0 22px 52px rgba(15, 33, 64, 0.12);
+  --sc-radius: 24px;
+  --sc-radius-sm: 18px;
+  --sc-container: min(1180px, 92vw);
+
   position: relative;
-  background-color: #F8F8FA;
-  padding: 4vw 6vw;
+  width: 100%;
+  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 7rem);
+  background:
+    radial-gradient(circle at top left, rgba(0, 85, 152, 0.05), transparent 28%),
+    linear-gradient(180deg, #fbfbfc 0%, var(--sc-bg) 100%);
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  box-sizing: border-box;
 }
 
-/* Heading */
-.text h1 {
-  color: #005598;
-  padding: 0 0 2vw 0;
-  font-size: 2.3em;
-  text-align: center;
+.text > h1,
+.text > p,
+.text > .common_issues-container,
+.text > .services-container,
+.text > .how_connect,
+.text > .link_contact_us{
+  width: var(--sc-container);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
-
-/* Paragraph text */
-.text p {
-  position: relative;
-  text-align: justify;
-  font-size: 1.2em;
-  margin: 1vw 0;
-}
-
-/* List styling */
-.text ul {
-  width: 100%;
-  font-size: 1.2em;
-  margin-left: 25px;
-  text-align: left;
-}
-
-/* Link: Back to services */
-.link_a {
-  all: unset;
-  margin-left: 100px;
-  color: #202E52;
-  font-weight: 600;
-  font-size: 1.1em;
-  cursor: pointer;
-  text-align: left;
-  width: 100vw;
-}
-
-.link_a:hover {
-  text-decoration: underline;
-}
-
-/* Contact button link */
-.link_contact_us {
-  all: unset;
-  cursor: pointer;
-}
-
-/* Optional image box (not used here, but available) */
-.box-services {
-  position: relative;
-  width: 300px;
-  height: 200px;
-  min-width: 300px;
-  min-height: 200px;
-  margin: 10px 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Contact button styling */
-.buttonTitle {
-  position: relative;
-  width: 200px;
-  background-color: #005598;
-  padding: 14px 0;
-  cursor: pointer;
-  margin: 50px auto 0 auto;
-  border: 1px solid #202E52;
-}
-
-.buttonTitle:hover {
-  background-color: #202E52;
-}
-
-.buttonTitle h3 {
-  text-align: center;
-  font-size: 1.3em;
-  font-weight: 500;
-  color: #F2F2F2;
-}
-
-.common_issues-container{
-  position: relative;
-  padding: 15px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-}
-.common_issues-box{
-  position: relative;
-  padding: 30px;
-  min-width: 350px;
-  width: 25%;
-  min-height: 500px;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, .02);
-  margin: 15px;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-}
-.common_issues-box h2{
-  margin-left: 0;
-  padding: 0;
-  text-align: center;
-}
-.common_issues-box p{
-  margin-left: 0;
-  padding: 0;
-}
-.common_issues-box img{
-  margin-left: 0;
-  padding: 0;
-}
-
-
-
-
-
-
-.services-container{
-  position: relative;
-  padding: 15px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-}
-.services-box{
-  position: relative;
-  padding: 30px;
-  min-width: 350px;
-  width: 25%;
-  min-height: 500px;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0);
-  margin: 15px;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-}
-.services-box h2{
-  margin-left: 0;
-  padding: 0;
-  text-align: center;
-}
-.services-box p{
-  margin-left: 0;
-  padding: 0;
-}
-.services-box img{
-  margin-left: 0;
-  padding: 0;
-}
-
-
-
-
-
 
 /* =========================
-   HOW THEY CONNECT (simple)
+   Intro
 ========================= */
+
+.text > h1{
+  margin-top: 0;
+  margin-bottom: 1.15rem;
+  color: var(--sc-blue);
+  font-size: clamp(2.35rem, 4.6vw, 5rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  max-width: 11ch;
+}
+
+.text > p{
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  color: var(--sc-muted);
+  font-size: clamp(1.08rem, 1.5vw, 1.26rem);
+  line-height: 1.8;
+  max-width: 78ch;
+  text-wrap: pretty;
+}
+
+.text > p:last-of-type{
+  margin-bottom: clamp(2.2rem, 4vw, 3rem);
+}
+
+/* =========================
+   Shared section wrappers
+========================= */
+
+.common_issues-container,
+.services-container,
 .how_connect{
   position: relative;
-  width: 100%;
-  padding: 28px 15px;
-  margin-top: 25px;
-  border-top: 1px solid rgba(32, 46, 82, .12);
+  margin-top: clamp(2.5rem, 5vw, 4.25rem);
+  padding: clamp(1.8rem, 3vw, 2.4rem);
+  background: rgba(255,255,255,0.58);
+  border: 1px solid rgba(15, 33, 64, 0.07);
+  border-radius: calc(var(--sc-radius) + 4px);
+  box-shadow: 0 12px 35px rgba(15, 33, 64, 0.04);
+  backdrop-filter: blur(4px);
 }
 
-.how_connect h2{
-  color: #005598;
-  text-align: center;
-  margin: 0 0 6px 0;
-  font-size: 1.9em;
+.common_issues-container > h2,
+.services-container > h2,
+.how_connect > h2{
+  margin: 0 0 .85rem;
+  color: var(--sc-ink);
+  font-size: clamp(1.7rem, 2.7vw, 2.6rem);
+  line-height: 1.15;
+  font-weight: 650;
+  letter-spacing: -0.03em;
 }
 
-.how_connect h3{
-  color: #202E52;
-  text-align: center;
-  margin: 0 0 14px 0;
-  font-size: 1.25em;
-  font-weight: 600;
-}
-
+.common_issues-container > p,
+.services-container > p,
 .how_connect > p{
-  max-width: 980px;
-  margin: 0 auto 18px auto;
-  color: rgba(32, 46, 82, .92);
-  line-height: 1.65;
-  text-align: justify; /* matches your section style */
-  font-size: 1.1em;
+  margin: 0 0 1.8rem;
+  color: var(--sc-muted);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  line-height: 1.8;
+  max-width: 76ch;
 }
 
-/* Cards layout */
-.how_connect_cards{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 10px;
+/* =========================
+   Grid areas
+========================= */
+
+.common_issues-container,
+.services-container{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.35rem;
 }
 
-/* Card */
+.common_issues-container > h2,
+.common_issues-container > p,
+.services-container > h2,
+.services-container > p{
+  grid-column: 1 / -1;
+}
+
+.common_issues-box{
+  grid-column: span 4;
+}
+
+.services-box{
+  grid-column: span 4;
+}
+
+/* =========================
+   Cards
+========================= */
+
+.common_issues-box,
+.services-box,
 .how_connect_card{
   position: relative;
-  width: 25%;
-  min-width: 350px;
-  padding: 22px;
-  border-radius: 6px;
-  background: #ffffff;
-  border: 1px solid rgba(32, 46, 82, .12);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
-
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  min-height: 100%;
+  padding: 1.25rem 1.2rem 1.35rem;
+  background: var(--sc-card);
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  box-shadow: var(--sc-shadow);
+  overflow: hidden;
+  transition:
+    transform .24s ease,
+    box-shadow .24s ease,
+    border-color .24s ease;
+}
+
+.common_issues-box::before,
+.services-box::before,
+.how_connect_card::before{
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, #005598 0%, #2a7fc4 100%);
+  opacity: 0;
+  transition: opacity .24s ease;
+}
+
+.common_issues-box:hover,
+.services-box:hover,
+.how_connect_card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--sc-shadow-hover);
+  border-color: rgba(0, 85, 152, 0.18);
+}
+
+.common_issues-box:hover::before,
+.services-box:hover::before,
+.how_connect_card:hover::before{
+  opacity: 1;
+}
+
+/* =========================
+   Images / logos inside cards
+========================= */
+
+.common_issues-box img,
+.services-box img{
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  display: block;
+  border-radius: 18px;
+  margin-bottom: 1rem;
+  background:
+    linear-gradient(180deg, rgba(0,85,152,0.03), rgba(32,46,82,0.02)),
+    #f9fafc;
+  border: 1px solid rgba(15,33,64,.06);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Headings inside cards
+========================= */
+
+.common_issues-box h2,
+.services-box h2{
+  margin: .1rem 0 .7rem;
+  color: var(--sc-ink);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+.common_issues-box p,
+.services-box p{
+  margin: 0;
+  color: var(--sc-muted);
+  font-size: .98rem;
+  line-height: 1.72;
+}
+
+/* =========================
+   How connect section
+========================= */
+
+.how_connect_cards{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.35rem;
+}
+
+.how_connect_card{
+  grid-column: span 6;
+  padding: 1.35rem 1.3rem 1.4rem;
+}
+
+.how_connect_card_wide{
+  grid-column: 1 / -1;
 }
 
 .how_connect_card h4{
-  margin: 0;
-  color: #202E52;
-  font-size: 1.1em;
-  line-height: 1.25;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(32, 46, 82, .10);
+  margin: 0 0 .85rem;
+  color: var(--sc-blue);
+  font-size: clamp(1.06rem, 1.35vw, 1.18rem);
+  line-height: 1.45;
+  font-weight: 700;
 }
 
 .how_connect_card p{
-  margin: 0;
-  color: rgba(32, 46, 82, .92);
-  line-height: 1.6;
-  text-align: left;
+  margin: 0 0 .8rem;
+  color: var(--sc-muted);
+  font-size: .99rem;
+  line-height: 1.75;
 }
 
 .how_connect_card strong{
-  color: #202E52;
+  color: var(--sc-ink);
+  font-weight: 700;
 }
 
-/* List inside last card */
 .how_connect_card ul{
-  margin: 0;
-  padding-left: 18px;
-  color: rgba(32, 46, 82, .92);
-  line-height: 1.7;
-  font-size: 1em;
+  margin: .25rem 0 1rem 1.2rem;
+  padding: 0;
+  color: var(--sc-muted);
 }
 
 .how_connect_card li{
-  margin: 6px 0;
+  margin-bottom: .55rem;
+  line-height: 1.7;
 }
 
-/* Wide card */
-.how_connect_card_wide{
-  width: calc(25% * 2 + 16px);
+/* =========================
+   Contact button
+========================= */
+
+.link_contact_us{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(2.4rem, 5vw, 3.4rem);
+  text-decoration: none;
 }
 
-/* Responsive */
-@media (max-width: 980px){
-  .how_connect_card,
-  .how_connect_card_wide{
-    width: 100%;
-    min-width: 320px;
+.buttonTitle{
+  min-width: 215px;
+  min-height: 74px;
+  padding: 0 1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #0b67b4 0%, #005598 100%);
+  box-shadow: 0 20px 34px rgba(0, 85, 152, 0.16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    filter .2s ease;
+}
+
+.buttonTitle h3{
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.08rem, 1.4vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.link_contact_us:hover .buttonTitle,
+.link_contact_us:focus-visible .buttonTitle{
+  transform: translateY(-2px);
+  box-shadow: 0 24px 38px rgba(0, 85, 152, 0.22);
+  filter: brightness(1.03);
+}
+
+.link_contact_us:focus-visible{
+  outline: none;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1100px){
+  .common_issues-box,
+  .services-box{
+    grid-column: span 6;
   }
 
-  .how_connect > p{
-    text-align: left; /* reads better on mobile */
+  .how_connect_card{
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px){
+  .text{
+    padding-top: 2.6rem;
+    padding-bottom: 3.4rem;
+  }
+
+  .text > h1{
+    max-width: 100%;
+    margin-bottom: .95rem;
+  }
+
+  .common_issues-container,
+  .services-container,
+  .how_connect{
+    padding: 1.2rem;
+    border-radius: 22px;
+  }
+
+  .common_issues-box,
+  .services-box{
+    grid-column: 1 / -1;
+  }
+
+  .common_issues-box,
+  .services-box,
+  .how_connect_card{
+    border-radius: 20px;
+  }
+
+  .buttonTitle{
+    min-width: 190px;
+    min-height: 68px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .common_issues-box,
+  .services-box,
+  .how_connect_card,
+  .buttonTitle{
+    transition: none;
   }
 }

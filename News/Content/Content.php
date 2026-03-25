@@ -20,14 +20,14 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
 
     <header class="newsroom__hero reveal">
       <p class="newsroom__eyebrow">Ullman Sails GBR</p>
-      <h1 id="newsroom-title" class="newsroom__title">News & Updates</h1>
+      <!-- <h1 id="newsroom-title" class="newsroom__title">News & Updates</h1> -->
       <p class="newsroom__lead">
         Race results, loft developments, customer stories and sailing news presented in a cleaner,
         more polished and fully responsive layout.
       </p>
     </header>
 
-    <nav class="newsroom__index reveal" id="newsIndex" aria-label="Article quick links"></nav>
+    <!-- <nav class="newsroom__index reveal" id="newsIndex" aria-label="Article quick links"></nav> -->
 
     <div class="newsroom__list">
 

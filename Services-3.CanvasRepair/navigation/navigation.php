@@ -2,12 +2,12 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$navCssFs = __DIR__ . '/../SailTypes/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/../cruising_navigator/navigation/navigation.js';
+$navCssFs = __DIR__ . '/Services-2.SailsCleaning/navigation/navigation.css';
+$navJsFs  = __DIR__ . '/Services-2.SailsCleaning/navigation/navigation.js';
 
 /* Public paths (as used in HTML) */
-$navCssPublic = '../SailTypes/navigation/navigation.css';
-$navJsPublic  = '../cruising_navigator/navigation/navigation.js';
+$navCssPublic = '../Services-2.SailsCleaning/navigation/navigation.css';
+$navJsPublic  = '../Services-2.SailsCleaning/navigation/navigation.js';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
@@ -24,7 +24,7 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
 $breadcrumbs = $breadcrumbs ?? [
   ['label' => 'Home',          'href' => '../Home/index.php'],
   ['label' => 'Services',          'href' => '../Services/index.php'],
-  ['label' => 'Sails Repair','href' => '../Services-1.SailsRepair/index.php'],
+  ['label' => 'Canvas Repair','href' => '../Services-1.SailsRepair/index.php'],
 ];
 ?>
 

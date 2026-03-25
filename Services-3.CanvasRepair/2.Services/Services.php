@@ -1,113 +1,44 @@
-<style media="screen">
-.text {
-  position: relative;
-  background-color: #F8F8FA;
-  padding: 4vw 6vw;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
 
-.text h1 {
-  color: #005598;
-  padding: 0 0 2vw 0;
-  font-size: 2.3em;
-  text-align: center;
-}
+<?php
+$cssFile = __DIR__ . '/Covers/2.Services/Services.css';
+$jsFile  = __DIR__ . '/Covers/2.Services/Services.js';
 
-.text p {
-  position: relative;
-  text-align: justify;
-  font-size: 1.2em;
-  margin: 1vw 0;
-}
+$cssVer = is_file($cssFile) ? filemtime($cssFile) : null;
+$jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+?>
 
-.text ul {
-  width: 100%;
-  font-size: 1.2em;
-  margin-left: 25px;
-  text-align: left;
-}
+<link rel="stylesheet" href="../Covers/2.Services/Services.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
 
-.link_a {
-  all: unset;
-  margin-left: -20px;
-  color: #202E52;
-  font-weight: 600;
-  font-size: 1.1em;
-  cursor: pointer;
-  text-align: left;
-  width: 100vw;
-}
+<script defer src="../Covers/2.Services/Services.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
 
-.link_a:hover {
-  text-decoration: underline;
-}
+<section class="services services--single" aria-labelledby="services-title" data-sr-reveal>
+  <div class="services__inner">
 
-.link_contact_us {
-  all: unset;
-  cursor: pointer;
-}
+    <div class="services__layout">
+      <div class="services__copy">
 
-.box-services {
-  position: relative;
-  width: 300px;
-  height: 200px;
-  min-width: 300px;
-  min-height: 200px;
-  margin: 10px 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+        <h1 id="services-title" class="services__title sr-item">
+          Canvas Repair Expertise for Uninterrupted Seafaring
+        </h1>
 
-.buttonTitle {
-  position: relative;
-  width: 200px;
-  background-color: #005598;
-  padding: 14px 0;
-  cursor: pointer;
-  margin: 50px auto 0 auto;
-  border: 1px solid #202E52;
-}
+        <p class="services__lead sr-item">
+          Discover the highest level of canvas repair at Ullman Sails, where we excel in restoring your nautical equipment to its best condition.
+          Our dedicated team of canvas specialists takes pride in meticulously repairing tears, reinforcing seams, and rejuvenating weathered fabrics.
+        </p>
 
-.buttonTitle:hover {
-  background-color: #202E52;
-}
+        <p class="services__lead sr-item">
+          Whether it's boat covers, sail bags, or awnings, we understand the importance of durable and functional canvas equipment for your maritime activities.
+          With an unwavering commitment to quality and expert craft, we ensure your gear is ready to withstand the elements and accompany you on many more journeys.
+          Choose Ullman Sails for canvas repair that ensures your equipment remains dependable and resilient for all your seafaring adventures.
+        </p>
 
-.buttonTitle h3 {
-  text-align: center;
-  font-size: 1.3em;
-  font-weight: 500;
-  color: #F2F2F2;
-}
-</style>
+        <div class="services__actions sr-item">
+          <a class="btn" href="../ContactUs/index.php">Contact us</a>
+        </div>
+      </div>
 
-<section class="text">
-  <h1>Canvas Repair Expertise for Uninterrupted Seafaring</h1>
-  <p>
-    Discover the highest level of canvas repair at Ullman Sails, where we excel in restoring your nautical equipment to its best condition.
-    Our dedicated team of canvas specialists takes pride in meticulously repairing tears, reinforcing seams, and rejuvenating weathered fabrics.
-  </p>
-  <p>
-    Whether it's boat covers, sail bags, or awnings, we understand the importance of durable and functional canvas equipment for your maritime activities.
-    With an unwavering commitment to quality and expert craft, we ensure your gear is ready to withstand the elements and accompany you on many more journeys.
-    Choose Ullman Sails for canvas repair that ensures your equipment remains dependable and resilient for all your seafaring adventures.
-  </p>
-  <a class="link_contact_us" href="../ContactUs/index.php">
-    <div class="buttonTitle">
-      <h3>Contact us</h3>
+      <div class="services__media services__media--repair sr-item" aria-hidden="true"></div>
     </div>
-  </a>
+
+  </div>
 </section>
-
-<script type="text/javascript">
-const buttonTitle = document.querySelectorAll(".OpenContactUs");
-
-for (let i = 0; i < buttonTitle.length; i++) {
-  buttonTitle[i].addEventListener("click", function () {
-    window.open("../ContactUs/index.php", "_self");
-  });
-}
-</script>
