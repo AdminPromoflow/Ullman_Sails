@@ -38,13 +38,13 @@
     </style>
   </head>
   <body>
-    <?php include "../General/Menu/Menu.php"?>
+    <?php include "../general/menu/menu.php"?>
 
-    <?php include "../General/Charging/charging.php"; ?>
-    <?php include "../General/new_sail_quote/new_sail_quote.php"; ?>
+    <?php include "../general/charging/charging.php"; ?>
+    <?php include "../general/new_sail_quote/new_sail_quote.php"; ?>
 
 
-    <?php include "../General/arrows_up_down/arrows_up_down.php" ?>
+    <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
 
     <?php include "../racing_race_series/0_slider/slider.php";?>
     <?php include "navigation/navigation.php"?>
@@ -66,6 +66,6 @@
 
 
 
-    <?php include "../General/Footer/Footer.php"?>
+    <?php include "../general/footer/Footer.php"?>
   </body>
 </html>
