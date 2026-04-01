@@ -73,16 +73,16 @@
 
 
     </style>
-    <?php include "../general/Menu/Menu.php" ?>
+    <?php include "../general/menu/menu.php" ?>
     <div id="searchHide" class="searchHide">
     <?php include "../AboutUs-Diogo/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
-    <?php include "../general/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.php"; ?>
 
     <div id="searchContent" class="searchContent">
     </div>
-    <?php include "../general/Footer/Footer.php" ?>
+    <?php include "../general/footer/Footer.php" ?>
 
     <script type="text/javascript">
     // Función para manejar el scroll suave y respuesta rápida
