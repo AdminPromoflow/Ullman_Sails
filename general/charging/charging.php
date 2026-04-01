@@ -18,7 +18,7 @@ $cssVersion = file_exists($cssPath) ? filemtime($cssPath) : time();
 
 <?php
 // Validar el archivo JS antes de usarlo
-$jsPath = '../General/Charging/charging.js';
+$jsPath = '../general/charging/charging.js';
 $jsVersion = file_exists($jsPath) ? filemtime($jsPath) : time();
 ?>
 
