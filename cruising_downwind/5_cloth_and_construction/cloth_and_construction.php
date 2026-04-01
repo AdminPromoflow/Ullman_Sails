@@ -4,8 +4,8 @@ declare(strict_types=1);
 /* =========================
    Filesystem paths (filemtime)
 ========================= */
-$nsCssFs = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
-$nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
+$nsCssFs = '../cruising_downwind/5_cloth_and_construction/cloth_and_construction.css';
+$nsJsFs  =  '../cruising_downwind/5_cloth_and_construction/cloth_and_construction.js';
 
 /* =========================
    Public paths (IMPORTANT)
@@ -13,8 +13,8 @@ $nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
 ========================= */
 $basePublic = '../cruising_downwind/5_cloth_and_construction';
 
-$nsCssPublic = $basePublic . '/cloth_and_construction.css';
-$nsJsPublic  = $basePublic . '/cloth_and_construction.js';
+$nsCssPublic = '../cruising_downwind/5_cloth_and_construction/cloth_and_construction.css';
+$nsJsPublic  = '../cruising_downwind/5_cloth_and_construction/cloth_and_construction.js';
 
 /* Versions */
 $nsCssV = is_file($nsCssFs) ? filemtime($nsCssFs) : time();
