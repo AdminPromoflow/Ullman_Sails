@@ -74,7 +74,7 @@
     </div>
 
     <div id="searchContent" class="searchContent">
-      <?php include "../general/charging/charging.js"; ?>
+      <?php include "../general/charging/charging.php"; ?>
 
     </div>
     <?php include "../general/footer/Footer.php" ?>
