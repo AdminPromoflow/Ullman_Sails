@@ -161,10 +161,11 @@
       <?php  include "RightPanel/RightPanel.php" ?>
     </section>
     <?php include "../general/charging/charging.php"; ?>
-    <?php include "../general/footer/Footer.php" ?>
 
 
 </section>
+<?php include "../general/footer/Footer.php" ?>
+
 
 <script type="text/javascript">
 const contentSections = document.querySelectorAll(".contentSections");
