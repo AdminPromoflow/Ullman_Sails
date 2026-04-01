@@ -39,5 +39,5 @@ $introJsVersion  = filemtime(__DIR__ . '/1_introduction/introduction.js');
 
 <script
   defer
-  src="../../1_introduction/introduction.js?v=<?= $introJsVersion ?>"
+  src="../1_introduction/introduction.js?v=<?= $introJsVersion ?>"
 ></script>
