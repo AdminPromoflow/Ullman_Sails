@@ -76,7 +76,7 @@
 
 
     </style>
-    <?php include "../General/Menu/Menu.php" ?>
+    <?php include "../general/menu/menu.php" ?>
 
     <div id="searchHide" class="searchHide">
     <?php include "../SailCare/1_slider/slider.php" ?>
@@ -89,12 +89,12 @@
     <?php include "../SailCare/7.type/type.php" ?>
     <?php include "../SailCare/8.FAQS/FAQS.php" ?>
     </div>
-    <?php include "../General/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.php"; ?>
 
 
     <div id="searchContent" class="searchContent">
     </div>
-    <?php include "../General/Footer/Footer.php" ?>
+    <?php include "../general/footer/Footer.php" ?>
 
 
     <script type="text/javascript">
