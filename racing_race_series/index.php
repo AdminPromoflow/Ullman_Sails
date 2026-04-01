@@ -57,15 +57,13 @@
     <?php include "7_standard_specifications/standard_specifications.php";?>
     <?php include "6_available_upgrades/available_upgrades.php";?>
     <?php include "9_engineering_for_extreme_environments/engineering_for_extreme_environments.php" ?>
-
-    <?php// include "5_cloth_selection/cloth_selection.php";?>
-    <?php// include "sail_handling_and_sail_accessories/sail_handling_and_sail_accessories.php";?>
-    <?php // include "gore_tenara_thread/gore_tenara_thread.php";?>
-    <?php // include "engineering_for_extreme_environments/engineering_for_extreme_environments.php";?>
-    <?php // include "sub_ranges_models/sub_ranges_models.php";?>
-
-
-
     <?php include "../general/footer/Footer.php"?>
+
+        <?php// include "5_cloth_selection/cloth_selection.php";?>
+        <?php// include "sail_handling_and_sail_accessories/sail_handling_and_sail_accessories.php";?>
+        <?php // include "gore_tenara_thread/gore_tenara_thread.php";?>
+        <?php // include "engineering_for_extreme_environments/engineering_for_extreme_environments.php";?>
+        <?php // include "sub_ranges_models/sub_ranges_models.php";?>
+
   </body>
 </html>
