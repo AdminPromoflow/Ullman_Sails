@@ -30,8 +30,8 @@
         <img src="../AboutUs/img/cat.jpg" alt="photograph of" />
       </a>
       <div class="cart_text_about ">
-        <a href="../AboutUs-Cat/index.php"><h3>Managing Director</h3></a>
-        <a href="../AboutUs-Cat/index.php"><h4>Catrina Southworth</h4> </a>
+        <a href="../AboutUs-Cat/index.php" target="_blank"><h3>Managing Director</h3></a>
+        <a href="../AboutUs-Cat/index.php" target="_blank"><h4>Catrina Southworth</h4> </a>
       </div>
     </div>
     <div class="cart_perfiles_about">
@@ -39,8 +39,8 @@
         <img src="../AboutUs/img/rob.jpg" alt="photograph of" />
      </a>
       <div class="cart_text_about ">
-        <a href="../AboutUs-Rob/index.php"><h3>Sales and technical Hamble.</h3></a>
-        <a href="../AboutUs-Rob/index.php"><h4>Robert Larke</h4> </a>
+        <a href="../AboutUs-Rob/index.php" target="_blank"><h3>Sales and technical Hamble.</h3></a>
+        <a href="../AboutUs-Rob/index.php" target="_blank"><h4>Robert Larke</h4> </a>
       </div>
     </div>
 
@@ -67,7 +67,7 @@
         <p>07979 591999</p>
       </p>
       </div>
-      <a class="button" href="../ContactUs/index.php"><button type="button" name="button">Contact Us</button></a>
+      <a class="button" href="../ContactUs/index.php" target="_blank"><button type="button" name="button">Contact Us</button></a>
     </div>
   </div>
     <div class="profiles_aboutUs">
@@ -75,10 +75,10 @@
     </div>
     <div class="box_card_aboutUs">
       <div class="cart_perfiles_about">
-        <a href="../AboutUs-Pegg/index.php"><img src="../AboutUs/img/pegg.jpg" alt=""></a>
+        <a href="../AboutUs-Pegg/index.php" target="_blank"><img src="../AboutUs/img/pegg.jpg" alt=""></a>
         <div class="cart_text_about">
-          <a href="../AboutUs-Pegg/index.php"><h3>Director</h3></a>
-          <a href="../AboutUs-Pegg/index.php"><h4>Jon Pegg</h4> </a>
+          <a href="../AboutUs-Pegg/index.php" target="_blank"><h3>Director</h3></a>
+          <a href="../AboutUs-Pegg/index.php" target="_blank"><h4>Jon Pegg</h4> </a>
         </div>
       </div>
       <div class="cart_perfiles_about">
@@ -91,22 +91,22 @@
       <div class="cart_perfiles_about">
         <a href="../AboutUs-Vicky/index.php"><img src="../AboutUs/img/vicky.jpg" alt=""></a>
         <div class="cart_text_about">
-          <a href="../AboutUs-Vicky/index.php"><h3>Service & Operations</h3></a>
-          <a href="../AboutUs-Vicky/index.php"><h4>Vicky Lawrence</h4> </a>
+          <a href="../AboutUs-Vicky/index.php" target="_blank"><h3>Service & Operations</h3></a>
+          <a href="../AboutUs-Vicky/index.php" target="_blank"><h4>Vicky Lawrence</h4> </a>
         </div>
       </div>
       <div class="cart_perfiles_about">
-        <a href="../AboutUs-HeatherBooth/index.php"><img src="../AboutUs/img/Heather.jpg" alt=""></a>
+        <a href="../AboutUs-HeatherBooth/index.php" target="_blank"><img src="../AboutUs/img/Heather.jpg" alt=""></a>
         <div class="cart_text_about">
-          <a href="../AboutUs-HeatherBooth/index.php"><h3>Canvas Maker</h3></a>
-          <a href="../AboutUs-HeatherBooth/index.php"><h4>Heather Booth</h4> </a>
+          <a href="../AboutUs-HeatherBooth/index.php" target="_blank"><h3>Canvas Maker</h3></a>
+          <a href="../AboutUs-HeatherBooth/index.php" target="_blank"><h4>Heather Booth</h4> </a>
         </div>
       </div>
       <div class="cart_perfiles_about">
-        <a href="../AboutUs-Diogo/index.php"><img src="../AboutUs/img/diogo.jpg" alt=""></a>
+        <a href="../AboutUs-Diogo/index.php" target="_blank"><img src="../AboutUs/img/diogo.jpg" alt=""></a>
         <div class="cart_text_about">
-          <a href="../AboutUs-Diogo/index.php"><h3>Sailmaker</h3></a>
-          <a href="../AboutUs-Diogo/index.php"><h4>Diogo Freitas</h4> </a>
+          <a href="../AboutUs-Diogo/index.php" target="_blank"><h3>Sailmaker</h3></a>
+          <a href="../AboutUs-Diogo/index.php" target="_blank"><h4>Diogo Freitas</h4> </a>
         </div>
       </div>
     </div>
