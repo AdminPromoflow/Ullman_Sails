@@ -73,7 +73,6 @@
 
 <section class="AboutUsEachOne">
   <div class="text">
-    <a class="comeBack" href="../AboutUs/index.php">&lt; About Us</a>
     <h1>Sales and technical Hamble</h1>
     <h2>Rob Larke</h2>
     <img src="2.Services/Image/SlideHome.jpg" alt="">

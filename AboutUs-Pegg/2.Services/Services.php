@@ -68,7 +68,6 @@
 
 <section class="AboutUsEachOne">
   <div class="text">
-    <a class="comeBack" href="../AboutUs/index.php">&lt; About Us</a>
     <h1>Director</h1>
     <h2>Jon Pegg</h2>
     <img src="2.Services/Image/SlideHome.jpg" alt="Jon Pegg">
