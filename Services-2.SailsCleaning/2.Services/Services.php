@@ -10,7 +10,7 @@ $jsVer  = is_file($jsFs)  ? filemtime($jsFs)  : time();
 <link rel="stylesheet" href="../Services-2.SailsCleaning/2.Services/Services.css?v=<?= $cssVer ?>">
 <script defer src="../Services-2.SailsCleaning/2.Services/Services.js?v=<?= $jsVer ?>"></script>
 <section class="text">
-  <h1 class="services__title sr-item">Sail & Canvas Cleaning</h1>
+  <h1>Sail & Canvas Cleaning</h1>
   <p>
 Keep your sails and canvas in top condition with professional cleaning and
 targeted treatments designed for UK conditions. From algae, mildew and salt

@@ -1,3 +1,6 @@
+
+.home-slider__slide.bg-racing-1{ background-image:url("img/slider_1.jpg"); }
+.home-slider__slide.bg-services{  background-image:url("img/slider_2.jpg"); }
 /* Slider.css */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
@@ -172,8 +175,12 @@
 }
 
 
-.home-slider__slide.bg-cruising-1{ background-image:url("img/slider_1.jpg"); }
-.home-slider__slide.bg-cruising-2{  background-image:url("img/slider_2.jpg"); }
+
+
+
+
+
+
 /* Overlay */
 .home-slider__slide::before{
   content: "";

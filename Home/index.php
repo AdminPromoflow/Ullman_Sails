@@ -25,9 +25,6 @@
     <?php include "../home/3_covers/covers.php" ?>
     <?php include "../home/4_services/services.php" ?>
 
-
-
-
     <?php include "5.Video/Video.php" ?>
     <?php include "4.News/News.php" ?>
     </div>
@@ -36,7 +33,7 @@
     <div id="searchContent" class="searchContent">
     </div>
 
-    <?php include "../General/Footer/Footer.php" ?>
+    <?php include "../general/footer/Footer.php" ?>
 
     <script defer src="../home/app.js?v=<?= file_exists('home/app.js') ? filemtime('../home/app.js') : time() ?>"></script>
 

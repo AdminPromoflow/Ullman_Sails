@@ -79,7 +79,6 @@
     <?php include "../General/Menu/Menu.php" ?>
 
     <div id="searchHide" class="searchHide">
-    <?php include "../general/new_sail_quote/new_sail_quote.php" ?>
     <?php include "../SailCare/1_slider/slider.php" ?>
     <?php include "../SailCare/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>

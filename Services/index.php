@@ -22,17 +22,67 @@
       font-family: 'Poppins', sans-serif;
       font-size: 15px;
     }
+    p {
+      font-size: 0.9em;
+    }
+
+    h2 {
+      color: #111C42;
+      font-size: 2em;
+    }
+    h3 {
+      color: #F2F2F2;
+      font-size: 1.6em;
+      font-weight: 500;
+    }
+    h4 {
+      color: #111C42;
+      font-size: 1em;
+      font-weight: 500;
+    }
+
+    button {
+      background-color: #111C42;
+      padding: 15px;
+      font-weight: bold;
+      border: none;
+      color: #F2F2F2;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #F2F2F2;
+      color: #111C42;
+    }
+
+    header {
+      padding: 50px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      background-color:
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
 
     </style>
 
     <?php include "../General/Menu/Menu.php" ?>
+
     <div id="searchHide" class="searchHide">
     <?php include "../Services/1.slider/slider.php" ?>
-    <?php include "../general/new_sail_quote/new_sail_quote.php" ?>
     <?php include "../Services/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>
+
+
     <div id="searchContent" class="searchContent">
     </div>
     <?php include "../General/Footer/Footer.php" ?>

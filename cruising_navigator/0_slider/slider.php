@@ -1,77 +1,119 @@
 <?php
-$sliderCss =  '../cruising_navigator/0_slider/slider.css';
-$sliderJs  =  '../cruising_navigator/0_slider/slider.js';
+declare(strict_types=1);
 
-$sliderCssTime = file_exists($sliderCss) ? filemtime($sliderCss) : time();
-$sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
+/* ---------------------------------------------
+   Home Slider (Ullman Sails) — same pattern
+---------------------------------------------- */
+
+function asset_version(string $absolutePath): ?int {
+  return is_file($absolutePath) ? filemtime($absolutePath) : null;
+}
+
+function with_version(string $relativeUrl, ?int $version): string {
+  return $version ? ($relativeUrl . '?v=' . $version) : $relativeUrl;
+}
+
+function slide_classes(array $slide): string {
+  $classes = ['home-slider__slide', (string)$slide['bg']];
+  if (!empty($slide['captionLeft'])) $classes[] = 'is-caption-left';
+  if (!empty($slide['captionRight'])) $classes[] = 'is-caption-right';
+  return implode(' ', $classes);
+}
+
+function render_caption(string $logoSrc, string $title, string $subtitle, string $ctaHref): void { ?>
+  <div class="home-slider__caption">
+    <div class="home-slider__kicker">
+      <img
+        src="<?= htmlspecialchars(with_version($logoSrc, asset_version(__DIR__ . '/' . $logoSrc)), ENT_QUOTES, 'UTF-8') ?>"
+        alt="Ullman Sails logo"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+
+    <h1 class="home-slider__title"><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></h1>
+    <h2 class="home-slider__subtitle"><?= htmlspecialchars($subtitle, ENT_QUOTES, 'UTF-8') ?></h2>
+
+    <div class="home-slider__line" aria-hidden="true"></div>
+
+    <a class="home-slider__btn"
+       href="<?= htmlspecialchars($ctaHref, ENT_QUOTES, 'UTF-8') ?>"
+       aria-label="Scroll down">↓</a>
+  </div>
+<?php }
+
+/* Assets (absolute for filemtime, public for browser) */
+$cssFs = __DIR__ . '/slider.css';
+$jsFs  = __DIR__ . '/slider.js';
+
+$cssPublic = '0_slider/slider.css';
+$jsPublic  = '0_slider/slider.js';
+
+$cssHref = with_version($cssPublic, asset_version($cssFs));
+$jsSrc   = with_version($jsPublic,  asset_version($jsFs));
+
+/* UI assets */
+$logoSrc = '../home/1_slider/img/ullman_sails.png';
+$ctaHref = '#sailing-types-introduction';
+
+/* Slides */
+$slides = [
+  [
+    'bg'          => 'bg-racing-1',
+    'captionLeft' => true,
+    'title'       => 'Navigator Series',
+    'subtitle'    => 'Designed for coastal cruising and day sailing.',
+  ],
+  [
+    'bg'          => 'bg-services',
+    'captionLeft' => false,
+    'title'       => 'Navigator Series',
+    'subtitle'    => 'Built for everyday cruising.',
+  ],
+];
+
+if (!$slides) return;
+
+$firstSlide = $slides[0];
+$lastSlide  = $slides[count($slides) - 1];
 ?>
 
-<link rel="stylesheet" href="../cruising_navigator/0_slider/slider.css?v=<?= $sliderCssTime ?>">
+<link rel="stylesheet" href="<?= htmlspecialchars($cssHref, ENT_QUOTES, 'UTF-8') ?>">
 
-<section class="home-slider" aria-label="Home slider">
+<section class="home-slider" aria-label="Home slider" aria-roledescription="carousel">
   <div id="homeSliderTrack" class="home-slider__track">
 
-    <!-- CLONE 2(last real) -->
-    <article class="home-slider__slide bg-cruising-2 is-caption-left" data-clone="last" aria-hidden="true">
-      <div class="home-slider__caption">
-        <div class="home-slider__kicker">
-          <img src="../cruising_navigator/0_slider/img/ullman_sails.png" alt="">
-        </div>
-        <h1 class="home-slider__title">Navigator Series</h1>
-        <h2 class="home-slider__subtitle">Built for everyday cruising.</h2>
-        <div class="home-slider__line" aria-hidden="true"></div>
-        <a class="home-slider__btn" href="../Services/index.php">Learn more</a>
-      </div>
+    <article class="<?= htmlspecialchars(slide_classes($lastSlide), ENT_QUOTES, 'UTF-8') ?>"
+             data-clone="last" aria-hidden="true">
+      <?php render_caption($logoSrc, $lastSlide['title'], $lastSlide['subtitle'], $ctaHref); ?>
     </article>
 
-<!-- 1 -->
-    <article class="home-slider__slide bg-cruising-1">
-      <div class="home-slider__caption">
-        <div class="home-slider__kicker">
-          <img src="../cruising_navigator/0_slider/img/ullman_sails.png" alt="">
-        </div>
-        <h1 class="home-slider__title">Navigator Series</h1>
-        <h2 class="home-slider__subtitle">Designed for coastal cruising and day sailing.</h2>
-        <div class="home-slider__line" aria-hidden="true"></div>
-        <a class="home-slider__btn" href="../Covers/index.php">Click here</a>
-      </div>
-    </article>
+    <?php foreach ($slides as $slide): ?>
+      <article class="<?= htmlspecialchars(slide_classes($slide), ENT_QUOTES, 'UTF-8') ?>">
+        <?php render_caption($logoSrc, $slide['title'], $slide['subtitle'], $ctaHref); ?>
+      </article>
+    <?php endforeach; ?>
 
-    <!-- 2 -->
-    <article class="home-slider__slide bg-cruising-2">
-      <div class="home-slider__caption">
-        <div class="home-slider__kicker">
-          <img src="../cruising_navigator/0_slider/img/ullman_sails.png" alt="">
-        </div>
-        <h1 class="home-slider__title">Navigator Series</h1>
-        <h2 class="home-slider__subtitle">Built for everyday cruising.</h2>
-        <div class="home-slider__line" aria-hidden="true"></div>
-        <a class="home-slider__btn" href="../Services/index.php">Learn more</a>
-      </div>
-    </article>
-
-    <!-- CLONE 1(first real) -->
-    <article class="home-slider__slide bg-cruising-1 is-caption-left" data-clone="first" aria-hidden="true">
-      <div class="home-slider__caption">
-        <div class="home-slider__kicker">
-          <img src="../cruising_navigator/0_slider/img/ullman_sails.png" alt="">
-        </div>
-        <h1 class="home-slider__title">Navigator Series</h1>
-        <h2 class="home-slider__subtitle">Designed for coastal cruising and day sailing.</h2>
-        <div class="home-slider__line" aria-hidden="true"></div>
-        <a class="home-slider__btn" href="../Racing/index.php">Click here</a>
-      </div>
+    <article class="<?= htmlspecialchars(slide_classes($firstSlide), ENT_QUOTES, 'UTF-8') ?>"
+             data-clone="first" aria-hidden="true">
+      <?php render_caption($logoSrc, $firstSlide['title'], $firstSlide['subtitle'], $ctaHref); ?>
     </article>
 
   </div>
 
-  <button id="homeSliderPrev" class="home-slider__arrow home-slider__arrow--left" type="button" aria-label="Previous slide">
-    <img src="../home/1_slider/img/left.png" alt="">
+  <button id="homeSliderPrev"
+          class="home-slider__arrow home-slider__arrow--left"
+          type="button"
+          aria-label="Previous slide">
+    <img src="<?= htmlspecialchars(with_version('../home/1_slider/img/left.png', asset_version('../home/1_slider/img/left.png')), ENT_QUOTES, 'UTF-8') ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 
-  <button id="homeSliderNext" class="home-slider__arrow home-slider__arrow--right" type="button" aria-label="Next slide">
-    <img src="../home/1_slider/img/right.png" alt="">
+  <button id="homeSliderNext"
+          class="home-slider__arrow home-slider__arrow--right"
+          type="button"
+          aria-label="Next slide">
+    <img src="<?= htmlspecialchars(with_version('../home/1_slider/img/right.png', asset_version('../home/1_slider/img/right.png')), ENT_QUOTES, 'UTF-8') ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
   </button>
 </section>
 
-<script src="../cruising_navigator/0_slider/slider.js?v=<?= $sliderJsTime ?>" defer></script>
+<script src="<?= htmlspecialchars($jsSrc, ENT_QUOTES, 'UTF-8') ?>" defer></script>
