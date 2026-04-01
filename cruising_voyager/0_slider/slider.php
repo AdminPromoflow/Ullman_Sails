@@ -58,8 +58,8 @@ $leftFs  = __DIR__ . '/../home/1_Slider/img/left.png';
 $rightFs = __DIR__ . '/../home/1_Slider/img/right.png';
 
 $logoSrc   = with_version('../home/1_Slider/img/ullman_sails.png', asset_version($logoFs));
-$leftIcon  = with_version('../home/1_Slider/img/left.png',        asset_version($leftFs));
-$rightIcon = with_version('../home/1_Slider/img/right.png',       asset_version($rightFs));
+$leftIcon  = with_version('../cruising_voyager/0_slider/img/left.png',        asset_version($leftFs));
+$rightIcon = with_version('../cruising_voyager/0_slider/img/right.png',       asset_version($rightFs));
 
 $ctaHref = '#sailing-types-introduction';
 
