@@ -75,7 +75,7 @@
   <div class="text">
     <h1>Sales and technical Hamble</h1>
     <h2>Rob Larke</h2>
-    <img src="AboutUs/img/rob.jpg" alt="">
+    <img src="../AboutUs/img/rob.jpg" alt="">
     <p>
       Rob is one of those people who quietly gets things done — and usually gets them done very well. He’s been at the helm of his own businesses and brings a calm, no-fuss approach to everything from managing teams to making sure boats are going fast.
       He’s intensely focused on getting it right for the client. Whether it’s designing the perfect sail plan or sorting logistics behind the scenes, Rob’s eye for detail and practical thinking have built a solid reputation with some of the most demanding teams on the water.
