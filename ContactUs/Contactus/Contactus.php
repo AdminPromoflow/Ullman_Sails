@@ -128,7 +128,6 @@
 
 </style>
 <section class="contactUs">
-  <a class="comeBack"href="../Home/index.php">&lt; Home</a>
   <h1 class="contactUsTitle">Contact us</h1>
   <div class="contactUsContainer">
     <div class="contactUsBox">
