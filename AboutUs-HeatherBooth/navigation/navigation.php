@@ -49,5 +49,3 @@ $breadcrumbs = $breadcrumbs ?? [
     </ol>
   </nav>
 </section>
-
-<script defer src="<?= $navJsPublic ?>?v=<?= $navJsV ?>" type="text/javascript"></script>
