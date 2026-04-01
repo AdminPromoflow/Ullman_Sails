@@ -9,7 +9,7 @@ $cssVersion = file_exists($cssPath) ? filemtime($cssPath) : time();
 
 <div class="charging_background" id="charging_background">
   <?php
-    $chargingGif = '../General/Charging/Img/charge.gif';
+    $chargingGif = '../general/charging/Img/charge.gif';
     $chargingGifVersion = file_exists($chargingGif) ? filemtime($chargingGif) : time();
   ?>
   <img src="<?= $chargingGif ?>?v=<?= $chargingGifVersion; ?>" alt="Loading...">
