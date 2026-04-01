@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
 $navCssFs = __DIR__ . '/AboutUs-Dan/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/AboutUs-Dan/navigation/navigation.js';
 
 /* Public paths (as used in HTML) */
 $navCssPublic = '../AboutUs-Dan/navigation/navigation.css';
