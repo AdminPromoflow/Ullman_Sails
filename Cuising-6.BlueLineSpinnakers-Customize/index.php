@@ -76,7 +76,7 @@
 
 
     </style>
-    <?php include "../General/Menu/Menu.php" ?>
+    <?php include "../general/menu/menu.php" ?>
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
@@ -84,11 +84,11 @@
     <?php include "2.Services/Services.php" ?>
     <?php include "Customize/Customize.php" ?>
     </div>
-    <?php include "../General/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.php"; ?>
 
     <div id="searchContent" class="searchContent">
     </div>
-    <?php include "../General/Footer/Footer.php" ?>
+    <?php include "../general/footer/Footer.php" ?>
 
     <script type="text/javascript">
     // Función para manejar el scroll suave y respuesta rápida
