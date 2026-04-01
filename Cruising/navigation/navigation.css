@@ -30,7 +30,7 @@
 
 /* Section wrapper */
 .nav-section{
-  background: #fff;
+  background: #F8F8FA;
   padding-block: var(--nav-sec-py);
   padding-inline: var(--nav-gutter);
   display: flex;
