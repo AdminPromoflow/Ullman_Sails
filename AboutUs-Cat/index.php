@@ -69,6 +69,7 @@
     </style>
     <?php include "../general/menu/menu.php" ?>
     <div id="searchHide" class="searchHide">
+      <?php include "../AboutUs-Cat/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
 
