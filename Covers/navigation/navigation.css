@@ -44,7 +44,7 @@
   overflow: hidden;
   position: relative;
 
-  background: #F8F8FA;
+  background: var(--nav-surface);
 
   /* Helps with “glass” feel without being heavy */
   backdrop-filter: blur(10px);
