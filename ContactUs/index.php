@@ -86,7 +86,7 @@
     </style>
     <?php include "../general/menu/menu.php" ?>
     <div id="searchHide" class="searchHide">
-    <?php include "ContactUs/Contactus/Contactus.php" ?>
+    <?php include "../ContactUs/Contactus/Contactus.php" ?>
     </div>
     <?php include "../general/charging/charging.php"; ?>
 
