@@ -64,11 +64,11 @@
         text-decoration: none;
       }
     </style>
-    <?php include "../General/Menu/Menu.php" ?>
+    <?php include "../general/menu/menu.php" ?>
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
-    <?php include "../General/arrows_up_down/arrows_up_down.php" ?>
+    <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
 
     <?php include "navigation/navigation.php" ?>
 
@@ -77,12 +77,12 @@
     <?php include "cruising_section/cruising_section.php" ?>
 
     </div>
-    <?php include "../General/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.php"; ?>
 
 
     <div id="searchContent" class="searchContent">
     </div>
-    <?php include "../General/Footer/Footer.php" ?>
+    <?php include "../general/footer/Footer.php" ?>
 
 
     <script type="text/javascript">

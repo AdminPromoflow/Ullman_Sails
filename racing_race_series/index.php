@@ -38,7 +38,7 @@
     </style>
   </head>
   <body>
-    <?php include "../general/menu/menu.php"?>
+    <?php include "../general/menu/menu.php";?>
 
     <?php include "../general/charging/charging.php"; ?>
     <?php include "../general/new_sail_quote/new_sail_quote.php"; ?>
@@ -47,7 +47,7 @@
     <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
 
     <?php include "../racing_race_series/0_slider/slider.php";?>
-    <?php include "navigation/navigation.php"?>
+    <?php include "navigation/navigation.php";?>
 
     <?php include "1_introduction/introduction.php";?>
     <?php include "2_handling_and_performance/handling_and_performance.php";?>
@@ -56,11 +56,11 @@
     <?php include "5_cloth_and_construction/cloth_and_construction.php";?>
     <?php include "7_standard_specifications/standard_specifications.php";?>
     <?php include "6_available_upgrades/available_upgrades.php";?>
-    <?php include "9_engineering_for_extreme_environments/engineering_for_extreme_environments.php" ?>
-    <?php include "../../general/footer/Footer.php"?>
+    <?php include "9_engineering_for_extreme_environments/engineering_for_extreme_environments.php"; ?>
+    <?php include "../general/footer/Footer.php";?>
 
-        <?php// include "5_cloth_selection/cloth_selection.php";?>
-        <?php// include "sail_handling_and_sail_accessories/sail_handling_and_sail_accessories.php";?>
+        <?php // include "5_cloth_selection/cloth_selection.php";?>
+        <?php // include "sail_handling_and_sail_accessories/sail_handling_and_sail_accessories.php";?>
         <?php // include "gore_tenara_thread/gore_tenara_thread.php";?>
         <?php // include "engineering_for_extreme_environments/engineering_for_extreme_environments.php";?>
         <?php // include "sub_ranges_models/sub_ranges_models.php";?>
