@@ -33,6 +33,7 @@
     <?php include "../Sails-Types-Example/sub_ranges_models/sub_ranges_models.php";?>
     <?php include "../Sails-Types-Example/11_expedition_extreme_environment/extreme_environment.php" ?>
     <?php include "../Sails-Types-Example/12_sub_models/sub_models.php" ?>
+    <?php include "../general/charging/charging.php"; ?>
     <?php include "../general/footer/Footer.php"?>
   </body>
 </html>
