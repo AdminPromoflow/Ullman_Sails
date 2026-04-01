@@ -20,25 +20,6 @@
       width: 100vw;
       overflow-x: hidden;
     }
-    h1{
-      color: #005598!important;
-      font-size: clamp(3rem, 5vw, 6rem);
-      font-weight: 600;
-      max-width: 18ch;
-      margin: 15px auto 20px;
-    }
-    h2{
-      color: #005598!important;
-    }
-    h3{
-      color: #202E52!important;
-    }
-    .cac-num{
-      color: #005598!important;
-    }
-    .ss-num{
-      color: #202E52!important;
-    }
     </style>
   </head>
   <body>

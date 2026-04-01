@@ -163,6 +163,8 @@
     <?php include "../General/Charging/charging.php"; ?>
 
 </section>
+<?php include "../general/footer/Footer.php" ?>
+
 
 <script type="text/javascript">
 const contentSections = document.querySelectorAll(".contentSections");

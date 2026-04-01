@@ -20,21 +20,7 @@
       width: 100vw;
       overflow-x: hidden;
     }
-    h1{
-      color: #005598!important;
-    }
-    h2{
-      color: #005598!important;
-    }
-    h3{
-      color: #202E52!important;
-    }
-    .cac-num{
-      color: #005598!important;
-    }
-    .ss-num{
-      color: #202E52!important;
-    }
+
     </style>
   </head>
   <body>

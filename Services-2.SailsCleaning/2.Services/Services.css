@@ -43,17 +43,6 @@
    Intro
 ========================= */
 
-.text > h1{
-  margin-top: 0;
-  margin-bottom: 1.15rem;
-  color: var(--sc-blue);
-  font-size: clamp(2.35rem, 4.6vw, 5rem);
-  line-height: 1.08;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  max-width: 11ch;
-}
-
 .text > p{
   margin-top: 0;
   margin-bottom: 1.25rem;

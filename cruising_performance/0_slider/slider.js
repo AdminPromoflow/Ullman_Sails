@@ -20,11 +20,6 @@ class HomeSlider {
       this.slides[0]?.dataset.clone === "last" &&
       this.slides[this.total - 1]?.dataset.clone === "first";
 
-    if (this.hasClones) {
-      this.slides[0].setAttribute("data-is-clone", "1");
-      this.slides[this.total - 1].setAttribute("data-is-clone", "1");
-    }
-
     this.index = this.hasClones ? 1 : 0;
 
     this.isAnimating = false;
@@ -34,8 +29,10 @@ class HomeSlider {
     this.updateMetrics();
     this.bind();
 
+    // Initial position without animation
     this.jumpTo(this.index);
 
+    // Autoplay
     if (!this.reduceMotion) this.start();
   }
 
@@ -48,6 +45,7 @@ class HomeSlider {
       this.track.style.transition = "none";
       return;
     }
+
     this.track.style.transition = on
       ? "transform .9s cubic-bezier(.2,.9,.2,1)"
       : "none";
@@ -58,10 +56,12 @@ class HomeSlider {
   }
 
   setActive() {
-    this.slides.forEach((s) => s.classList.remove("is-active"));
+    this.slides.forEach((slide) => slide.classList.remove("is-active"));
+
     const active = this.slides[this.index];
     if (!active) return;
-    void active.offsetWidth;
+
+    void active.offsetWidth; // Restart caption animations
     active.classList.add("is-active");
   }
 
@@ -69,7 +69,7 @@ class HomeSlider {
     this.index = i;
     this.setTransition(false);
     this.applyTransform();
-    this.track.offsetHeight;
+    this.track.offsetHeight; // Reflow
     this.setTransition(true);
     this.setActive();
     this.isAnimating = false;
@@ -78,6 +78,7 @@ class HomeSlider {
   goTo(i) {
     if (this.total < 2) return;
 
+    // Reduced motion: always move instantly
     if (this.reduceMotion) {
       if (this.hasClones) {
         if (i <= 0) i = this.total - 2;
@@ -86,36 +87,46 @@ class HomeSlider {
         if (i < 0) i = this.total - 1;
         if (i > this.total - 1) i = 0;
       }
+
       this.index = i;
       this.setTransition(false);
       this.applyTransform();
       this.setActive();
+      this.isAnimating = false;
       return;
     }
 
     if (this.isAnimating) return;
-    this.isAnimating = true;
 
+    // If the target is clone 0 or clone 9, jump directly with no animation
+    if (this.hasClones) {
+      if (i <= 0) {
+        this.jumpTo(this.total - 2); // Last real slide
+        return;
+      }
+
+      if (i >= this.total - 1) {
+        this.jumpTo(1); // First real slide
+        return;
+      }
+    } else {
+      if (i < 0) i = this.total - 1;
+      if (i > this.total - 1) i = 0;
+    }
+
+    this.isAnimating = true;
     this.index = i;
     this.setTransition(true);
     this.applyTransform();
     this.setActive();
   }
 
-  next() { this.goTo(this.index + 1); }
-  prev() { this.goTo(this.index - 1); }
+  next() {
+    this.goTo(this.index + 1);
+  }
 
-  fixLoopIfNeeded() {
-    if (!this.hasClones) return;
-
-    if (this.index === 0) {
-      this.jumpTo(this.total - 2);
-      return;
-    }
-    if (this.index === this.total - 1) {
-      this.jumpTo(1);
-      return;
-    }
+  prev() {
+    this.goTo(this.index - 1);
   }
 
   bind() {
@@ -124,29 +135,46 @@ class HomeSlider {
 
     this.track.addEventListener("transitionend", (e) => {
       if (e.propertyName !== "transform") return;
-      this.fixLoopIfNeeded();
       this.isAnimating = false;
     });
 
-    this.root.addEventListener("mouseenter", () => (this.paused = true));
-    this.root.addEventListener("mouseleave", () => (this.paused = false));
-    this.root.addEventListener("focusin", () => (this.paused = true));
-    this.root.addEventListener("focusout", () => (this.paused = false));
+    // Pause on hover / focus
+    this.root.addEventListener("mouseenter", () => {
+      this.paused = true;
+    });
 
+    this.root.addEventListener("mouseleave", () => {
+      this.paused = false;
+    });
+
+    this.root.addEventListener("focusin", () => {
+      this.paused = true;
+    });
+
+    this.root.addEventListener("focusout", () => {
+      this.paused = false;
+    });
+
+    // Pause when the tab is hidden
     document.addEventListener("visibilitychange", () => {
       this.paused = document.hidden;
     });
 
-    let t = null;
+    // Resize handler
+    let resizeTimer = null;
+
     window.addEventListener("resize", () => {
-      clearTimeout(t);
-      t = setTimeout(() => {
+      clearTimeout(resizeTimer);
+
+      resizeTimer = setTimeout(() => {
         this.updateMetrics();
         this.jumpTo(this.index);
       }, 120);
     });
 
+    // Keyboard support
     this.root.setAttribute("tabindex", "0");
+
     this.root.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") this.next();
       if (e.key === "ArrowLeft") this.prev();
@@ -155,6 +183,7 @@ class HomeSlider {
 
   start() {
     this.stop();
+
     this.timer = setInterval(() => {
       if (!this.paused) this.next();
     }, this.intervalMs);
