@@ -3,11 +3,9 @@ declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
 $navCssFs = __DIR__ . '/Covers/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/Covers/navigation/navigation.js';
 
 /* Public paths (as used in HTML) */
 $navCssPublic = '../Covers/navigation/navigation.css';
-$navJsPublic  = '../Covers/navigation/navigation.js';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
@@ -52,5 +50,3 @@ $breadcrumbs = $breadcrumbs ?? [
     </ol>
   </nav>
 </section>
-
-<script defer src="<?= $navJsPublic ?>?v=<?= $navJsV ?>" type="text/javascript"></script>
