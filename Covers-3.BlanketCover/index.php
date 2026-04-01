@@ -79,7 +79,7 @@
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
     <?php include "../Covers-3.BlanketCover/navigation/navigation.php" ?>
-    <?php include "../Covers-3.BlanketCover/2.Services/Services.php" ?>
+    <?php include "../../../Covers-3.BlanketCover/2.Services/Services.php" ?>
     </div>
     <?php include "../general/charging/charging.php"; ?>
 
