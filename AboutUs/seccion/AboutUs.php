@@ -84,8 +84,8 @@
       <div class="cart_perfiles_about">
         <a href="../AboutUs-Dan/index.php"><img src="../AboutUs/img/Dan.jpg" alt=""></a>
         <div class="cart_text_about">
-          <a href="../AboutUs-Dan/index.php"><h3>Sailmaker</h3></a>
-          <a href="../AboutUs-Dan/index.php"><h4>Dan Crawford</h4> </a>
+          <a href="../AboutUs-Dan/index.php" target="_blank"><h3>Sailmaker</h3></a>
+          <a href="../AboutUs-Dan/index.php" target="_blank"><h4>Dan Crawford</h4> </a>
         </div>
       </div>
       <div class="cart_perfiles_about">
