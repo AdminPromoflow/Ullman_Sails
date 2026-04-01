@@ -1,6 +1,6 @@
 <?php
 // Validar el archivo CSS antes de usarlo
-$cssPath = '../General/Charging/charging.css';
+$cssPath = '../general/charging/charging.css';
 $cssVersion = file_exists($cssPath) ? filemtime($cssPath) : time();
 ?>
 
