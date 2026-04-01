@@ -53,7 +53,7 @@ $cssHref = with_version($cssPublic, asset_version($cssFs));
 $jsSrc   = with_version($jsPublic,  asset_version($jsFs));
 
 /* UI assets */
-$logoSrc = '../home/1_Slider/img/ullman_sails.png';
+$logoSrc = '../home/1_slider/img/ullman_sails.png';
 $ctaHref = '#sailing-types-introduction';
 
 /* Slides */
