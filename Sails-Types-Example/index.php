@@ -18,7 +18,7 @@
     </style>
   </head>
   <body>
-    <?php include "../General/Menu/Menu.php"?>
+    <?php include "../general/menu/menu.php"?>
     <?php include "../Sails-Types-Example/sailing-types-introduction/sailing-types-introduction.php";?>
     <?php include "../Sails-Types-Example/performance-and-handling/performance-and-handling.php";?>
     <?php include "../Sails-Types-Example/design-and-construction/design-and-construction.php";?>
@@ -33,6 +33,6 @@
     <?php include "../Sails-Types-Example/sub_ranges_models/sub_ranges_models.php";?>
     <?php include "../Sails-Types-Example/11_expedition_extreme_environment/extreme_environment.php" ?>
     <?php include "../Sails-Types-Example/12_sub_models/sub_models.php" ?>
-    <?php include "../General/Footer/Footer.php"?>
+    <?php include "../general/footer/Footer.php"?>
   </body>
 </html>
