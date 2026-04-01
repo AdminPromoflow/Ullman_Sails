@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body class="aboutUs">
-    <?php include "../General/Menu/Menu.php" ?>
+    <?php include "../General/menu/menu.php" ?>
     <?php include "../AboutUs/seccion/AboutUs.php" ?>
     <?php include "../General/Charging/charging.php"; ?>
-    <?php include "../General/Footer/Footer.php" ?>
+    <?php include "../General/footer/Footer.php" ?>
   </body>
 
 </html>
