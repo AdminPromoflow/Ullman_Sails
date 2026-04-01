@@ -23,7 +23,8 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
  */
 $breadcrumbs = $breadcrumbs ?? [
   ['label' => 'Home',          'href' => '../Home/index.php'],
-  ['label' => 'About Us','href' => null],
+  ['label' => 'About Us',          'href' => '../AboutUs/index.php'],
+  ['label' => 'Dan Crawford','href' => null],
 ];
 ?>
 
