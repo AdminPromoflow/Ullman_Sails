@@ -19,9 +19,6 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
 <section class="nav-specsheet" data-sr-reveal aria-label="Downwind cloth selection and construction">
   <h2 id="csp-title" class="csp-title sr-item">Cloth Selection &amp; Construction</h2>
 
-  <!-- =========================
-       1) CODE SAILS (3 images)
-  ========================== -->
   <div class="nav-specsheet__wrap">
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
@@ -43,10 +40,10 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
                  alt="Axia Code 70 sail view"
                  data-sub="AXIA CODE 60 60-70% MID-GIRTH">
 
-           <img class="nav-rotator__img"
-                src="../racing_red_line_series/5_cloth_and_construction/img/RL_CODE_75.2048_0_1.png"
-                alt="Axia Code 70 sail view"
-                data-sub="AXIA CODE 75 75% MID GIRTH">
+            <img class="nav-rotator__img"
+                 src="../racing_red_line_series/5_cloth_and_construction/img/RL_CODE_75.2048_0_1.png"
+                 alt="Axia Code 70 sail view"
+                 data-sub="AXIA CODE 75 75% MID GIRTH">
           </div>
 
           <figcaption class="nav-rotator__caption">
@@ -132,9 +129,6 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
     </div>
   </div>
 
-  <!-- =========================
-       2) CLASSIC SPINNAKERS (2 images)
-  ========================== -->
   <div class="nav-specsheet__wrap">
     <div class="nav-specsheet__panel">
       <div class="nav-specsheet__grid">
