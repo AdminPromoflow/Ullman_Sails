@@ -78,7 +78,7 @@
       <?php include "../AboutUs-Dan/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
-    <?php include "../General/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.js"; ?>
 
     <div id="searchContent" class="searchContent">
     </div>

@@ -14,7 +14,7 @@
     <?php include "../general/menu/menu.php" ?>
     <?php include "../AboutUs/navigation/navigation.php" ?>
     <?php include "../AboutUs/seccion/AboutUs.php" ?>
-    <?php include "../General/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.js"; ?>
     <?php include "../general/footer/Footer.php" ?>
   </body>
 

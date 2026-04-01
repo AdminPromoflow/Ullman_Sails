@@ -75,6 +75,7 @@
     </style>
     <?php include "../General/Menu/Menu.php" ?>
     <div id="searchHide" class="searchHide">
+    <?php include "../AboutUs-HeatherBooth/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
     <?php include "../General/Charging/charging.php"; ?>

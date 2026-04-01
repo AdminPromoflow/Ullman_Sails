@@ -67,7 +67,6 @@
 
 <section class="AboutUsEachOne">
   <div class="text">
-    <a class="comeBack" href="../AboutUs/index.php">&lt; About Us</a>
     <h1>Canvas Maker</h1>
     <h2>Heather Booth</h2>
     <img src="2.Services/Image/SlideHome.jpg" alt="Heather Booth">

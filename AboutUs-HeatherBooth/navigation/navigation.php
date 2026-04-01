@@ -2,11 +2,10 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$navCssFs = __DIR__ . '/AboutUs-Dan/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/AboutUs-Dan/navigation/navigation.js';
+$navCssFs = __DIR__ . '/AboutUs-HeatherBooth/navigation/navigation.css';
 
 /* Public paths (as used in HTML) */
-$navCssPublic = '../AboutUs-Dan/navigation/navigation.css';
+$navCssPublic = '../AboutUs-HeatherBooth/navigation/navigation.css';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
@@ -22,7 +21,7 @@ $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
 $breadcrumbs = $breadcrumbs ?? [
   ['label' => 'Home',          'href' => '../Home/index.php'],
   ['label' => 'About Us',          'href' => '../AboutUs/index.php'],
-  ['label' => 'Dan Crawford','href' => null],
+  ['label' => 'Heather Booth','href' => null],
 ];
 ?>
 

@@ -78,7 +78,7 @@
     <?php include "../AboutUs-Diogo/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
-    <?php include "../general/charging/charging.php"; ?>
+    <?php include "../general/charging/charging.js"; ?>
 
     <div id="searchContent" class="searchContent">
     </div>

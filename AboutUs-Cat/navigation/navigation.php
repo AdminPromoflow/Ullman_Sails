@@ -3,15 +3,12 @@ declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
 $navCssFs = __DIR__ . '/AboutUs-Cat/navigation/navigation.css';
-$navJsFs  = __DIR__ . '/AboutUs-Cat/navigation/navigation.js';
 
 /* Public paths (as used in HTML) */
 $navCssPublic = '../AboutUs-Cat/navigation/navigation.css';
-$navJsPublic  = '../AboutUs-Cat/navigation/navigation.js';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
-$navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
 ?>
 
 <link rel="stylesheet" href="<?= $navCssPublic ?>?v=<?= $navCssV ?>">
