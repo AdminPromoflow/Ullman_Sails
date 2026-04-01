@@ -142,14 +142,14 @@ $nsJsV  = is_file($nsJsFs)  ? filemtime($nsJsFs)  : time();
         <figure class="nav-rotator sr-item" aria-label="Classic spinnakers image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png"
+                 src="../racing_red_line_series/5_cloth_and_construction/img2/RL_AXIA_SYMM.2048_0_1.png"
                  alt="Axia Asymm sail view"
-                 data-sub="AXIA ASYMM — 80%+ MID-GIRTH">
+                 data-sub="AXIA SYMM SYMMETRICAL DOWNWIND">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png"
+                 src="../racing_red_line_series/5_cloth_and_construction/img2/RL_AXIA_ASYMM.2048_0_1.png"
                  alt="Axia Symm sail view"
-                 data-sub="AXIA SYMM — SYMMETRICAL DOWNWIND">
+                 data-sub="AXIA ASSYM 80%+ MID-GIRTH">
           </div>
 
           <figcaption class="nav-rotator__caption">
