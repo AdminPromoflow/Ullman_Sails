@@ -12,6 +12,7 @@
   </head>
   <body class="aboutUs">
     <?php include "../general/menu/menu.php" ?>
+    <?php include "../AboutUs/navigation/navigation.php" ?>
     <?php include "../AboutUs/seccion/AboutUs.php" ?>
     <?php include "../General/Charging/charging.php"; ?>
     <?php include "../general/footer/Footer.php" ?>

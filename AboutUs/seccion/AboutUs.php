@@ -6,7 +6,6 @@
 
   <!--  **********************text aboutUs************************ -->
   <div class="text_aboutUs">
-    <a href="../Home/index.php">&lt; Home</a>
     <h1>About Us</h1>
     <p>
     Ullman Sails is a global sailmaking superpower, but we would hate to think that's all we are.<br><br>
