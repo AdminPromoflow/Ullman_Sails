@@ -19,7 +19,7 @@ $jsTime = filemtime('../Home/5.Video/video.js');
         preload="auto"
         poster="../home/5.Video/img/contactus-poster.jpg"
       >
-        <source src="../home/5.Video/videoUpdated.mp4" type="video/mp4">
+        <source src="../Home/5.Video/videoUpdated.mp4" type="video/mp4">
       </video>
     </div>
   </div>
