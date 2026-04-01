@@ -67,7 +67,6 @@
 
 <section class="AboutUsEachOne">
   <div class="text">
-    <a class="comeBack" href="../AboutUs/index.php">&lt; About Us</a>
     <h1>Sailmaker, Service</h1>
     <h2>Diogo Freitas</h2>
     <img src="2.Services/Image/SlideHome.jpg" alt="Diogo Freitas">

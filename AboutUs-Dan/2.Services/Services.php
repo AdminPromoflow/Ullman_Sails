@@ -68,7 +68,6 @@
 
 <section class="AboutUsEachOne">
   <div class="text">
-    <a class="comeBack" href="../AboutUs/index.php">&lt; About Us</a>
     <h1>Sailmaker</h1>
     <h2>Dan Crawford</h2>
     <img src="2.Services/Image/SlideHome.jpg" alt="Dan Crawford">

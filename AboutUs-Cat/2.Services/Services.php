@@ -66,7 +66,6 @@
 
 <section class="AboutUsEachOne">
   <div class="text">
-    <a class="comeBack" href="../AboutUs/index.php">&lt; About Us</a>
     <h1>Managing Director</h1>
     <h2>Catrina Southworth</h2>
     <img src="2.Services/Image/catrina-2.jpg" alt="Catrina Southworth">
