@@ -76,7 +76,7 @@
     <div id="searchContent" class="searchContent">
 
     </div>
-    <?php include "../general/gooter/Footer.php" ?>
+    <?php include "../general/footer/Footer.php" ?>
 
     <script type="text/javascript">
     // Función para manejar el scroll suave y respuesta rápida
