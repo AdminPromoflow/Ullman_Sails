@@ -129,8 +129,8 @@
 
 
     </style>
-    <?php include "../General/Menu/Menu.php" ?>
-    <?php include "../General/button_contact_us/button_contact_us.php"; ?>
+    <?php include "../general/menu/menu.php" ?>
+    <?php include "../general/button_contact_us/button_contact_us.php"; ?>
 
     <section class="news">
 
@@ -160,7 +160,9 @@
     <section class="rightPanel">
       <?php  include "RightPanel/RightPanel.php" ?>
     </section>
-    <?php include "../General/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.php"; ?>
+    <?php include "../general/footer/Footer.php" ?>
+
 
 </section>
 

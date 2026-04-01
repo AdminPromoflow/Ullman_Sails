@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body class="aboutUs">
-    <?php include "../General/Menu/Menu.php" ?>
+    <?php include "../general/menu/menu.php" ?>
     <?php include "../New_Sail_Quote/seccion/New_Sail_Quote.php" ?>
-    <?php include "../General/Charging/charging.php"; ?>
-    <?php include "../General/Footer/Footer.php" ?>
+    <?php include "../general/charging/charging.php"; ?>
+    <?php include "../general/footer/Footer.php" ?>
   </body>
 
 </html>
