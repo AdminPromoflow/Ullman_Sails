@@ -29,7 +29,7 @@
 
 /* Section wrapper */
 .nav-section{
-  background: transparent;
+  background: #FDF6F8;
   padding-block: var(--nav-sec-py);
   padding-inline: var(--nav-gutter);
   display: flex;
