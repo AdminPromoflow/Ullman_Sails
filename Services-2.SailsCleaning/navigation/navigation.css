@@ -30,7 +30,7 @@
 
 /* Section wrapper */
 .nav-section{
-
+  background-color: red;
   display: flex;
 
 }
