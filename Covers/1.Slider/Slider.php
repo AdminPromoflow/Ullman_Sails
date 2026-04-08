@@ -236,10 +236,6 @@
   filter: brightness(1.06);
 }
 
-.home-slider__btn:focus-visible{
-  outline: 2px solid #fff;
-  outline-offset: 3px;
-}
 
 
 @keyframes showContent{
