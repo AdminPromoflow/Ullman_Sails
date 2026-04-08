@@ -84,10 +84,10 @@
     </div>
     <?php include "../General/Charging/charging.php"; ?>
 
+    <?php include "../General/Footer/Footer.php" ?>
 
     <div id="searchContent" class="searchContent">
     </div>
-    <?php include "../General/Footer/Footer.php" ?>
     <script type="text/javascript">
     // Función para manejar el scroll suave y respuesta rápida
         let isScrolling = false;
