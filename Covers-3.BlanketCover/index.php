@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
-
     <style media="screen">
     * {
       padding: 0;
@@ -18,7 +17,7 @@
     }
 
     body {
-      background-color: #0E193B;
+      background-color: #F8F8FA;
       font-family: 'Poppins', sans-serif;
       font-size: 15px;
     }
@@ -75,16 +74,16 @@
     </style>
 
     <?php include "../general/menu/menu.php" ?>
-
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
-    <?php include "../Covers-3.BlanketCover/navigation/navigation.php" ?>
-    <?php include "../../../Covers-3.BlanketCover/2.Services/Services.php" ?>
+    <?php include "../Covers-3.BlanketCover/2.Services/Services.php" ?>
+    <?php include "2.Services/Services.php" ?>
+
     </div>
     <?php include "../general/charging/charging.php"; ?>
-
     <div id="searchContent" class="searchContent">
     </div>
+
     <?php include "../general/footer/Footer.php" ?>
     <script type="text/javascript">
     // Función para manejar el scroll suave y respuesta rápida
