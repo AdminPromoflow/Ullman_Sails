@@ -84,7 +84,7 @@
     </div>
     <?php include "../General/Charging/charging.php"; ?>
 
-    <?php include "../General/Footer/Footer.php" ?>
+    <?php include "../General/footer/Footer.php" ?>
 
     <div id="searchContent" class="searchContent">
     </div>
