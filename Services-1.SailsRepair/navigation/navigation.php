@@ -2,14 +2,13 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$navCssFs = __DIR__ . '/../Services-1.SailsRepair/navigation/navigation.css';
+$navCssFs = __DIR__ . '/Covers/navigation/navigation.css';
 
 /* Public paths (as used in HTML) */
-$navCssPublic = '../Services-1.SailsRepair/navigation/navigation.css';
+$navCssPublic = '../Covers/navigation/navigation.css';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
-$navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
 ?>
 
 <link rel="stylesheet" href="<?= $navCssPublic ?>?v=<?= $navCssV ?>">
@@ -21,8 +20,8 @@ $navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
  */
 $breadcrumbs = $breadcrumbs ?? [
   ['label' => 'Home',          'href' => '../Home/index.php'],
-  ['label' => 'Services',          'href' => '../Services/index.php'],
-  ['label' => 'Sails Repair','href' => '../Services-1.SailsRepair/index.php'],
+  ['label' => 'Cover',          'href' => '../Covers/index.php'],
+  ['label' => 'Services Repair','href' => null],
 ];
 ?>
 
