@@ -82,9 +82,9 @@
 
     <?php include "2.Services/Services.php" ?>
     </div>
-    <?php include "../General/Charging/charging.php"; ?>
+    <?php include "../general/charging/charging.php"; ?>
 
-    <?php include "../General/footer/Footer.php" ?>
+    <?php include "../general/footer/Footer.php" ?>
 
     <div id="searchContent" class="searchContent">
     </div>
