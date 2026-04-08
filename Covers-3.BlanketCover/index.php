@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>Ullman Sails</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-  <style media="screen">
+  <head>
+    <meta charset="utf-8">
+    <title>Ullman Sails</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+    <style media="screen">
     * {
-      margin: 0;
       padding: 0;
+      margin: 0;
       box-sizing: border-box;
     }
 
@@ -21,41 +20,34 @@
       background-color: #F8F8FA;
       font-family: 'Poppins', sans-serif;
       font-size: 15px;
-      line-height: 1.5;
-      color: #111C42;
     }
-
     p {
       font-size: 0.9em;
     }
 
     h2 {
-      font-size: 2em;
       color: #111C42;
+      font-size: 2em;
     }
-
     h3 {
+      color: #F2F2F2;
       font-size: 1.6em;
       font-weight: 500;
-      color: #F2F2F2;
     }
-
     h4 {
+      color: #111C42;
       font-size: 1em;
       font-weight: 500;
-      color: #111C42;
     }
 
     button {
-      padding: 15px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
       background-color: #111C42;
+      padding: 15px;
+      font-weight: bold;
+      border: none;
       color: #F2F2F2;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
     }
-
     button:hover {
       background-color: #F2F2F2;
       color: #111C42;
@@ -63,42 +55,60 @@
 
     header {
       padding: 50px;
-      text-align: center;
       background-color: aquamarine;
+      text-align: center;
     }
 
     nav {
       display: flex;
       flex-direction: row;
-      background-color: transparent;
+      background-color:
     }
 
     nav a {
+      color: white;
       padding: 14px 20px;
       text-decoration: none;
-      color: #FFFFFF;
     }
 
-    .searchHide,
-    .searchContent {
-      width: 100%;
-    }
-  </style>
-</head>
+    </style>
 
-<body>
-  <?php include "../general/menu/menu.php"; ?>
+    <?php include "../general/menu/menu.php" ?>
+    <div id="searchHide" class="searchHide">
+    <?php include "1.Slider/Slider.php" ?>
+    <?php include "../Covers-3.BlanketCover/navigation/navigation.php" ?>
+    <?php include "2.Services/Services.php" ?>
 
-  <div id="searchHide" class="searchHide">
-    <?php include "1.Slider/Slider.php"; ?>
-    <?php include "../Covers-3.BlanketCover/navigation/navigation.php"; ?>
-    <?php include "Covers-3.BlanketCover/2.Services/Services.php"; ?>
-  </div>
+    </div>
+    <?php include "../general/charging/charging.php"; ?>
+    <div id="searchContent" class="searchContent">
+    </div>
 
-  <?php include "../general/charging/charging.php"; ?>
+    <?php include "../general/footer/Footer.php" ?>
+    <script type="text/javascript">
+    // Función para manejar el scroll suave y respuesta rápida
+        let isScrolling = false;
+        let velocity = 0;
+        let previousY = 0;
 
-  <div id="searchContent" class="searchContent"></div>
+        function handleScroll() {
+        if (!isScrolling) {
+          requestAnimationFrame(() => {
+            const currentY = window.scrollY;
+            const deltaY = currentY - previousY;
 
-  <?php include "../general/footer/Footer.php"; ?>
-</body>
+            // Agregar aceleración
+            velocity += deltaY * 0.05;
+            // Aplicar desaceleración gradual
+            velocity *= 0.0;
+
+            window.scrollBy(0, velocity);
+
+            previousY = currentY;
+            isScrolling = false;
+          });
+        }
+        }
+    </script>
+  </body>
 </html>

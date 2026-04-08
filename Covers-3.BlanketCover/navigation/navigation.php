@@ -9,7 +9,6 @@ $navCssPublic = '../Covers/navigation/navigation.css';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();
-$navJsV  = is_file($navJsFs)  ? filemtime($navJsFs)  : time();
 ?>
 
 <link rel="stylesheet" href="<?= $navCssPublic ?>?v=<?= $navCssV ?>">
