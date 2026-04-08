@@ -24,7 +24,7 @@ $breadcrumbs = $breadcrumbs ?? [
 ];
 ?>
 
-<section class="nav-section" aria-label="Page navigation">
+<section id="navigation" class="nav-section" aria-label="Page navigation">
   <nav class="nav-breadcrumbs" aria-label="Breadcrumb">
     <ol class="nav-breadcrumbs__list">
       <?php foreach ($breadcrumbs as $i => $item): ?>

@@ -270,7 +270,7 @@
         <h1 class="home-slider__title">COVERS</h1>
         <h2 class="home-slider__subtitle">Bespoke Boat Covers,</h2>
         <div class="home-slider__line" aria-hidden="true"></div>
-        <a class="home-slider__btn" href="#services-title">↓</a>
+        <a class="home-slider__btn" href="#navigation">↓</a>
       </div>
     </article>
 
