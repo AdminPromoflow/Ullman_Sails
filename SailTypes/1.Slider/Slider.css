@@ -269,31 +269,29 @@
 
 /* Button */
 .home-slider__btn{
-  display: inline-block;
-  width: max-content;
-  margin-top: 1.2rem;
-  padding: 3px 20px;
+  display:inline-block;
+  width:max-content;
+  min-width: clamp(170px, 26vw, 220px);
+  margin-top:1.2rem;
+  padding:12px 22px;
 
-  background: #c5244b;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: var(--btn-shadow);
+  background:rgba(0,85,152,.92);
+  color:#fafafa;
+  border:1px solid rgba(255,255,255,.18);
 
-  font-size: 1.3em;
-  font-weight: 300;
-  text-decoration: none;
-  cursor: pointer;
-  transition-delay: .0s!important;
-  transition: all .4s!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+  font-size:var(--btn-size);
+  font-weight:600;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+
+  transition: transform .18s ease, filter .18s ease;
 
 }
 
-.home-slider__btn:hover{
-  background: rgba(32,46,82,.99);
-  transform: translateY(-2px)!important;
-  transition-delay: .0s!important;
-  transition: all .4s!important;
-}
+.home-slider__btn:hover{ transform: translateY(-1px); filter: brightness(1.06); }
+
 
 .home-slider__btn:focus-visible{
   outline: 2px solid #fff;

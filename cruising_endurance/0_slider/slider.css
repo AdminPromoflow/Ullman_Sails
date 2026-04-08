@@ -24,7 +24,7 @@
   --btn-size:    clamp(1.05rem, 1.8vw, 2.05rem);
 
   --arrow-size: clamp(30px, 3.2vw, 34px);
-  --arrow-x: clamp(10px, 1.4vw, 14px);
+  --arrow-x: 1.5rem;
 
   --kicker-shadow: 0 2px 12px rgba(0,0,0,.55);
 

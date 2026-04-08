@@ -156,9 +156,8 @@
   padding:12px 22px;
 
   background:rgba(0,85,152,.92);
-  color:#fff;
+  color:#fafafa;
   border:1px solid rgba(255,255,255,.18);
-  border-radius:999px;
 
   box-shadow:0 12px 30px rgba(0,0,0,.28);
   font-size:var(--btn-size);

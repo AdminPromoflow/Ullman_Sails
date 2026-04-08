@@ -21,7 +21,7 @@ $introJsVersion  = filemtime(__DIR__ . '/2.Services/Services.js');
     <p class="sr-item">Have fun!</p>
 
     <div class="buttonTitleBlue sr-item">
-      <h3 class="openContactUsBlueBlue">Contact us</h3>
+    <a href="../ContactUs/index.php">  <h3 class="openContactUsBlueBlue">Contact us</h3></a>
     </div>
   </div>
 </section>
