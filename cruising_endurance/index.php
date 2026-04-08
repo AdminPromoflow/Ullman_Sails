@@ -55,7 +55,7 @@
 
     <?php include "1_introduction/introduction.php";?>
     <?php include "2_handling_and_performance/handling_and_performance.php";?>
-    <?php include "3_design_and_construction/design_and_construction.php";?>
+    <?php include "../cruising_endurance/3_design_and_construction/design_and_construction.php";?>
     <?php include "4_durability_and_reinforcement/durability_and_reinforcement.php";?>
     <?php include "5_cloth_and_construction/cloth_and_construction.php";?>
     <?php include "7_standard_specifications/standard_specifications.php";?>

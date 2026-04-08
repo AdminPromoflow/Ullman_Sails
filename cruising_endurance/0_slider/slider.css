@@ -55,6 +55,7 @@
   width:100%;
   height:100%;
   display:grid;
+  background-color: RED;
   place-items:center;
   background-position:center;
   background-repeat:no-repeat;
