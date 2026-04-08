@@ -241,32 +241,6 @@
   outline-offset: 3px;
 }
 
-/* Estado inicial animación */
-.home-slider__caption > *{
-  opacity: 0;
-  transform: translateY(22px);
-}
-
-/* Animación cuando el slide está activo */
-.home-slider__slide.is-active .home-slider__kicker{
-  animation: showContent .55s ease forwards 0s;
-}
-
-.home-slider__slide.is-active .home-slider__title{
-  animation: showContent .55s ease forwards .18s;
-}
-
-.home-slider__slide.is-active .home-slider__subtitle{
-  animation: showContent .55s ease forwards .36s;
-}
-
-.home-slider__slide.is-active .home-slider__line{
-  animation: showContent .55s ease forwards .54s;
-}
-
-.home-slider__slide.is-active .home-slider__btn{
-  animation: showContent .55s ease forwards .72s;
-}
 
 @keyframes showContent{
   to{
