@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 /* Filesystem paths (for filemtime) */
-$navCssFs = __DIR__ . '/../SailTypes/navigation/navigation.css';
+$navCssFs = __DIR__ . '/../Services-2.SailsCleaning/navigation/navigation.css';
 
 /* Public paths (as used in HTML) */
-$navCssPublic = '../SailTypes/navigation/navigation.css';
+$navCssPublic = '../Services-2.SailsCleaning/navigation/navigation.css';
 
 /* Version values (cache-busting) */
 $navCssV = is_file($navCssFs) ? filemtime($navCssFs) : time();

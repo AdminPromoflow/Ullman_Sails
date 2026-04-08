@@ -30,9 +30,9 @@
 
 /* Section wrapper */
 .nav-section{
-  background-color: red;
-  display: flex;
 
+  display: flex;
+  background-color: #fafafa;
 }
 
 /* Card container */

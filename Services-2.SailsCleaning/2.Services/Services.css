@@ -19,6 +19,8 @@
 
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 7rem);
   background:#fafafa;
   overflow: hidden;
@@ -32,8 +34,7 @@
 .text > .how_connect,
 .text > .link_contact_us{
   width: var(--sc-container);
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   box-sizing: border-box;
 }
 
@@ -44,6 +45,7 @@
 .text > h1{
   margin-top: 0;
   margin-bottom: 1.15rem;
+  text-align: center;
   color: var(--sc-blue);
   font-size: clamp(2.35rem, 4.6vw, 5rem);
   line-height: 1.08;
@@ -74,12 +76,13 @@
 .services-container,
 .how_connect{
   position: relative;
+  display: flex;
+  flex-direction: column;
   margin-top: clamp(2.5rem, 5vw, 4.25rem);
   padding: clamp(1.8rem, 3vw, 2.4rem);
-  background: rgba(255,255,255,0.58);
-  border: 1px solid rgba(15, 33, 64, 0.07);
+  background-color: #fafafa;
+
   border-radius: calc(var(--sc-radius) + 4px);
-  box-shadow: 0 12px 35px rgba(15, 33, 64, 0.04);
   backdrop-filter: blur(4px);
 }
 
@@ -88,6 +91,7 @@
 .how_connect > h2{
   margin: 0 0 .85rem;
   color: var(--sc-ink);
+  text-align: center;
   font-size: clamp(1.7rem, 2.7vw, 2.6rem);
   line-height: 1.15;
   font-weight: 650;
@@ -97,7 +101,8 @@
 .common_issues-container > p,
 .services-container > p,
 .how_connect > p{
-  margin: 0 0 1.8rem;
+  margin: auto;
+  text-align: justify;
   color: var(--sc-muted);
   font-size: clamp(1rem, 1.35vw, 1.12rem);
   line-height: 1.8;
@@ -276,22 +281,22 @@
 ========================= */
 
 .link_contact_us{
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(2.4rem, 5vw, 3.4rem);
+  margin:auto;
   text-decoration: none;
+  display: flex;
 }
 
 .buttonTitle{
   min-width: 215px;
   min-height: 74px;
   padding: 0 1.6rem;
-  border-radius: 999px;
   background: linear-gradient(180deg, #0b67b4 0%, #005598 100%);
   box-shadow: 0 20px 34px rgba(0, 85, 152, 0.16);
   display: inline-flex;
   align-items: center;
+  margin: auto;
   justify-content: center;
   transition:
     transform .2s ease,

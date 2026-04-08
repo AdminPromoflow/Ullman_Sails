@@ -119,6 +119,6 @@ footer img {
 
 <script type="text/javascript">
   document.getElementById('TermsAndConditions').addEventListener("click", function () {
-    window.open("../General/TermsAndConditions/TermsAndConditions.php", "_blank");
+    window.open("../general/terms_and_conditions/TermsAndConditions.php", "_blank");
   });
 </script>
