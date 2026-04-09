@@ -74,7 +74,7 @@
 
     </style>
 
-    <?php include "../General/Menu/Menu.php" ?>
+    <?php include "../general/menu/menu.php" ?>
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
