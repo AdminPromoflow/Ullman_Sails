@@ -165,7 +165,6 @@ html.js .axia-section:not(.is-visible) .axia-image{
   box-shadow: 0 1px 0 rgba(15,33,64,.04);
   color: var(--cs-ink);
   text-decoration:none;
-  cursor:pointer;
   width: 100%;
 
   transform: translateY(0);
