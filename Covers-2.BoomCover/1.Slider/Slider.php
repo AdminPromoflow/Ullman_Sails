@@ -2,8 +2,8 @@
 .slideHome{
   position: relative;
   height: 80vh;
+  min-height: 500px;
   width: 100vw;
-  background-color: red;
   background-image: url("../Covers/2.Services/img/Boom_cover3.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -17,7 +17,8 @@
 
 @media  (orientation: landscape) {
   .slideHome{
-    height: 100vh;
+    height: 80vh;
+    min-height: 500px;
   }
 }
 </style>

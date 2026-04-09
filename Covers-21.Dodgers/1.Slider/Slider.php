@@ -2,6 +2,7 @@
 .slideHome{
   position: relative;
   height: 80vh;
+  min-height: 500px;
   width: 100vw;
   background-color: red;
   background-image: url("../Covers/2.Services/img/Dodgers.png");
@@ -18,7 +19,8 @@
 
 @media  (orientation: landscape) {
   .slideHome{
-    height: 100vh;
+    height: 80vh;
+    min-height: 500px;
   }
 }
 </style>

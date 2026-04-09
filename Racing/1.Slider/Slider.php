@@ -2,6 +2,7 @@
 .slideHome{
   position: relative;
   height: 80vh;
+  min-height: 500px;
   width: 100vw;
   background-image: url("../Racing/1.Slider/Topcrusingsails.jpg");
   background-position: center;

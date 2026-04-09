@@ -29,7 +29,8 @@
 
   position:relative;
   width:100%;
-  height: var(--slider-h);
+  height: 80vh;
+  min-height: 500px;
   margin:-1px 0 20px;
   overflow:hidden;
   background: #fff;

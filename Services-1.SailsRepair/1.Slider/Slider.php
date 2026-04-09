@@ -2,8 +2,8 @@
 .slideHome{
   position: relative;
   height: 80vh;
+  min-height: 500px;
   width: 100vw;
-  background-color: red;
   background-image: url("1.Slider/services.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -11,7 +11,8 @@
 }
 .gradientSlideHome{
   position: relative;
-  height: 100%;
+  height: 80vh;
+  min-height: 500px;
   width: 100%;
 
 }

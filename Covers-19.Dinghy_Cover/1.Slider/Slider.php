@@ -2,8 +2,8 @@
 .slideHome{
   position: relative;
   height: 80vh;
+  min-height: 500px;
   width: 100vw;
-  background-color: red;
   background-image: url("../Covers/2.Services/img/Dinghy_Cover.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -18,7 +18,8 @@
 
 @media  (orientation: landscape) {
   .slideHome{
-    height: 100vh;
+    height: 80vh;
+    min-height: 500px;
   }
 }
 </style>

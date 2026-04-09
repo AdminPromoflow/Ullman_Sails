@@ -2,6 +2,7 @@
 .slideHome{
   position: relative;
   height: 80vh;
+  min-height: 500px;
   width: 100vw;
   background-image: url("../Cuising-6.BlueLineSpinnakers-Customize/1.Slider/SlideHome2.jpg");
   background-position: center;
