@@ -99,7 +99,7 @@
             const deltaY = currentY - previousY;
 
             // Agregar aceleración
-            velocity += deltaY * 0.05;
+            velocity += deltaY * 1;
             // Aplicar desaceleración gradual
             velocity *= 0.0;
 
