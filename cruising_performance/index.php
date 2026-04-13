@@ -41,18 +41,10 @@
     <?php include "../general/menu/menu.php"?>
 
     <?php include "../general/charging/charging.php"; ?>
-    <?php include "../general/new_sail_quote/new_sail_quote.php"; ?>
-
-
-
-
-
-
+    <?php include "../cruising_performance/new_sail_quote/new_sail_quote.php"; ?>
     <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
-
     <?php include "../cruising_performance/0_slider/slider.php";?>
     <?php include "navigation/navigation.php"?>
-
     <?php include "1_introduction/introduction.php";?>
     <?php include "2_handling_and_performance/handling_and_performance.php";?>
     <?php include "3_design_and_construction/design_and_construction.php";?>

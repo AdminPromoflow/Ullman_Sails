@@ -78,6 +78,7 @@
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
+    <?php include "../Covers-20.Guardrail_and_Lifeline_Covers/new_sail_quote/new_sail_quote.php" ?>
     <?php include "../Covers-20.Guardrail_and_Lifeline_Covers/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>

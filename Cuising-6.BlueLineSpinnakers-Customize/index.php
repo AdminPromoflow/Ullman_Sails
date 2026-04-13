@@ -80,7 +80,7 @@
 
     <div id="searchHide" class="searchHide">
       <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
-    <?php include "../general/new_sail_quote/new_sail_quote.php" ?>
+    <?php include "../Cuising-6.BlueLineSpinnakers-Customize/new_sail_quote/new_sail_quote.php" ?>
     <?php include "1.Slider/Slider.php" ?>
     <?php include "navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>

@@ -42,7 +42,7 @@ $baseDir = __DIR__;
 <body>
   <?php include $baseDir . "/../general/menu/menu.php"; ?>
   <?php include $baseDir . "/../general/charging/charging.php"; ?>
-  <?php include $baseDir . "/../general/new_sail_quote/new_sail_quote.php"; ?>
+  <?php include $baseDir . "/../racing_race_series/new_sail_quote/new_sail_quote.php"; ?>
   <?php include $baseDir . "/../general/arrows_up_down/arrows_up_down.php"; ?>
 
   <?php include $baseDir . "/../racing_race_series/0_slider/slider.php"; ?>

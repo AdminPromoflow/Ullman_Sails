@@ -41,7 +41,7 @@
     <?php include "../general/menu/menu.php";?>
 
     <?php include "../general/charging/charging.php"; ?>
-    <?php include "../general/new_sail_quote/new_sail_quote.php"; ?>
+    <?php include "../cruising_navigator/new_sail_quote/new_sail_quote.php"; ?>
 
     <?php include "../general/arrows_up_down/arrows_up_down.php"; ?>
     <?php include "0_slider/slider.php";?>

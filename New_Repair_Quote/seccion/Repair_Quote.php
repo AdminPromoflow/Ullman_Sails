@@ -1,5 +1,28 @@
-<link rel="stylesheet" href="../New_Repair_Quote/seccion/Repair_Quote.css">
+<?php
+$css_file = __DIR__ . '/../New_Repair_Quote/seccion/Repair_Quote.css';
+$js_file  = __DIR__ . '/../New_Repair_Quote/seccion/Repair_Quote.js';
+
+$css_time = is_file($css_file) ? filemtime($css_file) : time();
+$js_time  = is_file($js_file) ? filemtime($js_file) : time();
+?>
+
+<link rel="stylesheet" href="../New_Repair_Quote/seccion/Repair_Quote.css?v=<?= $css_time ?>">
+
+
 <section class="seccion-form">
+  <div class="st-header">
+    <div class="img-title-sailing-content">
+      <img
+        src="../cruising_navigator/1_introduction/img/ullman_sails.png"
+        alt="Ullman Sails"
+        decoding="async"
+        width="240"
+        height="72"
+      >
+    </div>
+
+    <h1 id="sail_types_title" class="sail_types_title">Request a New Repair Quote</h1>
+  </div>
   <form>
     <h2>Request a Sail Repair Quote</h2>
     <p>To request a sail repair, service or laundry quote, please fill in the form below. <br>
@@ -120,3 +143,4 @@
 
   </form>
 </section>
+<script defer src="../New_Repair_Quote/seccion/Repair_Quote.js?v=<?= $js_time ?>"></script>

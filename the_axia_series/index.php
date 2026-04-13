@@ -40,7 +40,7 @@
 
     <div id="searchHide" class="searchHide">
       <?php // include "navigation/navigation.php"; ?>
-      <?php include "../general/new_sail_quote/new_sail_quote.php"; ?>
+      <?php include "../the_axia_series/new_sail_quote/new_sail_quote.php"; ?>
       <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
       <?php include "../the_axia_series/navigation/navigation.php" ?>
 

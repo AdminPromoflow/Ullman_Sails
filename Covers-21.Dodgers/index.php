@@ -78,6 +78,7 @@
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
+    <?php include "../Covers-21.Dodgers/new_sail_quote/new_sail_quote.php" ?>
     <?php include "../Covers-21.Dodgers/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>

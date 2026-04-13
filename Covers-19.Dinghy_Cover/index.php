@@ -78,6 +78,7 @@
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
+    <?php include "../Covers-19.Dinghy_Cover/new_sail_quote/new_sail_quote.php" ?>
     <?php include "../Covers-19.Dinghy_Cover/navigation/navigation.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>

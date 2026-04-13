@@ -69,6 +69,7 @@
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
     <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
+    <?php include "../SailTypes/new_sail_quote/new_sail_quote.php" ?>
 
     <?php include "navigation/navigation.php" ?>
 

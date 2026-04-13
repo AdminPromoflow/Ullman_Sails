@@ -41,7 +41,7 @@
     <?php include "../general/menu/menu.php"?>
 
     <?php include "../general/charging/charging.php"; ?>
-    <?php include "../general/new_sail_quote/new_sail_quote.php"; ?>
+    <?php include "../racing_fiberpath_series/new_sail_quote/new_sail_quote.php"; ?>
 
 
     <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
