@@ -61,6 +61,10 @@
   transition: transform 0.5s ease;
   position: relative;
 }
+.sail-types-scroller-container p{
+  text-decoration: none;
+  background-color: #000;
+}
 
 .sail-types-dots {
   position: relative;
