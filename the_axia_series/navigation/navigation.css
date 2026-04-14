@@ -32,9 +32,6 @@
   padding-inline: var(--nav-gutter);
   display: flex;
   background: #fafafa;
-
-  justify-content: center;   /* ✅ centra horizontal */
-  align-items: center;       /* ✅ centra vertical si aplica */
 }
 
 .nav-breadcrumbs{
