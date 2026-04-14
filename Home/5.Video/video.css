@@ -8,6 +8,7 @@
   grid-template-columns: 1.35fr .95fr; /* Left side wider */
   min-height: 760px;
   width: min(1400px, 100%);
+  padding: 2rem;
   margin: 0 auto;
   overflow: hidden;
   background: red;
