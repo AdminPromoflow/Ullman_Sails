@@ -8,10 +8,9 @@
   grid-template-columns: 1.35fr .95fr; /* Left side wider */
   min-height: 760px;
   width: min(1400px, 100%);
-  padding: 2rem;
   margin: 0 auto;
   overflow: hidden;
-  background: red;
+  background: #efefef;
   align-items: stretch;
 }
 
@@ -23,18 +22,17 @@
 .contactus-hero__content{
   position: relative;
   min-height: 760px;
-  background: #f3f3f3;
 }
 
 .contactus-hero__media{
-  background: #f3f3f3;
+  background: #8e8e8e;
   padding: 0; /* Remove inner spacing so the video fills the whole panel */
   display: flex;
   min-width: 0;
 }
 
 .contactus-hero__content{
-  background: red;
+  background: #f3f3f3;
   padding: clamp(2rem, 4vw, 4rem);
   display: flex;
   align-items: center;
