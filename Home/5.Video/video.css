@@ -34,7 +34,7 @@
 }
 
 .contactus-hero__content{
-  background: #f3f3f3;
+  background: red;
   padding: clamp(2rem, 4vw, 4rem);
   display: flex;
   align-items: center;
