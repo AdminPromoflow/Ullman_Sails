@@ -102,13 +102,7 @@
           <a href="../AboutUs-HeatherBooth/index.php" target="_blank"><h4>Heather Booth</h4> </a>
         </div>
       </div>
-      <div class="cart_perfiles_about">
-        <a href="../AboutUs-Diogo/index.php" target="_blank"><img src="../AboutUs/img/diogo.jpg" alt=""></a>
-        <div class="cart_text_about">
-          <a href="../AboutUs-Diogo/index.php" target="_blank"><h3>Sailmaker</h3></a>
-          <a href="../AboutUs-Diogo/index.php" target="_blank"><h4>Diogo Freitas</h4> </a>
-        </div>
-      </div>
+
     </div>
     <div class="boxSocialMedia">
       <div  class="socialMedia">
