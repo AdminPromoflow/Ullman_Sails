@@ -8,7 +8,7 @@
   --nav-muted: #5f6b7a;
 
   --nav-line: rgba(15,33,64,.14);
-  --nav-surface: rgba(255,255,255,.78);
+  --nav-surface: #fafafa;
 
   --nav-shadow: 0 18px 40px rgba(15,33,64,.05);
   --nav-radius: 18px;
@@ -44,7 +44,7 @@
   overflow: hidden;
   position: relative;
 
-  background: var(--nav-surface);
+  background: #fafafa;
 
   /* Helps with “glass” feel without being heavy */
   backdrop-filter: blur(10px);
