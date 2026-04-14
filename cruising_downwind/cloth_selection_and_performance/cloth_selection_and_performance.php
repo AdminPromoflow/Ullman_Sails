@@ -46,7 +46,7 @@ $imgVersion3 = is_file($imgFile3) ? filemtime($imgFile3) : null;
 
                 <figcaption class="nav-rotator__caption">
                   <span class="nav-rotator__capTitle">THE NAVIGATOR SERIES</span>
-                  <span class="nav-rotator__capSub" id="navCapSub">MAINSAIL</span>
+                  <span class="nav-rotator__capSub">MAINSAIL</span>
 
                   <div class="nav-rotator__dots" aria-hidden="true">
                     <span class="nav-rotator__dot is-active"></span>
