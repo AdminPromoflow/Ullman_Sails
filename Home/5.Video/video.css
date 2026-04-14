@@ -56,7 +56,7 @@
   margin: 0;
   overflow: hidden;
   border-radius: 0;
-  background: red;
+  background: rgba(0, 0, 0, .10);
   flex: 1 1 auto;
 
   opacity: 0;
