@@ -45,7 +45,7 @@ $jsTime = filemtime('../Home/5.Video/video.js');
       <div class="contactus-hero__actions">
         <a href="../ContactUs/index.php" class="contactus-btn contactus-btn--primary">Contact us</a>
         <a href="../New_Sail_Quote/index.php" class="contactus-btn contactus-btn--secondary">New Sail Quote</a>
-        <a href="../New_Repair_Quote/index.php" class="contactus-btn contactus-btn--secondary">New Repair Quote</a>
+        <a href="../New_Repair_Quote/index.php" class="contactus-btn contactus-btn--primary">New Repair Quote</a>
       </div>
 
     </div>
