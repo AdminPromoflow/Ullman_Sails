@@ -3,7 +3,7 @@ class NewSailQuote {
     container_bottom.addEventListener('click', function(){
       // alert("hola, entramos");
       const sailType = "Sail or Covers";
-      const title = "Services";
+      const title = "";
 
       const url = `../New_Sail_Quote/index.php?sailType=${encodeURIComponent(sailType)}&title=${encodeURIComponent(title)}`;
 
