@@ -81,6 +81,9 @@
     <div id="searchHide" class="searchHide">
     <?php include "../SailCare/1_slider/slider.php" ?>
     <?php include "../SailCare/navigation/navigation.php" ?>
+
+    <?php include "../SailCare/new_sail_quote/new_sail_quote.php" ?>
+
     <?php include "2.Services/Services.php" ?>
     <?php include "../SailCare/3.material/material.php" ?>
     <?php include "../SailCare/4.image/image.php" ?>
