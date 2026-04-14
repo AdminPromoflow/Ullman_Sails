@@ -22,10 +22,11 @@
 .contactus-hero__content{
   position: relative;
   min-height: 760px;
+  background: #f3f3f3;
 }
 
 .contactus-hero__media{
-  background: #8e8e8e;
+  background: #f3f3f3;
   padding: 0; /* Remove inner spacing so the video fills the whole panel */
   display: flex;
   min-width: 0;
