@@ -8,7 +8,7 @@
   --nav-muted: #5f6b7a;
 
   --nav-line: rgba(15,33,64,.14);
-  --nav-surface: rgba(255,255,255,.78);
+  --nav-surface: #fafafa;
 
   --nav-shadow: 0 18px 40px rgba(15,33,64,.05);
   --nav-radius: 18px;
@@ -28,16 +28,29 @@
   --nav-font: clamp(.92rem, 1.5vw, 1rem);
 }
 
+/* Section wrapper */
 .nav-section{
+  background: #fafafa;
+  padding-block: var(--nav-sec-py);
   padding-inline: var(--nav-gutter);
   display: flex;
-  background: #fafafa;
+
 }
 
+/* Card container */
 .nav-breadcrumbs{
   width: min(100%, var(--nav-container));
-  margin-inline: auto;       /* ✅ extra seguridad de centrado */
+
+  overflow: hidden;
+  position: relative;
+
+  background: #fafafa;
+
+  /* Helps with “glass” feel without being heavy */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
+
 /* Subtle premium highlight */
 .nav-breadcrumbs::before{
   content:"";
@@ -136,12 +149,13 @@
 }
 
 /* Fine-tuning for small mobiles */
-@media (max-width: 1100px){
+@media (max-width: 360px){
   .nav-section{
-    justify-content: center;
-    text-align: center;
+    padding-inline: 1rem;
   }
-
+  .nav-breadcrumbs__item:not(:last-child)::after{
+    margin-left: 0;
+  }
 }
 
 /* Tablet+ slightly more breathing room */
