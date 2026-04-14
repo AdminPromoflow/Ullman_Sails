@@ -37,6 +37,20 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
       </div>
     </article>
 
+
+    <!-- REAL 4 -->
+    <article class="home-slider__slide bg-cruising-2">
+      <div class="home-slider__caption">
+        <div class="home-slider__kicker">
+          <img src="../home/1_slider/img/ullman_sails.png" alt="">
+        </div>
+        <h1 class="home-slider__title">CRUISING SAILS</h1>
+        <h2 class="home-slider__subtitle">Trim fast, sail comfortably, enjoy every mile.</h2>
+        <div class="home-slider__line" aria-hidden="true"></div>
+        <a class="home-slider__btn" href="../Cruising/index.php">Click here</a>
+      </div>
+    </article>
+
     <!-- REAL 2 -->
     <article class="home-slider__slide bg-racing-2">
       <div class="home-slider__caption">
@@ -63,18 +77,8 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
       </div>
     </article>
 
-    <!-- REAL 4 -->
-    <article class="home-slider__slide bg-cruising-2">
-      <div class="home-slider__caption">
-        <div class="home-slider__kicker">
-          <img src="../home/1_slider/img/ullman_sails.png" alt="">
-        </div>
-        <h1 class="home-slider__title">CRUISING SAILS</h1>
-        <h2 class="home-slider__subtitle">Trim fast, sail comfortably, enjoy every mile.</h2>
-        <div class="home-slider__line" aria-hidden="true"></div>
-        <a class="home-slider__btn" href="../Cruising/index.php">Click here</a>
-      </div>
-    </article>
+
+
 
     <!-- REAL 5 -->
     <article class="home-slider__slide bg-axia-1">
