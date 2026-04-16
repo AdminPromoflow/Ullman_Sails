@@ -24,9 +24,9 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
           somewhere warmer. A small bit of kit that makes a big difference to life onboard.
         </p>
 
-        <div class="services__actions sr-item">
+        <!-- <div class="services__actions sr-item">
           <a class="btn" href="../ContactUs/index.php">Contact us</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="services__media services__media--windscoop sr-item" aria-hidden="true"></div>

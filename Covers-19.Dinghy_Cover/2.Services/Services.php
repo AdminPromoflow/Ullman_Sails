@@ -25,9 +25,9 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
           or breathable for storage, just give us a ring or drop us a line. We’ll get you sorted.
         </p>
 
-        <div class="services__actions sr-item">
+        <!-- <div class="services__actions sr-item">
           <a class="btn" href="../ContactUs/index.php">Contact us</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="services__media services__media--dinghycover sr-item" aria-hidden="true"></div>

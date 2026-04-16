@@ -54,9 +54,9 @@ $jsVer  = is_file($jsFile) ? filemtime($jsFile) : null;
           importance in extreme conditions.
         </p>
 
-        <div class="services__actions sr-item">
+        <!-- <div class="services__actions sr-item">
           <a class="btn" href="../ContactUs/index.php">Contact us</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="services__media services__media--wintercover sr-item" aria-hidden="true"></div>

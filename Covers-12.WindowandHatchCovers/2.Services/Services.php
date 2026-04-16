@@ -15,7 +15,7 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
     <div class="services__layout">
       <div class="services__copy">
- 
+
         <h1 id="services-title" class="services__title sr-item">Window and Hatch Covers</h1>
 
         <p class="services__lead sr-item">
@@ -25,9 +25,9 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
           darken interior spaces. Made to fit and easy to use — just let us know what you need.
         </p>
 
-        <div class="services__actions sr-item">
+        <!-- <div class="services__actions sr-item">
           <a class="btn" href="../ContactUs/index.php">Contact us</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="services__media services__media--windowhatch sr-item" aria-hidden="true"></div>

@@ -77,6 +77,7 @@
     <?php include "../general/menu/menu.php" ?>
 
     <div id="searchHide" class="searchHide">
+      <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
     <?php include "1.Slider/Slider.php" ?>
     <?php include "../Covers-14.WinterCover/new_sail_quote/new_sail_quote.php" ?>
     <?php include "../Covers-14.WinterCover/navigation/navigation.php" ?>
