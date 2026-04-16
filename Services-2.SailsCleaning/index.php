@@ -82,7 +82,7 @@
 
     <div id="searchHide" class="searchHide">
     <?php include "1.Slider/Slider.php" ?>
-    <?php include "../Services-2.SailsCleaning/navigation/navigation.php" ?>
+    <?php include "../Services-2.SailsCleaning/new_sail_quote/new_sail_quote.php" ?>
     <?php include "2.Services/Services.php" ?>
     </div>
     <?php include "../general/charging/charging.php"; ?>
