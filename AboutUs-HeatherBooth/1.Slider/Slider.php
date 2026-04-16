@@ -3,7 +3,6 @@
   position: relative;
   height: 80vh;
   width: 100vw;
-  background-color: red;
   background-image: url("AboutUs-Diogo/1.Slider/diogo.png");
   background-position: center;
   background-repeat: no-repeat;

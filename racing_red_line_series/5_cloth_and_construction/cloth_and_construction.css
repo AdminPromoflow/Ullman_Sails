@@ -16,7 +16,7 @@
   --ns-py: clamp(2.75rem, 6vw, 5rem);
 
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #fff;
+  background: #fafafa;
 
   padding-block: var(--ns-py);
   padding-inline: var(--ns-gutter);

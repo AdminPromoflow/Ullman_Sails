@@ -16,7 +16,7 @@
   position: relative;
   padding-block: var(--ph-py);
   padding-inline: var(--ph-gutter);
-  background: #F8F8FA;
+  background: #fafafa;
 }
 
 .ph-grid{

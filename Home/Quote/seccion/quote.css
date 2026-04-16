@@ -4,7 +4,6 @@
   display: flex;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
-  background-color: red;
   margin: 25px 0px;
   background-color: #F8F8FA;
 }
@@ -52,7 +51,6 @@
 /******************Botton************************/
 .link_quote{
   position: relative;
-  background-color: red;
   text-decoration: none;
   all: unset;
 }

@@ -11,9 +11,19 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 <section class="services" aria-labelledby="services-title">
 
   <div class="services__inner">
+    <div class="img-title">
+      <img
+        src="../cruising_navigator/1_introduction/img/ullman_sails.png"
+        alt="Ullman Sails"
+        decoding="async"
+        width="240"
+        height="72"
+      >
+    </div>
+    <h1 id="services-title" class="covers-title">Bespoke Boat Covers, Built to Last</h1>
 
     <header class="services__intro sr-item">
-      <h1 id="services-title">Bespoke Boat Covers, Built to Last</h1>
+
 
       <p class="services__lead">
         Whether you're protecting your sails, cockpit, or comfort on board, we make covers to suit your boat and how you use it.

@@ -17,9 +17,7 @@
 
 .news-home{
   position: relative;
-  background:
-    radial-gradient(circle at top right, rgba(0,85,152,.08), transparent 26%),
-    linear-gradient(180deg, #fbfcfe 0%, var(--ull-bg) 100%);
+  background-color: #fafafa;
   padding: clamp(2.5rem, 5vw, 5rem) 0;
   font-family: 'Poppins', sans-serif;
 }

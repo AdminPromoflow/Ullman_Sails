@@ -33,7 +33,6 @@
   grid-template-columns: 1.15fr .85fr;
   gap: clamp(14px, 2.5vw, 28px);
   align-items: center;
-  background-color: red;
 }
 
 .services__title{

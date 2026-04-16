@@ -1,27 +1,35 @@
 /* =========================
-   SAIL TYPES — cards stronger + CTA + hover + load animation
+   SAIL TYPES — cards + CTA + hover + load animation
 ========================= */
 
 .sail-types{
-  --cs-ink:#0f2140;
-  --cs-muted:#5f6b7a;
-  --cs-border:rgba(15,33,64,.10);
+  --cs-ink: #0f2140;
+  --cs-muted: #5f6b7a;
+  --cs-border: rgba(15, 33, 64, .10);
 
   --st-container: 72rem;
   --st-gutter: clamp(1rem, 4vw, 3rem);
   --st-py: clamp(2.75rem, 6vw, 5rem);
 
-  --st-card-bg: #ffffff;
-  --st-card-border: rgba(15,33,64,.12);
-  --st-card-shadow: 0 18px 50px rgba(15,33,64,.12);
-  --st-card-shadow-hover: 0 14px 10px rgba(15,33,64,.16);
+  --st-card-bg: rgba(255, 255, 255, .6);
+  --st-card-bg-hover: rgba(255, 255, 255, .82);
+  --st-card-border: rgba(15, 33, 64, .12);
+  --st-card-border-hover: rgba(15, 33, 64, .22);
+  --st-card-shadow: 0 18px 50px rgba(15, 33, 64, .12);
+  --st-card-shadow-hover: 0 14px 10px rgba(15, 33, 64, .16);
+
+  --st-title: #005598;
+  --st-btn-light: rgb(0, 85, 152);
+  --st-btn-dark: rgb(32, 46, 82);
+  --st-btn-text: #fafafa;
+  --st-btn-border: rgba(255, 255, 255, 0.18);
+  --st-btn-shadow: 0 10px 24px rgba(15, 33, 64, .12);
+
   --st-radius: 28px;
 
   position: relative;
-
-  background: #EEF1F6;
-  background: linear-gradient(180deg, rgba(238, 241, 246, 1) 0%, rgba(255, 255, 255, 1) 88%);
   text-align: center;
+  background: #fafafa;
 }
 
 .st-wrap{
@@ -50,15 +58,13 @@
 }
 
 .sail_types_title{
-  color: #005598;
+  max-width: 800px;
+  margin: 0.5rem auto 1.5rem;
+  color: var(--st-title);
   font-size: clamp(3rem, 4.5vw, 6rem);
   line-height: 1.1;
   font-weight: 600;
-  margin: 0.5rem 0 1.5rem 0;
   letter-spacing: -0.02em;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
   text-transform: none;
   z-index: 1;
 
@@ -73,17 +79,18 @@
   width: clamp(90px, 10vw, 140px);
   height: 2px;
   margin: 18px auto 0;
-  background: linear-gradient(90deg, transparent, rgba(15,33,64,.45), transparent);
+  background: linear-gradient(90deg, transparent, rgba(15, 33, 64, .45), transparent);
   transform: scaleX(.6);
   transform-origin: center;
   opacity: 0;
   transition: transform .9s ease, opacity .9s ease;
 }
 
-/* visible state */
+/* Visible state */
+
 .sail-types.is-visible .img-title-sailing-content{
   opacity: 1;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
   transition-delay: .05s;
 }
 
@@ -99,26 +106,33 @@
   transition-delay: .28s;
 }
 
-/* GRID */
+/* =========================
+   Grid
+========================= */
+
 .st-grid{
-  padding: 0;
-  list-style: none;
   display: grid;
-  gap: clamp(1.25rem, 3vw, 2.1rem);
   grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   justify-items: center;
   align-items: stretch;
+  gap: clamp(1.25rem, 3vw, 2.1rem);
+  padding: 0;
+  list-style: none;
 }
+
+/* =========================
+   Card
+========================= */
 
 .st-card{
   width: 100%;
   max-width: 26rem;
-  text-align: center;
-  background: rgba(255, 255, 255, .6);
-  padding: clamp(1.1rem, 2.2vw, 1.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: clamp(1.1rem, 2.2vw, 1.5rem);
+  text-align: center;
+  background: var(--st-card-bg);
   border: 1px solid var(--st-card-border);
   box-shadow: var(--st-card-shadow);
   backdrop-filter: blur(8px);
@@ -146,8 +160,8 @@
 .st-card:focus-within{
   transform: translateY(-6px);
   box-shadow: var(--st-card-shadow-hover);
-  border-color: rgba(15,33,64,.22);
-  background: rgba(255,255,255,.82);
+  border-color: var(--st-card-border-hover);
+  background: var(--st-card-bg-hover);
 }
 
 .st-icon{
@@ -157,81 +171,77 @@
 }
 
 .st-icon-img{
+  display: block;
   width: clamp(170px, 18vw, 220px);
   height: clamp(170px, 18vw, 220px);
-  display: block;
   object-fit: contain;
   border-radius: 30px;
 }
 
 .st-card-title{
-  margin: 0;
-  font-size: clamp(1.15rem, 2vw, 1.55rem);
-  font-weight: 500;
-  line-height: 1.2;
   max-width: 28ch;
-  color: rgb(0, 85, 152);
-  margin-inline: auto;
+  margin: 0 auto;
+  color: var(--st-title);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 .st-card-text{
+  max-width: 34ch;
   margin: clamp(.65rem, 1.6vw, .9rem) auto 0;
+  color: var(--cs-muted);
   font-size: clamp(1rem, 1.6vw, 1.05rem);
   line-height: 1.65;
-  color: var(--cs-muted);
-  max-width: 34ch;
 }
+
+/* =========================
+   Buttons
+========================= */
 
 .st-btn{
   display: inline-block;
   width: max-content;
   margin-top: 1.2rem;
   padding: 3px 20px;
-  color: #fafafa;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: var(--btn-shadow);
+  color: var(--st-btn-text);
+  border: 1px solid var(--st-btn-border);
+  box-shadow: var(--st-btn-shadow);
   font-size: 1.3em;
   font-weight: 300;
   text-decoration: none;
   cursor: pointer;
-  transition:
-    all .4s;
+  transition: transform .4s, background-color .4s;
 }
+
 .st-btn-dark{
-  background: rgb(32,46,82);
+  background: var(--st-btn-dark);
 }
+
 .st-btn-clear{
-  background: rgb(0, 85, 152);
+  background: var(--st-btn-light);
 }
+
 .st-btn-dark:hover{
-  background: rgb(0, 85, 152);
-  transform: translateY(-2px)!important;
-
+  background: var(--st-btn-light);
+  transform: translateY(-2px) !important;
 }
+
 .st-btn-clear:hover{
-  background: rgb(32,46,82);
-  transform: translateY(-2px)!important;
+  background: var(--st-btn-dark);
+  transform: translateY(-2px) !important;
 }
 
-
-
-/* ---------------------------------------------------------
-   Small button motion on card hover
-   --------------------------------------------------------- */
+/* Small button motion on card hover */
 
 .st-card:hover .st-btn,
 .st-card:focus-within .st-btn{
   transform: translateY(2px);
-  transition: all .4s;
 }
 
-
-
-@media (max-width: 360px){
-  .sail-types{
-    padding-inline: 1rem;
-  }
-}
+/* =========================
+   Responsive
+========================= */
 
 @media (max-width: 1100px){
   .st-grid{
@@ -252,6 +262,16 @@
     margin-bottom: 1.1rem;
   }
 }
+
+@media (max-width: 360px){
+  .sail-types{
+    padding-inline: 1rem;
+  }
+}
+
+/* =========================
+   Reduced motion
+========================= */
 
 @media (prefers-reduced-motion: reduce){
   .sail-types *,
