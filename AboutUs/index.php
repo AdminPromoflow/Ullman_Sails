@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body class="aboutUs">
+    <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
     <?php include "../general/menu/menu.php" ?>
     <?php include "../AboutUs/navigation/navigation.php" ?>
     <?php include "../AboutUs/seccion/AboutUs.php" ?>
