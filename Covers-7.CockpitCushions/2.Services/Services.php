@@ -54,9 +54,9 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
           personal flair.
         </p>
 
-        <div class="services__actions sr-item">
+        <!-- <div class="services__actions sr-item">
           <a class="btn" href="../ContactUs/index.php">Contact Us</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="services__media services__media--cockpitcushions sr-item" aria-hidden="true"></div>

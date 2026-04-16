@@ -22,9 +22,9 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
           tailored to fit neatly in your cockpit. Let us know what you're looking for — we’re happy to help. <br><br>
         </p>
 
-        <div class="services__actions sr-item">
+        <!-- <div class="services__actions sr-item">
           <a class="btn" href="../ContactUs/index.php">Contact Us</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="services__media services__media--wheelbinnacle sr-item" aria-hidden="true"></div>

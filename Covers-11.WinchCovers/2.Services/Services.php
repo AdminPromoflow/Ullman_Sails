@@ -45,9 +45,9 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
           marina stays to reduce corrosion and mechanical issues over time.
         </p>
 
-        <div class="services__actions sr-item">
+        <!-- <div class="services__actions sr-item">
           <a class="btn" href="../ContactUs/index.php">Contact us</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="services__media services__media--winchcovers sr-item" aria-hidden="true"></div>
