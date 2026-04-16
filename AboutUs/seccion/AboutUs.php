@@ -3,7 +3,9 @@
   <!--  **********************Imagen************************ -->
   <div class="img_about">
   </div>
-  <div class="services__inner">
+
+  <!--  **********************text aboutUs************************ -->
+  <div class="text_aboutUs">
     <div class="img-title">
       <img
         src="../cruising_navigator/1_introduction/img/ullman_sails.png"
@@ -14,10 +16,6 @@
       >
     </div>
     <h1 id="services-title" class="covers-title">About Us</h1>
-
-  <!--  **********************text aboutUs************************ -->
-  <div class="text_aboutUs">
-  
     <p>
     Ullman Sails is a global sailmaking superpower, but we would hate to think that's all we are.<br><br>
     A trip to the sailmaker used to mean a visit to the sail loft — a few pleasant
