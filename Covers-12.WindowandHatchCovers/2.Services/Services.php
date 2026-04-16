@@ -8,7 +8,6 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
 <link rel="stylesheet" href="../Covers/2.Services/Services.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
 
-<script defer src="../Covers/2.Services/Services.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
 
 <section class="services services--single" aria-labelledby="services-title" data-sr-reveal>
   <div class="services__inner">
@@ -35,3 +34,4 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
   </div>
 </section>
+<script defer src="../Covers/2.Services/Services.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
