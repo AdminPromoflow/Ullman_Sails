@@ -27,9 +27,9 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
           change the setup, we can help. Just give us a ring.<br><br>
         </p>
 
-        <div class="services__actions sr-item">
+        <!-- <div class="services__actions sr-item">
           <a class="btn" href="../ContactUs/index.php">Contact us</a>
-        </div>
+        </div> -->
       </div>
 
       <div class="services__media services__media--sprayhood sr-item" aria-hidden="true"></div>
