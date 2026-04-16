@@ -125,10 +125,59 @@
   .comeBack:hover{
     text-decoration: underline !important;
   }
+  .img-title{
+    width: clamp(140px, 28vw, 240px);
+    margin: 0 auto 1rem;
+    transform: translate3d(0, 12px, 0);
+    transition: transform .45s ease, opacity .45s ease;
+  }
+
+  .img-title img{
+    display: block;
+    width: 80%;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .covers-title{
+    color: #005598;
+    font-size: clamp(3rem, 4.5vw, 6rem);
+    line-height: 1.1;
+    font-weight: 600;
+    margin: auto;
+    text-align: center;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+    text-transform: none;
+    z-index: 1;
+  }
+
+  .covers-title::after{
+    content: "";
+    display: block;
+    width: clamp(90px, 10vw, 140px);
+    height: 2px;
+    margin: 18px auto 0;
+    background: red;
+    transform: scaleX(.6);
+    transform-origin: center;
+    opacity: 0;
+    transition: transform .9s ease, opacity .9s ease;
+  }
 
 </style>
 <section class="contactUs">
-  <h1 class="contactUsTitle">Contact us</h1>
+  <div class="img-title">
+    <img
+      src="../cruising_navigator/1_introduction/img/ullman_sails.png"
+      alt="Ullman Sails"
+      decoding="async"
+      width="240"
+      height="72"
+    >
+  </div>
+  <h1 id="services-title" class="covers-title">Contact us</h1>
+
   <div class="contactUsContainer">
     <div class="contactUsBox">
       <h3>Your contact info</h3>

@@ -86,6 +86,7 @@
     </style>
     <?php include "../general/menu/menu.php" ?>
     <div id="searchHide" class="searchHide">
+      <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
     <?php include "../ContactUs/navigation/navigation.php" ?>
     <?php include "../ContactUs/Contactus/Contactus.php" ?>
     </div>
