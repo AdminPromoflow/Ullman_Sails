@@ -21,6 +21,9 @@ class EmailSender {
 
       $mail = new PHPMailer(true);
 
+      echo json_encode("Entramos3");exit;
+
+
       try {
           $mail->isSMTP();
           $mail->SMTPDebug = 0;

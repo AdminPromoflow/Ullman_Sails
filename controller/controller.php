@@ -69,7 +69,6 @@ class ApiHandlerSendForms {
         );
 
         $emailSender = new EmailSender();
-        echo json_encode("Entramos2");exit;
 
         $emailSent = $emailSender->sendEmailContactUs($data);
         echo json_encode($emailSent);
