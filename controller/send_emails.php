@@ -38,7 +38,7 @@ class EmailSender {
 
       // Set your SMTP username and password
       $mail->Username = 'admin@promoflow.net';
-      $mail->Password = '32skiff32!CI';
+      $mail->Password = '32skiff32CI!';
 
       // Set the sender's email address and name
       $mail->setFrom('aleinarossui@gmail.com', 'Ian Southworth');
