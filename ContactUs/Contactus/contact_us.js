@@ -75,9 +75,9 @@ class ContactUs {
       .then((response) => {
         const data = JSON.parse(response);
 
-        if (data.success) {
+      //  if (data.success) {
           alert(data.message);
-        }
+      //  }
       })
       .catch((error) => {
         console.error("Error:", error);
