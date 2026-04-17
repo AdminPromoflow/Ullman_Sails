@@ -25,7 +25,7 @@ class EmailSender {
       $mail->isSMTP();
       $mail->SMTPDebug = 0;
       $mail->Host = 'smtp.hostinger.com';
-      $mail->Port = 587;
+      $mail->Port = 465;
       $mail->SMTPAuth = true;
       $mail->Username = 'admin@promoflow.net';
       $mail->Password   = '32skiff32CI!';
