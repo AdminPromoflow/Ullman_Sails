@@ -4,7 +4,7 @@
   height: 80vh;
   min-height: 500px;
   width: 100vw;
-  background-image: url("../Covers-21.Dodgers/1.Slider/img/dodger.png");
+  background-image: url("../Covers-21.Dodgers/1.Slider/img/dodger.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
