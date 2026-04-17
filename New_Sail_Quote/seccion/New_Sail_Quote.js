@@ -40,10 +40,11 @@ class NewSailQuote {
 
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      if (this.validateMainFields()) {
-        this.requestNewSailQuote();
-      }
+      alert("This action will be implemented once the page has been uploaded.");
+      // if (this.validateMainFields()) {
+      // //  this.requestNewSailQuote();
+      //
+      // }
     });
   }
 

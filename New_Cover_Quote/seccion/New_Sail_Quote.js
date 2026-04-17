@@ -36,10 +36,11 @@ class NewCoverQuote {
 
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
+      alert("This action will be implemented once the page has been uploaded.");
 
-      if (this.validateMainFields()) {
-        this.requestNewCoverQuote();
-      }
+      // if (this.validateMainFields()) {
+      // //  this.requestNewCoverQuote();
+      // }
     });
   }
 

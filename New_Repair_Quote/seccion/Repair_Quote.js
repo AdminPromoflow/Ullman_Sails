@@ -45,10 +45,11 @@ class NewRepairQuote {
 
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
+      alert("This action will be implemented once the page has been uploaded.");
 
-      if (this.validateMainFields()) {
-        this.requestNewRepairQuote();
-      }
+      // if (this.validateMainFields()) {
+      // //  this.requestNewRepairQuote();
+      // }
     });
   }
 
