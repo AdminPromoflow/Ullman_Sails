@@ -72,7 +72,7 @@ class ContactUs {
       body: formData
     })
       .then((response) => response.json())
-      .then((data) => {
+      .then((response) => {
         const data = JSON.parse(response);
 
         if (data.success) {
