@@ -66,7 +66,7 @@ class ContactUs {
     })
       .then((response) => response.json())
       .then((data) => {
-        alert(data);
+        alert(JSON.stringify(data));
       })
       .catch((error) => {
         console.error("Error:", error);
