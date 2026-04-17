@@ -88,7 +88,7 @@
     <div id="searchHide" class="searchHide">
       <?php include "../general/arrows_up_down/arrows_up_down.php" ?>
     <?php include "../ContactUs/navigation/navigation.php" ?>
-    <?php include "../ContactUs/Contactus/Contactus.php" ?>
+    <?php include "../ContactUs/Contactus/contact_us.php" ?>
     </div>
     <?php include "../general/charging/charging.php"; ?>
 
