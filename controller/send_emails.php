@@ -21,7 +21,6 @@ class EmailSender {
 
       $mail = new PHPMailer(true);
 
-      echo json_encode("Entramos3");exit;
 
 
       try {
@@ -43,6 +42,9 @@ class EmailSender {
 
           $mail->Subject = 'New customer on Lanyards For You';
           $mail->isHTML(true);
+
+          echo json_encode("Entramos4");exit;
+
 
           $recipientMessage = "
           <div style='margin:0; padding:40px 0; background:#f5f7fa; width:100%;'>
