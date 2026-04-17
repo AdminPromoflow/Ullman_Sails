@@ -44,7 +44,7 @@ class EmailSender {
           <div style='margin:0; padding:40px 0; background:#f5f7fa; width:100%;'>
             <div style='width:92%; max-width:760px; margin:0 auto; background:#ffffff; border:1px solid #d9e1ea; box-shadow:0 18px 45px rgba(32,46,82,.10); overflow:hidden;'>
               <div style='background:#202E52; padding:26px 32px; text-align:left;'>
-                <img src='https://lanyardsforyou.com/controller/assets/img/send-emails/password-recovery/logo.png' alt='Ullman Sails' style='display:block; max-width:220px; height:auto;'>
+                <img src='https://lanyardsforyou.com/ullman_sails/general/menu/img/logo.png' alt='Ullman Sails' style='display:block; max-width:220px; height:auto;'>
               </div>
               <div style='padding:40px 32px 18px 32px;'>
                 <p style='margin:0; font-family:Arial, sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#005598; font-weight:700;'>
