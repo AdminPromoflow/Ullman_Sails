@@ -50,7 +50,7 @@ class ApiHandlerSendForms {
     }
 
     private function handleContactUs() {
-      echo "Entramos";exit;
+      echo json_encode("Entramos");exit;
         $contactName = isset($_POST['contactName']) ? $_POST['contactName'] : null;
         $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : null;
         $contactLocation = isset($_POST['contactLocation']) ? $_POST['contactLocation'] : null;
