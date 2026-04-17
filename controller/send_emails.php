@@ -24,8 +24,7 @@ class EmailSender {
       // Configure PHPMailer to use SMTP
       $mail->isSMTP();
 
-      // Enable SMTP debugging (set to 0 in production)
-      $mail->SMTPDebug = 2;
+      $mail->SMTPDebug = 0;
 
       // Set the Hostinger SMTP server
       $mail->Host = 'smtp.hostinger.com';
@@ -41,13 +40,13 @@ class EmailSender {
       $mail->Password = '32skiff32CI!';
 
       // Set the sender's email address and name
-      $mail->setFrom('admin@promoflow.com', 'Ian Southworth');
+      $mail->setFrom('admin@lanyardsforyou.com', 'Ian Southworth');
 
       // Add a reply-to address
       $mail->addReplyTo('admin@promoflow.net', 'Ian Southworth');
 
       // Add recipient's email address and name
-      $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
+      $mail->addAddress('alerozochiquiza@gmail.com', 'Aleja');
 
       // Set the email subject
       $mail->Subject = 'New customer on Lanyards For You';
