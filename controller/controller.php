@@ -42,6 +42,7 @@ class ApiHandlerSendForms {
             "contactNumber" => $contactNumber,
             "contactLocation" => $contactLocation,
             "contactEmail" => $contactEmail,
+            "contactMessage" => $contactMessage,
             "file" => $file
         );
 

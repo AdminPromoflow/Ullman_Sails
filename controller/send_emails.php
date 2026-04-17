@@ -16,6 +16,7 @@ class EmailSender {
       $contactEmail = isset($data->contactEmail) ? $data->contactEmail : '';
       $contactNumber = isset($data->contactNumber) ? $data->contactNumber : '';
       $contactLocation = isset($data->contactLocation) ? $data->contactLocation : '';
+      $contactMessage = isset($data->contactMessage) ? $data->contactMessage : '';
       $file = isset($data->file) ? $data->file : null;
 
       $mail = new PHPMailer(true);
@@ -33,7 +34,7 @@ class EmailSender {
           $mail->CharSet = 'UTF-8';
           $mail->Encoding = 'base64';
 
-          $mail->setFrom('admin@promoflow.net', 'Ian Southworth');
+          $mail->setFrom('admin@promoflow.net', 'Jon Pegg');
           $mail->addReplyTo('admin@promoflow.net', 'Ian Southworth');
           $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
 
@@ -71,9 +72,13 @@ class EmailSender {
                     <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Phone</p>
                     <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$contactNumber</p>
                   </div>
-                  <div style='padding:18px 22px;'>
+                  <div style='padding:18px 22px; border-bottom:1px solid #dbe3ec;'>
                     <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Location</p>
                     <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$contactLocation</p>
+                  </div>
+                  <div style='padding:18px 22px;'>
+                    <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Message</p>
+                    <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$contactMessage</p>
                   </div>
                 </div>
               </div>
@@ -82,7 +87,7 @@ class EmailSender {
           ";
 
           $mail->Body = $recipientMessage;
-          $mail->AltBody = "New customer enquiry\nName: $contactName\nEmail: $contactEmail\nPhone: $contactNumber\nLocation: $contactLocation";
+          $mail->AltBody = "New customer enquiry\nName: $contactName\nEmail: $contactEmail\nPhone: $contactNumber\nLocation: $contactLocation\nMessage: $contactMessage";
 
           if ($file && isset($file['tmp_name']) && $file['tmp_name'] !== '') {
               $mail->addAttachment($file['tmp_name'], $file['name']);

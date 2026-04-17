@@ -5,6 +5,10 @@ class ContactUs {
     this.contactNumber = document.getElementById('contactNumber');
     this.contactLocation = document.getElementById('contactLocation');
     this.contactEmail = document.getElementById('contactEmail');
+    this.contactMessage = document.getElementById('contactMessage');
+
+
+
 
     this.initMap();
 
@@ -54,6 +58,9 @@ class ContactUs {
     formData.append('contactNumber', this.contactNumber.value);
     formData.append('contactLocation', this.contactLocation.value);
     formData.append('contactEmail', this.contactEmail.value);
+    formData.append('contactMessage', this.contactMessage.value);
+
+
 
     if (fileInput.files.length > 0) {
       var file = fileInput.files[0];
