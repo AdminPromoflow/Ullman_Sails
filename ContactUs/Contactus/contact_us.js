@@ -73,7 +73,7 @@ class ContactUs {
     })
       .then((response) => response.json())
       .then((data) => {
-        const data = JSON.parse(text);
+        const data = JSON.parse(response);
 
         if (data.success) {
           alert(data.message);

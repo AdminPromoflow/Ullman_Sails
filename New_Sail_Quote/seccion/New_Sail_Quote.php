@@ -8,8 +8,6 @@ $js_time  = is_file($js_file) ? filemtime($js_file) : time();
 
 <link rel="stylesheet" href="../New_Sail_Quote/seccion/New_Sail_Quote.css?v=<?= $css_time ?>">
 
-
-
 <section class="seccion-form">
   <div class="st-header">
     <div class="img-title-sailing-content">
@@ -25,7 +23,7 @@ $js_time  = is_file($js_file) ? filemtime($js_file) : time();
     <h1 id="sail_types_title" class="sail_types_title">Request a New Sail Quote</h1>
   </div>
 
-  <form action="#" method="post">
+  <form id="new_sail_quote_form" action="#" method="post">
     <p>
       To request a new sail quote, please fill in the form below.<br>
       We will not use this information to send you marketing information unless you give us permission to.<br>
@@ -83,10 +81,10 @@ $js_time  = is_file($js_file) ? filemtime($js_file) : time();
         <span class="field_label">Contact me by</span>
         <div class="checkbox-group">
           <label class="checkbox-label">
-            <input type="checkbox" class="checkbox"> Phone
+            <input id="contact_by_phone" type="checkbox" class="checkbox"> Phone
           </label>
           <label class="checkbox-label">
-            <input type="checkbox" class="checkbox"> Email
+            <input id="contact_by_email" type="checkbox" class="checkbox"> Email
           </label>
         </div>
       </div>
@@ -130,7 +128,7 @@ $js_time  = is_file($js_file) ? filemtime($js_file) : time();
 
     <div class="form_input newsletter-field">
       <label class="checkbox-label">
-        <input type="checkbox" class="checkbox">
+        <input id="newsletter" type="checkbox" class="checkbox">
         Please send me the Ullman Sails newsletter.
       </label>
     </div>
@@ -142,8 +140,9 @@ $js_time  = is_file($js_file) ? filemtime($js_file) : time();
     </p>
 
     <div class="form_input form_submit">
-      <input class="submit" type="submit" value="Send Quote">
+      <input id="btnNewSailQuote" class="submit" type="submit" value="Send Quote">
     </div>
   </form>
 </section>
+
 <script defer src="../New_Sail_Quote/seccion/New_Sail_Quote.js?v=<?= $js_time ?>"></script>
