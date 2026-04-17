@@ -37,17 +37,17 @@ class EmailSender {
       $mail->SMTPAuth = true;
 
       // Set your SMTP username and password
-      $mail->Username = 'admin@promoflow.net';
+      $mail->Username = 'admin@lanyardsforyou.com';
       $mail->Password = '32skiff32CI!';
 
       // Set the sender's email address and name
-      $mail->setFrom('aleinarossui@gmail.com', 'Ian Southworth');
+      $mail->setFrom('admin@promoflow.com', 'Ian Southworth');
 
       // Add a reply-to address
       $mail->addReplyTo('admin@promoflow.net', 'Ian Southworth');
 
       // Add recipient's email address and name
-      $mail->addAddress('alerozochiquiza@gmail.com', 'Aleja');
+      $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
 
       // Set the email subject
       $mail->Subject = 'New customer on Lanyards For You';
