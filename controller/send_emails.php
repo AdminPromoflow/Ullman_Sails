@@ -41,7 +41,7 @@ class EmailSender {
       $mail->addReplyTo('admin@promoflow.net', 'Ian Southworth');
 
       // Add recipient's email address and name
-      $mail->addAddress('alerozochiquiza@gmail.com', 'Aleja');
+      $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
 
       // Set the email subject
       $mail->Subject = 'New customer on Lanyards For You';
