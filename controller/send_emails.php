@@ -37,13 +37,12 @@ class EmailSender {
           $mail->Encoding = 'base64';
 
           $mail->setFrom('admin@promoflow.net', 'Jon Pegg');
-          $mail->addReplyTo('jon@ullmansails.co.uk', 'Jon Pegg');
+          $mail->addReplyTo('jons@ullmansails.co.uk', 'Jon Pegg');
           $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
 
           $mail->Subject = 'New customer on Lanyards For You';
           $mail->isHTML(true);
 
-          echo json_encode("Entramos4");exit;
 
 
           $recipientMessage = "
@@ -97,6 +96,7 @@ class EmailSender {
           if ($file && isset($file['tmp_name']) && $file['tmp_name'] !== '') {
               $mail->addAttachment($file['tmp_name'], $file['name']);
           }
+          echo json_encode("Entramos5");exit;
 
           $mail->send();
 
