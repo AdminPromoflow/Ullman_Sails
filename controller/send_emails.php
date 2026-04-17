@@ -29,7 +29,7 @@ class EmailSender {
       $mail->SMTPAuth = true;
       $mail->Username = 'admin@promoflow.net';
       $mail->Password   = '32skiff32CI!';
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL
 
       $mail->CharSet    = 'UTF-8';
       $mail->Encoding   = 'base64';
