@@ -24,15 +24,23 @@ class EmailSender {
       // Configure PHPMailer to use SMTP
       $mail->isSMTP();
       $mail->SMTPDebug = 0;
-      $mail->Host       = 'smtp.hostinger.com';
-      $mail->Port       = 465; // STARTTLS
-      $mail->SMTPAuth   = true;
-      $mail->Username   = 'admin@promoflow.com';
+      $mail->Host = 'smtp.hostinger.com';
+      $mail->Port = 587;
+      $mail->SMTPAuth = true;
+      $mail->Username = 'admin@promoflow.net';
       $mail->Password   = '32skiff32CI!';
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
       $mail->CharSet    = 'UTF-8';
       $mail->Encoding   = 'base64';
+
+
+
+
+
+
+
+
 
       // Set the sender's email address and name
       $mail->setFrom('admin@lanyardsforyou.com', 'Ian Southworth');
