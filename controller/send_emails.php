@@ -25,19 +25,19 @@ class EmailSender {
       $mail->isSMTP();
 
       // Enable SMTP debugging (set to 0 in production)
-      $mail->SMTPDebug = 0;
+      $mail->SMTPDebug = 2;
 
       // Set the Hostinger SMTP server
       $mail->Host = 'smtp.hostinger.com';
 
       // Configure the SMTP port (587 for STARTTLS, 465 for SSL)
-      $mail->Port = 587;
+      $mail->Port = 465;
 
       // Enable SMTP authentication
       $mail->SMTPAuth = true;
 
       // Set your SMTP username and password
-      $mail->Username = 'admin@lanyardsforyou.com';
+      $mail->Username = 'admin@promoflow.com';
       $mail->Password = '32skiff32CI!';
 
       // Set the sender's email address and name
