@@ -33,6 +33,7 @@ class ApiHandlerSendForms {
         $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : null;
         $contactLocation = isset($_POST['contactLocation']) ? $_POST['contactLocation'] : null;
         $contactEmail = isset($_POST['contactEmail']) ? $_POST['contactEmail'] : null;
+        $contactMessage = isset($_POST['contactMessage']) ? $_POST['contactMessage'] : null;
 
         $file = isset($_FILES['file']) ? $_FILES['file'] : null;
 
