@@ -73,10 +73,11 @@ class ContactUs {
     })
       .then((response) => response.json())
       .then((response) => {
+        alert(response);
         const data = JSON.parse(response);
 
       //  if (data.success) {
-          alert(data.message);
+          //alert(data.message);
       //  }
       })
       .catch((error) => {
