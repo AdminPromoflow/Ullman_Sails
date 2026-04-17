@@ -33,7 +33,7 @@ class EmailSender {
           $mail->CharSet = 'UTF-8';
           $mail->Encoding = 'base64';
 
-          $mail->setFrom('admin@promoflow.com', 'Ian Southworth');
+          $mail->setFrom('admin@promoflow.net', 'Ian Southworth');
           $mail->addReplyTo('admin@promoflow.net', 'Ian Southworth');
           $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
 
