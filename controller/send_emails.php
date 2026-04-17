@@ -37,7 +37,7 @@ class EmailSender {
       $mail->SMTPAuth = true;
 
       // Set your SMTP username and password
-      $mail->Username = 'admin@lanyardsforyou.com';
+      $mail->Username = 'admin@promoflow.net';
       $mail->Password = '32skiff32!CI';
 
       // Set the sender's email address and name
