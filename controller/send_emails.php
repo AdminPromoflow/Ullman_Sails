@@ -25,10 +25,10 @@ class EmailSender {
       $mail->isSMTP();
       $mail->SMTPDebug = 0;
       $mail->Host       = 'smtp.hostinger.com';
-      $mail->Port       = 587; // STARTTLS
+      $mail->Port       = 465; // STARTTLS
       $mail->SMTPAuth   = true;
-      $mail->Username   = 'admin@lanyardsforyou.com';
-      $mail->Password   = '32skiff32!CI';
+      $mail->Username   = 'admin@promoflow.com';
+      $mail->Password   = '32skiff32CI!';
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
       $mail->CharSet    = 'UTF-8';
