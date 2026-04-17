@@ -35,7 +35,7 @@ class EmailSender {
           $mail->Encoding = 'base64';
 
           $mail->setFrom('admin@promoflow.net', 'Jon Pegg');
-          $mail->addReplyTo('admin@promoflow.net', 'Ian Southworth');
+          $mail->addReplyTo('jon@ullmansails.co.uk', 'Jon Pegg');
           $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
 
           $mail->Subject = 'New customer on Lanyards For You';
@@ -97,7 +97,7 @@ class EmailSender {
 
           return array(
               "success" => true,
-              "message" => "Email sent successfully"
+              "message" => "Your message has been sent successfully. One of our advisers will be in touch with you shortly."
           );
       } catch (Exception $e) {
           return array(
