@@ -96,7 +96,7 @@ class EmailSender {
           if ($file && isset($file['tmp_name']) && $file['tmp_name'] !== '') {
               $mail->addAttachment($file['tmp_name'], $file['name']);
           }
-          echo json_encode("Entramos5");exit;
+        //   echo json_encode("Entramos5");exit;
 
           $mail->send();
 
