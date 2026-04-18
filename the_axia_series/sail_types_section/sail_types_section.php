@@ -1,60 +1,88 @@
 <?php
+/* =======================
+   sail_types_section.php
+   ======================= */
 declare(strict_types=1);
 
-/* CSS (filemtime) */
-$cssFs = '../the_axia_series/sail_types_section/sail_types_section.css';
-$cssPublic = '../the_axia_series/sail_types_section/sail_types_section.css';
-$cssV = is_file($cssFs) ? filemtime($cssFs) : null;
+/* CSS + JS (filemtime) */
+$cssV = filemtime(__DIR__ . '/../Racing/sail_types_section/sail_types_section.css');
+$jsV  = filemtime(__DIR__ . '/../Racing/sail_types_section/sail_types_section.js');
 
-/* Helper (evita "Cannot redeclare") */
-if (!function_exists('with_v')) {
-  function with_v(string $url, ?int $v): string {
-    return $v ? ($url . '?v=' . $v) : $url;
-  }
-}
+/* Arrows */
+$arrowLeftV  = filemtime(__DIR__ . '/../Racing/sail_types_section/img/arrow_left.png');
+$arrowRightV = filemtime(__DIR__ . '/../Racing/sail_types_section/img/arrow_right.png');
 
-/* Solo 2 imágenes */
-$cards = [
-  [
-    'href'  => '../cruising_navigator/index.php',
-    'imgFs' => __DIR__ . '/../Cruising/sail_types_section/img/Navigator.png',
-    'imgUrl'=> '../Cruising/sail_types_section/img/Navigator.png',
-    'alt'   => 'Navigator',
-    'label' => 'Navigator Series',
-  ],
-  [
-    'href'  => '../cruising_endurance/index.php',
-    'imgFs' => __DIR__ . '/../Cruising/sail_types_section/img/Endurance.png',
-    'imgUrl'=> '../Cruising/sail_types_section/img/Endurance.png',
-    'alt'   => 'Endurance',
-    'label' => 'Endurance Series',
-  ],
-];
+/* Slides */
+$navigatorV = filemtime(__DIR__ . '/../the_axia_series/sail_types_section/img/blue_line.jpg');
+$enduranceV = filemtime(__DIR__ . '/../the_axia_series/sail_types_section/img/red_line.jpg');
 ?>
 
-<link rel="stylesheet" href="<?= htmlspecialchars(with_v($cssPublic, $cssV), ENT_QUOTES, 'UTF-8') ?>">
+<link rel="stylesheet" href="../Racing/sail_types_section/sail_types_section.css?v=<?= $cssV ?>">
+<script defer src="../Racing/sail_types_section/sail_types_section.js?v=<?= $jsV ?>"></script>
 
-<div class="sail-types-section">
-  <h2 data-st-parallax-text>Discover Your <br>Perfect Sail</h2>
+<section class="sail-types-section" aria-labelledby="sail-types-heading">
+  <h2 id="sail-types-heading" data-st-parallax-text>
+    Discover Your <br>Perfect Sail
+  </h2>
 
   <p class="sail-types-subtitle" data-st-parallax-text>
     From everyday cruising to long-distance adventures, we have a sail type to match every journey.
   </p>
 
-  <div class="sail-types-axia-grid">
+  <div class="sail-types-container">
 
-    <div class="image-axia-container">
-      <img src="../the_axia_series/sail_types_section/img/cruising.jpg" alt="">
-      <a href="#"><h4>Cruising</h4></a>
+    <button class="sail-types-arrow sail-types-arrow-left" type="button" aria-label="Previous">
+      <img src="../Racing/sail_types_section/img/arrow_left.png?v=<?= $arrowLeftV ?>" alt="">
+    </button>
+
+    <button class="sail-types-arrow sail-types-arrow-right" type="button" aria-label="Next">
+      <img src="../Racing/sail_types_section/img/arrow_right.png?v=<?= $arrowRightV ?>" alt="">
+    </button>
+
+    <div class="sail-types-scroller-container">
+
+      <a href="../cruising_downwind/index.php" class="sail-types-link">
+        <article class="sail-types-box">
+          <img
+            data-st-parallax-img
+            src="../the_axia_series/sail_types_section/img/blue_line.jpg?v=<?= $navigatorV ?>"
+            alt="Cruising"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="sail-types-overlay"></div>
+          <div class="sail-types-caption">
+            <p class="sail-types-title" data-st-parallax-text>
+              Blue Line
+            </p>
+          </div>
+        </article>
+      </a>
+
+      <a href="../racing_red_line_series/index.php" class="sail-types-link">
+        <article class="sail-types-box">
+          <img
+            data-st-parallax-img
+            src="../the_axia_series/sail_types_section/img/red_line.jpg?v=<?= $enduranceV ?>"
+            alt="Racing"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="sail-types-overlay"></div>
+          <div class="sail-types-caption">
+            <p class="sail-types-title" data-st-parallax-text>
+              Red Line
+            </p>
+          </div>
+        </article>
+      </a>
+
     </div>
 
-    <div class="image-axia-container">
-      <img src="../the_axia_series/sail_types_section/img/racing.jpg" alt="">
-      <a href="#"><h4>Racing</h4></a>
-
+    <div class="sail-types-dots" aria-label="Slider dots">
+      <button class="sail-types-dot is-active" data-index="0" type="button" aria-label="Go to slide 1"></button>
+      <button class="sail-types-dot" data-index="1" type="button" aria-label="Go to slide 2"></button>
     </div>
 
   </div>
-
-
-</div>
+</section>

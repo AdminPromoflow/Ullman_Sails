@@ -1,7 +1,7 @@
-/* =========================
-   sail_types_section.js — COPY & PASTE
-   (tu slider + Reveal only)
-========================= */
+/* =======================
+   sail_types_section.js
+   (Solo slider, sin animación en el texto)
+   ======================= */
 
 // Cruising - Sail Types slider (arrows + dots) - smooth wrap + no dead clicks
 (() => {
@@ -18,6 +18,7 @@
   if (!container || !scroller || boxes.length === 0) return;
 
   let index = 0;
+  let currentX = 0;
 
   const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
@@ -43,6 +44,7 @@
   }
 
   function setActiveDot(i) {
+    if (!dots.length) return;
     dots.forEach((d) => d.classList.remove("is-active"));
     if (dots[i]) dots[i].classList.add("is-active");
   }
@@ -52,28 +54,28 @@
       scroller.style.transitionDuration = "0ms";
       return;
     }
-
     const dist = Math.abs(toX - fromX);
     let ms = Math.min(900, Math.max(350, (dist / 1000) * 600));
     if (isWrap) ms = Math.min(1100, ms + 200);
-
     scroller.style.transitionDuration = `${Math.round(ms)}ms`;
   }
 
   function applyTransform(i, animate = true, isWrap = false) {
     const toX = getTranslateX(i);
-    const fromX = getTranslateX(index);
+    const fromX = currentX;
 
     if (!animate) {
       scroller.classList.add("no-transition");
       scroller.style.transform = `translateX(${-toX}px)`;
       scroller.offsetWidth;
       scroller.classList.remove("no-transition");
+      currentX = toX;
       return;
     }
 
     setDynamicDuration(fromX, toX, isWrap);
     scroller.style.transform = `translateX(${-toX}px)`;
+    currentX = toX;
   }
 
   function goTo(i, { wrap = false } = {}) {
@@ -83,15 +85,9 @@
     if (target < 0) target = max;
     if (target > max) target = 0;
 
-    const prevIndex = index;
     index = target;
-
     applyTransform(index, true, wrap);
     setActiveDot(index);
-
-    if (nearlyEqual(getTranslateX(prevIndex), getTranslateX(index))) {
-      // coherencia sin extras
-    }
   }
 
   if (btnRight) {
@@ -134,87 +130,10 @@
   });
 
   window.addEventListener("resize", () => {
-    scroller.style.transitionDuration = "0ms";
-    scroller.classList.add("no-transition");
-    scroller.style.transform = `translateX(${-getTranslateX(index)}px)`;
-    scroller.offsetWidth;
-    scroller.classList.remove("no-transition");
+    applyTransform(index, false);
     setActiveDot(index);
   });
 
-  scroller.style.transitionDuration = "0ms";
-  scroller.classList.add("no-transition");
-  scroller.style.transform = `translateX(0px)`;
-  scroller.offsetWidth;
-  scroller.classList.remove("no-transition");
+  applyTransform(0, false);
   setActiveDot(0);
-})();
-
-
-// =========================
-// Reveal only (IntersectionObserver + stagger 70ms + prefers-reduced-motion)
-// - ejecuta UNA sola vez por sección
-// =========================
-(() => {
-  const STAGGER_MS = 70;
-  const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-
-  const sections = document.querySelectorAll("[data-sr-reveal]");
-  if (!sections.length) return;
-
-  function collectOrderedItems(section) {
-    const ordered = [];
-
-    const pushIf = (el) => {
-      if (!el) return;
-      if (!el.classList || !el.classList.contains("sr-item")) return;
-      if (ordered.includes(el)) return;
-      ordered.push(el);
-    };
-
-    // Orden (no lo diste): 1) título 2) subtítulo 3) flechas 4) boxes
-    pushIf(section.querySelector(".sail-types-title"));
-    pushIf(section.querySelector(".sail-types-subtitle"));
-    section.querySelectorAll(".sail-types-arrow.sr-item").forEach(pushIf);
-    section.querySelectorAll(".sail-types-box.sr-item").forEach(pushIf);
-
-    // Fallback por si agregas más sr-items después
-    section.querySelectorAll(".sr-item").forEach(pushIf);
-
-    return ordered;
-  }
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      const section = entry.target;
-
-      // Una sola vez por sección
-      if (section.dataset.srDone === "1") {
-        io.unobserve(section);
-        return;
-      }
-      section.dataset.srDone = "1";
-
-      const items = collectOrderedItems(section);
-
-      items.forEach((el, i) => {
-        const delay = reduce ? 0 : i * STAGGER_MS;
-        // delays por CSS var
-        el.style.setProperty("--sr-delay", `${delay}ms`);
-      });
-
-      requestAnimationFrame(() => {
-        items.forEach((el) => el.classList.add("is-revealed"));
-      });
-
-      io.unobserve(section);
-    });
-  }, { threshold: 0.22, rootMargin: "0px 0px -10% 0px" });
-
-  sections.forEach((section) => {
-    if (section.dataset.srDone === "1") return;
-    io.observe(section);
-  });
 })();

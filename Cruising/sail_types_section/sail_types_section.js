@@ -1,6 +1,6 @@
 /* =======================
-   sail_types_section.js — COPY & PASTE
-   (Tu slider intacto + Parallax tipo HERO al final)
+   sail_types_section.js
+   (Solo slider, sin animación en el texto)
    ======================= */
 
 // Cruising - Sail Types slider (arrows + dots) - smooth wrap + no dead clicks
@@ -67,7 +67,7 @@
     if (!animate) {
       scroller.classList.add("no-transition");
       scroller.style.transform = `translateX(${-toX}px)`;
-      scroller.offsetWidth; // reflow
+      scroller.offsetWidth;
       scroller.classList.remove("no-transition");
       currentX = toX;
       return;
@@ -136,53 +136,4 @@
 
   applyTransform(0, false);
   setActiveDot(0);
-})();
-
-/* =========================================================
-   ADD-ON — Parallax tipo HERO (título + texto + imágenes)
-   ========================================================= */
-(() => {
-  const section = document.querySelector(".sail-types-section");
-  if (!section) return;
-
-  const texts = Array.from(section.querySelectorAll("[data-st-parallax-text]"));
-  const imgs  = Array.from(section.querySelectorAll("[data-st-parallax-img]"));
-
-  const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
-  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-  if (reduceMotion) return;
-
-  function update() {
-    const rect = section.getBoundingClientRect();
-    const vh = window.innerHeight || 1;
-
-    const end = vh * 0.9;
-    const p = clamp((0 - rect.top) / end, 0, 1);
-
-    texts.forEach((el, i) => {
-      const localP = clamp(p + i * 0.06, 0, 1);
-      const y  = localP * 90;
-      const op = clamp(1 - localP * 1.25, 0, 1);
-      el.style.transform = `translate3d(0, ${y}px, 0)`;
-      el.style.opacity = op;
-    });
-
-    const imgY = -p * 70;
-    imgs.forEach((img) => {
-      img.style.transform = `translate3d(0, ${imgY}px, 0)`;
-    });
-  }
-
-  let raf = 0;
-  function onScroll() {
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0;
-      update();
-    });
-  }
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  update();
 })();
