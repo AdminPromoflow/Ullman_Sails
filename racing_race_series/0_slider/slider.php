@@ -85,8 +85,7 @@ $firstSlide = $slides[0];
 $lastSlide  = $slides[count($slides) - 1];
 ?>
 
-<link rel="stylesheet" href="<?= htmlspecialchars($cssHref, ENT_QUOTES, 'UTF-8') ?>">
-
+<link rel="stylesheet" href="<?= '../../racing_race_series/0_slider/slider.css' . (is_file('../../racing_race_series/0_slider/slider.css') ? '&v=' . filemtime('../../racing_race_series/0_slider/slider.css') : '') ?>">
 <section class="home-slider" aria-label="Home slider" aria-roledescription="carousel">
   <div id="homeSliderTrack" class="home-slider__track">
 
