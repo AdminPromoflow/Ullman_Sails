@@ -61,7 +61,7 @@
   background-size:cover;
 }
 
-.home-slider__slide.bg-racing-1{ background-image:url("../../racing_race_series/0_slider/img/bimini-no-enclosure.jpg"); }
+.home-slider__slide.bg-racing-1{ background-image:url("img/bimini-no-enclosure.jpg"); }
 .home-slider__slide.bg-services{  background-image:url("img/slider_2.jpg"); }
 
 .home-slider__slide::before{
