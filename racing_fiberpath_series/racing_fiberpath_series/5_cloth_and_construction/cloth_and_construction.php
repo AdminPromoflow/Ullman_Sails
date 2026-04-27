@@ -6,9 +6,9 @@ $nsCssFs = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.css';
 $nsJsFs  = __DIR__ . '/5_cloth_and_construction/cloth_and_construction.js';
 
 /* Rotator images (filesystem paths for filemtime) */
-$fpRegattaMainFs = __DIR__ . '/img/GrandPrix_Main.2048_0_1.png';
-$fpRegattaHeadFs = __DIR__ . '/img/Regatta_Head.2048_0_1.png';
-$fpRegattaJibFs  = __DIR__ . '/img/Regatta_Jib.2048_0_1.png';
+$fpRegattaMainFs = __DIR__ . '/img/GrandPrix_Main.png';
+$fpRegattaHeadFs = __DIR__ . '/img/Regatta_Head.png';
+$fpRegattaJibFs  = __DIR__ . '/img/Regatta_Jib.png';
 
 $fpGrandPrixMainFs = __DIR__ . '/../../cruising_navigator/5_cloth_and_construction/img/sail_1.png';
 $fpGrandPrixHeadFs = __DIR__ . '/../../cruising_navigator/5_cloth_and_construction/img/sail_2.png';
@@ -46,17 +46,17 @@ $fpGrandPrixJibV  = is_file($fpGrandPrixJibFs)  ? filemtime($fpGrandPrixJibFs)  
         <figure class="nav-rotator" aria-label="FiberPath image rotator" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../racing_fiberpath_series/5_cloth_and_construction/img/GrandPrix_Main.2048_0_1.png?v=<?= $fpRegattaMainV ?>"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/GrandPrix_Main.png?v=<?= $fpRegattaMainV ?>"
                  alt="FiberPath sail view 1"
                  data-sub="THE FIBERPATH REGATTA SERIES — MAINSAIL">
 
             <img class="nav-rotator__img"
-                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Head.2048_0_1.png?v=<?= $fpRegattaHeadV ?>"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Head.png?v=<?= $fpRegattaHeadV ?>"
                  alt="FiberPath sail view 2"
                  data-sub="THE FIBERPATH REGATTA SERIES — HEADSAIL">
 
             <img class="nav-rotator__img"
-                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Jib.2048_0_1.png?v=<?= $fpRegattaJibV ?>"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Jib.png?v=<?= $fpRegattaJibV ?>"
                  alt="FiberPath sail view 3"
                  data-sub="THE FIBERPATH REGATTA SERIES — JIB">
           </div>
@@ -136,18 +136,18 @@ $fpGrandPrixJibV  = is_file($fpGrandPrixJibFs)  ? filemtime($fpGrandPrixJibFs)  
         <figure class="nav-rotator" aria-label="FiberPath image rotator 2" data-interval="3000">
           <div class="nav-rotator__frame">
             <img class="nav-rotator__img is-active"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_1.png?v=<?= $fpGrandPrixMainV ?>"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/GrandPrix_Main.png?v=<?= $fpGrandPrixMainV ?>"
                  alt="FiberPath sail view A"
                  data-sub="THE FIBERPATH GRAND PRIX SERIES — MAINSAIL">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png?v=<?= $fpGrandPrixHeadV ?>"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Head.png?v=<?= $fpGrandPrixHeadV ?>"
                  alt="FiberPath sail view B"
                  data-sub="THE FIBERPATH GRAND PRIX SERIES — HEADSAIL">
 
             <img class="nav-rotator__img"
-                 src="../cruising_navigator/5_cloth_and_construction/img/sail_2.png?v=<?= $fpGrandPrixJibV ?>"
-                 alt="FiberPath sail view B"
+                 src="../racing_fiberpath_series/5_cloth_and_construction/img/Regatta_Jib.png?v=<?= $fpGrandPrixJibV ?>"
+                 alt="FiberPath sail view C"
                  data-sub="THE FIBERPATH GRAND PRIX SERIES — JIB">
           </div>
 
