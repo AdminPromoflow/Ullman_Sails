@@ -46,12 +46,11 @@ $img4V = is_file($img4Fs) ? filemtime($img4Fs) : null;
   <h2 id="cruising-title" class="cruising-title">Racing Sails</h2>
 
   <p class="cruising-subtitle">
-    When it comes to cruising sails, durability and ease of use are key. The Navigator Series, Endurance Series,
-    Voyager Series, and Expedition Series are all popular choices for cruisers, each with their own unique
-    features and benefits...
+    When it comes to racing sails, performance, precision and innovation are essential. Race Icon, FiberPath, and The Axia Series – Red Line represent the pinnacle of high-performance sail design, delivering speed, control and advanced technology for competitive sailing at the highest level.
   </p>
 
   <ul class="cruising-icons" role="list">
+
     <li class="cruising-icon">
       <a class="cruising-link" href="../racing_race_series/index.php">
         <img src="<?= with_v($img1Url, $img1V) ?>" alt="Race Icon">
@@ -72,6 +71,7 @@ $img4V = is_file($img4Fs) ? filemtime($img4Fs) : null;
         <h3 class="series">The Axia Series - Red Line</h3>
       </a>
     </li>
+    
   </ul>
 
   <figure class="cruising-image">

@@ -58,6 +58,29 @@ $menuCloseV      = is_file($menuCloseFs) ? filemtime($menuCloseFs) : time();
         </button>
         <input class="ull-search__input" id="searchInput" type="text" placeholder="Search..." autocomplete="off">
         <button class="ull-search__btn" id="searchButton" type="submit">Search</button>
+        <div class="ull-search-results" id="searchResults" aria-live="polite">
+          <p class="ull-search-results__title">Search results</p>
+
+          <a class="ull-search-results__item" href="../Cruising/index.php">
+            <span class="ull-search-results__name">Cruising Sails</span>
+            <span class="ull-search-results__desc">Sails for coastal cruising and long-distance sailing.</span>
+          </a>
+
+          <a class="ull-search-results__item" href="../Racing/index.php">
+            <span class="ull-search-results__name">Racing Sails</span>
+            <span class="ull-search-results__desc">Performance sails for competitive sailing.</span>
+          </a>
+          <a class="ull-search-results__item" href="../Racing/index.php">
+            <span class="ull-search-results__name">Racing Sails</span>
+            <span class="ull-search-results__desc">Performance sails for competitive sailing.</span>
+          </a>
+          <a class="ull-search-results__item" href="../Racing/index.php">
+            <span class="ull-search-results__name">Racing Sails</span>
+            <span class="ull-search-results__desc">Performance sails for competitive sailing.</span>
+          </a>
+
+
+        </div>
       </form>
     </div>
 
@@ -75,6 +98,21 @@ $menuCloseV      = is_file($menuCloseFs) ? filemtime($menuCloseFs) : time();
     <div class="ull-drawer__header"><span class="ull-drawer__title">Menu</span></div>
 
     <nav class="ull-drawer__nav" aria-label="Mobile navigation">
+      <div class="ull-drawer__search">
+        <form class="ull-search is-open ull-search--mobile" id="searchFormMobile" role="search" aria-label="Search site (mobile)">
+          <input class="ull-search__input" id="searchInputMobile" type="text" placeholder="Search..." autocomplete="off">
+          <button class="ull-search__btn" id="searchButtonMobile" type="submit">Search</button>
+
+          <div class="ull-search-results-mobile" id="searchResultsMobile" aria-live="polite">
+          <p class="ull-search-results-mobile__title">Search results</p>
+
+          <a class="ull-search-results-mobile__item" href="../Racing/index.php">
+            <span class="ull-search-results-mobile__name">Page: Racing Sails</span>
+            <span class="ull-search-results-mobile__desc">Performance sails for competitive sailing.</span>
+          </a>
+        </div>
+        </form>
+      </div>
       <a class="ull-drawer__link" href="../Home/index.php">Home</a>
 
       <button class="ull-drawer__acc" type="button" data-acc="sails" aria-expanded="false">Sail Types</button>
@@ -93,14 +131,12 @@ $menuCloseV      = is_file($menuCloseFs) ? filemtime($menuCloseFs) : time();
       <a class="ull-drawer__link" href="../AboutUs/index.php">About Us</a>
       <a class="ull-drawer__link" href="../ContactUs/index.php">Contact Us</a>
 
-      <div class="ull-drawer__search">
-        <form class="ull-search is-open" id="searchFormMobile" role="search" aria-label="Search site (mobile)">
-          <input class="ull-search__input" id="searchInputMobile" type="text" placeholder="Search..." autocomplete="off">
-          <button class="ull-search__btn" id="searchButtonMobile" type="submit">Search</button>
-        </form>
-      </div>
+
     </nav>
   </aside>
 </section>
 
+
+
+<script defer src="../Search/search/search-data.js?v=<?= filemtime(__DIR__ . '/../Search/search/search-data.js') ?>"></script>
 <script defer src="../general/menu/menu.js?v=<?= $menuJsV ?>"></script>

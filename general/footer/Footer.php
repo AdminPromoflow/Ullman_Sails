@@ -74,7 +74,7 @@ footer img {
 
 </style>
 
-<footer>
+<footer id="footer_container">
   <div class="contain_footer">
     <h3 class="footer__headline">Contact – United Kingdom</h3>
     <ul class="footer__list">

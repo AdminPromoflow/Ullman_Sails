@@ -9,7 +9,7 @@ class HomeSlider {
     this.btnNext = this.root.querySelector("#homeSliderNext");
     if (!this.track) return;
 
-    this.intervalMs   = options.intervalMs ?? 8000;
+    this.intervalMs   = options.intervalMs ?? 5000;
     this.reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
 
     this.slides = Array.from(this.track.querySelectorAll(".home-slider__slide"));
@@ -168,5 +168,5 @@ class HomeSlider {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  new HomeSlider(".home-slider", { intervalMs: 8000 });
+  new HomeSlider(".home-slider", { intervalMs: 5000 });
 });

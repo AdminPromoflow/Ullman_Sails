@@ -1,12 +1,15 @@
 <?php
-$cssFile = __DIR__ . '/../search/search.css';
-$jsFile  = __DIR__ . '/../search/search.js';
+$cssPublic = '../Search/search/search.css';
+$jsPublic  = '../Search/search/search.js';
 
-$cssVer = is_file($cssFile) ? filemtime($cssFile) : null;
-$jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
+$cssFs =  '../Search/search/search.css';
+$jsFs  = '../Search/search/search.js';
+
+$cssVer = is_file($cssFs) ? filemtime($cssFs) : null;
+$jsVer  = is_file($jsFs)  ? filemtime($jsFs)  : null;
 ?>
+<link rel="stylesheet" href="<?= $cssPublic ?><?= $cssVer ? '?v='.$cssVer : '' ?>">
 
-<link rel="stylesheet" href="../search/search.css<?= $cssVer ? '?v='.$cssVer : '' ?>">
 
   <section class="search-page">
     <div class="search-page__inner">
@@ -35,7 +38,7 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
 
           <input
             type="text"
-            id="searchInput"
+            id="searchField"
             class="search-box__input"
             placeholder="Search for pages, for example: Ullman Sails"
             autocomplete="off"
@@ -63,4 +66,4 @@ $jsVer  = is_file($jsFile)  ? filemtime($jsFile)  : null;
     </div>
   </section>
 
-<script defer src="../search/search.js<?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
+  <script defer src="<?= $jsPublic ?><?= $jsVer ? '?v='.$jsVer : '' ?>"></script>
