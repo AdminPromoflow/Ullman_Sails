@@ -4,7 +4,7 @@
   height: 80vh;
   min-height: 500px;
   width: 100vw;
-  background-image: url("../Covers/2.Services/img/Bimini.jpg");
+  background-image: url("../Covers-16.Bimini/1.Slider/bimini_sunshade.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
