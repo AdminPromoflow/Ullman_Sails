@@ -45,11 +45,12 @@ class NewRepairQuote {
 
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("This action will be implemented once the page has been uploaded.");
+    //  alert("This action will be implemented once the page has been uploaded.");
 
-      // if (this.validateMainFields()) {
-      // //  this.requestNewRepairQuote();
-      // }
+      if (this.validateMainFields()) {
+        chargingClass.hideShowcharging(true);
+        this.requestNewRepairQuote();
+      }
     });
   }
 
@@ -99,13 +100,16 @@ class NewRepairQuote {
       .then((data) => {
         if (data.success) {
           alert(data.message);
+          chargingClass.hideShowcharging(false);
         } else {
           alert(data.message || "There was an error sending your repair quote request.");
+          chargingClass.hideShowcharging(false);
         }
       })
       .catch((error) => {
         console.error("Error:", error);
         alert("An unexpected error occurred.");
+        chargingClass.hideShowcharging(false);
       });
   }
 }

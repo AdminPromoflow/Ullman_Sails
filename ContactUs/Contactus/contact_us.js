@@ -14,7 +14,10 @@ class ContactUs {
 
     this.btnContactUs.addEventListener("click", () => {
       if (this.validateMainFields()) {
+        chargingClass.hideShowcharging(true);
+
         this.requestContactUs();
+
       }
     });
   }
@@ -72,13 +75,11 @@ class ContactUs {
       body: formData
     })
       .then((response) => response.json())
-      .then((response) => {
-        alert(response);
-        const data = JSON.parse(response);
-
-      //  if (data.success) {
-          //alert(data.message);
-      //  }
+      .then((data) => {
+        if (data.success) {
+          alert(data.message);
+          chargingClass.hideShowcharging(false);
+        }
       })
       .catch((error) => {
         console.error("Error:", error);

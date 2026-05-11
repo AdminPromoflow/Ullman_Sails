@@ -5,7 +5,7 @@ class NewSailQuote {
       const sailType = "Sail & Canvas Cleaning";
       const title = "Sail & Canvas Cleaning";
 
-      const url = `../New_Sail_Quote/index.php?sailType=${encodeURIComponent(sailType)}&title=${encodeURIComponent(title)}`;
+      const url = `../New_Repair_Quote/index.php?sailType=${encodeURIComponent(sailType)}&title=${encodeURIComponent(title)}`;
 
       window.location.href = url;
     })

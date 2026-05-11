@@ -40,11 +40,13 @@ class NewSailQuote {
 
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("This action will be implemented once the page has been uploaded.");
-      // if (this.validateMainFields()) {
-      // //  this.requestNewSailQuote();
-      //
-      // }
+      //alert("This action will be implemented once the page has been uploaded.");
+      if (this.validateMainFields()) {
+        chargingClass.hideShowcharging(true);
+
+        this.requestNewSailQuote();
+
+      }
     });
   }
 
@@ -89,15 +91,22 @@ class NewSailQuote {
     })
       .then((response) => response.json())
       .then((data) => {
+        //alert((data));
         if (data.success) {
           alert(data.message);
+          chargingClass.hideShowcharging(false);
+
         } else {
           alert(data.message || "There was an error sending your sail quote request.");
+          chargingClass.hideShowcharging(false);
+
         }
       })
       .catch((error) => {
         console.error("Error:", error);
         alert("An unexpected error occurred.");
+        chargingClass.hideShowcharging(false);
+
       });
   }
 }

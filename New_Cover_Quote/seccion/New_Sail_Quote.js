@@ -36,11 +36,12 @@ class NewCoverQuote {
 
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("This action will be implemented once the page has been uploaded.");
+    //  alert("This action will be implemented once the page has been uploaded.");
 
-      // if (this.validateMainFields()) {
-      // //  this.requestNewCoverQuote();
-      // }
+      if (this.validateMainFields()) {
+        chargingClass.hideShowcharging(true);
+        this.requestNewCoverQuote();
+      }
     });
   }
 
@@ -97,8 +98,10 @@ class NewCoverQuote {
       .then((data) => {
         if (data.success) {
           alert(data.message);
+          chargingClass.hideShowcharging(false);
         } else {
-          alert(data.message || "There was an error sending your quote request.");
+          alert(data.message || "There was an error sending your repair quote request.");
+          chargingClass.hideShowcharging(false);
         }
       })
       .catch((error) => {
