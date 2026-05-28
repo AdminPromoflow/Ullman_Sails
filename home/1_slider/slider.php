@@ -17,7 +17,7 @@ $sliderJsTime  = file_exists($sliderJs)  ? filemtime($sliderJs)  : time();
         <div class="home-slider__kicker">
           <img src="../home/1_slider/img/ullman_sails.png" alt="">
         </div>
-        <h1 class="home-slider__title">SERVICES</h1>
+        <h1 class="home-slider__title">SERVICES_________</h1>
         <h2 class="home-slider__subtitle">Professional services designed to meet your goals.</h2>
         <div class="home-slider__line" aria-hidden="true"></div>
         <a class="home-slider__btn" href="../Services/index.php">Learn more</a>
