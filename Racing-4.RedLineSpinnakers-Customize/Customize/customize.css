@@ -1,0 +1,119 @@
+.customize {
+  position: relative;
+  background-color: #F8F8FA;
+  padding: 2vw 0;
+}
+
+.customize-selects {
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select-group label {
+  font-size: 1rem;
+  color: #202E52;
+  font-weight: 500;
+}
+
+.select-group select {
+  min-width: 220px;
+  padding: 10px 12px;
+  border: 1px solid #202E52;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.colours {
+  position: relative;
+  padding: 2vw 3vw;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.colour {
+  position: relative;
+  height: 28px;
+  width: 28px;
+  margin: 7px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.colour.active {
+  outline: 3px solid #005598;
+  outline-offset: 2px;
+}
+
+.sail-option {
+  display: none;
+}
+
+.sail-option.active {
+  display: block;
+}
+
+.sail-option svg,
+.spinnaker-svg {
+  position: relative;
+  background-color: grey;
+  width: 40vw;
+  height: 60vw;
+  min-width: 280px;
+  min-height: 420px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+
+.sail-option svg path,
+.sail-option svg polygon,
+.sail-option svg rect,
+.sail-option svg circle,
+.sail-option svg ellipse,
+.sail-option svg polyline {
+  cursor: pointer;
+}
+
+.st0 {
+  cursor: pointer;
+}
+
+.buttonTitle {
+  position: relative;
+  background-color: #005598;
+  padding: 5px;
+  margin: 1.5vw 0;
+  cursor: pointer;
+  border: 1px solid #202E52;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+}
+
+.buttonTitle:hover {
+  background-color: rgb(36, 46, 77);
+}
+
+.buttonTitle h3 {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 200;
+  color: white;
+}
