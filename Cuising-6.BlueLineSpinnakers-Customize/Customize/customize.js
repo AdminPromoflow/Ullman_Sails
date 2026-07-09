@@ -330,8 +330,21 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-        const scaledWidth = canvasWidth * 0.85;
-        const scaledHeight = img.height * (scaledWidth / img.width);
+        /*
+          Esta parte evita que el sail se corte arriba o abajo.
+          Antes solo se calculaba por ancho.
+          Ahora se calcula por ancho y alto.
+        */
+        const maxWidth = canvasWidth * 0.82;
+        const maxHeight = canvasHeight * 0.88;
+
+        const scale = Math.min(
+          maxWidth / img.width,
+          maxHeight / img.height
+        );
+
+        const scaledWidth = img.width * scale;
+        const scaledHeight = img.height * scale;
 
         const x = (canvasWidth - scaledWidth) / 2;
         const y = (canvasHeight - scaledHeight) / 2;
@@ -351,6 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           pdf.save("custom-spinnaker.pdf");
+
         } else if (window.jspdf && window.jspdf.jsPDF) {
           const pdf = new window.jspdf.jsPDF();
 
@@ -364,6 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
           );
 
           pdf.save("custom-spinnaker.pdf");
+
         } else {
           alert("jsPDF is not loaded.");
         }
@@ -371,9 +386,114 @@ document.addEventListener("DOMContentLoaded", function () {
         URL.revokeObjectURL(url);
       };
 
+      img.onerror = function () {
+        URL.revokeObjectURL(url);
+        alert("Could not load the sail image.");
+      };
+
       img.src = url;
     });
   }
+
+  class CustomizeSailForm {
+    constructor() {
+      this.customizeForm = document.getElementById("customizeForm");
+
+      if (this.customizeForm) {
+        this.customizeForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          this.submitCustomizeForm();
+        });
+      }
+    }
+
+    async submitCustomizeForm() {
+      const customerName = document.getElementById("customerName");
+      const customerEmail = document.getElementById("customerEmail");
+      const salespersonEmail = document.getElementById("salespersonEmail");
+      const boatName = document.getElementById("boatName");
+      const boatDesignLength = document.getElementById("boatDesignLength");
+
+      if (
+        !customerName ||
+        !customerEmail ||
+        !salespersonEmail ||
+        !boatName ||
+        !boatDesignLength
+      ) {
+        alert("Some form fields were not found.");
+        return;
+      }
+
+      const activeOption = document.querySelector(".sail-option.active");
+      const activeSvg = activeOption ? activeOption.querySelector("svg") : null;
+
+      if (
+        !customerName.value ||
+        !customerEmail.value ||
+        !salespersonEmail.value ||
+        !boatName.value ||
+        !boatDesignLength.value
+      ) {
+        alert("Please complete all fields.");
+        return;
+      }
+
+      if (!activeSvg) {
+        alert("No SVG found.");
+        return;
+      }
+
+      const clonedSvg = activeSvg.cloneNode(true);
+      clonedSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+
+      const svgText = new XMLSerializer().serializeToString(clonedSvg);
+
+      const url = "../../controller/customize/customize.php";
+
+      const data = {
+        action: "submit_customize_form",
+        name: customerName.value,
+        email: customerEmail.value,
+        salesperson_email: salespersonEmail.value,
+        boat_name: boatName.value,
+        boat_design_length: boatDesignLength.value,
+        sail_type: sailTypeSelect.value,
+        cloth_weight: clothWeightSelect.value,
+        svg: svgText
+      };
+
+      const response = await this.makeRequest(url, data);
+
+      if (!response) return;
+
+      alert(JSON.stringify(response));
+    }
+
+    async makeRequest(url, data) {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+          throw new Error("Network error.");
+        }
+
+        return await response.json();
+
+      } catch (error) {
+        console.error("Error:", error);
+        return null;
+      }
+    }
+  }
+
+  new CustomizeSailForm();
 
   showSelectedSail(sailTypeSelect.value);
   loadClothWeights(sailTypeSelect.value);

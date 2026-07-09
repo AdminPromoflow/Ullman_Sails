@@ -112,6 +112,173 @@ class EmailSender {
       }
   }
 
+
+  public function sendCustomizeSailForm($data) {
+      $name = isset($data->name) ? $data->name : '';
+      $email = isset($data->email) ? $data->email : '';
+      $salespersonEmail = isset($data->salesperson_email) ? $data->salesperson_email : '';
+      $boatName = isset($data->boat_name) ? $data->boat_name : '';
+      $boatDesignLength = isset($data->boat_design_length) ? $data->boat_design_length : '';
+      $sailType = isset($data->sail_type) ? $data->sail_type : '';
+      $clothWeight = isset($data->cloth_weight) ? $data->cloth_weight : '';
+      $svg = isset($data->svg) ? $data->svg : '';
+
+      $safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+      $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+      $safeSalespersonEmail = htmlspecialchars($salespersonEmail, ENT_QUOTES, 'UTF-8');
+      $safeBoatName = htmlspecialchars($boatName, ENT_QUOTES, 'UTF-8');
+      $safeBoatDesignLength = htmlspecialchars($boatDesignLength, ENT_QUOTES, 'UTF-8');
+      $safeSailType = htmlspecialchars($sailType, ENT_QUOTES, 'UTF-8');
+      $safeClothWeight = htmlspecialchars($clothWeight, ENT_QUOTES, 'UTF-8');
+
+      $mail = new PHPMailer(true);
+
+      try {
+          $mail->isSMTP();
+          $mail->SMTPDebug = 0;
+          $mail->Host = 'smtp.hostinger.com';
+          $mail->Port = 587;
+          $mail->SMTPAuth = true;
+          $mail->Username = 'admin@promoflow.net';
+
+          /*
+            IMPORTANTE:
+            No es recomendable dejar la contraseña escrita directamente en el código.
+            Puedes poner aquí tu contraseña actual o, mejor, usar una variable de entorno.
+          */
+          $mail->Password = '32skiff32CI!';
+
+          $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
+          $mail->CharSet = 'UTF-8';
+          $mail->Encoding = 'base64';
+
+          $mail->setFrom('admin@promoflow.net', 'Jon Pegg');
+
+          if (!empty($email)) {
+              $mail->addReplyTo($email, $name);
+          } else {
+              // $mail->addReplyTo('jon@ullmansails.co.uk', 'Jon Pegg');
+              $mail->addReplyTo('aleinarossui@gmail.com', 'Ale Rozo');
+
+          }
+
+          /*
+            Se envía al salesperson email que escribió el usuario.
+            También puedes dejar una copia interna.
+          */
+          if (!empty($salespersonEmail)) {
+              $mail->addAddress($salespersonEmail, 'Salesperson');
+          }
+
+          $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
+
+          $mail->Subject = 'New Custom Sail Design Request';
+          $mail->isHTML(true);
+
+          $recipientMessage = "
+          <div style='margin:0; padding:40px 0; background:#f5f7fa; width:100%;'>
+            <div style='width:92%; max-width:760px; margin:0 auto; background:#ffffff; border:1px solid #d9e1ea; box-shadow:0 18px 45px rgba(32,46,82,.10); overflow:hidden;'>
+
+              <div style='background:#202E52; padding:26px 32px; text-align:left;'>
+                <img src='https://lanyardsforyou.com/ullman_sails/general/menu/img/logo.png' alt='Ullman Sails' style='display:block; max-width:220px; height:auto;'>
+              </div>
+
+              <div style='padding:40px 32px 18px 32px;'>
+                <p style='margin:0; font-family:Arial, sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#005598; font-weight:700;'>
+                  Custom Sail Design
+                </p>
+
+                <h1 style='margin:12px 0 10px 0; font-family:Arial, sans-serif; font-size:34px; line-height:1.15; color:#202E52; font-weight:700;'>
+                  New custom sail design request
+                </h1>
+
+                <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; line-height:1.7; color:#5e6b7a; max-width:560px;'>
+                  A customer has submitted a custom sail design from the website. The selected sail design SVG is attached to this email.
+                </p>
+              </div>
+
+              <div style='padding:20px 32px 32px 32px;'>
+                <div style='background:#ffffff; border:1px solid #dbe3ec;'>
+
+                  <div style='padding:18px 22px; border-bottom:1px solid #dbe3ec;'>
+                    <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Name</p>
+                    <p style='margin:0; font-family:Arial, sans-serif; font-size:18px; color:#202E52; font-weight:600;'>$safeName</p>
+                  </div>
+
+                  <div style='padding:18px 22px; border-bottom:1px solid #dbe3ec;'>
+                    <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Customer Email</p>
+                    <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$safeEmail</p>
+                  </div>
+
+                  <div style='padding:18px 22px; border-bottom:1px solid #dbe3ec;'>
+                    <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Salesperson Email</p>
+                    <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$safeSalespersonEmail</p>
+                  </div>
+
+                  <div style='padding:18px 22px; border-bottom:1px solid #dbe3ec;'>
+                    <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Boat Name</p>
+                    <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$safeBoatName</p>
+                  </div>
+
+                  <div style='padding:18px 22px; border-bottom:1px solid #dbe3ec;'>
+                    <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Boat Design / Length</p>
+                    <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$safeBoatDesignLength</p>
+                  </div>
+
+                  <div style='padding:18px 22px; border-bottom:1px solid #dbe3ec;'>
+                    <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Sail Type</p>
+                    <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$safeSailType</p>
+                  </div>
+
+                  <div style='padding:18px 22px;'>
+                    <p style='margin:0 0 6px 0; font-family:Arial, sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#7b8794; font-weight:700;'>Cloth Weight</p>
+                    <p style='margin:0; font-family:Arial, sans-serif; font-size:16px; color:#202E52;'>$safeClothWeight</p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          ";
+
+          $mail->Body = $recipientMessage;
+
+          $mail->AltBody = "New custom sail design request
+  Name: $name
+  Customer Email: $email
+  Salesperson Email: $salespersonEmail
+  Boat Name: $boatName
+  Boat Design / Length: $boatDesignLength
+  Sail Type: $sailType
+  Cloth Weight: $clothWeight";
+
+          if (!empty($svg)) {
+              $mail->addStringAttachment(
+                  $svg,
+                  'custom-sail-design.svg',
+                  'base64',
+                  'image/svg+xml'
+              );
+          }
+
+          $mail->send();
+
+          return array(
+              "success" => true,
+              "message" => "Your custom sail design request has been sent successfully. One of our advisers will be in touch with you shortly."
+          );
+
+      } catch (Exception $e) {
+          return array(
+              "success" => false,
+              "message" => $mail->ErrorInfo
+          );
+      }
+  }
+
+
   public function sendNewCoverQuote($data) {
 
 
