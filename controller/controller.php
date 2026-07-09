@@ -250,7 +250,7 @@ class ApiHandlerSendForms {
         $boatDesignLength = isset($this->requestData['boat_design_length']) ? $this->requestData['boat_design_length'] : null;
         $sailType = isset($this->requestData['sail_type']) ? $this->requestData['sail_type'] : null;
         $clothWeight = isset($this->requestData['cloth_weight']) ? $this->requestData['cloth_weight'] : null;
-        $svg = isset($this->requestData['svg']) ? $this->requestData['svg'] : null;
+        $pdfBase64 = isset($this->requestData['pdf_base64']) ? $this->requestData['pdf_base64'] : null;
 
         if (
             empty($name) ||
@@ -260,7 +260,7 @@ class ApiHandlerSendForms {
             empty($boatDesignLength) ||
             empty($sailType) ||
             empty($clothWeight) ||
-            empty($svg)
+            empty($pdfBase64)
         ) {
             http_response_code(400);
             echo json_encode(array(
@@ -279,7 +279,7 @@ class ApiHandlerSendForms {
             "boat_design_length" => $boatDesignLength,
             "sail_type" => $sailType,
             "cloth_weight" => $clothWeight,
-            "svg" => $svg
+            "pdf_base64" => $pdfBase64
         );
 
         $emailSender = new EmailSender();

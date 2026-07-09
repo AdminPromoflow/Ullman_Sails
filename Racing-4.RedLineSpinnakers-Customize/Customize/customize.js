@@ -1,93 +1,109 @@
 document.addEventListener("DOMContentLoaded", function () {
   let colourCustomize = "white";
 
+  class Charging {
+    constructor() {
+      this.hideShowcharging(false);
+    }
+
+    hideShowcharging(action) {
+      const charging_background = document.querySelector(".charging_background");
+
+      if (charging_background) {
+        charging_background.style.display = action ? "flex" : "none";
+      }
+    }
+  }
+
+  const chargingClass = new Charging();
+
   const sharedColours = {
     nyliteFull: [
-      "#EFE8D2", // Cream
-      "#F70F8A", // Pink
-      "#FF5A0A", // Orange
-      "#E60808", // Red
-      "#E99A00", // Gold
-      "#FFE329", // Yellow
-      "#06733B", // Green
-      "#22B3AE", // Turquoise
-      "#12128B", // Navy blue
-      "#168CBC", // Blue
-      "#5D08B9", // Purple
-      "#606664", // Grey
-      "#000000", // Black
-      "#FFFFFF"  // White
+      "#EFE8D2",
+      "#F70F8A",
+      "#FF5A0A",
+      "#E60808",
+      "#E99A00",
+      "#FFE329",
+      "#06733B",
+      "#22B3AE",
+      "#12128B",
+      "#168CBC",
+      "#5D08B9",
+      "#606664",
+      "#000000",
+      "#FFFFFF"
     ],
 
     fibermaxFull: [
-      "#F70F8A", // Pink
-      "#FF5A0A", // Orange
-      "#E60808", // Red
-      "#FFE329", // Yellow
-      "#06733B", // Green
-      "#12128B", // Navy blue
-      "#168CBC", // Blue
-      "#5D08B9", // Purple
-      "#606664", // Grey
-      "#000000", // Black
-      "#E99A00", // Gold
-      "#20293F", // Dark navy
-      "#6BDC56", // Light green
-      "#E015A5", // Magenta
-      "#F5FF00", // Neon yellow
-      "#147F91", // Teal
-      "#FFFFFF"  // White
+      "#F70F8A",
+      "#FF5A0A",
+      "#E60808",
+      "#FFE329",
+      "#06733B",
+      "#12128B",
+      "#168CBC",
+      "#5D08B9",
+      "#606664",
+      "#000000",
+      "#E99A00",
+      "#20293F",
+      "#6BDC56",
+      "#E015A5",
+      "#F5FF00",
+      "#147F91",
+      "#FFFFFF"
     ],
 
     raceBasicFull: [
-      "#F70F8A", // Pink
-      "#FF5A0A", // Orange
-      "#E60808", // Red
-      "#E99A00", // Gold
-      "#FFE329", // Yellow
-      "#06733B", // Green
-      "#12128B", // Navy blue
-      "#168CBC", // Blue
-      "#5D08B9", // Purple
-      "#606664", // Grey
-      "#000000", // Black
-      "#FFFFFF"  // White
+      "#F70F8A",
+      "#FF5A0A",
+      "#E60808",
+      "#E99A00",
+      "#FFE329",
+      "#06733B",
+      "#12128B",
+      "#168CBC",
+      "#5D08B9",
+      "#606664",
+      "#000000",
+      "#FFFFFF"
     ],
 
     redBlueWhite: [
-      "#E60808", // Red
-      "#12128B", // Navy blue
-      "#FFFFFF"  // White
+      "#E60808",
+      "#12128B",
+      "#FFFFFF"
     ],
 
     redBlueBlackWhite: [
-      "#E60808", // Red
-      "#12128B", // Navy blue
-      "#000000", // Black
-      "#FFFFFF"  // White
+      "#E60808",
+      "#12128B",
+      "#000000",
+      "#FFFFFF"
     ],
 
     redBlueGreyBlackWhite: [
-      "#E60808", // Red
-      "#12128B", // Navy blue
-      "#606664", // Grey
-      "#000000", // Black
-      "#FFFFFF"  // White
+      "#E60808",
+      "#12128B",
+      "#606664",
+      "#000000",
+      "#FFFFFF"
     ],
 
     whiteOnly: [
-      "#FFFFFF" // White
+      "#FFFFFF"
     ],
 
     airxFull: [
-      "#E60808", // Red
-      "#FFE329", // Yellow
-      "#12128B", // Navy blue
-      "#168CBC", // Blue
-      "#606664", // Grey
-      "#000000", // Black
-      "#4B5663", // Slate grey
-      "#FFFFFF"  // White
+      "#E60808",
+      "#FFE329",
+      "#12128B",
+      "#168CBC",
+      "#606664",
+      "#000000",
+      "#4B5663",
+      "#FFFFFF"
     ]
   };
 
@@ -97,12 +113,9 @@ document.addEventListener("DOMContentLoaded", function () {
       clothWeights: {
         "Nylite 90": sharedColours.nyliteFull,
         "Nylite 150": sharedColours.nyliteFull,
-
         "Fibermax 44": sharedColours.fibermaxFull,
         "Fibermax 64": sharedColours.fibermaxFull,
-
         "Superlite 50": sharedColours.redBlueWhite,
-
         "Superkote 60": sharedColours.redBlueBlackWhite,
         "Superkote 70": sharedColours.whiteOnly,
         "Superkote 75": sharedColours.redBlueBlackWhite,
@@ -113,10 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Superkote 200": sharedColours.whiteOnly,
         "Superkote 250": sharedColours.redBlueWhite,
         "Superkote 350": sharedColours.airxFull,
-
         "Stormlite 210": sharedColours.redBlueWhite,
         "Stormlite 510": sharedColours.whiteOnly,
-
         "AIRX 500": sharedColours.airxFull,
         "AIRX 600": sharedColours.airxFull,
         "AIRX 650": sharedColours.airxFull,
@@ -131,12 +142,9 @@ document.addEventListener("DOMContentLoaded", function () {
       clothWeights: {
         "Nylite 90": sharedColours.nyliteFull,
         "Nylite 150": sharedColours.nyliteFull,
-
         "Fibermax 44": sharedColours.fibermaxFull,
         "Fibermax 64": sharedColours.fibermaxFull,
-
         "Superlite 50": sharedColours.redBlueWhite,
-
         "Superkote 60": sharedColours.redBlueBlackWhite,
         "Superkote 70": sharedColours.whiteOnly,
         "Superkote 75": sharedColours.redBlueBlackWhite,
@@ -147,10 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Superkote 200": sharedColours.whiteOnly,
         "Superkote 250": sharedColours.redBlueWhite,
         "Superkote 350": sharedColours.raceBasicFull,
-
         "Stormlite 210": sharedColours.redBlueWhite,
         "Stormlite 510": sharedColours.whiteOnly,
-
         "AIRX 500": sharedColours.raceBasicFull,
         "AIRX 600": sharedColours.raceBasicFull,
         "AIRX 650": sharedColours.raceBasicFull,
@@ -222,10 +228,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     weights.forEach(function (weight) {
       const option = document.createElement("option");
-
       option.value = weight;
       option.textContent = weight;
-
       clothWeightSelect.appendChild(option);
     });
 
@@ -310,34 +314,33 @@ document.addEventListener("DOMContentLoaded", function () {
     paintableElement.setAttribute("fill", colourCustomize);
   });
 
-  if (downloadPDF) {
-    downloadPDF.addEventListener("click", function () {
-      const activeOption = document.querySelector(".sail-option.active");
+  async function createCustomSailPdf() {
+    const activeOption = document.querySelector(".sail-option.active");
 
-      if (!activeOption) {
-        alert("Please select a sail design.");
-        return;
-      }
+    if (!activeOption) {
+      alert("Please select a sail design.");
+      return null;
+    }
 
-      const svgElement = activeOption.querySelector("svg");
+    const svgElement = activeOption.querySelector("svg");
 
-      if (!svgElement) {
-        alert("No SVG found.");
-        return;
-      }
+    if (!svgElement) {
+      alert("No SVG found.");
+      return null;
+    }
 
-      const clonedSvg = svgElement.cloneNode(true);
+    const clonedSvg = svgElement.cloneNode(true);
+    clonedSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
 
-      clonedSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    const svgData = new XMLSerializer().serializeToString(clonedSvg);
 
-      const svgData = new XMLSerializer().serializeToString(clonedSvg);
+    const svgBlob = new Blob([svgData], {
+      type: "image/svg+xml;charset=utf-8"
+    });
 
-      const svgBlob = new Blob([svgData], {
-        type: "image/svg+xml;charset=utf-8"
-      });
+    const svgUrl = URL.createObjectURL(svgBlob);
 
-      const url = URL.createObjectURL(svgBlob);
-
+    return new Promise((resolve) => {
       const img = new Image();
 
       img.onload = function () {
@@ -353,50 +356,177 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-        const scaledWidth = canvasWidth * 0.85;
-        const scaledHeight = img.height * (scaledWidth / img.width);
+        const maxWidth = canvasWidth * 0.82;
+        const maxHeight = canvasHeight * 0.88;
+
+        const scale = Math.min(
+          maxWidth / img.width,
+          maxHeight / img.height
+        );
+
+        const scaledWidth = img.width * scale;
+        const scaledHeight = img.height * scale;
 
         const x = (canvasWidth - scaledWidth) / 2;
         const y = (canvasHeight - scaledHeight) / 2;
 
         ctx.drawImage(img, x, y, scaledWidth, scaledHeight);
 
+        let pdf = null;
+
         if (typeof jsPDF !== "undefined") {
-          const pdf = new jsPDF();
-
-          pdf.addImage(
-            canvas.toDataURL("image/jpeg", 1.0),
-            "JPEG",
-            0,
-            0,
-            pdf.internal.pageSize.getWidth(),
-            pdf.internal.pageSize.getHeight()
-          );
-
-          pdf.save("custom-spinnaker.pdf");
+          pdf = new jsPDF();
         } else if (window.jspdf && window.jspdf.jsPDF) {
-          const pdf = new window.jspdf.jsPDF();
-
-          pdf.addImage(
-            canvas.toDataURL("image/jpeg", 1.0),
-            "JPEG",
-            0,
-            0,
-            pdf.internal.pageSize.getWidth(),
-            pdf.internal.pageSize.getHeight()
-          );
-
-          pdf.save("custom-spinnaker.pdf");
+          pdf = new window.jspdf.jsPDF();
         } else {
           alert("jsPDF is not loaded.");
+          URL.revokeObjectURL(svgUrl);
+          resolve(null);
+          return;
         }
 
-        URL.revokeObjectURL(url);
+        pdf.addImage(
+          canvas.toDataURL("image/jpeg", 1.0),
+          "JPEG",
+          0,
+          0,
+          pdf.internal.pageSize.getWidth(),
+          pdf.internal.pageSize.getHeight()
+        );
+
+        URL.revokeObjectURL(svgUrl);
+        resolve(pdf);
       };
 
-      img.src = url;
+      img.onerror = function () {
+        URL.revokeObjectURL(svgUrl);
+        alert("Could not load the sail image.");
+        resolve(null);
+      };
+
+      img.src = svgUrl;
     });
   }
+
+  if (downloadPDF) {
+    downloadPDF.addEventListener("click", async function () {
+      const pdf = await createCustomSailPdf();
+
+      if (!pdf) return;
+
+      pdf.save("custom-spinnaker.pdf");
+    });
+  }
+
+  class CustomizeSailForm {
+    constructor() {
+      this.customizeForm = document.getElementById("customizeForm");
+
+      if (this.customizeForm) {
+        this.customizeForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          this.submitCustomizeForm();
+        });
+      }
+    }
+
+    async submitCustomizeForm() {
+      const customerName = document.getElementById("customerName");
+      const customerEmail = document.getElementById("customerEmail");
+      const salespersonEmail = document.getElementById("salespersonEmail");
+      const boatName = document.getElementById("boatName");
+      const boatDesignLength = document.getElementById("boatDesignLength");
+
+      if (
+        !customerName ||
+        !customerEmail ||
+        !salespersonEmail ||
+        !boatName ||
+        !boatDesignLength
+      ) {
+        alert("Some form fields were not found.");
+        return;
+      }
+
+      if (
+        !customerName.value ||
+        !customerEmail.value ||
+        !salespersonEmail.value ||
+        !boatName.value ||
+        !boatDesignLength.value
+      ) {
+        alert("Please complete all fields.");
+        return;
+      }
+
+      chargingClass.hideShowcharging(true);
+
+      try {
+        const pdf = await createCustomSailPdf();
+
+        if (!pdf) {
+          alert("Could not create PDF.");
+          return;
+        }
+
+        const pdfBase64 = pdf.output("datauristring");
+
+        const url = "../controller/controller.php";
+
+        const data = {
+          action: "submit_customize_form",
+          name: customerName.value,
+          email: customerEmail.value,
+          salesperson_email: salespersonEmail.value,
+          boat_name: boatName.value,
+          boat_design_length: boatDesignLength.value,
+          sail_type: sailTypeSelect.options[sailTypeSelect.selectedIndex].textContent,
+          cloth_weight: clothWeightSelect.value,
+          pdf_base64: pdfBase64
+        };
+
+        const response = await this.makeRequest(url, data);
+
+        if (!response) return;
+
+        alert(JSON.stringify(response));
+
+        if (response.success === true) {
+          this.customizeForm.reset();
+        }
+
+      } catch (error) {
+        console.error("Submit error:", error);
+        alert("There was an error sending the form.");
+      } finally {
+        chargingClass.hideShowcharging(false);
+      }
+    }
+
+    async makeRequest(url, data) {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+          throw new Error("Network error.");
+        }
+
+        return await response.json();
+
+      } catch (error) {
+        console.error("Error:", error);
+        return null;
+      }
+    }
+  }
+
+  new CustomizeSailForm();
 
   showSelectedSail(sailTypeSelect.value);
   loadClothWeights(sailTypeSelect.value);

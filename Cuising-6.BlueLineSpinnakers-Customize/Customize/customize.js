@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
   let colourCustomize = "white";
 
+  class Charging {
+    constructor() {
+      this.hideShowcharging(false);
+    }
+
+    hideShowcharging(action) {
+      const charging_background = document.querySelector(".charging_background");
+
+      if (charging_background) {
+        charging_background.style.display = action ? "flex" : "none";
+      }
+    }
+  }
+
+  const chargingClass = new Charging();
+
   const sharedColours = {
     fullNylite: [
       "#EFE8D2", // Cream
@@ -287,34 +303,33 @@ document.addEventListener("DOMContentLoaded", function () {
     paintableElement.setAttribute("fill", colourCustomize);
   });
 
-  if (downloadPDF) {
-    downloadPDF.addEventListener("click", function () {
-      const activeOption = document.querySelector(".sail-option.active");
+  async function createCustomSailPdf() {
+    const activeOption = document.querySelector(".sail-option.active");
 
-      if (!activeOption) {
-        alert("Please select a sail design.");
-        return;
-      }
+    if (!activeOption) {
+      alert("Please select a sail design.");
+      return null;
+    }
 
-      const svgElement = activeOption.querySelector("svg");
+    const svgElement = activeOption.querySelector("svg");
 
-      if (!svgElement) {
-        alert("No SVG found.");
-        return;
-      }
+    if (!svgElement) {
+      alert("No SVG found.");
+      return null;
+    }
 
-      const clonedSvg = svgElement.cloneNode(true);
+    const clonedSvg = svgElement.cloneNode(true);
+    clonedSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
 
-      clonedSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    const svgData = new XMLSerializer().serializeToString(clonedSvg);
 
-      const svgData = new XMLSerializer().serializeToString(clonedSvg);
+    const svgBlob = new Blob([svgData], {
+      type: "image/svg+xml;charset=utf-8"
+    });
 
-      const svgBlob = new Blob([svgData], {
-        type: "image/svg+xml;charset=utf-8"
-      });
+    const svgUrl = URL.createObjectURL(svgBlob);
 
-      const url = URL.createObjectURL(svgBlob);
-
+    return new Promise((resolve) => {
       const img = new Image();
 
       img.onload = function () {
@@ -330,11 +345,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-        /*
-          Esta parte evita que el sail se corte arriba o abajo.
-          Antes solo se calculaba por ancho.
-          Ahora se calcula por ancho y alto.
-        */
         const maxWidth = canvasWidth * 0.82;
         const maxHeight = canvasHeight * 0.88;
 
@@ -351,47 +361,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
         ctx.drawImage(img, x, y, scaledWidth, scaledHeight);
 
+        let pdf = null;
+
         if (typeof jsPDF !== "undefined") {
-          const pdf = new jsPDF();
-
-          pdf.addImage(
-            canvas.toDataURL("image/jpeg", 1.0),
-            "JPEG",
-            0,
-            0,
-            pdf.internal.pageSize.getWidth(),
-            pdf.internal.pageSize.getHeight()
-          );
-
-          pdf.save("custom-spinnaker.pdf");
-
+          pdf = new jsPDF();
         } else if (window.jspdf && window.jspdf.jsPDF) {
-          const pdf = new window.jspdf.jsPDF();
-
-          pdf.addImage(
-            canvas.toDataURL("image/jpeg", 1.0),
-            "JPEG",
-            0,
-            0,
-            pdf.internal.pageSize.getWidth(),
-            pdf.internal.pageSize.getHeight()
-          );
-
-          pdf.save("custom-spinnaker.pdf");
-
+          pdf = new window.jspdf.jsPDF();
         } else {
           alert("jsPDF is not loaded.");
+          URL.revokeObjectURL(svgUrl);
+          resolve(null);
+          return;
         }
 
-        URL.revokeObjectURL(url);
+        pdf.addImage(
+          canvas.toDataURL("image/jpeg", 1.0),
+          "JPEG",
+          0,
+          0,
+          pdf.internal.pageSize.getWidth(),
+          pdf.internal.pageSize.getHeight()
+        );
+
+        URL.revokeObjectURL(svgUrl);
+        resolve(pdf);
       };
 
       img.onerror = function () {
-        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(svgUrl);
         alert("Could not load the sail image.");
+        resolve(null);
       };
 
-      img.src = url;
+      img.src = svgUrl;
+    });
+  }
+
+  if (downloadPDF) {
+    downloadPDF.addEventListener("click", async function () {
+      const pdf = await createCustomSailPdf();
+
+      if (!pdf) return;
+
+      pdf.save("custom-spinnaker.pdf");
     });
   }
 
@@ -425,9 +437,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const activeOption = document.querySelector(".sail-option.active");
-      const activeSvg = activeOption ? activeOption.querySelector("svg") : null;
-
       if (
         !customerName.value ||
         !customerEmail.value ||
@@ -439,35 +448,52 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (!activeSvg) {
-        alert("No SVG found.");
-        return;
+      chargingClass.hideShowcharging(true);
+
+      try {
+        const pdf = await createCustomSailPdf();
+
+        if (!pdf) {
+          alert("Could not create PDF.");
+          chargingClass.hideShowcharging(false);
+          return;
+        }
+
+        const pdfBase64 = pdf.output("datauristring");
+
+        const url = "../controller/controller.php";
+
+        const data = {
+          action: "submit_customize_form",
+          name: customerName.value,
+          email: customerEmail.value,
+          salesperson_email: salespersonEmail.value,
+          boat_name: boatName.value,
+          boat_design_length: boatDesignLength.value,
+          sail_type: sailTypeSelect.value,
+          cloth_weight: clothWeightSelect.value,
+          pdf_base64: pdfBase64
+        };
+
+        const response = await this.makeRequest(url, data);
+
+        if (!response) {
+          chargingClass.hideShowcharging(false);
+          return;
+        }
+
+        alert(JSON.stringify(response));
+
+        if (response.success === true) {
+          this.customizeForm.reset();
+        }
+
+      } catch (error) {
+        console.error("Submit error:", error);
+        alert("There was an error sending the form.");
+      } finally {
+        chargingClass.hideShowcharging(false);
       }
-
-      const clonedSvg = activeSvg.cloneNode(true);
-      clonedSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-
-      const svgText = new XMLSerializer().serializeToString(clonedSvg);
-
-      const url = "../../controller/customize/customize.php";
-
-      const data = {
-        action: "submit_customize_form",
-        name: customerName.value,
-        email: customerEmail.value,
-        salesperson_email: salespersonEmail.value,
-        boat_name: boatName.value,
-        boat_design_length: boatDesignLength.value,
-        sail_type: sailTypeSelect.value,
-        cloth_weight: clothWeightSelect.value,
-        svg: svgText
-      };
-
-      const response = await this.makeRequest(url, data);
-
-      if (!response) return;
-
-      alert(JSON.stringify(response));
     }
 
     async makeRequest(url, data) {

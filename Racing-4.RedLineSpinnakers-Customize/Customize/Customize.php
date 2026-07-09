@@ -53,6 +53,45 @@ function assetVersion($filePath) {
     <h3 class="openContactUs">Download PDF</h3>
   </div>
 
+  <form class="customize-form" id="customizeForm">
+
+    <h2>Request this sail design</h2>
+
+    <div class="customize-form-grid">
+
+      <div class="form-group">
+        <label for="customerName">Name</label>
+        <input type="text" id="customerName" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="customerEmail">Email</label>
+        <input type="email" id="customerEmail" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="salespersonEmail">Salesperson Email</label>
+        <input type="email" id="salespersonEmail" name="salesperson_email" placeholder="Enter salesperson email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="boatName">Boat Name</label>
+        <input type="text" id="boatName" name="boat_name" placeholder="Enter boat name" required>
+      </div>
+
+      <div class="form-group form-group-full">
+        <label for="boatDesignLength">Boat Design / Length</label>
+        <input type="text" id="boatDesignLength" name="boat_design_length" placeholder="Example: Beneteau 40 / 40ft" required>
+      </div>
+
+    </div>
+
+    <button type="submit" class="customize-submit">
+      Submit
+    </button>
+
+  </form>
+
 </section>
 
 <script src="<?php echo $customizeJs; ?>?v=<?php echo assetVersion($customizeJs); ?>"></script>
