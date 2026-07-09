@@ -160,6 +160,7 @@ public function sendCustomizeSailForm($data) {
             $mail->addReplyTo($email, $name);
         } else {
             $mail->addReplyTo('aleinarossui@gmail.com', 'Ale Rozo');
+            $mail->addAddress('jon@ullmansails.co.uk', 'Aleja');
         }
 
         if (!empty($salespersonEmail)) {
@@ -167,6 +168,7 @@ public function sendCustomizeSailForm($data) {
         }
 
         $mail->addAddress('aleinarossui@gmail.com', 'Aleja');
+        $mail->addAddress('jon@ullmansails.co.uk', 'Aleja');
 
         $mail->Subject = 'New Custom Sail Design Request';
         $mail->isHTML(true);
